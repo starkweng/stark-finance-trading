@@ -2,7 +2,7 @@
 
 - Status: PASS
 - ZIP: `dist/stark-finance-trading-github-repo.zip`
-- Archive entries: 118
+- Archive entries: 117
 
 ## Checks
 

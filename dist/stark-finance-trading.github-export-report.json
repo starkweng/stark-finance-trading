@@ -44,7 +44,6 @@
     "dist/stark-finance-trading.public-tool-catalog.json",
     "dist/stark-finance-trading.public-tool-catalog.md",
     "dist/stark-finance-trading.quality-suite.json",
-    "dist/stark-finance-trading.quality-suite.stdout.json",
     "dist/stark-finance-trading.release-manifest.json",
     "dist/stark-finance-trading.release-manifest.md",
     "dist/stark-finance-trading.release-notes.json",
@@ -72,7 +71,7 @@
   "archive": {
     "path": "dist/stark-finance-trading-github-repo.zip",
     "status": "PASS",
-    "entry_count": 118
+    "entry_count": 117
   },
   "evidence_boundary": "Local export validation only; does not prove remote GitHub Actions completion."
 }

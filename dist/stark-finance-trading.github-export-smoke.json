@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "created_at": "2026-06-28T04:40:09.133516+00:00",
+  "created_at": "2026-06-28T04:46:38.541767+00:00",
   "zip": "dist/stark-finance-trading-github-repo.zip",
   "status": "PASS",
   "checks": {
@@ -59,6 +59,6 @@
   ],
   "missing_required_files": [],
   "transient_files": [],
-  "entry_count": 118,
+  "entry_count": 117,
   "evidence_boundary": "Local smoke test of the exported GitHub repository ZIP only. It proves the archive can be extracted and core gates can run from the standalone layout. It does not prove remote GitHub Actions completion, uploaded artifact availability, live market-data correctness, live trading performance, or live model behavior."
 }
