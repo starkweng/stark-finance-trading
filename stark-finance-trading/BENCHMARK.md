@@ -39,6 +39,7 @@ This skill should compete on workflow quality, not instruction volume.
 - GitHub export smoke: `scripts/smoke_github_export.py` extracts the standalone repository ZIP and reruns core gates from the exported layout.
 - Remote CI proof helper: `scripts/enable_remote_ci.py` audits the public repository, publishes `.github/workflows/ci.yml` through the GitHub Contents API when the GitHub CLI token has `workflow` scope, dispatches the workflow, and records the latest remote run status.
 - External proof auditor: `scripts/audit_external_proofs.py` classifies public repo, remote CI, approved live model eval, and reviewed comparative eval proof status without treating dry-runs or fixture smokes as live proof.
+- Goal completion auditor: `scripts/audit_goal_completion.py` maps Stark's original objective to concrete proof requirements and keeps the goal incomplete when any required proof is partial, missing, or blocked.
 - Release readiness validator: `scripts/validate_release_readiness.py` checks local release artifacts, package hashes, export ZIP cleanliness, public-claim boundaries, and external proof status.
 - Package smoke: available through `scripts/install_package_smoke.py`.
 - CI smoke: available through `.github/workflows/ci.yml`.
@@ -117,6 +118,10 @@ The review bundle is the handoff layer between automated checks and human judgme
 ## External Proof Audit Gate
 
 `scripts/audit_external_proofs.py` reads the remote CI proof packet, live eval scorecard, comparative eval scorecard, and both harness-smoke reports, then writes `stark-finance-trading.external-proof-audit.*`. A PASS means the audit ran and labeled every external proof. Goal completion still requires public repo URL, remote CI success or reviewed run URL, approved live model eval, and reviewed comparative live eval to be `PROVEN` or `PROVIDED`. Dry-run scorecards and fixture harness smokes stay useful supporting evidence, not live proof.
+
+## Goal Completion Audit Gate
+
+`scripts/audit_goal_completion.py` maps the original Stark objective into concrete requirements: `stark-` single front door, merged vendor/local routing, public tool catalog coverage, runtime alignment, route regression, public benchmark, quality suite, package/export readiness, installed copy sync, public repository proof, remote CI proof, approved live eval, and reviewed comparative live eval. A PASS means the audit ran. The goal is complete only when every required requirement is `PROVEN`; `PARTIAL`, `MISSING`, `BLOCKED`, dry-run, or fixture-only evidence keeps the goal active.
 
 ## GitHub Export Smoke Gate
 

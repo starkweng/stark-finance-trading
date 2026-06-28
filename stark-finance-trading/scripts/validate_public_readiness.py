@@ -41,6 +41,7 @@ REQUIRED_BENCHMARK_FILES = [
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
     "scripts/audit_external_proofs.py",
+    "scripts/audit_goal_completion.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
@@ -163,10 +164,11 @@ def validate(root: Path) -> int:
         or "GitHub Actions Workflow Gate" not in benchmark_md
         or "Remote CI Proof Gate" not in benchmark_md
         or "External Proof Audit Gate" not in benchmark_md
+        or "Goal Completion Audit Gate" not in benchmark_md
         or "GitHub Export Smoke Gate" not in benchmark_md
         or "Release Readiness Gate" not in benchmark_md
     ):
-        return fail("BENCHMARK.md must mention public comparison, public source audit, competitive task benchmark, eval review bundle, Eval Review Scorecard Gate, Live Eval Harness Smoke, GitHub Actions Workflow Gate, Remote CI Proof Gate, External Proof Audit Gate, GitHub Export Smoke Gate, Release Readiness Gate, adversarial coverage, and public benchmark gate")
+        return fail("BENCHMARK.md must mention public comparison, public source audit, competitive task benchmark, eval review bundle, Eval Review Scorecard Gate, Live Eval Harness Smoke, GitHub Actions Workflow Gate, Remote CI Proof Gate, External Proof Audit Gate, Goal Completion Audit Gate, GitHub Export Smoke Gate, Release Readiness Gate, adversarial coverage, and public benchmark gate")
 
     scanned_text = "\n".join(
         path.read_text(encoding="utf-8", errors="replace")

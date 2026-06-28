@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 46
+- Required artifacts: 48
 
 ## Checks
 
@@ -58,6 +58,8 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.external-proof-audit.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.external-proof-audit.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.external-proof-audit.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.external-proof-audit.md` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.goal-completion-audit.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.goal-completion-audit.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.goal-completion-audit.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.goal-completion-audit.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.github-export-report.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.github-export-report.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.github-export-report.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.github-export-report.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.github-export-smoke.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.github-export-smoke.json` |

@@ -239,6 +239,15 @@ supporting_competitive_eval_harness_smoke: HARNESS_ONLY_NOT_MODEL_PROOF
 ```
 
 ```text
+python3 scripts/audit_goal_completion.py --skill-root . --dist ../dist --public-repo-url https://github.com/starkweng/stark-finance-trading --out ../dist/stark-finance-trading.goal-completion-audit.json --markdown ../dist/stark-finance-trading.goal-completion-audit.md --json
+PASS
+goal_completion_status: NOT_COMPLETE_REQUIREMENTS_PENDING
+proven_requirements: see ../dist/stark-finance-trading.goal-completion-audit.json
+partial_requirements: critical_runtime_alignment
+blocked_or_missing_requirements: remote_github_actions_proven, approved_live_model_eval_proven, reviewed_comparative_live_eval_proven
+```
+
+```text
 python3 scripts/validate_release_readiness.py --skill-root . --dist ../dist --out ../dist/stark-finance-trading.release-readiness.json --markdown ../dist/stark-finance-trading.release-readiness.md --public-repo-url https://github.com/starkweng/stark-finance-trading --json
 PASS
 local_release_status: LOCAL_RELEASE_READY
@@ -347,6 +356,7 @@ no output
 - GitHub export smoke proves the standalone repository ZIP can be extracted and core gates rerun locally. It does not prove remote GitHub Actions completion or uploaded artifact availability.
 - Remote CI proof helper exists, audits remote Actions/workflow/run state, and reports the current GitHub CLI permission blocker. It does not enable CI until the token has `workflow` scope and a remote run completes.
 - External proof audit consolidates public repo, remote CI, live eval, comparative eval, and harness-smoke evidence. A PASS means the audit ran; the current goal status remains pending until required external proofs are proven or provided.
+- Goal completion audit maps the original user objective to proof requirements. A PASS means the audit ran; the goal remains incomplete while any requirement is partial, missing, blocked, dry-run-only, or fixture-only.
 - Release readiness proves local package/source freshness, release artifact consistency, clean package/export ZIPs, status artifacts, and public-claim boundaries. It does not prove public repo publication, remote GitHub Actions completion, approved live model evals, or reviewed comparative live evals.
 - Comparative live benchmark is pending.
 - Live model-service eval is pending and requires explicit approval.

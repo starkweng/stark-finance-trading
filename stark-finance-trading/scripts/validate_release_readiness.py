@@ -55,6 +55,7 @@ REQUIRED_SOURCE_FILES = [
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
     "scripts/audit_external_proofs.py",
+    "scripts/audit_goal_completion.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 

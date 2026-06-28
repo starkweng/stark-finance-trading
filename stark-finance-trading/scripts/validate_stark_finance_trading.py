@@ -50,6 +50,7 @@ REQUIRED_FILES = [
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
     "scripts/audit_external_proofs.py",
+    "scripts/audit_goal_completion.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
@@ -236,6 +237,10 @@ def validate(root: Path) -> int:
     for phrase in ["external_proof_status", "remote_github_actions_run", "approved_live_model_eval", "HARNESS_ONLY_NOT_MODEL_PROOF"]:
         if phrase not in external_proof_script:
             return fail(f"audit_external_proofs missing phrase: {phrase}")
+    goal_completion_script = read(root / "scripts/audit_goal_completion.py")
+    for phrase in ["goal_completion_status", "NOT_COMPLETE_REQUIREMENTS_PENDING", "stark_named_single_front_door", "remote_github_actions_proven"]:
+        if phrase not in goal_completion_script:
+            return fail(f"audit_goal_completion missing phrase: {phrase}")
 
     comparison = json.loads(read(root / "benchmarks/public-comparison-2026-06-28.json"))
     candidates = comparison.get("candidates", [])

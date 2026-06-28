@@ -3,7 +3,7 @@
   "status": "PASS",
   "export_root": "dist/github-export/stark-finance-trading",
   "skill_name": "stark-finance-trading",
-  "skill_files_copied": 59,
+  "skill_files_copied": 60,
   "release_artifacts_copied": [
     "dist/stark-finance-trading.competitive-eval-harness-smoke.json",
     "dist/stark-finance-trading.competitive-eval-harness-smoke.md",
@@ -24,6 +24,8 @@
     "dist/stark-finance-trading.github-export-report.md",
     "dist/stark-finance-trading.github-export-smoke.json",
     "dist/stark-finance-trading.github-export-smoke.md",
+    "dist/stark-finance-trading.goal-completion-audit.json",
+    "dist/stark-finance-trading.goal-completion-audit.md",
     "dist/stark-finance-trading.live-eval-harness-smoke.json",
     "dist/stark-finance-trading.live-eval-harness-smoke.md",
     "dist/stark-finance-trading.live-eval-review/review.html",
@@ -66,12 +68,12 @@
     },
     "missing_required_files": [],
     "transient_files": [],
-    "release_package_entry_count": 58
+    "release_package_entry_count": 59
   },
   "archive": {
     "path": "dist/stark-finance-trading-github-repo.zip",
     "status": "PASS",
-    "entry_count": 117
+    "entry_count": 120
   },
   "evidence_boundary": "Local export validation only; does not prove remote GitHub Actions completion."
 }
