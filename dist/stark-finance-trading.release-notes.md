@@ -3,8 +3,8 @@
 - Status: PASS
 - Release date: 2026-06-28
 - Package: `stark-finance-trading.skill`
-- SHA256: `fdc09379f4826cdbeede4310fed93a942841a7c87de19adbd56c9a18ed5cac04`
-- Entry count: 46
+- SHA256: `b35bf7cf62b403fa9e404e1bebd7305035455bb9dc09b8667b66e460f818a8cb`
+- Entry count: 48
 - Install smoke: PASS
 - Live eval signoff: PASS / approval PENDING
 
@@ -26,6 +26,7 @@
 - Added eval review scorecards so dry-run and future live eval bundles become public, evidence-labeled score reports.
 - Added local release manifest and release notes generators so GitHub export uses current package evidence instead of stale sidecars.
 - Added GitHub Actions workflow validation so CI artifact coverage is checked before public handoff.
+- Added a workflow template and remote CI proof helper for public repos where GitHub requires refreshed `workflow` scope before CI can be enabled.
 - Added GitHub export smoke testing so the standalone repository ZIP is extracted and core gates rerun before public handoff.
 - Added local release-readiness validation to separate source-package readiness from external proofs such as public repo publication, remote GitHub Actions, approved live evals, and reviewed comparative evals.
 

@@ -10,7 +10,7 @@ PASS
 {
   "ok": true,
   "skill": "stark-finance-trading",
-  "required_files": 29,
+  "required_files": 31,
   "routing_cases": 8,
   "adversarial_cases": 10,
   "live_behavior_cases": 6,
@@ -120,7 +120,7 @@ eval_regression: PASS
 ```text
 python3 /path/to/stark-skiller/scripts/security_scan_skill.py .
 PASS
-files_scanned: 46
+files_scanned: 48
 critical: 0
 high: 0
 medium: 0
@@ -141,29 +141,29 @@ hashes_match: true
 fixed_zip_metadata: true
 entry_counts_match: true
 install_smoke: true
-entry_count: 46
+entry_count: 48
 ```
 
 ```text
 python3 scripts/package_skill.py . ../dist
 python3 scripts/install_package_smoke.py ../dist/stark-finance-trading.skill --json
 PASS
-entry_count: 46
+entry_count: 48
 ```
 
 ```text
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
-skill_files_copied: 47
+skill_files_copied: 49
 release_artifacts_copied: 30
 release_package_install_smoke: true
-zip_entry_count: 83
+zip_entry_count: 87
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 83
+zip_entry_count: 87
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -175,19 +175,32 @@ install_smoke_exported_package: PASS
 ```
 
 ```text
-python3 scripts/validate_release_readiness.py --skill-root . --dist ../dist --out ../dist/stark-finance-trading.release-readiness.json --markdown ../dist/stark-finance-trading.release-readiness.md --json
+python3 scripts/validate_release_readiness.py --skill-root . --dist ../dist --out ../dist/stark-finance-trading.release-readiness.json --markdown ../dist/stark-finance-trading.release-readiness.md --public-repo-url https://github.com/starkweng/stark-finance-trading --json
 PASS
 local_release_status: LOCAL_RELEASE_READY
 goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
-package_entry_count: 46
-github_export_zip_entry_count: 83
+package_sha256: see ../dist/stark-finance-trading.release-readiness.json
+github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
+package_entry_count: 48
+github_export_zip_entry_count: 87
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
-external_public_repo_url: PENDING
+external_public_repo_url: PROVIDED
 external_remote_github_actions_run_url: PENDING
 external_approved_live_model_eval: PENDING
 external_reviewed_comparative_live_eval: PENDING
+```
+
+```text
+python3 scripts/enable_remote_ci.py --repo-root ../dist/github-export/stark-finance-trading --repo starkweng/stark-finance-trading --out ../dist/stark-finance-trading.remote-ci-proof.json --markdown ../dist/stark-finance-trading.remote-ci-proof.md --json
+FAIL
+workflow_scope: false
+token_scopes: gist, read:org, repo
+workflow_copy: SKIPPED
+push: SKIPPED
+remote_run: SKIPPED
+required_action: gh auth refresh -h github.com -s workflow
 ```
 
 ```text
@@ -242,6 +255,7 @@ no output
 - Eval review scorecards prove reviewability and evidence labeling. Dry-run scorecard PASS still does not prove live model behavior.
 - Package smoke, GitHub export validation, and GitHub export smoke passed locally.
 - GitHub export smoke proves the standalone repository ZIP can be extracted and core gates rerun locally. It does not prove remote GitHub Actions completion or uploaded artifact availability.
+- Remote CI proof helper exists and reports the current GitHub CLI permission blocker. It does not enable CI until the token has `workflow` scope and a remote run completes.
 - Release readiness proves local package/source freshness, release artifact consistency, clean package/export ZIPs, status artifacts, and public-claim boundaries. It does not prove public repo publication, remote GitHub Actions completion, approved live model evals, or reviewed comparative live evals.
 - Comparative live benchmark is pending.
 - Live model-service eval is pending and requires explicit approval.

@@ -35,10 +35,12 @@ REQUIRED_FILES = [
     "scripts/generate_release_manifest.py",
     "scripts/generate_release_notes.py",
     "scripts/run_quality_suite.py",
+    "scripts/enable_remote_ci.py",
     "scripts/validate_github_actions_workflow.py",
     "scripts/smoke_github_export.py",
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
+    "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
 REQUIRED_TOOL_TERMS = [

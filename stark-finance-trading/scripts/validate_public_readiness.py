@@ -26,10 +26,12 @@ REQUIRED_BENCHMARK_FILES = [
     "scripts/generate_release_manifest.py",
     "scripts/generate_release_notes.py",
     "scripts/run_quality_suite.py",
+    "scripts/enable_remote_ci.py",
     "scripts/validate_github_actions_workflow.py",
     "scripts/smoke_github_export.py",
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
+    "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
 REQUIRED_ADVERSARIAL_CATEGORIES = {
@@ -128,10 +130,11 @@ def validate(root: Path) -> int:
         or "Eval Review Bundle" not in benchmark_md
         or "Eval Review Scorecard Gate" not in benchmark_md
         or "GitHub Actions Workflow Gate" not in benchmark_md
+        or "Remote CI Proof Gate" not in benchmark_md
         or "GitHub Export Smoke Gate" not in benchmark_md
         or "Release Readiness Gate" not in benchmark_md
     ):
-        return fail("BENCHMARK.md must mention public comparison, public source audit, competitive task benchmark, eval review bundle, Eval Review Scorecard Gate, GitHub Actions Workflow Gate, GitHub Export Smoke Gate, Release Readiness Gate, adversarial coverage, and public benchmark gate")
+        return fail("BENCHMARK.md must mention public comparison, public source audit, competitive task benchmark, eval review bundle, Eval Review Scorecard Gate, GitHub Actions Workflow Gate, Remote CI Proof Gate, GitHub Export Smoke Gate, Release Readiness Gate, adversarial coverage, and public benchmark gate")
 
     scanned_text = "\n".join(
         path.read_text(encoding="utf-8", errors="replace")

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "title": "stark-finance-trading Competitive Task Eval Review",
-  "generated_at": "2026-06-28T01:00:58.296370+00:00",
+  "generated_at": "2026-06-28T01:36:46.369371+00:00",
   "source_report": "dist/competitive-eval-dry-run/review.json",
   "source_status": "PASS",
   "source_mode": "dry_run",

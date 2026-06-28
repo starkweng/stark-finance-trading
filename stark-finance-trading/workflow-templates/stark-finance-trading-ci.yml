@@ -1,0 +1,70 @@
+name: stark-finance-trading-ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skill
+        working-directory: stark-finance-trading
+        run: |
+          python3 scripts/run_quality_suite.py --json
+
+      - name: Build package
+        working-directory: stark-finance-trading
+        run: |
+          python3 scripts/package_skill.py . dist
+          python3 scripts/install_package_smoke.py dist/stark-finance-trading.skill --json
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: stark-finance-trading-skill
+          path: |
+            stark-finance-trading/dist/stark-finance-trading.skill
+            stark-finance-trading/dist/stark-finance-trading.quality-suite.json
+            stark-finance-trading/dist/stark-finance-trading.github-actions-workflow.json
+            stark-finance-trading/dist/stark-finance-trading.github-actions-workflow.md
+            stark-finance-trading/dist/stark-finance-trading.release-manifest.json
+            stark-finance-trading/dist/stark-finance-trading.release-manifest.md
+            stark-finance-trading/dist/stark-finance-trading.release-notes.json
+            stark-finance-trading/dist/stark-finance-trading.release-notes.md
+            stark-finance-trading/dist/stark-finance-trading.public-source-audit.json
+            stark-finance-trading/dist/stark-finance-trading.public-source-audit.md
+            stark-finance-trading/dist/stark-finance-trading.public-benchmark.json
+            stark-finance-trading/dist/stark-finance-trading.public-benchmark.md
+            stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json
+            stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md
+            stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json
+            stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.md
+            stark-finance-trading/dist/stark-finance-trading.live-eval-review/**
+            stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.json
+            stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md
+            stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.json
+            stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.md
+            stark-finance-trading/dist/stark-finance-trading.competitive-eval-review/**
+            stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.json
+            stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md
+            stark-finance-trading/dist/stark-finance-trading.github-export-report.json
+            stark-finance-trading/dist/stark-finance-trading.github-export-report.md
+            stark-finance-trading/dist/stark-finance-trading.github-export-smoke.json
+            stark-finance-trading/dist/stark-finance-trading.github-export-smoke.md
+            stark-finance-trading/dist/stark-finance-trading.release-readiness.json
+            stark-finance-trading/dist/stark-finance-trading.release-readiness.md
+            stark-finance-trading/dist/stark-finance-trading-github-repo.zip
+            stark-finance-trading/scripts/generate_eval_review_bundle.py
+            stark-finance-trading/VALIDATION.md
+            stark-finance-trading/BENCHMARK.md
+            stark-finance-trading/benchmarks/PUBLIC_COMPARISON_2026-06-28.md

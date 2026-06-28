@@ -40,10 +40,12 @@ REQUIRED_SOURCE_FILES = [
     "scripts/run_quality_suite.py",
     "scripts/package_skill.py",
     "scripts/install_package_smoke.py",
+    "scripts/enable_remote_ci.py",
     "scripts/export_github_repo.py",
     "scripts/smoke_github_export.py",
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
+    "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
 REQUIRED_ARTIFACTS = [

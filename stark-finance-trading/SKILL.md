@@ -63,7 +63,7 @@ For serious or ambiguous work, start with `references/tool-router.md` and `refer
 
 ## Quality Gates
 
-This skill has a Loop Blueprint, a Loop Engineering Gate, a Learn Loop, a Live Eval Signoff Gate, an Eval Review Bundle Gate, an Eval Review Scorecard Gate, a Release Notes Gate, a GitHub Actions Workflow Gate, a GitHub Repo Export Gate, a GitHub Export Smoke Gate, and a Release Readiness Gate. These gates do not prove live trading quality by themselves; they make the claim auditable before public release.
+This skill has a Loop Blueprint, a Loop Engineering Gate, a Learn Loop, a Live Eval Signoff Gate, an Eval Review Bundle Gate, an Eval Review Scorecard Gate, a Release Notes Gate, a GitHub Actions Workflow Gate, a Remote CI Proof Gate, a GitHub Repo Export Gate, a GitHub Export Smoke Gate, and a Release Readiness Gate. These gates do not prove live trading quality by themselves; they make the claim auditable before public release.
 
 ## Fast Route Map
 

@@ -87,3 +87,10 @@ Use these gates before claiming the skill is GitHub-ready or best-in-class.
 - CI builds and smoke-tests the `.skill` package.
 - CI uploads package, public benchmark, release manifest/notes, eval review bundles, eval review scorecards, workflow validation, GitHub export artifacts, export-smoke reports, and release-readiness reports.
 - Static workflow validation does not prove remote GitHub Actions completion.
+
+## Remote CI Proof Gate
+
+- `workflow-templates/stark-finance-trading-ci.yml` carries the publishable CI workflow when GitHub rejects direct workflow pushes.
+- `scripts/enable_remote_ci.py` requires a GitHub CLI token with `workflow` scope before copying the template into `.github/workflows/ci.yml`.
+- The helper must commit, push, and record the latest remote GitHub Actions run before remote CI is treated as proven.
+- Missing `workflow` scope, no completed run, or a failed run keeps the full GitHub/public goal incomplete.

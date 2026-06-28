@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "status": "FAIL",
+  "generated_at": "2026-06-28T01:37:17.436219+00:00",
+  "repo": "starkweng/stark-finance-trading",
+  "repo_root": ".",
+  "auth": {
+    "status": "PASS",
+    "scopes": [
+      "gist",
+      "read:org",
+      "repo"
+    ],
+    "has_workflow_scope": false,
+    "raw_tail": "[redacted: GitHub CLI auth status contained local account/token-scope diagnostic text]"
+  },
+  "workflow_copy": {
+    "status": "SKIPPED",
+    "reason": "workflow scope missing"
+  },
+  "push": {
+    "status": "SKIPPED",
+    "reason": "workflow scope missing"
+  },
+  "remote_run": {
+    "status": "SKIPPED",
+    "reason": "workflow not enabled"
+  },
+  "evidence_boundary": "This proof only covers enabling and observing the GitHub Actions CI workflow. A successful remote run does not prove live model behavior, market-data correctness, trading performance, or public superiority."
+}
