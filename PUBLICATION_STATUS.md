@@ -5,7 +5,7 @@ Current public repository:
 - Repo: https://github.com/starkweng/stark-finance-trading
 - Visibility: public
 - Main branch: `main`
-- Published commit: `d381e45`
+- Published commit: `52d754a`
 
 ## Completed External Proofs
 
