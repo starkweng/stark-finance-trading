@@ -330,6 +330,22 @@ def main() -> int:
             ],
         ),
         (
+            "competitive_eval_harness_smoke",
+            [
+                py,
+                "scripts/run_live_eval_harness_smoke.py",
+                "--skill-root",
+                ".",
+                "--eval-set",
+                "benchmarks/competitive-task-cases.json",
+                "--out",
+                str(dist_for_cmd / "stark-finance-trading.competitive-eval-harness-smoke.json"),
+                "--markdown",
+                str(dist_for_cmd / "stark-finance-trading.competitive-eval-harness-smoke.md"),
+                "--json",
+            ],
+        ),
+        (
             "competitive_eval_review_bundle",
             [
                 py,

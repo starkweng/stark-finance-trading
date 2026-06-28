@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 42
+- Required artifacts: 44
 
 ## Checks
 
@@ -51,6 +51,8 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.md` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-harness-smoke.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-harness-smoke.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-harness-smoke.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-harness-smoke.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-review/**` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-review/**` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md` |

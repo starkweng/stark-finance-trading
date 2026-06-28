@@ -66,6 +66,7 @@ def copy_release_artifacts(skill_name: str, release_dir: Path, out_dir: Path) ->
         f"{skill_name}.public-source-audit",
         f"{skill_name}.competitive-task-benchmark",
         f"{skill_name}.competitive-eval-signoff",
+        f"{skill_name}.competitive-eval-harness-smoke",
         f"{skill_name}.competitive-eval-review",
         f"{skill_name}.competitive-eval-scorecard",
         f"{skill_name}.live-eval-review",

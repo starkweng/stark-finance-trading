@@ -141,19 +141,20 @@ live_eval_review_bundle: PASS
 live_eval_review_scorecard: PASS
 competitive_eval_signoff: PASS
 competitive_codex_eval_dry_run: PASS
+competitive_eval_harness_smoke: PASS
 competitive_eval_review_bundle: PASS
 competitive_eval_review_scorecard: PASS
 github_export: PASS
 github_export_smoke: PASS
 release_readiness: PASS
-steps: 37
+steps: 38
 ```
 
 ```text
 python3 scripts/validate_github_actions_workflow.py --root . --json
 PASS
 required_snippet_count: 13
-required_artifact_count: 42
+required_artifact_count: 44
 failed_checks: 0
 ```
 
@@ -267,6 +268,14 @@ runner_kind: fixture
 ```
 
 ```text
+python3 scripts/run_live_eval_harness_smoke.py --skill-root . --eval-set benchmarks/competitive-task-cases.json --out ../dist/stark-finance-trading.competitive-eval-harness-smoke.json --markdown ../dist/stark-finance-trading.competitive-eval-harness-smoke.md --json
+PASS
+mode: fixture_run
+case_count: 1
+runner_kind: fixture
+```
+
+```text
 python3 scripts/generate_eval_review_bundle.py ../dist/live-eval-dry-run --eval-set evals/live-behavior-evals.json --out-dir ../dist/stark-finance-trading.live-eval-review --json
 PASS
 cases: 9
@@ -317,7 +326,7 @@ no output
 - GitHub Actions workflow validation is static coverage validation. It does not prove the workflow has run remotely on GitHub.
 - Adversarial evals are seeded as regression prompts, not live-run.
 - Live behavior evals and competitive task evals are defined and dry-run reviewed through human-review bundles, not live-run.
-- Live eval harness smoke proves the approved runner execution path with a local fixture runner. It does not prove live model behavior.
+- Live eval harness smokes prove the approved runner execution path for both live behavior and competitive eval sets with a local fixture runner. They do not prove live model behavior.
 - Eval review bundles prove that cases are reviewable by humans. They do not prove live model behavior, market-data correctness, trading performance, or public superiority.
 - Eval review scorecards prove reviewability and evidence labeling. Dry-run scorecard PASS still does not prove live model behavior.
 - Package smoke, GitHub export validation, and GitHub export smoke passed locally.

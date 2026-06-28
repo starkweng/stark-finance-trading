@@ -64,6 +64,8 @@ jobs:
             stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md
             stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.json
             stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.md
+            stark-finance-trading/dist/stark-finance-trading.competitive-eval-harness-smoke.json
+            stark-finance-trading/dist/stark-finance-trading.competitive-eval-harness-smoke.md
             stark-finance-trading/dist/stark-finance-trading.competitive-eval-review/**
             stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.json
             stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md

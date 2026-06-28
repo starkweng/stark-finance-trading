@@ -75,7 +75,7 @@ The adversarial eval set covers prompt injection, secret requests, live trade pr
 
 ## Live Eval Harness Smoke
 
-`scripts/run_live_eval_harness_smoke.py` creates a temporary fixture-only approved signoff, runs one eval case through `scripts/codex_eval.py` and `scripts/live_eval_runner_fixture.py`, then writes `stark-finance-trading.live-eval-harness-smoke.json/md`. A PASS proves the approved runner path can execute and produce reviewable artifacts. It does not prove live model behavior, market-data correctness, trading performance, or public superiority.
+`scripts/run_live_eval_harness_smoke.py` creates a temporary fixture-only approved signoff, runs one eval case through `scripts/codex_eval.py` and `scripts/live_eval_runner_fixture.py`, then writes a harness-smoke JSON/Markdown report. The same harness is run for both `evals/live-behavior-evals.json` and `benchmarks/competitive-task-cases.json`, producing `stark-finance-trading.live-eval-harness-smoke.*` and `stark-finance-trading.competitive-eval-harness-smoke.*`. A PASS proves the approved runner path can execute and produce reviewable artifacts. It does not prove live model behavior, market-data correctness, trading performance, or public superiority.
 
 ## Eval Review Bundle
 
