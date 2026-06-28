@@ -1,7 +1,7 @@
 # stark-finance-trading GitHub Export
 
 - Status: PASS
-- Skill files copied: 64
-- Release artifacts copied: 60
+- Skill files copied: 65
+- Release artifacts copied: 62
 - Validation: PASS
 - ZIP: `dist/stark-finance-trading-github-repo.zip`

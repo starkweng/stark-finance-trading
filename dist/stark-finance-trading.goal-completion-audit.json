@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T06:15:32.104083+00:00",
+  "generated_at": "2026-06-28T06:46:25.255999+00:00",
   "skill": "stark-finance-trading",
   "skill_root": "stark-finance-trading",
   "dist": "dist",
   "goal_completion_status": "NOT_COMPLETE_REQUIREMENTS_PENDING",
   "summary": {
-    "requirements": 16,
-    "proven": 12,
+    "requirements": 17,
+    "proven": 13,
     "partial": 1,
     "missing_or_blocked": 4
   },
@@ -95,12 +95,21 @@
       "required_action": "Run scripts/generate_integration_activation_plan.py after runtime capability scan."
     },
     {
+      "id": "release_blocker_plan_generated",
+      "label": "Open release blockers are converted into an actionable plan",
+      "status": "PROVEN",
+      "passed": true,
+      "required_for_goal_completion": true,
+      "evidence": "blocker_plan_status=ACTIONABLE_BLOCKERS_OPEN; blockers=4; categories={'needs_secret_or_env': 1, 'needs_github_permission': 1, 'needs_live_eval_approval': 2}",
+      "required_action": "Run scripts/generate_release_blocker_plan.py after external proof audit."
+    },
+    {
       "id": "quality_suite_green",
       "label": "Portable quality suite is green",
       "status": "PROVEN",
       "passed": true,
       "required_for_goal_completion": true,
-      "evidence": "quality_status=PASS; steps=48",
+      "evidence": "quality_status=PASS; steps=49",
       "required_action": "Rerun scripts/run_quality_suite.py and fix failing steps."
     },
     {
@@ -109,7 +118,7 @@
       "status": "PROVEN",
       "passed": true,
       "required_for_goal_completion": true,
-      "evidence": "release_status=PASS; package_sha=d805bc4b9f947f681ab3feadae7b8215fb331ebfe8dcf74fd860ac766a6a6035; package_entries=63; github_zip_sha=047e27a1580d66dbae8afc028632e50b4c3be88c080525cbc2f290f171eba3f1; github_zip_entries=132; github_smoke=PASS",
+      "evidence": "release_status=PASS; package_sha=5df9964e2461cf204c7e00f3996bf5d7cc34120369c0a560e0577bed981dbbe3; package_entries=64; github_zip_sha=8ba95838f90b4c3ed86d6c2785c777c4365c60e178dc7e83cd593669d3c07f22; github_zip_entries=135; github_smoke=PASS",
       "required_action": "Regenerate package, GitHub export, export smoke, and release readiness."
     },
     {
@@ -118,7 +127,7 @@
       "status": "PROVEN",
       "passed": true,
       "required_for_goal_completion": true,
-      "evidence": "existing=4; matching=4; checked_files=['SKILL.md', 'scripts/analyze_competitive_gaps.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/generate_competitive_route_backlog.py', 'scripts/generate_integration_activation_plan.py', 'scripts/run_quality_suite.py']",
+      "evidence": "existing=4; matching=4; checked_files=['SKILL.md', 'scripts/analyze_competitive_gaps.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/generate_competitive_route_backlog.py', 'scripts/generate_integration_activation_plan.py', 'scripts/generate_release_blocker_plan.py', 'scripts/run_quality_suite.py']",
       "required_action": "Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators."
     },
     {
@@ -199,14 +208,15 @@
   "installed_copies": {
     "status": "PASS",
     "source_hashes": {
-      "SKILL.md": "a61d6b6f638de41db8a5c69d8d200eb2d1f157dec19b5ae61c8465b303cd8024",
-      "scripts/audit_goal_completion.py": "23c7f1280848e4d0d76e854d449df0c8969ba4b26b236e67c2f09d9ffe9199a7",
+      "SKILL.md": "68b63e93177c61004f50da98d4c140ba1f00ecb022031efdfafeca0eaac8f486",
+      "scripts/audit_goal_completion.py": "d12b29f7cf0e669ec0b17b77ee2d5e6728ca80d193f5eb22936a1f3d39da300a",
       "scripts/audit_external_proofs.py": "75c8a3c40beb1a6f345f933f90d710d41dab2bda3d9d3816f5feaedf861f066d",
       "scripts/discover_github_finance_tools.py": "1bb88e139726f53cbd1fc04668a66d8fa84b4abe3459dc193f4bff0cf257880c",
       "scripts/analyze_competitive_gaps.py": "2564d0b38de4b7f7ba47fe918ceeb11b5750983b7fe3fe0bc1d51d6b7f9613b9",
       "scripts/generate_competitive_route_backlog.py": "2ff94886371cd26ae0b56d0abf1a653c087538b98f02bc600e14ef1978278170",
       "scripts/generate_integration_activation_plan.py": "ed4ae65b36b3d00200d98f590eba95915e6c1edce0fcff5d83bac11e60e66fc4",
-      "scripts/run_quality_suite.py": "5e69bb26e483a09ab5f6ee78a5c0e5767b4c9aacd587663069876cf495532815"
+      "scripts/generate_release_blocker_plan.py": "ade63be08bdff7e4eca3dbfa36fc4342dd49777f89d0cabd7e9cbc3195d5a823",
+      "scripts/run_quality_suite.py": "af36fd2811f3268b830d90bb318fb8d6f5b14a0ca40feed0abfc69a56f8aed90"
     },
     "copies": [
       {
@@ -245,6 +255,11 @@
           },
           {
             "path": "scripts/generate_integration_activation_plan.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
+            "path": "scripts/generate_release_blocker_plan.py",
             "exists": true,
             "hash_matches_source": true
           },
@@ -296,6 +311,11 @@
             "hash_matches_source": true
           },
           {
+            "path": "scripts/generate_release_blocker_plan.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
             "path": "scripts/run_quality_suite.py",
             "exists": true,
             "hash_matches_source": true
@@ -339,6 +359,11 @@
           },
           {
             "path": "scripts/generate_integration_activation_plan.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
+            "path": "scripts/generate_release_blocker_plan.py",
             "exists": true,
             "hash_matches_source": true
           },
@@ -390,6 +415,11 @@
             "hash_matches_source": true
           },
           {
+            "path": "scripts/generate_release_blocker_plan.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
             "path": "scripts/run_quality_suite.py",
             "exists": true,
             "hash_matches_source": true
@@ -403,9 +433,9 @@
   },
   "artifacts": {
     "package": "dist/stark-finance-trading.skill",
-    "package_sha256": "d805bc4b9f947f681ab3feadae7b8215fb331ebfe8dcf74fd860ac766a6a6035",
+    "package_sha256": "5df9964e2461cf204c7e00f3996bf5d7cc34120369c0a560e0577bed981dbbe3",
     "github_export_zip": "dist/stark-finance-trading-github-repo.zip",
-    "github_export_zip_sha256": "047e27a1580d66dbae8afc028632e50b4c3be88c080525cbc2f290f171eba3f1"
+    "github_export_zip_sha256": "8ba95838f90b4c3ed86d6c2785c777c4365c60e178dc7e83cd593669d3c07f22"
   },
   "evidence_boundary": "This audit maps Stark's original objective to machine-checkable evidence. PASS means the audit ran. The goal is complete only when every required requirement is PROVEN. PARTIAL, MISSING, BLOCKED, or dry-run evidence keeps the goal active."
 }

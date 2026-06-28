@@ -45,6 +45,7 @@ REQUIRED_EXPORT_FILES = [
     f"{SKILL_NAME}/scripts/analyze_competitive_gaps.py",
     f"{SKILL_NAME}/scripts/generate_competitive_route_backlog.py",
     f"{SKILL_NAME}/scripts/generate_integration_activation_plan.py",
+    f"{SKILL_NAME}/scripts/generate_release_blocker_plan.py",
     "dist/stark-finance-trading.skill",
     "dist/stark-finance-trading.release-manifest.json",
     "dist/stark-finance-trading.release-notes.json",
@@ -57,6 +58,7 @@ REQUIRED_EXPORT_FILES = [
     "dist/stark-finance-trading.competitive-gap-analysis.json",
     "dist/stark-finance-trading.competitive-route-backlog.json",
     "dist/stark-finance-trading.integration-activation-plan.json",
+    "dist/stark-finance-trading.release-blocker-plan.json",
 ]
 
 

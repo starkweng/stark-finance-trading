@@ -6,9 +6,9 @@
   "release_date": "2026-06-28",
   "package": {
     "name": "stark-finance-trading.skill",
-    "sha256": "d805bc4b9f947f681ab3feadae7b8215fb331ebfe8dcf74fd860ac766a6a6035",
-    "size_bytes": 187672,
-    "entry_count": 63
+    "sha256": "5df9964e2461cf204c7e00f3996bf5d7cc34120369c0a560e0577bed981dbbe3",
+    "size_bytes": 192989,
+    "entry_count": 64
   },
   "install_smoke": {
     "status": "PASS",
@@ -21,7 +21,7 @@
       "quick_validate": true,
       "security_scan": true
     },
-    "entry_count": 63
+    "entry_count": 64
   },
   "live_eval_signoff": {
     "status": "PASS",
@@ -29,6 +29,7 @@
     "exact_command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json"
   },
   "changes": [
+    "- Added release blocker plan generation that turns missing external proofs, env/key setup, GitHub workflow permission, and live-eval approvals into a no-secret-values action plan.",
     "- Created `stark-finance-trading` as a unified finance/trading router skill.",
     "- Added tool matrix covering installed Web3/CEX/DEX surfaces and public official TradFi/quant candidates.",
     "- Added read-only-first safety policy with explicit live-action confirmation gate.",

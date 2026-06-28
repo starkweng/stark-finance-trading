@@ -3,13 +3,14 @@
 - Status: PASS
 - Release date: 2026-06-28
 - Package: `stark-finance-trading.skill`
-- SHA256: `d805bc4b9f947f681ab3feadae7b8215fb331ebfe8dcf74fd860ac766a6a6035`
-- Entry count: 63
+- SHA256: `5df9964e2461cf204c7e00f3996bf5d7cc34120369c0a560e0577bed981dbbe3`
+- Entry count: 64
 - Install smoke: PASS
 - Live eval signoff: PASS / approval PENDING
 
 ## Changes
 
+- Added release blocker plan generation that turns missing external proofs, env/key setup, GitHub workflow permission, and live-eval approvals into a no-secret-values action plan.
 - Created `stark-finance-trading` as a unified finance/trading router skill.
 - Added tool matrix covering installed Web3/CEX/DEX surfaces and public official TradFi/quant candidates.
 - Added read-only-first safety policy with explicit live-action confirmation gate.

@@ -99,11 +99,18 @@ Use these gates before claiming the skill is GitHub-ready or best-in-class.
 - The gate separates ready routes, quick env/auth activations, install/auth backlog, watchlist tools, and Tier 4 surfaces requiring explicit confirmation.
 - A PASS proves the activation plan was generated without secret values; it does not prove OAuth validity, entitlement, live availability, or trading performance.
 
+## Release Blocker Plan Gate
+
+- `scripts/generate_release_blocker_plan.py` reads runtime capability, external proof audit, release readiness, and goal completion evidence when available.
+- The gate turns open env/key setup, GitHub workflow permission, live-eval approval, and local repair gaps into owner/action/verification/success-evidence records.
+- The report must set `no_secret_values: true` and must not print API keys, broker credentials, wallet secrets, or production tokens.
+- A PASS proves the blocker plan was generated and is actionable; it does not prove the blockers are resolved.
+
 ## GitHub Actions Workflow Gate
 
 - `.github/workflows/ci.yml` runs the portable quality suite from the skill subdirectory.
 - CI builds and smoke-tests the `.skill` package.
-- CI uploads package, public benchmark, competitive gap analysis, competitive route backlog, integration activation plan, release manifest/notes, eval review bundles, eval review scorecards, workflow validation, GitHub export artifacts, export-smoke reports, and release-readiness reports.
+- CI uploads package, public benchmark, competitive gap analysis, competitive route backlog, integration activation plan, release blocker plan, release manifest/notes, eval review bundles, eval review scorecards, workflow validation, GitHub export artifacts, export-smoke reports, and release-readiness reports.
 - Static workflow validation does not prove remote GitHub Actions completion.
 
 ## Remote CI Proof Gate

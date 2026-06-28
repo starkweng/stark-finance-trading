@@ -37,6 +37,7 @@ REQUIRED_FILES = [
     "scripts/plan_tool_route.py",
     "scripts/runtime_capability_scan.py",
     "scripts/generate_integration_activation_plan.py",
+    "scripts/generate_release_blocker_plan.py",
     "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
@@ -237,6 +238,10 @@ def validate(root: Path) -> int:
     for phrase in ["integration_activation_status", "activation_stage", "high_risk_requires_confirmation", "no_secret_values"]:
         if phrase not in activation_script:
             return fail(f"generate_integration_activation_plan missing phrase: {phrase}")
+    release_blocker_script = read(root / "scripts/generate_release_blocker_plan.py")
+    for phrase in ["release_blocker_plan_status", "needs_github_permission", "needs_secret_or_env", "automation_allowed"]:
+        if phrase not in release_blocker_script:
+            return fail(f"generate_release_blocker_plan missing phrase: {phrase}")
     codex_eval_script = read(root / "scripts/codex_eval.py")
     for phrase in ["runner_command", "runner_kind", "fixture_run", "approval_required", "runner_required"]:
         if phrase not in codex_eval_script:

@@ -38,6 +38,7 @@ INSTALLED_COPY_FRESHNESS_FILES = [
     "scripts/analyze_competitive_gaps.py",
     "scripts/generate_competitive_route_backlog.py",
     "scripts/generate_integration_activation_plan.py",
+    "scripts/generate_release_blocker_plan.py",
     "scripts/run_quality_suite.py",
 ]
 
@@ -150,6 +151,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     quality = read_json(dist / f"{SKILL_NAME}.quality-suite.json")
     runtime = read_json(dist / f"{SKILL_NAME}.runtime-capabilities.json")
     activation_plan = read_json(dist / f"{SKILL_NAME}.integration-activation-plan.json")
+    release_blocker_plan = read_json(dist / f"{SKILL_NAME}.release-blocker-plan.json")
     route_plan = read_json(dist / f"{SKILL_NAME}.tool-route-plan.json")
     inventory = read_json(dist / f"{SKILL_NAME}.local-skill-inventory.json")
     public_benchmark = read_json(dist / f"{SKILL_NAME}.public-benchmark.json")
@@ -286,6 +288,21 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
                 f"high_risk={activation_plan.get('high_risk_requires_confirmation_count')}"
             ),
             required_action="Run scripts/generate_integration_activation_plan.py after runtime capability scan.",
+        ),
+        requirement(
+            "release_blocker_plan_generated",
+            "Open release blockers are converted into an actionable plan",
+            release_blocker_plan.get("status") == "PASS"
+            and release_blocker_plan.get("actionable_blocker_count", 0) >= 4
+            and "needs_secret_or_env" in (release_blocker_plan.get("category_counts") or {})
+            and "needs_github_permission" in (release_blocker_plan.get("category_counts") or {})
+            and "needs_live_eval_approval" in (release_blocker_plan.get("category_counts") or {}),
+            evidence=(
+                f"blocker_plan_status={release_blocker_plan.get('release_blocker_plan_status')}; "
+                f"blockers={release_blocker_plan.get('actionable_blocker_count')}; "
+                f"categories={release_blocker_plan.get('category_counts')}"
+            ),
+            required_action="Run scripts/generate_release_blocker_plan.py after external proof audit.",
         ),
         requirement(
             "quality_suite_green",

@@ -27,6 +27,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Prompt-to-tool route plan: `scripts/plan_tool_route.py` validates natural prompts against `evals/tool-routing-cases.json`.
 - Runtime capability scan: `scripts/runtime_capability_scan.py` reconciles catalog tools with local MCP servers, plugins, skills, and env-var presence.
 - Integration activation plan: `scripts/generate_integration_activation_plan.py` converts catalog/runtime evidence into ready routes, quick activations, install/auth backlog, watchlist tools, and high-risk confirmation surfaces.
+- Release blocker plan: `scripts/generate_release_blocker_plan.py` converts open proof/env/live-eval gaps into an actionable no-secret-values plan.
 - Public benchmark cases: `benchmarks/public-benchmark-cases.json`.
 - Public benchmark generator: `scripts/generate_public_benchmark.py`.
 - Competitive task cases: `benchmarks/competitive-task-cases.json`.
@@ -123,13 +124,17 @@ The review bundle is the handoff layer between automated checks and human judgme
 
 `scripts/generate_integration_activation_plan.py` reads the public tool catalog and runtime capability report, then produces `ready_now`, `quick_activations`, `priority_backlog`, and `high_risk_requires_confirmation` lists. A PASS means major public tools have an explicit setup/activation posture without exposing secret values. It does not prove OAuth validity, API entitlement, live tool availability, trading performance, or public superiority.
 
+## Release Blocker Plan Gate
+
+`scripts/generate_release_blocker_plan.py` reads runtime capability, external proof audit, release readiness, and goal completion evidence when available, then writes `stark-finance-trading.release-blocker-plan.*`. A PASS means open blockers are categorized into secret/env setup, GitHub workflow permission, live eval approval, or local repair with owner, boundary, verification command, and success evidence. It does not print secret values and does not prove the blockers are resolved.
+
 ## Competitive Task Benchmark
 
 `scripts/generate_competitive_task_benchmark.py` runs eight representative finance/trading/Web3 task scenarios against the current skill source. It checks whether the router covers multi-source workflows and safety boundaries that a single vendor surface usually cannot cover alone. The same case set can also produce a PENDING live-eval signoff packet and a dry-run human-review bundle. A PASS means the source tree contains task-level routing coverage for those scenarios and the eval set is reviewable. It does not prove live model quality, live data accuracy, or public superiority.
 
 ## GitHub Actions Workflow Gate
 
-`scripts/validate_github_actions_workflow.py` statically validates that `.github/workflows/ci.yml` runs the quality suite, builds and smoke-tests the package, and uploads the package, public benchmark, runtime capability report, integration activation plan, release manifest/notes, live/competitive eval review bundles, workflow validation report, and GitHub export ZIP. A PASS here means the workflow has the expected coverage. It does not prove the workflow has run on GitHub.
+`scripts/validate_github_actions_workflow.py` statically validates that `.github/workflows/ci.yml` runs the quality suite, builds and smoke-tests the package, and uploads the package, public benchmark, runtime capability report, integration activation plan, release blocker plan, release manifest/notes, live/competitive eval review bundles, workflow validation report, and GitHub export ZIP. A PASS here means the workflow has the expected coverage. It does not prove the workflow has run on GitHub.
 
 ## Remote CI Proof Gate
 

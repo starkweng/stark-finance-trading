@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "competitive_gap_status": "PASS",
-  "generated_at": "2026-06-28T06:14:51.304481+00:00",
+  "generated_at": "2026-06-28T06:45:40.189285+00:00",
   "skill": "stark-finance-trading",
   "input_statuses": {
     "github_tool_discovery": "PASS",
@@ -52,7 +52,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
       "candidate_count": 13,
-      "total_stars": 187948,
+      "total_stars": 187953,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -79,7 +79,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
       "candidate_count": 13,
-      "total_stars": 109005,
+      "total_stars": 109006,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -122,7 +122,7 @@
       ],
       "stark_response": "Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
       "candidate_count": 5,
-      "total_stars": 62994,
+      "total_stars": 62995,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -153,7 +153,7 @@
       ],
       "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
       "candidate_count": 5,
-      "total_stars": 8664,
+      "total_stars": 8667,
       "top_candidate": "nirholas/UCAI"
     },
     {
@@ -178,7 +178,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
       "candidate_count": 3,
-      "total_stars": 98976,
+      "total_stars": 98979,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -350,7 +350,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43095,
+      "stars": 43096,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -520,7 +520,7 @@
       "name": "wilsonfreitas/awesome-quant",
       "url": "https://github.com/wilsonfreitas/awesome-quant",
       "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
-      "stars": 27081,
+      "stars": 27082,
       "language": "HTML",
       "route_tags": [
         "bot_framework"
@@ -664,7 +664,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7529,
+      "stars": 7532,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -860,7 +860,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43095,
+      "stars": 43096,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -1030,7 +1030,7 @@
       "name": "wilsonfreitas/awesome-quant",
       "url": "https://github.com/wilsonfreitas/awesome-quant",
       "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
-      "stars": 27081,
+      "stars": 27082,
       "language": "HTML",
       "route_tags": [
         "bot_framework"
@@ -1174,7 +1174,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7529,
+      "stars": 7532,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -1380,7 +1380,7 @@
       "name": "Fincept-Corporation/FinceptTerminal",
       "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
       "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
-      "stars": 27576,
+      "stars": 27579,
       "language": "C++",
       "route_tags": [
         "research"

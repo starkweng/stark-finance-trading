@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T06:14:36.900916+00:00",
+  "generated_at": "2026-06-28T06:45:25.022087+00:00",
   "skill": "stark-finance-trading",
   "catalog_path": "references/public-tool-catalog.json",
   "tool_count": 34,

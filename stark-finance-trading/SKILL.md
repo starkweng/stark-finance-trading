@@ -57,6 +57,7 @@ Load only what the task needs:
 | Prompt-to-tool deterministic route regression | `evals/tool-routing-cases.json` and `scripts/plan_tool_route.py` |
 | Local runtime availability alignment | `scripts/runtime_capability_scan.py` |
 | Public tool activation and setup priority | `scripts/generate_integration_activation_plan.py` |
+| Open external blockers, secret/env gates, and live-eval approvals | `scripts/generate_release_blocker_plan.py` |
 | Execution, wallets, broker accounts, live orders, bots | `references/safety-policy.md` |
 | Market snapshot, token DD, options flow, backtest, MM workflows | `references/workflows.md` |
 | Loop Blueprint and repair/learn cycle | `references/loop-engineering-pattern-2026-06-28.md` |
@@ -68,7 +69,7 @@ For serious or ambiguous work, start with `references/tool-router.md`, `referenc
 
 ## Quality Gates
 
-This skill has a Loop Blueprint, a Loop Engineering Gate, a Learn Loop, a Live Eval Signoff Gate, an Eval Review Bundle Gate, an Eval Review Scorecard Gate, a Release Notes Gate, a GitHub Actions Workflow Gate, a Remote CI Proof Gate, a GitHub Repo Export Gate, a GitHub Export Smoke Gate, and a Release Readiness Gate. These gates do not prove live trading quality by themselves; they make the claim auditable before public release.
+This skill has a Loop Blueprint, a Loop Engineering Gate, a Learn Loop, a Live Eval Signoff Gate, an Eval Review Bundle Gate, an Eval Review Scorecard Gate, a Release Notes Gate, a GitHub Actions Workflow Gate, a Remote CI Proof Gate, a Release Blocker Plan Gate, a GitHub Repo Export Gate, a GitHub Export Smoke Gate, and a Release Readiness Gate. These gates do not prove live trading quality by themselves; they make the claim auditable before public release.
 
 ## Fast Route Map
 
@@ -157,6 +158,7 @@ python3 scripts/discover_github_finance_tools.py --root . --auto-live --allow-fa
 python3 scripts/analyze_competitive_gaps.py --root . --dist dist --out dist/stark-finance-trading.competitive-gap-analysis.json --markdown dist/stark-finance-trading.competitive-gap-analysis.md --json
 python3 scripts/generate_competitive_route_backlog.py --root . --dist dist --out dist/stark-finance-trading.competitive-route-backlog.json --markdown dist/stark-finance-trading.competitive-route-backlog.md --json
 python3 scripts/discover_local_skill_inventory.py --skill-root . --out dist/stark-finance-trading.local-skill-inventory.json --markdown dist/stark-finance-trading.local-skill-inventory.md --json
+python3 scripts/generate_release_blocker_plan.py --dist dist --out dist/stark-finance-trading.release-blocker-plan.json --markdown dist/stark-finance-trading.release-blocker-plan.md --json
 ```
 
 For packaging, use the bundled deterministic packager and smoke test:

@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T06:45:41.201139+00:00",
+  "skill": "stark-finance-trading",
+  "dist": "dist",
+  "release_blocker_plan_status": "ACTIONABLE_BLOCKERS_OPEN",
+  "goal_completion_status": "NOT_COMPLETE_REQUIREMENTS_PENDING",
+  "release_status": "LOCAL_RELEASE_READY",
+  "blocker_count": 4,
+  "actionable_blocker_count": 4,
+  "blocked_external_count": 4,
+  "category_counts": {
+    "needs_secret_or_env": 1,
+    "needs_github_permission": 1,
+    "needs_live_eval_approval": 2
+  },
+  "status_counts": {
+    "PARTIAL": 1,
+    "MISSING": 3
+  },
+  "blockers": [
+    {
+      "id": "critical_runtime_alignment",
+      "label": "Critical local Web3 surfaces are runtime-aligned",
+      "status": "PARTIAL",
+      "category": "needs_secret_or_env",
+      "source": "goal_completion_audit",
+      "evidence": "core_runtime={'dune-mcp': 'configured_mcp', 'alchemy-mcp': 'configured_mcp', 'etherscan-mcp': 'configured_mcp_needs_env', 'binance-skills-hub': 'enabled_plugin'}; etherscan_env_present=False",
+      "required_action": "Set ETHERSCAN_API_KEY if Etherscan live calls are required.",
+      "owner": "Stark/local secret setup",
+      "automation_allowed": false,
+      "automation_boundary": "Do not ask the model to print or store API keys. Set the key in a local secret environment, then rerun the scan.",
+      "unblocks": "critical_runtime_alignment",
+      "verification_command": "python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json",
+      "success_evidence": "etherscan-mcp no longer appears in env_missing_tool_ids and ETHERSCAN_API_KEY presence is true."
+    },
+    {
+      "id": "remote_github_actions_proven",
+      "label": "Remote GitHub Actions CI has completed successfully",
+      "status": "MISSING",
+      "category": "needs_github_permission",
+      "source": "goal_completion_audit",
+      "evidence": "GitHub CLI token is missing workflow scope.",
+      "required_action": "Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`.",
+      "owner": "Stark/GitHub auth",
+      "automation_allowed": false,
+      "automation_boundary": "The helper can publish and wait only after GitHub CLI auth has workflow scope.",
+      "unblocks": "remote_github_actions_proven",
+      "verification_command": "gh auth refresh -h github.com -s workflow; python3 scripts/enable_remote_ci.py --repo-root . --repo starkweng/stark-finance-trading --wait --out dist/stark-finance-trading.remote-ci-proof.json --markdown dist/stark-finance-trading.remote-ci-proof.md --json",
+      "success_evidence": "remote_github_actions_run is PROVEN or PROVIDED in external proof audit."
+    },
+    {
+      "id": "approved_live_model_eval_proven",
+      "label": "Approved live model eval proof exists",
+      "status": "MISSING",
+      "category": "needs_live_eval_approval",
+      "source": "goal_completion_audit",
+      "evidence": "Scorecard status=PASS; source_mode=dry_run; behavior_proof_status=UNPROVEN_DRY_RUN_ONLY.",
+      "required_action": "Run an approved live eval, generate the review bundle, and score it after human review.",
+      "owner": "Stark/live eval reviewer",
+      "automation_allowed": false,
+      "automation_boundary": "Live eval prompts must be explicitly approved before sending them to a model service.",
+      "unblocks": "approved_live_model_eval_proven",
+      "verification_command": "python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set evals/live-behavior-evals.json --live-out-dir dist/live-eval --out dist/stark-finance-trading.live-eval-signoff.json --markdown dist/stark-finance-trading.live-eval-signoff.md",
+      "success_evidence": "approved_live_model_eval is PROVEN or PROVIDED and scorecard source_mode is live/reviewed."
+    },
+    {
+      "id": "reviewed_comparative_live_eval_proven",
+      "label": "Reviewed comparative live eval proof exists",
+      "status": "MISSING",
+      "category": "needs_live_eval_approval",
+      "source": "goal_completion_audit",
+      "evidence": "Scorecard status=PASS; source_mode=dry_run; behavior_proof_status=UNPROVEN_DRY_RUN_ONLY.",
+      "required_action": "Run an approved live eval, generate the review bundle, and score it after human review.",
+      "owner": "Stark/live eval reviewer",
+      "automation_allowed": false,
+      "automation_boundary": "Live eval prompts must be explicitly approved before sending them to a model service.",
+      "unblocks": "reviewed_comparative_live_eval_proven",
+      "verification_command": "python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --live-out-dir dist/competitive-eval --out dist/stark-finance-trading.competitive-eval-signoff.json --markdown dist/stark-finance-trading.competitive-eval-signoff.md",
+      "success_evidence": "reviewed_comparative_live_eval is PROVEN or PROVIDED and scorecard source_mode is live/reviewed."
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "critical_runtime_alignment",
+      "category": "needs_secret_or_env",
+      "owner": "Stark/local secret setup",
+      "action": "Set ETHERSCAN_API_KEY if Etherscan live calls are required.",
+      "verify": "python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json"
+    },
+    {
+      "id": "remote_github_actions_proven",
+      "category": "needs_github_permission",
+      "owner": "Stark/GitHub auth",
+      "action": "Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`.",
+      "verify": "gh auth refresh -h github.com -s workflow; python3 scripts/enable_remote_ci.py --repo-root . --repo starkweng/stark-finance-trading --wait --out dist/stark-finance-trading.remote-ci-proof.json --markdown dist/stark-finance-trading.remote-ci-proof.md --json"
+    },
+    {
+      "id": "approved_live_model_eval_proven",
+      "category": "needs_live_eval_approval",
+      "owner": "Stark/live eval reviewer",
+      "action": "Run an approved live eval, generate the review bundle, and score it after human review.",
+      "verify": "python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set evals/live-behavior-evals.json --live-out-dir dist/live-eval --out dist/stark-finance-trading.live-eval-signoff.json --markdown dist/stark-finance-trading.live-eval-signoff.md"
+    },
+    {
+      "id": "reviewed_comparative_live_eval_proven",
+      "category": "needs_live_eval_approval",
+      "owner": "Stark/live eval reviewer",
+      "action": "Run an approved live eval, generate the review bundle, and score it after human review.",
+      "verify": "python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --live-out-dir dist/competitive-eval --out dist/stark-finance-trading.competitive-eval-signoff.json --markdown dist/stark-finance-trading.competitive-eval-signoff.md"
+    }
+  ],
+  "no_secret_values": true,
+  "evidence_boundary": "Release blocker plan is an actionable routing artifact. PASS means the plan was generated from local audits without printing secret values. It does not prove remote GitHub Actions, live model behavior, API entitlement, market-data correctness, trading performance, or public superiority."
+}

@@ -2,6 +2,7 @@
 
 ## 0.1.0 - 2026-06-28
 
+- Added release blocker plan generation that turns missing external proofs, env/key setup, GitHub workflow permission, and live-eval approvals into a no-secret-values action plan.
 - Created `stark-finance-trading` as a unified finance/trading router skill.
 - Added tool matrix covering installed Web3/CEX/DEX surfaces and public official TradFi/quant candidates.
 - Added read-only-first safety policy with explicit live-action confirmation gate.

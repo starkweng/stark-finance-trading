@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-28T06:14:51.687326+00:00",
+  "generated_at": "2026-06-28T06:45:40.586153+00:00",
   "package": {
     "path": "dist/stark-finance-trading.skill",
     "name": "stark-finance-trading.skill",
-    "size_bytes": 187672,
-    "sha256": "d805bc4b9f947f681ab3feadae7b8215fb331ebfe8dcf74fd860ac766a6a6035",
-    "entry_count": 63
+    "size_bytes": 192989,
+    "sha256": "5df9964e2461cf204c7e00f3996bf5d7cc34120369c0a560e0577bed981dbbe3",
+    "entry_count": 64
   },
   "install_smoke": {
     "status": "PASS",
@@ -19,18 +19,18 @@
       "quick_validate": true,
       "security_scan": true
     },
-    "entry_count": 63
+    "entry_count": 64
   },
   "entries": [
     {
       "path": "stark-finance-trading/BENCHMARK.md",
-      "size": 19850,
-      "sha256": "969c11ece9c99ad4005e4f7ac3dbbbbb2a6a10823afe392ad7a159bd4c2d573f"
+      "size": 20540,
+      "sha256": "1d3a5ca051777cd87e34845d4322c126d9003ba798596f7ca8435de1e394b084"
     },
     {
       "path": "stark-finance-trading/CHANGELOG.md",
-      "size": 2638,
-      "sha256": "346d0125a88b017e3cf82358ceabdd0934d4d20b7700f448af36c0c282522e19"
+      "size": 2818,
+      "sha256": "127bea74bca2d50eb3941ad4cb8c413c2c01321988285449210d023b3e3fff08"
     },
     {
       "path": "stark-finance-trading/CONTRIBUTING.md",
@@ -44,8 +44,8 @@
     },
     {
       "path": "stark-finance-trading/README.md",
-      "size": 12796,
-      "sha256": "c27fa16b9db7b29a2b846ef4872d8617fc0c615c5bafb2f0447cf1c557294558"
+      "size": 13197,
+      "sha256": "8d82f2c86432ee40d480e35efaeeaf49362d6f200959727e8a378d76b33f164f"
     },
     {
       "path": "stark-finance-trading/SECURITY.md",
@@ -54,13 +54,13 @@
     },
     {
       "path": "stark-finance-trading/SKILL.md",
-      "size": 10781,
-      "sha256": "a61d6b6f638de41db8a5c69d8d200eb2d1f157dec19b5ae61c8465b303cd8024"
+      "size": 11114,
+      "sha256": "68b63e93177c61004f50da98d4c140ba1f00ecb022031efdfafeca0eaac8f486"
     },
     {
       "path": "stark-finance-trading/VALIDATION.md",
-      "size": 16707,
-      "sha256": "99ce7caf96c4f6f4f531e1e42c180eb93b9955c43bd7867c720ae2575b251bba"
+      "size": 17420,
+      "sha256": "2328b69b4e1455e91fd6a6942fe63257ae4f873968a5c5ae40cb489dee23019e"
     },
     {
       "path": "stark-finance-trading/VERSION",
@@ -149,8 +149,8 @@
     },
     {
       "path": "stark-finance-trading/references/quality-gates-2026-06-24.md",
-      "size": 6039,
-      "sha256": "f62376f43dc7c5eb9b4694ee8be8db579944bdc5d7e1ba5f40aa265969516f47"
+      "size": 6658,
+      "sha256": "54a0d3fdaa8b6c1158a2b17f987324a38c1d41e1a4f459d6b525b103d70c249b"
     },
     {
       "path": "stark-finance-trading/references/safety-policy.md",
@@ -184,8 +184,8 @@
     },
     {
       "path": "stark-finance-trading/scripts/audit_goal_completion.py",
-      "size": 20516,
-      "sha256": "23c7f1280848e4d0d76e854d449df0c8969ba4b26b236e67c2f09d9ffe9199a7"
+      "size": 21629,
+      "sha256": "d12b29f7cf0e669ec0b17b77ee2d5e6728ca80d193f5eb22936a1f3d39da300a"
     },
     {
       "path": "stark-finance-trading/scripts/audit_public_sources.py",
@@ -214,8 +214,8 @@
     },
     {
       "path": "stark-finance-trading/scripts/export_github_repo.py",
-      "size": 18538,
-      "sha256": "e1fb56a6660092dd3d9a8af82add3975dacc70489a8473a6fd1c7e49045a5c40"
+      "size": 18729,
+      "sha256": "eb41fb7e03f514a68a84f65d6c394ca3d5a380b44a747f15a2bf280925127568"
     },
     {
       "path": "stark-finance-trading/scripts/generate_competitive_route_backlog.py",
@@ -246,6 +246,11 @@
       "path": "stark-finance-trading/scripts/generate_public_benchmark.py",
       "size": 12118,
       "sha256": "f61777b5cfaf33bbf846e5511043696c20d1b8655171c108488d122179ac140e"
+    },
+    {
+      "path": "stark-finance-trading/scripts/generate_release_blocker_plan.py",
+      "size": 14701,
+      "sha256": "ade63be08bdff7e4eca3dbfa36fc4342dd49777f89d0cabd7e9cbc3195d5a823"
     },
     {
       "path": "stark-finance-trading/scripts/generate_release_manifest.py",
@@ -289,8 +294,8 @@
     },
     {
       "path": "stark-finance-trading/scripts/run_quality_suite.py",
-      "size": 23104,
-      "sha256": "5e69bb26e483a09ab5f6ee78a5c0e5767b4c9aacd587663069876cf495532815"
+      "size": 23628,
+      "sha256": "af36fd2811f3268b830d90bb318fb8d6f5b14a0ca40feed0abfc69a56f8aed90"
     },
     {
       "path": "stark-finance-trading/scripts/runtime_capability_scan.py",
@@ -304,18 +309,18 @@
     },
     {
       "path": "stark-finance-trading/scripts/smoke_github_export.py",
-      "size": 10047,
-      "sha256": "7bbdc02da8f47c6b18afe2013c50194063a3e20a793541ef90fb49fc066dbde4"
+      "size": 10169,
+      "sha256": "acd773eda914ec2f58926498e0d505524601ad02cfc81d552375b16ecd4afca8"
     },
     {
       "path": "stark-finance-trading/scripts/validate_github_actions_workflow.py",
-      "size": 9086,
-      "sha256": "e7fb30d967ad2da8782af7baad82ef389b791eca61f99cc74fe1ca57321fdb00"
+      "size": 9248,
+      "sha256": "d0143ee9e4d5461c6105aa0e6f49a2c8a557f7b9d0b9fa7edc110a8562a04ae2"
     },
     {
       "path": "stark-finance-trading/scripts/validate_public_readiness.py",
-      "size": 10253,
-      "sha256": "7c45193f3987a32b943f0ae61ff2be95a79c140a8d2344f2c50040e176aa2b1d"
+      "size": 10387,
+      "sha256": "80c7f8762a33968fc5e63af24e25b4a2fbecde33fe57b2bf56e4771903dbf803"
     },
     {
       "path": "stark-finance-trading/scripts/validate_public_tool_catalog.py",
@@ -324,18 +329,18 @@
     },
     {
       "path": "stark-finance-trading/scripts/validate_release_readiness.py",
-      "size": 18163,
-      "sha256": "e75a5f499f1e0f48e0ecd26f6d76c6c8add7a0582ba554fa05f0cf53a3b0fc63"
+      "size": 18321,
+      "sha256": "71de9c9a40afc9a68d255c0ae9fdcdbaef2d709fd07a89afd42f85f2732a9f71"
     },
     {
       "path": "stark-finance-trading/scripts/validate_stark_finance_trading.py",
-      "size": 14442,
-      "sha256": "faa00ad6c034fcb9836ccf58d22e80d80b16c0446278f63bcd00ca7ce4a19c33"
+      "size": 14830,
+      "sha256": "130338933703455fe2448aa986a8d86480d9891d0eec3c9436bb0b1a4616fff0"
     },
     {
       "path": "stark-finance-trading/workflow-templates/stark-finance-trading-ci.yml",
-      "size": 5835,
-      "sha256": "9411cdbe07f56fcdb912c48ede13038fe70ed240e286a0bfe850c31d6602c2bb"
+      "size": 6007,
+      "sha256": "1128e698f6874453c5b32604d2f62795b62db7e4d4d7910821b4aca137d4ef55"
     }
   ],
   "evidence_boundary": "Local package manifest and install-smoke evidence only; does not prove live model behavior, remote GitHub Actions, market-data accuracy, or trading performance.",
