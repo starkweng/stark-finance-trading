@@ -3,8 +3,8 @@
 - Status: PASS
 - Release date: 2026-06-28
 - Package: `stark-finance-trading.skill`
-- SHA256: `cf97da072e3c9790d1efe3dc29581f035942d0c30b7db8fb99a79d49cd9da324`
-- Entry count: 61
+- SHA256: `63774f10bd23f8244a15ae87dfda6941c201a86f8c637c79c695d7c8b591e4ad`
+- Entry count: 62
 - Install smoke: PASS
 - Live eval signoff: PASS / approval PENDING
 
@@ -30,6 +30,7 @@
 - Added GitHub export smoke testing so the standalone repository ZIP is extracted and core gates rerun before public handoff.
 - Added local release-readiness validation to separate source-package readiness from external proofs such as public repo publication, remote GitHub Actions, approved live evals, and reviewed comparative evals.
 - Added competitive gap analysis that converts GitHub finance/trading discovery into coverage status, partial-runtime gaps, and route/backlog actions.
+- Added competitive route backlog generation that turns gap findings into route/eval proposals, auth gates, and learn-loop next actions.
 
 ## Evidence Boundary
 

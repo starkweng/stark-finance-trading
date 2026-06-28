@@ -36,6 +36,7 @@ INSTALLED_COPY_FRESHNESS_FILES = [
     "scripts/audit_external_proofs.py",
     "scripts/discover_github_finance_tools.py",
     "scripts/analyze_competitive_gaps.py",
+    "scripts/generate_competitive_route_backlog.py",
     "scripts/run_quality_suite.py",
 ]
 
@@ -151,6 +152,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     inventory = read_json(dist / f"{SKILL_NAME}.local-skill-inventory.json")
     public_benchmark = read_json(dist / f"{SKILL_NAME}.public-benchmark.json")
     competitive_gap = read_json(dist / f"{SKILL_NAME}.competitive-gap-analysis.json")
+    competitive_route_backlog = read_json(dist / f"{SKILL_NAME}.competitive-route-backlog.json")
     release_readiness = read_json(dist / f"{SKILL_NAME}.release-readiness.json")
     external_audit = read_json(dist / f"{SKILL_NAME}.external-proof-audit.json")
     github_smoke = read_json(dist / f"{SKILL_NAME}.github-export-smoke.json")
@@ -250,6 +252,21 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
                 f"actions={competitive_gap.get('backlog_action_counts')}"
             ),
             required_action="Run scripts/analyze_competitive_gaps.py after GitHub discovery, runtime scan, and route planning.",
+        ),
+        requirement(
+            "competitive_route_eval_backlog_generated",
+            "Competitive backlog is converted into route/eval proposals",
+            competitive_route_backlog.get("status") == "PASS"
+            and competitive_route_backlog.get("case_count", 0) > 0
+            and "route_eval_proposal" in (competitive_route_backlog.get("stage_counts") or {})
+            and "auth_or_env_needed" in (competitive_route_backlog.get("stage_counts") or {}),
+            evidence=(
+                f"route_backlog_status={competitive_route_backlog.get('status')}; "
+                f"cases={competitive_route_backlog.get('case_count')}; "
+                f"stages={competitive_route_backlog.get('stage_counts')}; "
+                f"actions={competitive_route_backlog.get('backlog_action_counts')}"
+            ),
+            required_action="Run scripts/generate_competitive_route_backlog.py after competitive gap analysis.",
         ),
         requirement(
             "quality_suite_green",

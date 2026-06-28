@@ -58,6 +58,7 @@ REQUIRED_SOURCE_FILES = [
     "scripts/audit_goal_completion.py",
     "scripts/discover_github_finance_tools.py",
     "scripts/analyze_competitive_gaps.py",
+    "scripts/generate_competitive_route_backlog.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
@@ -70,6 +71,7 @@ REQUIRED_ARTIFACTS = [
     "stark-finance-trading.public-benchmark.json",
     "stark-finance-trading.github-tool-discovery.json",
     "stark-finance-trading.competitive-gap-analysis.json",
+    "stark-finance-trading.competitive-route-backlog.json",
     "stark-finance-trading.public-tool-catalog.json",
     "stark-finance-trading.runtime-capabilities.json",
     "stark-finance-trading.tool-route-plan.json",
@@ -97,6 +99,7 @@ STATUS_ARTIFACTS = [
     "stark-finance-trading.public-benchmark.json",
     "stark-finance-trading.github-tool-discovery.json",
     "stark-finance-trading.competitive-gap-analysis.json",
+    "stark-finance-trading.competitive-route-backlog.json",
     "stark-finance-trading.public-tool-catalog.json",
     "stark-finance-trading.runtime-capabilities.json",
     "stark-finance-trading.tool-route-plan.json",

@@ -2,7 +2,7 @@
 
 - Status: PASS
 - Goal completion status: `NOT_COMPLETE_REQUIREMENTS_PENDING`
-- Proven requirements: 10/14
+- Proven requirements: 11/15
 - Partial requirements: 1
 - Missing or blocked requirements: 4
 
@@ -17,9 +17,10 @@
 | `route_regression_coverage` | PROVEN | route_plan_status=PASS; cases=13/13 | Fix scripts/plan_tool_route.py or evals/tool-routing-cases.json. |
 | `source_level_public_benchmark` | PROVEN | benchmark_status=PASS; score=100.0; claim_status=source_level_benchmark_pass_live_comparison_pending | Regenerate public benchmark and keep superiority claims evidence-labeled. |
 | `competitive_gap_backlog_generated` | PROVEN | gap_status=PASS; candidates=25; high_priority_backlog=20; actions={'add_route_eval': 12, 'maintain_watch': 5, 'requires_secret_or_auth': 8} | Run scripts/analyze_competitive_gaps.py after GitHub discovery, runtime scan, and route planning. |
-| `quality_suite_green` | PROVEN | quality_status=PASS; steps=46 | Rerun scripts/run_quality_suite.py and fix failing steps. |
-| `package_and_export_ready` | PROVEN | release_status=PASS; package_sha=cf97da072e3c9790d1efe3dc29581f035942d0c30b7db8fb99a79d49cd9da324; package_entries=61; github_zip_sha=a21864fea71e897e41ff89013c13d11572dbb0d1b6a3b8c25c22b83ea6a3ed1d; github_zip_entries=126; github_smoke=PASS | Regenerate package, GitHub export, export smoke, and release readiness. |
-| `installed_copies_synced` | PROVEN | existing=4; matching=4; checked_files=['SKILL.md', 'scripts/analyze_competitive_gaps.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/run_quality_suite.py'] | Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators. |
+| `competitive_route_eval_backlog_generated` | PROVEN | route_backlog_status=PASS; cases=20; stages={'auth_or_env_needed': 8, 'route_eval_proposal': 12}; actions={'add_route_eval': 12, 'requires_secret_or_auth': 8} | Run scripts/generate_competitive_route_backlog.py after competitive gap analysis. |
+| `quality_suite_green` | PROVEN | quality_status=PASS; steps=47 | Rerun scripts/run_quality_suite.py and fix failing steps. |
+| `package_and_export_ready` | PROVEN | release_status=PASS; package_sha=63774f10bd23f8244a15ae87dfda6941c201a86f8c637c79c695d7c8b591e4ad; package_entries=62; github_zip_sha=8ede21cbfdcc0137c2cc293b4400960ad96d258c50863a484464dd2674c90f0a; github_zip_entries=129; github_smoke=PASS | Regenerate package, GitHub export, export smoke, and release readiness. |
+| `installed_copies_synced` | PROVEN | existing=4; matching=4; checked_files=['SKILL.md', 'scripts/analyze_competitive_gaps.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/generate_competitive_route_backlog.py', 'scripts/run_quality_suite.py'] | Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators. |
 | `public_repository_published` | PROVEN | public_repo_status=PROVIDED; url=https://github.com/starkweng/stark-finance-trading | Publish or provide the public GitHub repository URL. |
 | `remote_github_actions_proven` | MISSING | remote_ci_status=BLOCKED; evidence=GitHub CLI token is missing workflow scope. | Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`. |
 | `approved_live_model_eval_proven` | MISSING | live_eval_status=PENDING; evidence=Scorecard status=PASS; source_mode=dry_run; behavior_proof_status=UNPROVEN_DRY_RUN_ONLY. | Run an approved live eval, generate the review bundle, and score it after human review. |

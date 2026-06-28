@@ -22,3 +22,4 @@
 - Added GitHub export smoke testing so the standalone repository ZIP is extracted and core gates rerun before public handoff.
 - Added local release-readiness validation to separate source-package readiness from external proofs such as public repo publication, remote GitHub Actions, approved live evals, and reviewed comparative evals.
 - Added competitive gap analysis that converts GitHub finance/trading discovery into coverage status, partial-runtime gaps, and route/backlog actions.
+- Added competitive route backlog generation that turns gap findings into route/eval proposals, auth gates, and learn-loop next actions.

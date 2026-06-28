@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "created_at": "2026-06-28T05:35:21.300215+00:00",
+  "created_at": "2026-06-28T05:48:28.477979+00:00",
   "workflow": ".github/workflows/ci.yml",
   "checks": [
     {
@@ -98,6 +98,16 @@
       "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.md",
       "passed": true,
       "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-route-backlog.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-route-backlog.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-route-backlog.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-route-backlog.md"
     },
     {
       "id": "artifact:stark-finance-trading/dist/stark-finance-trading.release-manifest.json",
@@ -331,7 +341,7 @@
     }
   ],
   "required_snippet_count": 13,
-  "required_artifact_count": 52,
+  "required_artifact_count": 54,
   "failed_checks": [],
   "evidence_boundary": "Static workflow coverage validation only. It does not prove remote GitHub Actions execution, uploaded artifact availability, or live model behavior."
 }

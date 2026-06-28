@@ -87,11 +87,17 @@ Use these gates before claiming the skill is GitHub-ready or best-in-class.
 - The gate classifies public candidates into coverage states and emits backlog actions for route evals, runtime-install candidates, or secret/auth requirements.
 - A PASS proves the planning report was generated and route tags were classified; it does not prove installability, entitlement, live API behavior, or public superiority.
 
+## Competitive Route Backlog Gate
+
+- `scripts/generate_competitive_route_backlog.py` turns competitive gap findings into candidate route/eval prompts, adoption stages, required terms, and promotion gates.
+- The gate is a learn-loop sink for future public-tool discovery changes.
+- A PASS proves backlog proposals were generated; it does not prove live eval behavior or automatically promote them into committed regression cases.
+
 ## GitHub Actions Workflow Gate
 
 - `.github/workflows/ci.yml` runs the portable quality suite from the skill subdirectory.
 - CI builds and smoke-tests the `.skill` package.
-- CI uploads package, public benchmark, competitive gap analysis, release manifest/notes, eval review bundles, eval review scorecards, workflow validation, GitHub export artifacts, export-smoke reports, and release-readiness reports.
+- CI uploads package, public benchmark, competitive gap analysis, competitive route backlog, release manifest/notes, eval review bundles, eval review scorecards, workflow validation, GitHub export artifacts, export-smoke reports, and release-readiness reports.
 - Static workflow validation does not prove remote GitHub Actions completion.
 
 ## Remote CI Proof Gate

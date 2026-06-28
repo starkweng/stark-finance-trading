@@ -53,6 +53,7 @@ REQUIRED_FILES = [
     "scripts/audit_goal_completion.py",
     "scripts/discover_github_finance_tools.py",
     "scripts/analyze_competitive_gaps.py",
+    "scripts/generate_competitive_route_backlog.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
@@ -251,6 +252,10 @@ def validate(root: Path) -> int:
     for phrase in ["competitive_gap_status", "PARTIAL_RUNTIME", "runtime_install_candidate", "live_gating_required"]:
         if phrase not in competitive_gap_script:
             return fail(f"analyze_competitive_gaps missing phrase: {phrase}")
+    competitive_route_backlog_script = read(root / "scripts/generate_competitive_route_backlog.py")
+    for phrase in ["competitive_route_backlog_status", "route_eval_proposal", "auth_or_env_needed", "no_live_execution"]:
+        if phrase not in competitive_route_backlog_script:
+            return fail(f"generate_competitive_route_backlog missing phrase: {phrase}")
 
     comparison = json.loads(read(root / "benchmarks/public-comparison-2026-06-28.json"))
     candidates = comparison.get("candidates", [])

@@ -23,6 +23,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Public tool catalog: `references/public-tool-catalog.json` and `scripts/validate_public_tool_catalog.py` keep official MCP/API/framework candidates machine-checkable.
 - GitHub discovery: `scripts/discover_github_finance_tools.py` refreshes public GitHub finance/trading/Web3 candidates through live search when available, or marks curated fallback mode.
 - Competitive gap analyzer: `scripts/analyze_competitive_gaps.py` converts GitHub discovery into coverage status, partial runtime gaps, and route/backlog actions.
+- Competitive route backlog: `scripts/generate_competitive_route_backlog.py` converts gap findings into candidate route/eval prompts, auth gates, and learn-loop next actions.
 - Prompt-to-tool route plan: `scripts/plan_tool_route.py` validates natural prompts against `evals/tool-routing-cases.json`.
 - Runtime capability scan: `scripts/runtime_capability_scan.py` reconciles catalog tools with local MCP servers, plugins, skills, and env-var presence.
 - Public benchmark cases: `benchmarks/public-benchmark-cases.json`.
@@ -104,6 +105,10 @@ The review bundle is the handoff layer between automated checks and human judgme
 ## Competitive Gap Analysis Gate
 
 `scripts/analyze_competitive_gaps.py` reads the GitHub discovery snapshot, runtime capability scan, prompt-to-tool route plan, public benchmark, and curated public tool catalog. It classifies public candidates into `COVERED_SOURCE_LEVEL`, `COVERED_GENERIC_MCP`, `COVERED_WITH_LIVE_GATING_REQUIRED`, `PARTIAL_RUNTIME`, `WATCHLIST`, or `GAP`, then emits route/backlog actions such as `maintain_watch`, `add_route_eval`, `runtime_install_candidate`, or `requires_secret_or_auth`. A PASS means the gap/backlog report is generated and no discovered route tags are unclassified. It does not prove installability, entitlement, live API behavior, trading performance, or public superiority.
+
+## Competitive Route Backlog Gate
+
+`scripts/generate_competitive_route_backlog.py` reads `stark-finance-trading.competitive-gap-analysis.json` and turns the top backlog into candidate route/eval prompts with adoption stages such as `route_eval_proposal`, `auth_or_env_needed`, `runtime_install_candidate`, and `watchlist`. A PASS means each backlog case has required safety terms and an evidence boundary. It does not add those cases to permanent evals automatically, and it does not prove installability, live API behavior, live model behavior, trading performance, or public superiority.
 
 ## Tool Route Planner Gate
 

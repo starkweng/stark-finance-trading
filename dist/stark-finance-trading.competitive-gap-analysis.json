@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "competitive_gap_status": "PASS",
-  "generated_at": "2026-06-28T05:35:48.393940+00:00",
+  "generated_at": "2026-06-28T05:48:54.508139+00:00",
   "skill": "stark-finance-trading",
   "input_statuses": {
     "github_tool_discovery": "PASS",
@@ -52,7 +52,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
       "candidate_count": 13,
-      "total_stars": 187939,
+      "total_stars": 187943,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -79,7 +79,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
       "candidate_count": 13,
-      "total_stars": 109000,
+      "total_stars": 109002,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -122,7 +122,7 @@
       ],
       "stark_response": "Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
       "candidate_count": 5,
-      "total_stars": 62990,
+      "total_stars": 62992,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -153,7 +153,7 @@
       ],
       "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
       "candidate_count": 5,
-      "total_stars": 8662,
+      "total_stars": 8663,
       "top_candidate": "nirholas/UCAI"
     },
     {
@@ -178,7 +178,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
       "candidate_count": 3,
-      "total_stars": 98974,
+      "total_stars": 98975,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -203,7 +203,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation.",
       "candidate_count": 3,
-      "total_stars": 23371,
+      "total_stars": 23372,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -228,7 +228,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat flow/greeks/dark-pool data as signal evidence, not execution advice; live credentials and redistribution rules remain external.",
       "candidate_count": 1,
-      "total_stars": 69773,
+      "total_stars": 69774,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -294,7 +294,7 @@
       "name": "hummingbot/hummingbot",
       "url": "https://github.com/hummingbot/hummingbot",
       "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
-      "stars": 19005,
+      "stars": 19006,
       "language": "Python",
       "route_tags": [
         "broker_execution",
@@ -350,7 +350,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43093,
+      "stars": 43094,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -466,7 +466,7 @@
       "name": "freqtrade/freqtrade",
       "url": "https://github.com/freqtrade/freqtrade",
       "description": "Free, open source crypto trading bot",
-      "stars": 51899,
+      "stars": 51900,
       "language": "Python",
       "route_tags": [
         "bot_framework"
@@ -492,7 +492,7 @@
       "name": "OpenBB-finance/OpenBB",
       "url": "https://github.com/OpenBB-finance/OpenBB",
       "description": "Financial data platform for analysts, quants and AI agents.",
-      "stars": 69773,
+      "stars": 69774,
       "language": "Python",
       "route_tags": [
         "options_flow",
@@ -664,7 +664,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7527,
+      "stars": 7528,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -804,7 +804,7 @@
       "name": "hummingbot/hummingbot",
       "url": "https://github.com/hummingbot/hummingbot",
       "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
-      "stars": 19005,
+      "stars": 19006,
       "language": "Python",
       "route_tags": [
         "broker_execution",
@@ -860,7 +860,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43093,
+      "stars": 43094,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -976,7 +976,7 @@
       "name": "freqtrade/freqtrade",
       "url": "https://github.com/freqtrade/freqtrade",
       "description": "Free, open source crypto trading bot",
-      "stars": 51899,
+      "stars": 51900,
       "language": "Python",
       "route_tags": [
         "bot_framework"
@@ -1002,7 +1002,7 @@
       "name": "OpenBB-finance/OpenBB",
       "url": "https://github.com/OpenBB-finance/OpenBB",
       "description": "Financial data platform for analysts, quants and AI agents.",
-      "stars": 69773,
+      "stars": 69774,
       "language": "Python",
       "route_tags": [
         "options_flow",
@@ -1174,7 +1174,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7527,
+      "stars": 7528,
       "language": "Python",
       "route_tags": [
         "mcp",

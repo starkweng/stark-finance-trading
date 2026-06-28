@@ -41,6 +41,8 @@ jobs:
             stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.md
             stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.json
             stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.md
+            stark-finance-trading/dist/stark-finance-trading.competitive-route-backlog.json
+            stark-finance-trading/dist/stark-finance-trading.competitive-route-backlog.md
             stark-finance-trading/dist/stark-finance-trading.release-manifest.json
             stark-finance-trading/dist/stark-finance-trading.release-manifest.md
             stark-finance-trading/dist/stark-finance-trading.release-notes.json

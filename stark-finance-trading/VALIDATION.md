@@ -10,7 +10,7 @@ PASS
 {
   "ok": true,
   "skill": "stark-finance-trading",
-  "required_files": 44,
+  "required_files": 45,
   "routing_cases": 11,
   "adversarial_cases": 12,
   "live_behavior_cases": 9,
@@ -120,6 +120,15 @@ backlog_actions: add_route_eval=12, maintain_watch=5, requires_secret_or_auth=8
 ```
 
 ```text
+python3 scripts/generate_competitive_route_backlog.py --root . --dist ../dist --out ../dist/stark-finance-trading.competitive-route-backlog.json --markdown ../dist/stark-finance-trading.competitive-route-backlog.md --json
+PASS
+case_count: 20
+stage_counts: auth_or_env_needed=8, route_eval_proposal=12
+backlog_actions: add_route_eval=12, requires_secret_or_auth=8
+missing_required_term_cases: 0
+```
+
+```text
 python3 scripts/quick_validate.py .
 PASS
 Skill is valid!
@@ -141,6 +150,7 @@ github_finance_tool_discovery: PASS
 runtime_capability_scan: PASS
 tool_route_plan: PASS
 competitive_gap_analysis: PASS
+competitive_route_backlog: PASS
 competitive_task_benchmark: PASS
 local_skill_inventory: PASS
 package: PASS
@@ -160,14 +170,14 @@ competitive_eval_review_scorecard: PASS
 github_export: PASS
 github_export_smoke: PASS
 release_readiness: PASS
-steps: 46
+steps: 47
 ```
 
 ```text
 python3 scripts/validate_github_actions_workflow.py --root . --json
 PASS
 required_snippet_count: 13
-required_artifact_count: 52
+required_artifact_count: 54
 failed_checks: 0
 ```
 
@@ -184,7 +194,7 @@ eval_regression: PASS
 ```text
 python3 /path/to/stark-skiller/scripts/security_scan_skill.py .
 PASS
-files_scanned: 61
+files_scanned: 62
 critical: 0
 high: 0
 medium: 0
@@ -205,29 +215,29 @@ hashes_match: true
 fixed_zip_metadata: true
 entry_counts_match: true
 install_smoke: true
-entry_count: 61
+entry_count: 62
 ```
 
 ```text
 python3 scripts/package_skill.py . ../dist
 python3 scripts/install_package_smoke.py ../dist/stark-finance-trading.skill --json
 PASS
-entry_count: 61
+entry_count: 62
 ```
 
 ```text
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
-skill_files_copied: 62
-release_artifacts_copied: 56
+skill_files_copied: 63
+release_artifacts_copied: 58
 release_package_install_smoke: true
-zip_entry_count: 126
+zip_entry_count: 129
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 126
+zip_entry_count: 129
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -265,7 +275,7 @@ PASS
 goal_completion_status: NOT_COMPLETE_REQUIREMENTS_PENDING
 proven_requirements: see ../dist/stark-finance-trading.goal-completion-audit.json
 partial_requirements: critical_runtime_alignment
-proven_requirements: 10/14
+proven_requirements: 11/15
 blocked_or_missing_requirements: critical_runtime_alignment, remote_github_actions_proven, approved_live_model_eval_proven, reviewed_comparative_live_eval_proven
 ```
 
@@ -276,8 +286,8 @@ local_release_status: LOCAL_RELEASE_READY
 goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
-package_entry_count: 61
-github_export_zip_entry_count: 126
+package_entry_count: 62
+github_export_zip_entry_count: 129
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
@@ -365,6 +375,7 @@ no output
 - Public source audit checks candidate classification and URL reachability only. Live URL audit can return WARN for WAF, bot-blocking, rate-limit, or local TLS/network issues; WARN is not market-data proof and not a source invalidation.
 - GitHub discovery checks public repository search results or a labeled curated fallback. It does not prove official status, installability, entitlement, live API behavior, trading performance, or superiority.
 - Competitive gap analysis maps public GitHub candidates to covered, partial-runtime, watchlist, or backlog actions. It is planning evidence, not installability, entitlement, live API behavior, trading performance, or superiority proof.
+- Competitive route backlog turns gap findings into candidate route/eval prompts and auth gates. It is a learn-loop artifact, not live eval behavior, installability, entitlement, trading performance, or superiority proof.
 - Public tool catalog validation checks source-ledger alignment, route tags, official-source status, action tiers, and high-risk surfaces. It does not prove credentials, entitlement, live availability, market-data correctness, or execution quality.
 - Runtime capability scan checks local MCP/plugin/skill configuration and env-var presence, while redacting secret values. It does not prove OAuth validity, paid entitlement, live API reachability, market-data correctness, or trading performance.
 - Tool route planner validation checks deterministic natural-language prompt routing into workflow, tool IDs, route tags, local helper hints, risk tier, and safety terms. It does not prove live tool availability, API credentials, market-data correctness, or model behavior.

@@ -6,7 +6,7 @@
 - Eval set: `benchmarks/competitive-task-cases.json`
 - Cases: 12
 - Approval status: MISSING
-- Generated at: 2026-06-28T05:35:49.081420+00:00
+- Generated at: 2026-06-28T05:48:55.207235+00:00
 
 ## Evidence Boundary
 

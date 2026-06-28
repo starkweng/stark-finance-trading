@@ -43,6 +43,7 @@ REQUIRED_EXPORT_FILES = [
     f"{SKILL_NAME}/scripts/score_eval_review_bundle.py",
     f"{SKILL_NAME}/scripts/discover_github_finance_tools.py",
     f"{SKILL_NAME}/scripts/analyze_competitive_gaps.py",
+    f"{SKILL_NAME}/scripts/generate_competitive_route_backlog.py",
     "dist/stark-finance-trading.skill",
     "dist/stark-finance-trading.release-manifest.json",
     "dist/stark-finance-trading.release-notes.json",
@@ -53,6 +54,7 @@ REQUIRED_EXPORT_FILES = [
     "dist/stark-finance-trading.goal-completion-audit.json",
     "dist/stark-finance-trading.github-tool-discovery.json",
     "dist/stark-finance-trading.competitive-gap-analysis.json",
+    "dist/stark-finance-trading.competitive-route-backlog.json",
 ]
 
 
