@@ -206,15 +206,15 @@ entry_count: 57
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
 skill_files_copied: 58
-release_artifacts_copied: 42
+release_artifacts_copied: 48
 release_package_install_smoke: true
-zip_entry_count: 108
+zip_entry_count: 114
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 108
+zip_entry_count: 114
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -233,7 +233,7 @@ goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
 package_entry_count: 57
-github_export_zip_entry_count: 108
+github_export_zip_entry_count: 114
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0

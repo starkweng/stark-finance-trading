@@ -57,6 +57,8 @@ def copy_release_artifacts(skill_name: str, release_dir: Path, out_dir: Path) ->
         f"{skill_name}.loop-blueprint",
         f"{skill_name}.quality-suite",
         f"{skill_name}.github-actions-workflow",
+        f"{skill_name}.github-export-report",
+        f"{skill_name}.github-export-smoke",
         f"{skill_name}.remote-ci-proof",
         f"{skill_name}.public-benchmark",
         f"{skill_name}.public-tool-catalog",
