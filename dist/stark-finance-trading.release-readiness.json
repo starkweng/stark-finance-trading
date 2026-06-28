@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T01:07:54.242962+00:00",
+  "skill": "stark-finance-trading",
+  "skill_root": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/stark-finance-trading",
+  "dist": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist",
+  "local_release_status": "LOCAL_RELEASE_READY",
+  "goal_completion_status": "NOT_COMPLETE_EXTERNAL_PROOFS_PENDING",
+  "checks": [
+    {
+      "id": "source_files_present",
+      "passed": true
+    },
+    {
+      "id": "release_artifacts_present",
+      "passed": true
+    },
+    {
+      "id": "status_artifacts_pass",
+      "passed": true
+    },
+    {
+      "id": "package_hash_matches_manifest",
+      "passed": true
+    },
+    {
+      "id": "package_zip_clean",
+      "passed": true
+    },
+    {
+      "id": "package_contains_current_required_sources",
+      "passed": true
+    },
+    {
+      "id": "github_export_zip_clean",
+      "passed": true
+    },
+    {
+      "id": "public_claim_boundary",
+      "passed": true
+    }
+  ],
+  "source_missing": [],
+  "artifact_missing": [],
+  "artifact_statuses": {
+    "stark-finance-trading.release-manifest.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "Local package manifest and install-smoke evidence only; does not prove live model behavior, remote GitHub Actions, market-data accuracy, or trading performance."
+    },
+    "stark-finance-trading.release-notes.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": [
+        "Release notes are generated from the current local manifest, changelog, and signoff evidence.",
+        "They do not prove remote GitHub Actions completion.",
+        "They do not prove live model behavior, market-data accuracy, trading performance, or public superiority."
+      ]
+    },
+    "stark-finance-trading.github-actions-workflow.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "Static workflow coverage validation only. It does not prove remote GitHub Actions execution, uploaded artifact availability, or live model behavior."
+    },
+    "stark-finance-trading.public-source-audit.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "This audit checks source classification and optional URL reachability only. It does not verify API credentials, live model behavior, trading performance, or public superiority."
+    },
+    "stark-finance-trading.public-benchmark.json": {
+      "status": "PASS",
+      "score": 100.0,
+      "behavior_proof_status": null,
+      "evidence_boundary": "Source-level benchmark over the current skill tree. This does not prove live model behavior, remote GitHub CI, or public superiority over competing projects."
+    },
+    "stark-finance-trading.competitive-task-benchmark.json": {
+      "status": "PASS",
+      "score": 100.0,
+      "behavior_proof_status": null,
+      "evidence_boundary": "Task-level static benchmark over source coverage. It shows router workflow coverage and safety boundary design, not live output quality, API availability, execution performance, or public superiority."
+    },
+    "stark-finance-trading.live-eval-signoff.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "This packet proves live-eval readiness and approval status only. It does not prove model behavior."
+    },
+    "stark-finance-trading.live-eval-review/review.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "This bundle makes eval dry-run or live-run outputs reviewable by a human. When the source mode is dry_run or approval_required, it proves review readiness only, not live model behavior, market-data correctness, trading performance, or public superiority."
+    },
+    "stark-finance-trading.live-eval-scorecard.json": {
+      "status": "PASS",
+      "score": 100,
+      "behavior_proof_status": "UNPROVEN_DRY_RUN_ONLY",
+      "evidence_boundary": "Eval scorecard covers reviewability and evidence labeling. A PASS on a dry-run bundle does not prove live model behavior, market-data correctness, trading performance, or public superiority."
+    },
+    "stark-finance-trading.competitive-eval-signoff.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "This packet proves live-eval readiness and approval status only. It does not prove model behavior."
+    },
+    "stark-finance-trading.competitive-eval-review/review.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "This bundle makes eval dry-run or live-run outputs reviewable by a human. When the source mode is dry_run or approval_required, it proves review readiness only, not live model behavior, market-data correctness, trading performance, or public superiority."
+    },
+    "stark-finance-trading.competitive-eval-scorecard.json": {
+      "status": "PASS",
+      "score": 100,
+      "behavior_proof_status": "UNPROVEN_DRY_RUN_ONLY",
+      "evidence_boundary": "Eval scorecard covers reviewability and evidence labeling. A PASS on a dry-run bundle does not prove live model behavior, market-data correctness, trading performance, or public superiority."
+    },
+    "stark-finance-trading.github-export-report.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "Local export validation only; does not prove remote GitHub Actions completion."
+    },
+    "stark-finance-trading.github-export-smoke.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "Local smoke test of the exported GitHub repository ZIP only. It proves the archive can be extracted and core gates can run from the standalone layout. It does not prove remote GitHub Actions completion, uploaded artifact availability, live market-data correctness, live trading performance, or live model behavior."
+    }
+  },
+  "package": {
+    "path": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading.skill",
+    "sha256": "fdc09379f4826cdbeede4310fed93a942841a7c87de19adbd56c9a18ed5cac04",
+    "manifest_sha256": "fdc09379f4826cdbeede4310fed93a942841a7c87de19adbd56c9a18ed5cac04",
+    "hash_match": true,
+    "zip": {
+      "status": "PASS",
+      "entry_count": 46,
+      "safe_paths": true,
+      "archive_clean": true
+    },
+    "source_freshness": {
+      "status": "PASS",
+      "checked_count": 27,
+      "missing_required_package_files": [],
+      "hash_mismatches": []
+    }
+  },
+  "github_export_zip": {
+    "path": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading-github-repo.zip",
+    "sha256": "ed1a133972eed75b969b248df32ca2e65a7302bac1860f2a7bd14b1286180c86",
+    "zip": {
+      "status": "PASS",
+      "entry_count": 83,
+      "safe_paths": true,
+      "archive_clean": true
+    }
+  },
+  "public_claims": {
+    "status": "PASS",
+    "matches": []
+  },
+  "external_proofs": [
+    {
+      "id": "public_repo_url",
+      "status": "PROVIDED",
+      "value": "https://github.com/starkweng/stark-finance-trading",
+      "required_for_goal_completion": true
+    },
+    {
+      "id": "remote_github_actions_run_url",
+      "status": "PENDING",
+      "value": "",
+      "required_for_goal_completion": true
+    },
+    {
+      "id": "approved_live_model_eval",
+      "status": "PENDING",
+      "value": "",
+      "required_for_goal_completion": true
+    },
+    {
+      "id": "reviewed_comparative_live_eval",
+      "status": "PENDING",
+      "value": "",
+      "required_for_goal_completion": true
+    }
+  ],
+  "evidence_boundary": "Local release-readiness validation only. PASS means the local package, release artifacts, GitHub export ZIP, review scorecards, and public-claim boundaries are internally consistent. It does not prove remote GitHub Actions completion, public repository publication, live model behavior, market-data correctness, trading performance, or public superiority."
+}
