@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "status": "FAIL",
-  "generated_at": "2026-06-28T03:11:59.998830+00:00",
+  "generated_at": "2026-06-28T03:32:42.979194+00:00",
   "repo": "starkweng/stark-finance-trading",
-  "repo_root": ".",
+  "repo_root": "dist/github-export/stark-finance-trading",
   "auth": {
     "status": "PASS",
     "scopes": [
@@ -12,7 +12,71 @@
       "repo"
     ],
     "has_workflow_scope": false,
-    "raw_tail": "[redacted: GitHub CLI auth status contained local account/token-scope diagnostic text]"
+    "raw_tail": "github.com\n  ✓ Logged in to github.com account starkweng (keyring)\n  - Active account: true\n  - Git operations protocol: https\n  - Token: gho_************************************\n  - Token scopes: 'gist', 'read:org', 'repo'\n"
+  },
+  "remote_state": {
+    "workflow_file": {
+      "status": "MISSING_OR_INACCESSIBLE",
+      "path": ".github/workflows/ci.yml",
+      "sha": "",
+      "size": 0,
+      "command": {
+        "command": "gh api -X GET repos/starkweng/stark-finance-trading/contents/.github/workflows/ci.yml",
+        "returncode": 1,
+        "stdout_tail": "{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+        "stderr_tail": "gh: Not Found (HTTP 404)\n",
+        "attempt": 1,
+        "json": {}
+      }
+    },
+    "actions_permissions": {
+      "status": "PASS",
+      "enabled": true,
+      "allowed_actions": "all",
+      "sha_pinning_required": false
+    },
+    "workflow_list": {
+      "status": "PASS",
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    "run_list": {
+      "status": "PASS",
+      "runs": [],
+      "stderr_tail": ""
+    }
+  },
+  "remote_state_before": {
+    "workflow_file": {
+      "status": "MISSING_OR_INACCESSIBLE",
+      "path": ".github/workflows/ci.yml",
+      "sha": "",
+      "size": 0,
+      "command": {
+        "command": "gh api -X GET repos/starkweng/stark-finance-trading/contents/.github/workflows/ci.yml",
+        "returncode": 1,
+        "stdout_tail": "{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/contents#get-repository-content\",\"status\":\"404\"}",
+        "stderr_tail": "gh: Not Found (HTTP 404)\n",
+        "attempt": 1,
+        "json": {}
+      }
+    },
+    "actions_permissions": {
+      "status": "PASS",
+      "enabled": true,
+      "allowed_actions": "all",
+      "sha_pinning_required": false
+    },
+    "workflow_list": {
+      "status": "PASS",
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    "run_list": {
+      "status": "PASS",
+      "runs": [],
+      "stderr_tail": ""
+    }
   },
   "workflow_copy": {
     "status": "SKIPPED",
@@ -22,9 +86,14 @@
     "status": "SKIPPED",
     "reason": "workflow scope missing"
   },
+  "dispatch": {
+    "status": "SKIPPED",
+    "reason": "workflow not published"
+  },
   "remote_run": {
     "status": "SKIPPED",
     "reason": "workflow not enabled"
   },
+  "required_action": "Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`.",
   "evidence_boundary": "This proof only covers enabling and observing the GitHub Actions CI workflow. A successful remote run does not prove live model behavior, market-data correctness, trading performance, or public superiority."
 }

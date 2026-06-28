@@ -16,6 +16,7 @@ Current public repository:
 ## Pending External Proofs
 
 - Remote GitHub Actions run: pending until `.github/workflows/ci.yml` is pushed and completes.
+- Remote CI proof report: included when generated, and may show the current auth/workflow blocker.
 - Approved live model eval: pending.
 - Reviewed comparative live eval: pending.
 
@@ -23,7 +24,7 @@ Current public repository:
 
 The CI workflow is available as `workflow-templates/stark-finance-trading-ci.yml`.
 
-If GitHub rejects workflow-file pushes, refresh GitHub CLI auth with the `workflow` scope, then enable CI:
+If the remote repository is missing `.github/workflows/ci.yml`, refresh GitHub CLI auth with the `workflow` scope, then let the helper publish and dispatch CI through the GitHub API:
 
 ```bash
 gh auth refresh -h github.com -s workflow

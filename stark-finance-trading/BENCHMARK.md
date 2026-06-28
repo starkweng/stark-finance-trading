@@ -37,7 +37,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Release notes generator: `scripts/generate_release_notes.py` records version, changelog, package evidence, signoff status, and evidence boundaries.
 - GitHub Actions workflow validator: `scripts/validate_github_actions_workflow.py` checks CI triggers, validation/build steps, and uploaded release evidence artifacts.
 - GitHub export smoke: `scripts/smoke_github_export.py` extracts the standalone repository ZIP and reruns core gates from the exported layout.
-- Remote CI proof helper: `scripts/enable_remote_ci.py` copies the workflow template into a public export, pushes it when the GitHub CLI token has `workflow` scope, and records the latest remote run status.
+- Remote CI proof helper: `scripts/enable_remote_ci.py` audits the public repository, publishes `.github/workflows/ci.yml` through the GitHub Contents API when the GitHub CLI token has `workflow` scope, dispatches the workflow, and records the latest remote run status.
 - Release readiness validator: `scripts/validate_release_readiness.py` checks local release artifacts, package hashes, export ZIP cleanliness, public-claim boundaries, and external proof status.
 - Package smoke: available through `scripts/install_package_smoke.py`.
 - CI smoke: available through `.github/workflows/ci.yml`.
@@ -107,7 +107,7 @@ The review bundle is the handoff layer between automated checks and human judgme
 
 ## Remote CI Proof Gate
 
-`scripts/enable_remote_ci.py` is the post-publication helper for the exported repository. It requires GitHub CLI auth with `workflow` scope, copies `workflow-templates/stark-finance-trading-ci.yml` into `.github/workflows/ci.yml`, commits and pushes the workflow, then records the latest remote GitHub Actions run. A PASS here proves the remote CI workflow completed successfully. PENDING or FAIL keeps the full public-release goal incomplete.
+`scripts/enable_remote_ci.py` is the post-publication helper for the exported repository. It first audits whether Actions are enabled, whether `.github/workflows/ci.yml` exists remotely, and whether prior runs exist. With GitHub CLI auth that includes `workflow` scope, it publishes `workflow-templates/stark-finance-trading-ci.yml` to `.github/workflows/ci.yml` through the GitHub Contents API, dispatches the workflow, waits when requested, and records the latest remote GitHub Actions run. A PASS here proves the remote CI workflow completed successfully. PENDING or FAIL keeps the full public-release goal incomplete.
 
 ## GitHub Export Smoke Gate
 

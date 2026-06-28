@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-28T03:11:27.543732+00:00",
+  "generated_at": "2026-06-28T03:32:11.109212+00:00",
   "package": {
     "path": "dist/stark-finance-trading.skill",
     "name": "stark-finance-trading.skill",
-    "size_bytes": 147147,
-    "sha256": "edd701ebbeb890bba73decde630d37de669cf395e918ac605b3db17757852736",
+    "size_bytes": 148799,
+    "sha256": "49988beef9eeb91898e91ead71589296a2f1b824de4e3da908ee276112b91f69",
     "entry_count": 55
   },
   "install_smoke": {
@@ -24,8 +24,8 @@
   "entries": [
     {
       "path": "stark-finance-trading/BENCHMARK.md",
-      "size": 13826,
-      "sha256": "dcb547c2b2a3148bc6597a6962e2f442aae4e6a83f008f65de4ad238017f8f98"
+      "size": 14067,
+      "sha256": "00eac9747d0386e3cb82ae8ee724e8ea14c6942e8cd4d434d5bd9d9d0d402730"
     },
     {
       "path": "stark-finance-trading/CHANGELOG.md",
@@ -44,8 +44,8 @@
     },
     {
       "path": "stark-finance-trading/README.md",
-      "size": 10143,
-      "sha256": "89b3475d363e449e14e548bb9ae50159124ae86d657bdb739cbb8000b5d8be15"
+      "size": 10357,
+      "sha256": "82ef0967b85fff0423965235b6aac19fa4fa3353ff3c08a7e94fbf68e1747623"
     },
     {
       "path": "stark-finance-trading/SECURITY.md",
@@ -59,8 +59,8 @@
     },
     {
       "path": "stark-finance-trading/VALIDATION.md",
-      "size": 10811,
-      "sha256": "8fb808b92d0a1b064a9aa5978462ec6b70b6001caa5cad26353a7fe4009d79e3"
+      "size": 10977,
+      "sha256": "eb965124328f9e39823f80f398e87a9054cf6094616d5767722623aba12510fe"
     },
     {
       "path": "stark-finance-trading/VERSION",
@@ -189,13 +189,13 @@
     },
     {
       "path": "stark-finance-trading/scripts/enable_remote_ci.py",
-      "size": 7999,
-      "sha256": "9a5f81ed63ffb871de8874c9203444d6b840462fb0437a80ded515b41a4bc62d"
+      "size": 14887,
+      "sha256": "2e37673f771ad137ce88867a2c57cdb2d8cdda8687a5a8a48a30398a877d1952"
     },
     {
       "path": "stark-finance-trading/scripts/export_github_repo.py",
-      "size": 16711,
-      "sha256": "c164ce9fedad752fd565b75f32261148d8e0e2d2334e38e82414231a66f430dc"
+      "size": 16938,
+      "sha256": "912d201b83d768008ccaca96a6b3cc8ec7468de813c9f0adf9fcfebe57b955f5"
     },
     {
       "path": "stark-finance-trading/scripts/generate_competitive_task_benchmark.py",

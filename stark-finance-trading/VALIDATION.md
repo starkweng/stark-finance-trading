@@ -246,8 +246,13 @@ python3 scripts/enable_remote_ci.py --repo-root ../dist/github-export/stark-fina
 FAIL
 workflow_scope: false
 token_scopes: gist, read:org, repo
+remote_workflow_file: MISSING_OR_INACCESSIBLE
+actions_enabled: true
+workflow_list: empty
+run_list: empty
 workflow_copy: SKIPPED
 push: SKIPPED
+dispatch: SKIPPED
 remote_run: SKIPPED
 required_action: gh auth refresh -h github.com -s workflow
 ```
@@ -307,7 +312,7 @@ no output
 - Eval review scorecards prove reviewability and evidence labeling. Dry-run scorecard PASS still does not prove live model behavior.
 - Package smoke, GitHub export validation, and GitHub export smoke passed locally.
 - GitHub export smoke proves the standalone repository ZIP can be extracted and core gates rerun locally. It does not prove remote GitHub Actions completion or uploaded artifact availability.
-- Remote CI proof helper exists and reports the current GitHub CLI permission blocker. It does not enable CI until the token has `workflow` scope and a remote run completes.
+- Remote CI proof helper exists, audits remote Actions/workflow/run state, and reports the current GitHub CLI permission blocker. It does not enable CI until the token has `workflow` scope and a remote run completes.
 - Release readiness proves local package/source freshness, release artifact consistency, clean package/export ZIPs, status artifacts, and public-claim boundaries. It does not prove public repo publication, remote GitHub Actions completion, approved live model evals, or reviewed comparative live evals.
 - Comparative live benchmark is pending.
 - Live model-service eval is pending and requires explicit approval.

@@ -89,7 +89,7 @@ python3 scripts/smoke_github_export.py --zip dist/stark-finance-trading-github-r
 python3 scripts/validate_release_readiness.py --skill-root . --dist dist --out dist/stark-finance-trading.release-readiness.json --markdown dist/stark-finance-trading.release-readiness.md --json
 ```
 
-After the exported repository is public, enable and prove remote GitHub Actions only from the exported repository root:
+After the exported repository is public, enable and prove remote GitHub Actions from the exported repository root. The helper audits the remote repo, publishes the workflow through the GitHub Contents API when `workflow` scope is available, dispatches the workflow, and writes a proof packet:
 
 ```bash
 gh auth refresh -h github.com -s workflow
@@ -98,4 +98,4 @@ python3 stark-finance-trading/scripts/enable_remote_ci.py --repo-root . --repo s
 
 ## Evidence Boundaries
 
-This v0.1 package has static validation, routing eval seeds, prompt-to-tool route regression, local runtime capability alignment, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a machine-readable public tool catalog, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.
+This v0.1 package has static validation, routing eval seeds, prompt-to-tool route regression, local runtime capability alignment, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a machine-readable public tool catalog, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper with repository/workflow/run-state audit, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.
