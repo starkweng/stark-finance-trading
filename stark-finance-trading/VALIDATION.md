@@ -10,7 +10,7 @@ PASS
 {
   "ok": true,
   "skill": "stark-finance-trading",
-  "required_files": 38,
+  "required_files": 40,
   "routing_cases": 11,
   "adversarial_cases": 12,
   "live_behavior_cases": 9,
@@ -136,6 +136,7 @@ release_manifest: PASS
 live_eval_signoff: PASS
 release_notes: PASS
 codex_eval_dry_run: PASS
+live_eval_harness_smoke: PASS
 live_eval_review_bundle: PASS
 live_eval_review_scorecard: PASS
 competitive_eval_signoff: PASS
@@ -145,14 +146,14 @@ competitive_eval_review_scorecard: PASS
 github_export: PASS
 github_export_smoke: PASS
 release_readiness: PASS
-steps: 36
+steps: 37
 ```
 
 ```text
 python3 scripts/validate_github_actions_workflow.py --root . --json
 PASS
 required_snippet_count: 13
-required_artifact_count: 40
+required_artifact_count: 42
 failed_checks: 0
 ```
 
@@ -169,7 +170,7 @@ eval_regression: PASS
 ```text
 python3 /path/to/stark-skiller/scripts/security_scan_skill.py .
 PASS
-files_scanned: 55
+files_scanned: 57
 critical: 0
 high: 0
 medium: 0
@@ -190,29 +191,29 @@ hashes_match: true
 fixed_zip_metadata: true
 entry_counts_match: true
 install_smoke: true
-entry_count: 55
+entry_count: 57
 ```
 
 ```text
 python3 scripts/package_skill.py . ../dist
 python3 scripts/install_package_smoke.py ../dist/stark-finance-trading.skill --json
 PASS
-entry_count: 55
+entry_count: 57
 ```
 
 ```text
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
-skill_files_copied: 56
-release_artifacts_copied: 38
+skill_files_copied: 58
+release_artifacts_copied: 42
 release_package_install_smoke: true
-zip_entry_count: 102
+zip_entry_count: 108
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 102
+zip_entry_count: 108
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -230,8 +231,8 @@ local_release_status: LOCAL_RELEASE_READY
 goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
-package_entry_count: 55
-github_export_zip_entry_count: 102
+package_entry_count: 57
+github_export_zip_entry_count: 108
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
@@ -255,6 +256,14 @@ push: SKIPPED
 dispatch: SKIPPED
 remote_run: SKIPPED
 required_action: gh auth refresh -h github.com -s workflow
+```
+
+```text
+python3 scripts/run_live_eval_harness_smoke.py --skill-root . --eval-set evals/live-behavior-evals.json --out ../dist/stark-finance-trading.live-eval-harness-smoke.json --markdown ../dist/stark-finance-trading.live-eval-harness-smoke.md --json
+PASS
+mode: fixture_run
+case_count: 1
+runner_kind: fixture
 ```
 
 ```text
@@ -308,6 +317,7 @@ no output
 - GitHub Actions workflow validation is static coverage validation. It does not prove the workflow has run remotely on GitHub.
 - Adversarial evals are seeded as regression prompts, not live-run.
 - Live behavior evals and competitive task evals are defined and dry-run reviewed through human-review bundles, not live-run.
+- Live eval harness smoke proves the approved runner execution path with a local fixture runner. It does not prove live model behavior.
 - Eval review bundles prove that cases are reviewable by humans. They do not prove live model behavior, market-data correctness, trading performance, or public superiority.
 - Eval review scorecards prove reviewability and evidence labeling. Dry-run scorecard PASS still does not prove live model behavior.
 - Package smoke, GitHub export validation, and GitHub export smoke passed locally.

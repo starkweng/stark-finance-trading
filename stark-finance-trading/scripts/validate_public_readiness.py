@@ -21,6 +21,8 @@ REQUIRED_BENCHMARK_FILES = [
     "evals/live-behavior-evals.json",
     "evals/tool-routing-cases.json",
     "scripts/codex_eval.py",
+    "scripts/live_eval_runner_fixture.py",
+    "scripts/run_live_eval_harness_smoke.py",
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
     "scripts/plan_tool_route.py",
@@ -156,12 +158,13 @@ def validate(root: Path) -> int:
         or "Competitive Task Benchmark" not in benchmark_md
         or "Eval Review Bundle" not in benchmark_md
         or "Eval Review Scorecard Gate" not in benchmark_md
+        or "Live Eval Harness Smoke" not in benchmark_md
         or "GitHub Actions Workflow Gate" not in benchmark_md
         or "Remote CI Proof Gate" not in benchmark_md
         or "GitHub Export Smoke Gate" not in benchmark_md
         or "Release Readiness Gate" not in benchmark_md
     ):
-        return fail("BENCHMARK.md must mention public comparison, public source audit, competitive task benchmark, eval review bundle, Eval Review Scorecard Gate, GitHub Actions Workflow Gate, Remote CI Proof Gate, GitHub Export Smoke Gate, Release Readiness Gate, adversarial coverage, and public benchmark gate")
+        return fail("BENCHMARK.md must mention public comparison, public source audit, competitive task benchmark, eval review bundle, Eval Review Scorecard Gate, Live Eval Harness Smoke, GitHub Actions Workflow Gate, Remote CI Proof Gate, GitHub Export Smoke Gate, Release Readiness Gate, adversarial coverage, and public benchmark gate")
 
     scanned_text = "\n".join(
         path.read_text(encoding="utf-8", errors="replace")

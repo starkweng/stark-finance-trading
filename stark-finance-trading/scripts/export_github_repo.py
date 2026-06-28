@@ -53,6 +53,7 @@ def copy_release_artifacts(skill_name: str, release_dir: Path, out_dir: Path) ->
     allowed_prefixes = (
         f"{skill_name}.release-",
         f"{skill_name}.live-eval-signoff",
+        f"{skill_name}.live-eval-harness-smoke",
         f"{skill_name}.loop-blueprint",
         f"{skill_name}.quality-suite",
         f"{skill_name}.github-actions-workflow",

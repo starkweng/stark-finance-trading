@@ -74,8 +74,13 @@ def score(review: dict[str, Any], *, min_score: int, require_live: bool) -> dict
     evidence_boundary = str(review.get("evidence_boundary") or "")
     case_rows = [case_score(case, source_mode) for case in cases if isinstance(case, dict)]
 
-    live_mode = source_mode not in {"dry_run", "approval_required", ""}
-    behavior_proof_status = "REVIEWABLE_LIVE_EVIDENCE" if live_mode else "UNPROVEN_DRY_RUN_ONLY"
+    live_mode = source_mode in {"live", "reviewed_live"}
+    if live_mode:
+        behavior_proof_status = "REVIEWABLE_LIVE_EVIDENCE"
+    elif source_mode in {"fixture_run", "local_tool_run"}:
+        behavior_proof_status = "HARNESS_ONLY_NOT_MODEL_PROOF"
+    else:
+        behavior_proof_status = "UNPROVEN_DRY_RUN_ONLY"
 
     checks = [
         ("bundle_status_pass", review.get("status") == "PASS", 15),
@@ -83,7 +88,7 @@ def score(review: dict[str, Any], *, min_score: int, require_live: bool) -> dict
         ("cases_present", bool(case_rows), 10),
         ("case_count_matches", int(review.get("case_count") or 0) == len(case_rows), 10),
         ("all_cases_reviewable", bool(case_rows) and all(item["score"] == 100 for item in case_rows), 25),
-        ("source_mode_labeled", source_mode in {"dry_run", "approval_required", "live", "reviewed_live"}, 10),
+        ("source_mode_labeled", source_mode in {"dry_run", "approval_required", "runner_required", "fixture_run", "local_tool_run", "live", "reviewed_live"}, 10),
         ("approval_status_labeled", bool(approval_status), 5),
         ("evidence_boundary_labeled", has_boundary(evidence_boundary), 10),
         ("live_required_if_requested", (not require_live) or live_mode, 5),

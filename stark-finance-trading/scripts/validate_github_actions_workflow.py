@@ -50,6 +50,8 @@ REQUIRED_ARTIFACTS = [
     "stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md",
     "stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json",
     "stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.md",
+    "stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.json",
+    "stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.md",
     "stark-finance-trading/dist/stark-finance-trading.live-eval-review/**",
     "stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.json",
     "stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md",

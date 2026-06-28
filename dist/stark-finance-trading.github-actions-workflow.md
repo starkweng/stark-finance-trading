@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 40
+- Required artifacts: 42
 
 ## Checks
 
@@ -44,6 +44,8 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.md` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-review/**` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-review/**` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md` |

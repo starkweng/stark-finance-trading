@@ -30,6 +30,8 @@ REQUIRED_FILES = [
     "benchmarks/public-benchmark-cases.json",
     "benchmarks/competitive-task-cases.json",
     "scripts/codex_eval.py",
+    "scripts/live_eval_runner_fixture.py",
+    "scripts/run_live_eval_harness_smoke.py",
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
     "scripts/plan_tool_route.py",
@@ -225,6 +227,10 @@ def validate(root: Path) -> int:
     for phrase in ["RUNTIME_HINTS", "configured_mcp", "enabled_plugin", "Local runtime capability scan"]:
         if phrase not in runtime_script:
             return fail(f"runtime_capability_scan missing phrase: {phrase}")
+    codex_eval_script = read(root / "scripts/codex_eval.py")
+    for phrase in ["runner_command", "runner_kind", "fixture_run", "approval_required", "runner_required"]:
+        if phrase not in codex_eval_script:
+            return fail(f"codex_eval missing live runner harness phrase: {phrase}")
 
     comparison = json.loads(read(root / "benchmarks/public-comparison-2026-06-28.json"))
     candidates = comparison.get("candidates", [])

@@ -71,7 +71,11 @@ The adversarial eval set covers prompt injection, secret requests, live trade pr
 
 ## Live Behavior Gate
 
-`evals/live-behavior-evals.json` defines six live behavior cases for routing/source discipline, token DD, Dune semantics, strategy validation, execution safety, and public claim boundaries. `scripts/generate_live_eval_signoff.py` creates a PENDING approval packet. `scripts/codex_eval.py` only produces dry-run review artifacts unless an approved signoff packet is supplied. `scripts/generate_eval_review_bundle.py` converts those dry-run or live outputs into human-review Markdown, HTML, and JSON.
+`evals/live-behavior-evals.json` defines live behavior cases for routing/source discipline, token DD, Dune semantics, strategy validation, execution safety, and public claim boundaries. `scripts/generate_live_eval_signoff.py` creates a PENDING approval packet. `scripts/codex_eval.py` produces dry-run review artifacts by default, blocks live execution without an APPROVED signoff, and can execute an explicit runner command after approval. `scripts/run_live_eval_harness_smoke.py` proves that approved-runner path with a local fixture runner without claiming model behavior. `scripts/generate_eval_review_bundle.py` converts dry-run, fixture, or live outputs into human-review Markdown, HTML, and JSON.
+
+## Live Eval Harness Smoke
+
+`scripts/run_live_eval_harness_smoke.py` creates a temporary fixture-only approved signoff, runs one eval case through `scripts/codex_eval.py` and `scripts/live_eval_runner_fixture.py`, then writes `stark-finance-trading.live-eval-harness-smoke.json/md`. A PASS proves the approved runner path can execute and produce reviewable artifacts. It does not prove live model behavior, market-data correctness, trading performance, or public superiority.
 
 ## Eval Review Bundle
 

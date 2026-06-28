@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "created_at": "2026-06-28T03:32:10.603425+00:00",
+  "created_at": "2026-06-28T03:54:17.258873+00:00",
   "workflow": ".github/workflows/ci.yml",
   "checks": [
     {
@@ -180,6 +180,16 @@
       "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.md"
     },
     {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-harness-smoke.md"
+    },
+    {
       "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-review/**",
       "passed": true,
       "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-review/**"
@@ -271,7 +281,7 @@
     }
   ],
   "required_snippet_count": 13,
-  "required_artifact_count": 40,
+  "required_artifact_count": 42,
   "failed_checks": [],
   "evidence_boundary": "Static workflow coverage validation only. It does not prove remote GitHub Actions execution, uploaded artifact availability, or live model behavior."
 }
