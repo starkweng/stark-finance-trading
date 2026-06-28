@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T01:58:14.994598+00:00",
+  "generated_at": "2026-06-28T02:09:20.728750+00:00",
   "benchmark_type": "scenario-static-competitive-router-benchmark",
   "claim_status": "scenario-static-router-advantage-live-review-pending",
   "status": "PASS",
   "score": 100.0,
   "max_score": 100,
-  "case_count": 11,
-  "passed_cases": 11,
+  "case_count": 12,
+  "passed_cases": 12,
   "average_router_static_score": 100.0,
-  "average_single_surface_static_ceiling": 68.73,
-  "average_router_static_edge": 31.27,
+  "average_single_surface_static_ceiling": 68.33,
+  "average_router_static_edge": 31.67,
   "cases": [
     {
       "id": "multi_asset_market_snapshot",
@@ -699,6 +699,73 @@
       ],
       "best_single_surface": "Stripe and Plaid cover payments/banking data, not trading decision workflows.",
       "router_edge": "Keeps financial infrastructure, cashflow evidence, privacy, and trading-signal boundaries separate."
+    },
+    {
+      "id": "local_skill_consolidation_router",
+      "prompt": "帮我做 NVDA earnings preview，结合 equity research、DCF、catalyst、portfolio risk 和是否值得继续跟踪，但不要直接交易。",
+      "status": "PASS",
+      "router_static_score": 100.0,
+      "best_single_surface_static_ceiling": 64,
+      "router_static_edge": 36.0,
+      "checks": [
+        {
+          "type": "coverage",
+          "term": "local-skill-router",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "earnings-preview",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "equity-research",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "dcf-model",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "catalyst-calendar",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "portfolio-rebalance",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "stark-finance-trading",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "implementation detail",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "not a trade order",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "fresh market data",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "safety policy",
+          "passed": true
+        }
+      ],
+      "best_single_surface": "A single earnings or DCF skill can handle one slice, but not cross-skill routing, live market context, portfolio risk, and execution boundaries together.",
+      "router_edge": "Keeps one front door while delegating earnings, valuation, catalyst, and portfolio helpers behind a market-evidence and safety contract."
     }
   ],
   "evidence_boundary": "Task-level static benchmark over source coverage. It shows router workflow coverage and safety boundary design, not live output quality, API availability, execution performance, or public superiority."

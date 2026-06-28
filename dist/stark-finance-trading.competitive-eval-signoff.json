@@ -6,10 +6,10 @@
     "status": "PENDING",
     "exact_command_to_approve": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/competitive-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.competitive-eval-signoff.json"
   },
-  "created_at": "2026-06-28T01:58:15.286373+00:00",
+  "created_at": "2026-06-28T02:09:21.018960+00:00",
   "skill_path": ".",
   "eval_set": "benchmarks/competitive-task-cases.json",
-  "case_count": 11,
+  "case_count": 12,
   "case_hashes": [
     {
       "id": "multi_asset_market_snapshot",
@@ -75,6 +75,12 @@
       "id": "finance_infra_not_trading",
       "category": "payments_banking_boundary",
       "prompt_sha256": "f28e313b64d60e212d43543f93b6de392f2c2cad4b2550e12fa39e1f1f813bc2",
+      "required_check_count": 11
+    },
+    {
+      "id": "local_skill_consolidation_router",
+      "category": "local_finance_skill_merge",
+      "prompt_sha256": "519201fc222d41bc0f636de65293ce1cd6863c8cff8437979c6e4621b9de5782",
       "required_check_count": 11
     }
   ],

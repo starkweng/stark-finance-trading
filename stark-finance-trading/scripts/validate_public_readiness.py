@@ -15,6 +15,7 @@ REQUIRED_BENCHMARK_FILES = [
     "benchmarks/PUBLIC_COMPARISON_2026-06-28.md",
     "benchmarks/public-benchmark-cases.json",
     "benchmarks/competitive-task-cases.json",
+    "references/local-skill-router.md",
     "evals/adversarial-evals.json",
     "evals/live-behavior-evals.json",
     "scripts/codex_eval.py",

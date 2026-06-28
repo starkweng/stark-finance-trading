@@ -4,7 +4,7 @@
 - Score: 100/90 minimum
 - Source mode: `dry_run`
 - Behavior proof: `UNPROVEN_DRY_RUN_ONLY`
-- Cases: 11
+- Cases: 12
 
 ## Checks
 
@@ -35,6 +35,7 @@
 | `solana_meme_launch_route` | `solana_meme_liquidity` | 100.0 | 13 |
 | `protocol_fundamentals_router` | `crypto_protocol_fundamentals` | 100.0 | 13 |
 | `finance_infra_not_trading` | `payments_banking_boundary` | 100.0 | 11 |
+| `local_skill_consolidation_router` | `local_finance_skill_merge` | 100.0 | 11 |
 
 ## Evidence Boundary
 

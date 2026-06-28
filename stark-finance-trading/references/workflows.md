@@ -209,3 +209,23 @@ Steps:
 5. Record the network, endpoint id, rule type, and rollback path.
 
 Infrastructure health can affect data quality and bot reliability, but it is not a market signal by itself.
+
+## 14. Local Skill Delegation
+
+Use when a request is finance/trading/investment work but the best implementation detail is an installed local specialist skill.
+
+Steps:
+
+1. Keep `stark-finance-trading` as the user-facing route.
+2. Read `references/local-skill-router.md` to choose the helper family.
+3. Load only the helper that matches the task, such as `earnings-preview`, `equity-research`, `dcf-model`, `comps-analysis`, `bond-futures-basis`, `option-vol-analysis`, `portfolio-rebalance`, `gmgn-token`, or `binance`.
+4. Preserve the evidence and safety contract from this skill: source timestamps, assumptions, risk tier, and execution boundary.
+5. If the helper produces valuation, research, a rebalance draft, or a signal, do not convert it into a live trade without fresh market data, position/risk sizing, and explicit confirmation.
+6. If the primary intent is not finance/trading evidence, hand off to the better Stark skill instead of forcing this route.
+
+Required output:
+
+- chosen helper route;
+- source/evidence plan;
+- whether the output is research, model, draft, paper/demo, or live;
+- safety boundary and next verification step.

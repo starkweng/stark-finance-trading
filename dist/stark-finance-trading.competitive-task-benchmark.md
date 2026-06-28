@@ -2,10 +2,10 @@
 
 - Status: PASS
 - Score: 100.0/100
-- Cases: 11
+- Cases: 12
 - Average router score: 100.0
-- Average single-surface ceiling: 68.73
-- Average router edge: 31.27
+- Average single-surface ceiling: 68.33
+- Average router edge: 31.67
 
 ## Task Scorecard
 
@@ -22,6 +22,7 @@
 | `solana_meme_launch_route` | 100.0 | 70 | 30.0 | PASS |
 | `protocol_fundamentals_router` | 100.0 | 76 | 24.0 | PASS |
 | `finance_infra_not_trading` | 100.0 | 55 | 45.0 | PASS |
+| `local_skill_consolidation_router` | 100.0 | 64 | 36.0 | PASS |
 
 ## Evidence Boundary
 

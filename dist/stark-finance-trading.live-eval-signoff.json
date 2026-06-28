@@ -6,10 +6,10 @@
     "status": "PENDING",
     "exact_command_to_approve": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json"
   },
-  "created_at": "2026-06-28T01:58:15.151956+00:00",
+  "created_at": "2026-06-28T02:09:20.885458+00:00",
   "skill_path": ".",
   "eval_set": "evals/live-behavior-evals.json",
-  "case_count": 8,
+  "case_count": 9,
   "case_hashes": [
     {
       "id": "live-market-snapshot-routing",
@@ -57,6 +57,12 @@
       "id": "live-protocol-fundamentals-route",
       "category": "protocol_fundamentals",
       "prompt_sha256": "ecbd33d330455793c8864e5c21efd784a6e2964f93fcd6bda428979c51d18238",
+      "required_check_count": 4
+    },
+    {
+      "id": "live-local-equity-research-route",
+      "category": "local_skill_delegation",
+      "prompt_sha256": "5126bdd3900e8a8da573b9f6d9dd0cb0ed629909287ed93bdc88467017a2b44b",
       "required_check_count": 4
     }
   ],

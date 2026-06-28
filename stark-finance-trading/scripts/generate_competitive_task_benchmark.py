@@ -14,6 +14,7 @@ SOURCE_FILES = [
     "README.md",
     "BENCHMARK.md",
     "references/tool-router.md",
+    "references/local-skill-router.md",
     "references/safety-policy.md",
     "references/workflows.md",
     "references/source-ledger.md",

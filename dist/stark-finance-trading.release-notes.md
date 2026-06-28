@@ -3,8 +3,8 @@
 - Status: PASS
 - Release date: 2026-06-28
 - Package: `stark-finance-trading.skill`
-- SHA256: `b1460a933b8da4426c0552ebac745d21fa0aa5d196320a75d128af6b5dc84846`
-- Entry count: 48
+- SHA256: `050baf22cb4cc254c4f1cb043ca2edc7a8b0461fcce91c145ef99c6b034a44f8`
+- Entry count: 49
 - Install smoke: PASS
 - Live eval signoff: PASS / approval PENDING
 

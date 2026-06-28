@@ -128,6 +128,18 @@
         "does not provide full-position trading advice from cashflow alone"
       ],
       "expected_output": "Finance-infrastructure route with privacy and no-trading-signal boundary."
+    },
+    {
+      "id": "local-skill-consolidation-route",
+      "category": "contextual",
+      "prompt": "帮我做 NVDA earnings preview，结合 equity research、DCF、催化和仓位风险，但不要直接下单。",
+      "required_checks": [
+        "loads local-skill-router",
+        "keeps stark-finance-trading as the user-facing route",
+        "routes earnings/equity/valuation helpers as implementation details",
+        "does not turn valuation into a live order or full-position recommendation"
+      ],
+      "expected_output": "Local specialist skill route with research/model boundary and no execution."
     }
   ]
 }

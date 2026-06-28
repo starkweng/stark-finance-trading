@@ -37,7 +37,8 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
     benchmark = read_text(root / "BENCHMARK.md")
     workflow_ci = read_text(root / ".github/workflows/ci.yml")
     routing_cases = (read_json(root / "evals/routing-evals.json").get("cases") or [])
-    codex_cases = (read_json(root / "evals/codex-evals.json").get("evals") or [])
+    codex_eval_file = read_json(root / "evals/codex-evals.json")
+    codex_cases = (codex_eval_file.get("cases") or codex_eval_file.get("evals") or [])
     adversarial_cases = (read_json(root / "evals/adversarial-evals.json").get("cases") or [])
     live_cases = (read_json(root / "evals/live-behavior-evals.json").get("cases") or [])
     comparison = read_json(root / "benchmarks/public-comparison-2026-06-28.json")
@@ -74,7 +75,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
         checks = [
             (
                 "workflow_sections",
-                has_all(workflows, ["Market Snapshot", "Token Due Diligence", "Smart-Money", "Options", "Strategy Backtest", "Execution Prep", "MM"]),
+                has_all(workflows, ["Market Snapshot", "Token Due Diligence", "Smart-Money", "Options", "Strategy Backtest", "Execution Prep", "MM", "Local Skill Delegation"]),
             ),
             (
                 "live_behavior_categories",

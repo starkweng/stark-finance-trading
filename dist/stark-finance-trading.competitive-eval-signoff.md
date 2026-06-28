@@ -4,7 +4,7 @@
 - Approval: PENDING
 - Skill: `.`
 - Eval set: `benchmarks/competitive-task-cases.json`
-- Cases: 11
+- Cases: 12
 - Sandbox: `read-only`
 
 ## Exact Command
@@ -43,6 +43,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-se
 | `solana_meme_launch_route` | `a2f210de1ebf84e21382c270be69ef1f5f2764cead50fcc6321a72a6130d8cb0` |
 | `protocol_fundamentals_router` | `c57a1c663cf51f16dd070bd59639b037cb1f03af5bf0c64d1c818e04cff06c66` |
 | `finance_infra_not_trading` | `f28e313b64d60e212d43543f93b6de392f2c2cad4b2550e12fa39e1f1f813bc2` |
+| `local_skill_consolidation_router` | `519201fc222d41bc0f636de65293ce1cd6863c8cff8437979c6e4621b9de5782` |
 
 ## Evidence Boundary
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "created_at": "2026-06-28T01:59:10.637917+00:00",
+  "created_at": "2026-06-28T02:09:21.210435+00:00",
   "zip": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading-github-repo.zip",
   "status": "PASS",
   "checks": {
@@ -26,7 +26,7 @@
       "cwd": "stark-finance-trading",
       "returncode": 0,
       "status": "PASS",
-      "stdout_tail": "{\n  \"ok\": true,\n  \"skill\": \"stark-finance-trading\",\n  \"required_files\": 31,\n  \"routing_cases\": 10,\n  \"adversarial_cases\": 11,\n  \"live_behavior_cases\": 8,\n  \"public_comparison_candidates\": 34,\n  \"public_benchmark_dimensions\": 7,\n  \"competitive_task_cases\": 11,\n  \"router_terms\": 31\n}\n",
+      "stdout_tail": "{\n  \"ok\": true,\n  \"skill\": \"stark-finance-trading\",\n  \"required_files\": 32,\n  \"routing_cases\": 11,\n  \"adversarial_cases\": 12,\n  \"live_behavior_cases\": 9,\n  \"public_comparison_candidates\": 34,\n  \"public_benchmark_dimensions\": 7,\n  \"competitive_task_cases\": 12,\n  \"router_terms\": 31,\n  \"local_skill_terms\": 14\n}\n",
       "stderr_tail": ""
     },
     {
@@ -35,7 +35,7 @@
       "cwd": "stark-finance-trading",
       "returncode": 0,
       "status": "PASS",
-      "stdout_tail": "{\n  \"ok\": true,\n  \"skill\": \"stark-finance-trading\",\n  \"candidates\": 34,\n  \"official_or_primary_sources\": 34,\n  \"adversarial_cases\": 11,\n  \"live_behavior_cases\": 8,\n  \"public_benchmark_dimensions\": 7,\n  \"competitive_task_cases\": 11,\n  \"adversarial_categories\": [\n    \"data_semantics\",\n    \"finance_infra_boundary\",\n    \"legal_boundary\",\n    \"live_execution\",\n    \"negative_routing\",\n    \"overclaim\",\n    \"prompt_injection\",\n    \"secret_request\",\n    \"stale_data\",\n    \"token_identity\",\n    \"untrusted_tool_output\"\n  ],\n  \"live_behavior_categories\": [\n    \"data_semantics\",\n    \"execution_safety\",\n    \"onchain_token_dd\",\n    \"protocol_fundamentals\",\n    \"public_claims\",\n    \"routing_source_discipline\",\n    \"solana_launch_liquidity\",\n    \"strategy_validation\"\n  ],\n  \"evidence_boundary\": \"Source-level public comparison. URLs and product capabilities should be live-verified before installation, trading, or public superiority claims.\"\n}\n",
+      "stdout_tail": "{\n  \"ok\": true,\n  \"skill\": \"stark-finance-trading\",\n  \"candidates\": 34,\n  \"official_or_primary_sources\": 34,\n  \"adversarial_cases\": 12,\n  \"live_behavior_cases\": 9,\n  \"public_benchmark_dimensions\": 7,\n  \"competitive_task_cases\": 12,\n  \"adversarial_categories\": [\n    \"data_semantics\",\n    \"finance_infra_boundary\",\n    \"legal_boundary\",\n    \"live_execution\",\n    \"local_skill_boundary\",\n    \"negative_routing\",\n    \"overclaim\",\n    \"prompt_injection\",\n    \"secret_request\",\n    \"stale_data\",\n    \"token_identity\",\n    \"untrusted_tool_output\"\n  ],\n  \"live_behavior_categories\": [\n    \"data_semantics\",\n    \"execution_safety\",\n    \"local_skill_delegation\",\n    \"onchain_token_dd\",\n    \"protocol_fundamentals\",\n    \"public_claims\",\n    \"routing_source_discipline\",\n    \"solana_launch_liquidity\",\n    \"strategy_validation\"\n  ],\n  \"evidence_boundary\": \"Source-level public comparison. URLs and product capabilities should be live-verified before installation, trading, or public superiority claims.\"\n}\n",
       "stderr_tail": ""
     },
     {
@@ -53,12 +53,12 @@
       "cwd": ".",
       "returncode": 0,
       "status": "PASS",
-      "stdout_tail": "{\n  \"package\": \"/private<export-root>/dist/stark-finance-trading.skill\",\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"zip_integrity\": true,\n    \"safe_paths\": true,\n    \"archive_clean\": true,\n    \"single_skill_root\": true,\n    \"skill_md\": true,\n    \"quick_validate\": true,\n    \"security_scan\": true\n  },\n  \"entry_count\": 48\n}\n",
+      "stdout_tail": "{\n  \"package\": \"/private<export-root>/dist/stark-finance-trading.skill\",\n  \"status\": \"PASS\",\n  \"checks\": {\n    \"zip_integrity\": true,\n    \"safe_paths\": true,\n    \"archive_clean\": true,\n    \"single_skill_root\": true,\n    \"skill_md\": true,\n    \"quick_validate\": true,\n    \"security_scan\": true\n  },\n  \"entry_count\": 49\n}\n",
       "stderr_tail": ""
     }
   ],
   "missing_required_files": [],
   "transient_files": [],
-  "entry_count": 87,
+  "entry_count": 88,
   "evidence_boundary": "Local smoke test of the exported GitHub repository ZIP only. It proves the archive can be extracted and core gates can run from the standalone layout. It does not prove remote GitHub Actions completion, uploaded artifact availability, live market-data correctness, live trading performance, or live model behavior."
 }

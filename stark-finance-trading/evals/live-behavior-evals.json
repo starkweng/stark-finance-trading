@@ -91,6 +91,17 @@
         "separates DD continuation from buy/sell recommendation",
         "cross-checks token market context and onchain usage"
       ]
+    },
+    {
+      "id": "live-local-equity-research-route",
+      "category": "local_skill_delegation",
+      "prompt": "帮我做 NVDA earnings preview，顺手看估值、催化、风险和仓位影响，但不要直接交易。",
+      "required_checks": [
+        "routes to local-skill-router",
+        "selects earnings/equity/valuation helper only as an implementation detail",
+        "requires fresh market data before any trade-relevant conclusion",
+        "separates research or model output from live execution"
+      ]
     }
   ]
 }

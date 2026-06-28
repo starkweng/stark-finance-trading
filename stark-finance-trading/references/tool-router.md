@@ -14,6 +14,7 @@ This router keeps one user-facing skill while preserving tool-specific safety an
 | Binance Web3 skills | Installed | `query-token-info`, `query-token-audit`, `query-address-info`, `crypto-market-rank`, `trading-signal`, `meme-rush` | Read-only except wallet/swap surfaces. Treat upstream scores as signals, not truth. |
 | GMGN skills | Installed | Meme/token market, portfolio, smart money, tracking, swap | Swap is high risk. Keep read-only unless explicitly confirmed. |
 | BNB Agent Studio | Installed | BNB agent identity/job/tx/block/contract view, ERC-8004/8183/x402 workflows | Default testnet and read-only. Paid or signing actions require confirmation. |
+| Local finance/trading skill inventory | Installed across `.agents` and `.codex` skill roots | Earnings, equity research, valuation, bonds/rates/FX, portfolio, PE/deal, finance ops, GMGN/Binance/Web3 helper workflows | Route through `references/local-skill-router.md`; keep `stark-finance-trading` as the user-facing front door. |
 | Alpaca connector | Lazy-loadable via Codex app tools | US equities, options, crypto market data, snapshots, bars, order books | Treat current tool surface as market-data first unless authenticated trading tools are explicitly available. |
 | QuickNode connector | Lazy-loadable via Codex app tools | Web3 endpoint inventory, endpoint creation, chain support, endpoint security rules | Infrastructure/admin route only. Do not expose endpoint secrets; avoid changing endpoint security without explicit confirmation. |
 
@@ -84,7 +85,7 @@ Use `crypto-market-rank`, `trading-signal`, `meme-rush`, GMGN, DexScreener, and 
 
 ### Equity / Fundamental Research
 
-Use OpenBB/FMP/Alpha Vantage/Massive/Twelve Data/Databento/FactSet where installed or available. For DeFi protocol or crypto sector claims, add Token Terminal, DeFiLlama, Dune, CoinGecko, and CoinMarketCap where useful. DeFiLlama TVL, yields, and fees have methodology gaps and are not a direct safety or trade signal. Token Terminal financial metrics are stronger for protocol fundamentals, but still need methodology and timestamp caveats. For current public-company or macro claims, verify against official filings, exchange pages, or primary news when high stakes.
+Use OpenBB/FMP/Alpha Vantage/Massive/Twelve Data/Databento/FactSet where installed or available. Use `references/local-skill-router.md` for local helpers such as `equity-research`, `earnings-preview`, `earnings-analysis`, `dcf-model`, `comps-analysis`, `model-update`, and `catalyst-calendar`. For DeFi protocol or crypto sector claims, add Token Terminal, DeFiLlama, Dune, CoinGecko, and CoinMarketCap where useful. DeFiLlama TVL, yields, and fees have methodology gaps and are not a direct safety or trade signal. Token Terminal financial metrics are stronger for protocol fundamentals, but still need methodology and timestamp caveats. For current public-company or macro claims, verify against official filings, exchange pages, or primary news when high stakes.
 
 For institutional or investor-grade TradFi work, consider FactSet before lower-grade sources if entitlement exists. Preserve source timestamps, metric definitions, and redistribution limits.
 
@@ -99,6 +100,8 @@ Use Unusual Whales for flow/dark-pool/congressional data, then Alpaca/Tradier fo
 ### Backtest / Strategy Research
 
 Use QuantConnect/LEAN, NautilusTrader, Freqtrade, Hummingbot, CCXT-backed local adapters, or local backtest scripts depending on venue and rigor. Include dataset, period, universe, fees/slippage, position sizing, drawdown, out-of-sample plan, and live adapter boundary. Reject overfit claims.
+
+For local specialist skills, consult `references/local-skill-router.md`: `option-vol-analysis`, `bond-futures-basis`, `bond-relative-value`, `fx-carry-trade`, `swap-curve-strategy`, `fixed-income-portfolio`, and `portfolio-rebalance` are helper routes, not separate user-facing entry points.
 
 ### Execution
 
@@ -123,3 +126,5 @@ Use official IBKR/TWS API docs as the primary source. Community MCP wrappers are
 ## Merge Logic
 
 Do not create separate user-facing skills for every vendor by default. Keep vendor wrappers only when a tool needs special auth or command syntax. The primary user-facing route is `stark-finance-trading`; vendor-specific skills remain implementation details.
+
+Local finance skills follow the same merge logic. Keep earnings, valuation, portfolio, bond/rates/FX, PE/deal, finance-ops, GMGN, and Binance helpers behind `stark-finance-trading` unless the user's primary intent clearly belongs to another Stark skill such as `stark-tokenomics-planner`, `stark-market-ops`, `stark-mkt-ops`, `stark-liquidity-strategy`, or `stark-capital-strategy`.

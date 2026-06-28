@@ -12,6 +12,7 @@ It is designed for Stark's workflow: one natural entry point that quietly routes
 - Options and flow candidates: Unusual Whales, Alpaca options, Tradier, IBKR/TWS candidates.
 - Quant/backtest frameworks: QuantConnect, LEAN, NautilusTrader, Hummingbot, Freqtrade, CCXT-backed local adapters.
 - Execution-capable candidates: Binance, Coinbase CDP/AgentKit wallet actions, Alpaca, Tradier, Robinhood Agentic Trading, cTrader, IBKR/TWS, Hummingbot, Freqtrade, CCXT, NautilusTrader, QuantConnect live.
+- Local finance/trading skills: earnings, equity research, DCF/comps/model update, bond/rates/FX/derivatives, portfolio monitoring/rebalance, PE/deal diligence, finance ops, GMGN/Binance/Web3 helpers. These stay implementation details behind one front door.
 - Adjacent finance infrastructure: Stripe and Plaid for payments, billing, account connectivity, cashflow, and treasury context. These are not trading-signal routes.
 
 ## Why One Skill
@@ -25,6 +26,8 @@ signal question -> signal + liquidity + audit
 strategy question -> backtest + risk
 execution question -> safety policy first
 ```
+
+Local skills follow the same rule: `stark-finance-trading` remains the user-facing route, while specialist helpers such as `earnings-preview`, `equity-research`, `dcf-model`, `bond-futures-basis`, `portfolio-rebalance`, `gmgn-token`, or `binance` are loaded only as implementation details when the task needs them.
 
 ## Safety Model
 

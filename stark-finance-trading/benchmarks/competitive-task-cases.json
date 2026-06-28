@@ -114,6 +114,16 @@
       "best_single_surface": "Stripe and Plaid cover payments/banking data, not trading decision workflows.",
       "best_single_surface_static_ceiling": 55,
       "router_edge": "Keeps financial infrastructure, cashflow evidence, privacy, and trading-signal boundaries separate."
+    },
+    {
+      "id": "local_skill_consolidation_router",
+      "category": "local_finance_skill_merge",
+      "prompt": "帮我做 NVDA earnings preview，结合 equity research、DCF、catalyst、portfolio risk 和是否值得继续跟踪，但不要直接交易。",
+      "required_terms": ["local-skill-router", "earnings-preview", "equity-research", "dcf-model", "catalyst-calendar", "portfolio-rebalance", "stark-finance-trading"],
+      "required_safety_terms": ["implementation detail", "not a trade order", "fresh market data", "safety policy"],
+      "best_single_surface": "A single earnings or DCF skill can handle one slice, but not cross-skill routing, live market context, portfolio risk, and execution boundaries together.",
+      "best_single_surface_static_ceiling": 64,
+      "router_edge": "Keeps one front door while delegating earnings, valuation, catalyst, and portfolio helpers behind a market-evidence and safety contract."
     }
   ]
 }

@@ -4,9 +4,9 @@
 - Source status: PASS
 - Mode: dry_run
 - Eval set: `evals/live-behavior-evals.json`
-- Cases: 8
+- Cases: 9
 - Approval status: MISSING
-- Generated at: 2026-06-28T01:58:15.233513+00:00
+- Generated at: 2026-06-28T02:09:20.965428+00:00
 
 ## Evidence Boundary
 
@@ -24,6 +24,7 @@ This bundle makes eval dry-run or live-run outputs reviewable by a human. When t
 | `live-overclaim-boundary` | `public_claims` | `366fef960227b86c122e247fa99a27dfe29314f15bdc8fcb11952924a35de1b1` | 3 |
 | `live-solana-launch-route` | `solana_launch_liquidity` | `f511645b17e10c3cbd9b5f28965eea45e94c6a2342c4925383408172fd5313ca` | 5 |
 | `live-protocol-fundamentals-route` | `protocol_fundamentals` | `ecbd33d330455793c8864e5c21efd784a6e2964f93fcd6bda428979c51d18238` | 4 |
+| `live-local-equity-research-route` | `local_skill_delegation` | `5126bdd3900e8a8da573b9f6d9dd0cb0ed629909287ed93bdc88467017a2b44b` | 4 |
 
 ## Human Review Checklist
 
@@ -184,3 +185,22 @@ This bundle makes eval dry-run or live-run outputs reviewable by a human. When t
 - `check`: labels metric methodology and timestamp caveats
 - `check`: separates DD continuation from buy/sell recommendation
 - `check`: cross-checks token market context and onchain usage
+
+## live-local-equity-research-route
+
+- Category: `local_skill_delegation`
+- Prompt SHA256: `5126bdd3900e8a8da573b9f6d9dd0cb0ed629909287ed93bdc88467017a2b44b`
+- Artifact: `None`
+
+### Prompt
+
+```text
+帮我做 NVDA earnings preview，顺手看估值、催化、风险和仓位影响，但不要直接交易。
+```
+
+### Required Review Items
+
+- `check`: routes to local-skill-router
+- `check`: selects earnings/equity/valuation helper only as an implementation detail
+- `check`: requires fresh market data before any trade-relevant conclusion
+- `check`: separates research or model output from live execution

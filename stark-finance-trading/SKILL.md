@@ -52,6 +52,7 @@ Load only what the task needs:
 | Need | Read |
 |---|---|
 | Tool selection and installed status | `references/tool-router.md` |
+| Local finance/trading skills and merge/delegate boundaries | `references/local-skill-router.md` |
 | Execution, wallets, broker accounts, live orders, bots | `references/safety-policy.md` |
 | Market snapshot, token DD, options flow, backtest, MM workflows | `references/workflows.md` |
 | Loop Blueprint and repair/learn cycle | `references/loop-engineering-pattern-2026-06-28.md` |
@@ -59,7 +60,7 @@ Load only what the task needs:
 | Official public tool sources and drift policy | `references/source-ledger.md` |
 | Known failure modes and routing traps | `references/gotchas.md` |
 
-For serious or ambiguous work, start with `references/tool-router.md` and `references/safety-policy.md`.
+For serious or ambiguous work, start with `references/tool-router.md`, `references/local-skill-router.md`, and `references/safety-policy.md`.
 
 ## Quality Gates
 

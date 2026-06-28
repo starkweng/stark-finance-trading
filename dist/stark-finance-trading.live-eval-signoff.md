@@ -4,7 +4,7 @@
 - Approval: PENDING
 - Skill: `.`
 - Eval set: `evals/live-behavior-evals.json`
-- Cases: 8
+- Cases: 9
 - Sandbox: `read-only`
 
 ## Exact Command
@@ -40,6 +40,7 @@ PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-se
 | `live-overclaim-boundary` | `366fef960227b86c122e247fa99a27dfe29314f15bdc8fcb11952924a35de1b1` |
 | `live-solana-launch-route` | `f511645b17e10c3cbd9b5f28965eea45e94c6a2342c4925383408172fd5313ca` |
 | `live-protocol-fundamentals-route` | `ecbd33d330455793c8864e5c21efd784a6e2964f93fcd6bda428979c51d18238` |
+| `live-local-equity-research-route` | `5126bdd3900e8a8da573b9f6d9dd0cb0ed629909287ed93bdc88467017a2b44b` |
 
 ## Evidence Boundary
 

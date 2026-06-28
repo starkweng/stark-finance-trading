@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T01:58:15.260305+00:00",
+  "generated_at": "2026-06-28T02:09:20.992484+00:00",
   "title": "stark-finance-trading Live Behavior Eval Review",
   "source_mode": "dry_run",
   "approval_status": "MISSING",
-  "case_count": 8,
+  "case_count": 9,
   "score": 100,
   "min_score": 90,
   "behavior_proof_status": "UNPROVEN_DRY_RUN_ONLY",
@@ -146,6 +146,18 @@
     {
       "id": "live-protocol-fundamentals-route",
       "category": "protocol_fundamentals",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 4
+    },
+    {
+      "id": "live-local-equity-research-route",
+      "category": "local_skill_delegation",
       "score": 100.0,
       "checks": {
         "prompt_present": true,

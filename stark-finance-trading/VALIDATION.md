@@ -10,14 +10,15 @@ PASS
 {
   "ok": true,
   "skill": "stark-finance-trading",
-  "required_files": 31,
-  "routing_cases": 10,
-  "adversarial_cases": 11,
-  "live_behavior_cases": 8,
+  "required_files": 32,
+  "routing_cases": 11,
+  "adversarial_cases": 12,
+  "live_behavior_cases": 9,
   "public_comparison_candidates": 34,
   "public_benchmark_dimensions": 7,
-  "competitive_task_cases": 11,
-  "router_terms": 31
+  "competitive_task_cases": 12,
+  "router_terms": 31,
+  "local_skill_terms": 14
 }
 ```
 
@@ -26,10 +27,10 @@ python3 scripts/validate_public_readiness.py .
 PASS
 candidates: 34
 official_or_primary_sources: 34
-adversarial_cases: 11
-live_behavior_cases: 8
+adversarial_cases: 12
+live_behavior_cases: 9
 public_benchmark_dimensions: 7
-competitive_task_cases: 11
+competitive_task_cases: 12
 ```
 
 ```text
@@ -61,8 +62,8 @@ dimensions: 7
 python3 scripts/generate_competitive_task_benchmark.py --root . --json
 PASS
 score: 100/100
-cases: 11
-average_router_static_edge: 31.27
+cases: 12
+average_router_static_edge: 31.67
 ```
 
 ```text
@@ -120,7 +121,7 @@ eval_regression: PASS
 ```text
 python3 /path/to/stark-skiller/scripts/security_scan_skill.py .
 PASS
-files_scanned: 48
+files_scanned: 49
 critical: 0
 high: 0
 medium: 0
@@ -141,29 +142,29 @@ hashes_match: true
 fixed_zip_metadata: true
 entry_counts_match: true
 install_smoke: true
-entry_count: 48
+entry_count: 49
 ```
 
 ```text
 python3 scripts/package_skill.py . ../dist
 python3 scripts/install_package_smoke.py ../dist/stark-finance-trading.skill --json
 PASS
-entry_count: 48
+entry_count: 49
 ```
 
 ```text
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
-skill_files_copied: 49
+skill_files_copied: 50
 release_artifacts_copied: 30
 release_package_install_smoke: true
-zip_entry_count: 87
+zip_entry_count: 88
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 87
+zip_entry_count: 88
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -181,8 +182,8 @@ local_release_status: LOCAL_RELEASE_READY
 goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
-package_entry_count: 48
-github_export_zip_entry_count: 87
+package_entry_count: 49
+github_export_zip_entry_count: 88
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
@@ -206,7 +207,7 @@ required_action: gh auth refresh -h github.com -s workflow
 ```text
 python3 scripts/generate_eval_review_bundle.py ../dist/live-eval-dry-run --eval-set evals/live-behavior-evals.json --out-dir ../dist/stark-finance-trading.live-eval-review --json
 PASS
-cases: 8
+cases: 9
 review_md: ../dist/stark-finance-trading.live-eval-review/review.md
 review_html: ../dist/stark-finance-trading.live-eval-review/review.html
 ```
@@ -216,13 +217,13 @@ python3 scripts/score_eval_review_bundle.py ../dist/stark-finance-trading.live-e
 PASS
 score: 100/100
 behavior_proof_status: UNPROVEN_DRY_RUN_ONLY
-cases: 8
+cases: 9
 ```
 
 ```text
 python3 scripts/generate_eval_review_bundle.py ../dist/competitive-eval-dry-run --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/stark-finance-trading.competitive-eval-review --json
 PASS
-cases: 11
+cases: 12
 review_md: ../dist/stark-finance-trading.competitive-eval-review/review.md
 review_html: ../dist/stark-finance-trading.competitive-eval-review/review.html
 ```
@@ -232,7 +233,7 @@ python3 scripts/score_eval_review_bundle.py ../dist/stark-finance-trading.compet
 PASS
 score: 100/100
 behavior_proof_status: UNPROVEN_DRY_RUN_ONLY
-cases: 11
+cases: 12
 ```
 
 ```text

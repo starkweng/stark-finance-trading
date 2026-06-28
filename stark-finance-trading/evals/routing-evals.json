@@ -65,6 +65,13 @@
       "risk_tier": 3
     },
     {
+      "id": "local-equity-earnings-route",
+      "prompt": "帮我做 NVDA earnings preview，结合估值、催化、风险和仓位影响，但不要直接下单。",
+      "should_load": true,
+      "expected_route": ["local-skill-router.md", "tool-router.md", "workflows.md", "safety-policy.md"],
+      "risk_tier": 1
+    },
+    {
       "id": "finance-infra-boundary",
       "prompt": "这个产品接 Stripe 和 Plaid，帮我看支付/银行流水风险，但不要把它当成交易信号。",
       "should_load": true,

@@ -15,6 +15,7 @@ REQUIRED_FILES = [
     "VERSION",
     "CHANGELOG.md",
     "references/tool-router.md",
+    "references/local-skill-router.md",
     "references/safety-policy.md",
     "references/workflows.md",
     "references/source-ledger.md",
@@ -77,6 +78,23 @@ REQUIRED_TOOL_TERMS = [
     "CCXT",
 ]
 
+REQUIRED_LOCAL_SKILL_TERMS = [
+    "earnings-preview",
+    "equity-research",
+    "dcf-model",
+    "comps-analysis",
+    "bond-futures-basis",
+    "option-vol-analysis",
+    "portfolio-rebalance",
+    "gmgn-token",
+    "gmgn-swap",
+    "binance",
+    "derivatives-trading-coin-futures",
+    "stark-liquidity-strategy",
+    "stark-tokenomics-planner",
+    "stark-market-ops",
+]
+
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
     re.compile(r"sk_[A-Za-z0-9_-]{20,}"),
@@ -118,6 +136,15 @@ def validate(root: Path) -> int:
         return fail(f"tool-router missing terms: {', '.join(missing_terms)}")
     if "Do not create separate user-facing skills for every vendor" not in router:
         return fail("tool-router must preserve one-skill merge logic")
+    if "references/local-skill-router.md" not in router:
+        return fail("tool-router must route local finance skills through local-skill-router.md")
+
+    local_router = read(root / "references/local-skill-router.md")
+    missing_local_terms = [term for term in REQUIRED_LOCAL_SKILL_TERMS if term not in local_router]
+    if missing_local_terms:
+        return fail(f"local-skill-router missing terms: {', '.join(missing_local_terms)}")
+    if "User-facing entry: stark-finance-trading" not in local_router:
+        return fail("local-skill-router must keep stark-finance-trading as the user-facing entry")
 
     safety = read(root / "references/safety-policy.md")
     for phrase in ["Risk Tiers", "Tier 4", "Live Confirmation Checklist", "Never execute"]:
@@ -125,7 +152,7 @@ def validate(root: Path) -> int:
             return fail(f"safety-policy missing phrase: {phrase}")
 
     workflows = read(root / "references/workflows.md")
-    for phrase in ["Market Snapshot", "Token Due Diligence", "Strategy Backtest", "Execution Prep"]:
+    for phrase in ["Market Snapshot", "Token Due Diligence", "Strategy Backtest", "Execution Prep", "Local Skill Delegation"]:
         if phrase not in workflows:
             return fail(f"workflows missing phrase: {phrase}")
 
@@ -188,6 +215,7 @@ def validate(root: Path) -> int:
         "public_benchmark_dimensions": len(dimensions),
         "competitive_task_cases": len(competitive_cases),
         "router_terms": len(REQUIRED_TOOL_TERMS),
+        "local_skill_terms": len(REQUIRED_LOCAL_SKILL_TERMS),
     }, ensure_ascii=False, indent=2))
     return 0
 
