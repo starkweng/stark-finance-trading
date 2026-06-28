@@ -38,6 +38,7 @@ This skill should compete on workflow quality, not instruction volume.
 - GitHub Actions workflow validator: `scripts/validate_github_actions_workflow.py` checks CI triggers, validation/build steps, and uploaded release evidence artifacts.
 - GitHub export smoke: `scripts/smoke_github_export.py` extracts the standalone repository ZIP and reruns core gates from the exported layout.
 - Remote CI proof helper: `scripts/enable_remote_ci.py` audits the public repository, publishes `.github/workflows/ci.yml` through the GitHub Contents API when the GitHub CLI token has `workflow` scope, dispatches the workflow, and records the latest remote run status.
+- External proof auditor: `scripts/audit_external_proofs.py` classifies public repo, remote CI, approved live model eval, and reviewed comparative eval proof status without treating dry-runs or fixture smokes as live proof.
 - Release readiness validator: `scripts/validate_release_readiness.py` checks local release artifacts, package hashes, export ZIP cleanliness, public-claim boundaries, and external proof status.
 - Package smoke: available through `scripts/install_package_smoke.py`.
 - CI smoke: available through `.github/workflows/ci.yml`.
@@ -113,13 +114,17 @@ The review bundle is the handoff layer between automated checks and human judgme
 
 `scripts/enable_remote_ci.py` is the post-publication helper for the exported repository. It first audits whether Actions are enabled, whether `.github/workflows/ci.yml` exists remotely, and whether prior runs exist. With GitHub CLI auth that includes `workflow` scope, it publishes `workflow-templates/stark-finance-trading-ci.yml` to `.github/workflows/ci.yml` through the GitHub Contents API, dispatches the workflow, waits when requested, and records the latest remote GitHub Actions run. A PASS here proves the remote CI workflow completed successfully. PENDING or FAIL keeps the full public-release goal incomplete.
 
+## External Proof Audit Gate
+
+`scripts/audit_external_proofs.py` reads the remote CI proof packet, live eval scorecard, comparative eval scorecard, and both harness-smoke reports, then writes `stark-finance-trading.external-proof-audit.*`. A PASS means the audit ran and labeled every external proof. Goal completion still requires public repo URL, remote CI success or reviewed run URL, approved live model eval, and reviewed comparative live eval to be `PROVEN` or `PROVIDED`. Dry-run scorecards and fixture harness smokes stay useful supporting evidence, not live proof.
+
 ## GitHub Export Smoke Gate
 
 `scripts/smoke_github_export.py` extracts `stark-finance-trading-github-repo.zip`, checks the standalone repository layout, reruns core validators from the exported skill directory, validates the exported workflow from the repository root, and smoke-tests the exported `.skill` package. A PASS means the handoff ZIP is locally executable as a repository bundle. It does not prove remote GitHub Actions completion, uploaded artifact availability, live market-data correctness, trading performance, or live model behavior.
 
 ## Release Readiness Gate
 
-`scripts/validate_release_readiness.py` runs after packaging, release sidecars, review scorecards, GitHub export, and export smoke. It reports `LOCAL_RELEASE_READY` only when local source files, release artifacts, package hashes, clean ZIP checks, status artifacts, and public-claim boundaries are internally consistent. It keeps public repo URL, remote GitHub Actions run, approved live model eval, and reviewed comparative live eval as explicit external proofs. A PASS here does not mean the full "best finance/trading skill on GitHub" goal is complete.
+`scripts/validate_release_readiness.py` runs after packaging, release sidecars, review scorecards, external proof audit, GitHub export, and export smoke. It reports `LOCAL_RELEASE_READY` only when local source files, release artifacts, package hashes, clean ZIP checks, status artifacts, and public-claim boundaries are internally consistent. It keeps public repo URL, remote GitHub Actions run, approved live model eval, and reviewed comparative live eval as explicit external proofs. A PASS here does not mean the full "best finance/trading skill on GitHub" goal is complete.
 
 ## Scoring Rubric
 

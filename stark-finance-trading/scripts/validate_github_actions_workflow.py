@@ -62,6 +62,8 @@ REQUIRED_ARTIFACTS = [
     "stark-finance-trading/dist/stark-finance-trading.competitive-eval-review/**",
     "stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.json",
     "stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md",
+    "stark-finance-trading/dist/stark-finance-trading.external-proof-audit.json",
+    "stark-finance-trading/dist/stark-finance-trading.external-proof-audit.md",
     "stark-finance-trading/dist/stark-finance-trading.github-export-report.json",
     "stark-finance-trading/dist/stark-finance-trading.github-export-report.md",
     "stark-finance-trading/dist/stark-finance-trading.github-export-smoke.json",

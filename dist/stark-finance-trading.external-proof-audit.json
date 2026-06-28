@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T04:46:38.424062+00:00",
+  "skill": "stark-finance-trading",
+  "dist": "dist",
+  "external_proof_status": "PENDING",
+  "goal_completion_status": "NOT_COMPLETE_EXTERNAL_PROOFS_PENDING",
+  "summary": {
+    "required_proofs": 4,
+    "proven_or_provided": 1,
+    "pending_or_blocked": 3,
+    "blocked": 1,
+    "supporting_evidence_items": 2
+  },
+  "required_proofs": [
+    {
+      "id": "public_repo_url",
+      "label": "Public GitHub repository URL",
+      "status": "PROVIDED",
+      "required_for_goal_completion": true,
+      "value": "https://github.com/starkweng/stark-finance-trading",
+      "source": "argument",
+      "evidence": "A public GitHub repository URL was supplied.",
+      "required_action": "",
+      "evidence_boundary": "URL presence proves the publication target, not source freshness or remote CI."
+    },
+    {
+      "id": "remote_github_actions_run",
+      "label": "Remote GitHub Actions run",
+      "status": "BLOCKED",
+      "required_for_goal_completion": true,
+      "value": "",
+      "source": "dist/stark-finance-trading.remote-ci-proof.json",
+      "evidence": "GitHub CLI token is missing workflow scope.",
+      "required_action": "Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`.",
+      "evidence_boundary": "Remote CI is required for public release completion but does not prove live model behavior."
+    },
+    {
+      "id": "approved_live_model_eval",
+      "label": "Approved live model eval",
+      "status": "PENDING",
+      "required_for_goal_completion": true,
+      "value": "",
+      "source": "dist/stark-finance-trading.live-eval-scorecard.json",
+      "evidence": "Scorecard status=PASS; source_mode=dry_run; behavior_proof_status=UNPROVEN_DRY_RUN_ONLY.",
+      "required_action": "Run an approved live eval, generate the review bundle, and score it after human review.",
+      "evidence_boundary": "Dry-run or fixture scorecards are reviewability proof only, not live model behavior proof."
+    },
+    {
+      "id": "reviewed_comparative_live_eval",
+      "label": "Reviewed comparative live eval",
+      "status": "PENDING",
+      "required_for_goal_completion": true,
+      "value": "",
+      "source": "dist/stark-finance-trading.competitive-eval-scorecard.json",
+      "evidence": "Scorecard status=PASS; source_mode=dry_run; behavior_proof_status=UNPROVEN_DRY_RUN_ONLY.",
+      "required_action": "Run an approved live eval, generate the review bundle, and score it after human review.",
+      "evidence_boundary": "Dry-run or fixture scorecards are reviewability proof only, not live model behavior proof."
+    }
+  ],
+  "supporting_evidence": [
+    {
+      "id": "live_eval_harness_smoke",
+      "label": "Live eval harness smoke",
+      "status": "HARNESS_ONLY_NOT_MODEL_PROOF",
+      "required_for_goal_completion": false,
+      "value": "",
+      "source": "dist/stark-finance-trading.live-eval-harness-smoke.json",
+      "evidence": "Harness smoke PASS; mode=fixture_run; runner_kind=fixture.",
+      "required_action": "",
+      "evidence_boundary": "Harness smoke proves the approved-runner path only. It is not live model behavior proof."
+    },
+    {
+      "id": "competitive_eval_harness_smoke",
+      "label": "Competitive eval harness smoke",
+      "status": "HARNESS_ONLY_NOT_MODEL_PROOF",
+      "required_for_goal_completion": false,
+      "value": "",
+      "source": "dist/stark-finance-trading.competitive-eval-harness-smoke.json",
+      "evidence": "Harness smoke PASS; mode=fixture_run; runner_kind=fixture.",
+      "required_action": "",
+      "evidence_boundary": "Harness smoke proves the approved-runner path only. It is not live model behavior proof."
+    }
+  ],
+  "required_actions": [
+    "Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`.",
+    "Run an approved live eval, generate the review bundle, and score it after human review.",
+    "Run an approved live eval, generate the review bundle, and score it after human review."
+  ],
+  "evidence_boundary": "This audit classifies external completion proofs. PASS means the audit ran and labeled the evidence. Goal completion remains pending until every required proof is PROVEN or PROVIDED. Harness smokes, dry-run scorecards, and local package checks are useful release evidence but are not live model behavior, remote CI success, market-data correctness, trading performance, or public superiority proof."
+}

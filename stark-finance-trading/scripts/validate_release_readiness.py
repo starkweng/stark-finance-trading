@@ -54,6 +54,7 @@ REQUIRED_SOURCE_FILES = [
     "scripts/smoke_github_export.py",
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
+    "scripts/audit_external_proofs.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
@@ -77,6 +78,7 @@ REQUIRED_ARTIFACTS = [
     "stark-finance-trading.competitive-eval-harness-smoke.json",
     "stark-finance-trading.competitive-eval-review/review.json",
     "stark-finance-trading.competitive-eval-scorecard.json",
+    "stark-finance-trading.external-proof-audit.json",
     "stark-finance-trading.github-export-report.json",
     "stark-finance-trading.github-export-smoke.json",
     "stark-finance-trading-github-repo.zip",
@@ -101,6 +103,7 @@ STATUS_ARTIFACTS = [
     "stark-finance-trading.competitive-eval-harness-smoke.json",
     "stark-finance-trading.competitive-eval-review/review.json",
     "stark-finance-trading.competitive-eval-scorecard.json",
+    "stark-finance-trading.external-proof-audit.json",
     "stark-finance-trading.github-export-report.json",
     "stark-finance-trading.github-export-smoke.json",
 ]
@@ -210,10 +213,10 @@ def check_public_claims(root: Path) -> dict[str, Any]:
     }
 
 
-def external_proof_status(args: argparse.Namespace) -> list[dict[str, Any]]:
+def fallback_external_proof_status(args: argparse.Namespace) -> list[dict[str, Any]]:
     items = [
         ("public_repo_url", args.public_repo_url),
-        ("remote_github_actions_run_url", args.github_run_url),
+        ("remote_github_actions_run", args.github_run_url),
         ("approved_live_model_eval", args.live_eval_url),
         ("reviewed_comparative_live_eval", args.comparative_eval_url),
     ]
@@ -223,9 +226,41 @@ def external_proof_status(args: argparse.Namespace) -> list[dict[str, Any]]:
             "status": "PROVIDED" if value else "PENDING",
             "value": value or "",
             "required_for_goal_completion": True,
+            "evidence": "Argument provided." if value else "No external proof supplied.",
+            "required_action": "" if value else "Provide or generate this external proof.",
         }
         for name, value in items
     ]
+
+
+def external_proof_status(args: argparse.Namespace, dist: Path) -> list[dict[str, Any]]:
+    audit_path = dist / f"{SKILL_NAME}.external-proof-audit.json"
+    if not audit_path.exists():
+        return fallback_external_proof_status(args)
+    audit = read_json(audit_path)
+    proofs = list(audit.get("required_proofs") or [])
+    arg_overrides = {
+        "public_repo_url": args.public_repo_url,
+        "remote_github_actions_run": args.github_run_url,
+        "approved_live_model_eval": args.live_eval_url,
+        "reviewed_comparative_live_eval": args.comparative_eval_url,
+    }
+    normalized: list[dict[str, Any]] = []
+    for item in proofs:
+        proof_id = str(item.get("id") or "")
+        value = arg_overrides.get(proof_id) or item.get("value") or ""
+        status = "PROVIDED" if arg_overrides.get(proof_id) else str(item.get("status") or "PENDING")
+        normalized.append(
+            {
+                "id": proof_id,
+                "status": status,
+                "value": value,
+                "required_for_goal_completion": bool(item.get("required_for_goal_completion", True)),
+                "evidence": item.get("evidence") or "",
+                "required_action": "" if status in {"PROVEN", "PROVIDED"} else item.get("required_action") or "",
+            }
+        )
+    return normalized or fallback_external_proof_status(args)
 
 
 def validate(args: argparse.Namespace) -> dict[str, Any]:
@@ -263,8 +298,12 @@ def validate(args: argparse.Namespace) -> dict[str, Any]:
     github_zip = check_zip(github_zip_path)
     public_claims = check_public_claims(root)
 
-    external = external_proof_status(args)
-    pending_external = [item for item in external if item["status"] == "PENDING"]
+    external = external_proof_status(args, dist)
+    pending_external = [
+        item
+        for item in external
+        if item.get("required_for_goal_completion", True) and item.get("status") not in {"PROVEN", "PROVIDED"}
+    ]
 
     local_checks = [
         ("source_files_present", not source_missing),
@@ -308,6 +347,10 @@ def validate(args: argparse.Namespace) -> dict[str, Any]:
         },
         "public_claims": public_claims,
         "external_proofs": external,
+        "external_proof_audit": {
+            "path": str(dist / f"{SKILL_NAME}.external-proof-audit.json"),
+            "status": artifact_statuses.get(f"{SKILL_NAME}.external-proof-audit.json", {}).get("status", "MISSING"),
+        },
         "evidence_boundary": (
             "Local release-readiness validation only. PASS means the local package, release artifacts, "
             "GitHub export ZIP, review scorecards, and public-claim boundaries are internally consistent. "
@@ -334,9 +377,11 @@ def write_markdown(path: Path, report: dict[str, Any]) -> None:
     ]
     for check in report["checks"]:
         lines.append(f"| `{check['id']}` | {'PASS' if check['passed'] else 'FAIL'} |")
-    lines.extend(["", "## External Proofs", "", "| Proof | Status | Required For Goal Completion |", "|---|---|---|"])
+    lines.extend(["", "## External Proofs", "", "| Proof | Status | Required For Goal Completion | Required Action |", "|---|---|---|---|"])
     for item in report["external_proofs"]:
-        lines.append(f"| `{item['id']}` | {item['status']} | {item['required_for_goal_completion']} |")
+        lines.append(
+            f"| `{item['id']}` | {item['status']} | {item['required_for_goal_completion']} | {item.get('required_action') or '-'} |"
+        )
     if report["source_missing"]:
         lines.extend(["", "## Missing Source Files", ""])
         lines.extend(f"- `{item}`" for item in report["source_missing"])

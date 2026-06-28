@@ -6,9 +6,9 @@
   "release_date": "2026-06-28",
   "package": {
     "name": "stark-finance-trading.skill",
-    "sha256": "171e64a961e4c57a0f80688a8c13d78eeb4ab27c04e3751230d5158b47dc3d20",
-    "size_bytes": 153704,
-    "entry_count": 57
+    "sha256": "352a5b0c30e3ac87c7beec8ffca8bf76b74f2b9941bd285d8712f5dd27b44b4a",
+    "size_bytes": 158807,
+    "entry_count": 58
   },
   "install_smoke": {
     "status": "PASS",
@@ -21,7 +21,7 @@
       "quick_validate": true,
       "security_scan": true
     },
-    "entry_count": 57
+    "entry_count": 58
   },
   "live_eval_signoff": {
     "status": "PASS",

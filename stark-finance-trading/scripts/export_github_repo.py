@@ -71,6 +71,7 @@ def copy_release_artifacts(skill_name: str, release_dir: Path, out_dir: Path) ->
         f"{skill_name}.competitive-eval-harness-smoke",
         f"{skill_name}.competitive-eval-review",
         f"{skill_name}.competitive-eval-scorecard",
+        f"{skill_name}.external-proof-audit",
         f"{skill_name}.live-eval-review",
         f"{skill_name}.live-eval-scorecard",
     )
@@ -90,6 +91,8 @@ def copy_release_artifacts(skill_name: str, release_dir: Path, out_dir: Path) ->
             shutil.copy2(src, dst)
 
     for path in sorted(release_dir.iterdir()):
+        if ".stdout." in path.name:
+            continue
         if path.name.startswith(excluded_prefixes):
             continue
         if path.is_dir():
@@ -97,6 +100,8 @@ def copy_release_artifacts(skill_name: str, release_dir: Path, out_dir: Path) ->
                 continue
             for child in sorted(path.rglob("*")):
                 if not child.is_file():
+                    continue
+                if ".stdout." in child.name:
                     continue
                 if child.name in EXCLUDED_NAMES or child.suffix in {".pyc", ".pyo", ".skill", ".zip"}:
                     continue
@@ -142,6 +147,7 @@ def validate_export(skill_name: str, out_dir: Path) -> dict:
         f"{skill_name}/scripts/generate_release_notes.py",
         f"{skill_name}/scripts/validate_github_actions_workflow.py",
         f"{skill_name}/scripts/validate_release_readiness.py",
+        f"{skill_name}/scripts/audit_external_proofs.py",
         f"{skill_name}/scripts/smoke_github_export.py",
         f"{skill_name}/scripts/score_eval_review_bundle.py",
         f"{skill_name}/scripts/codex_eval.py",
@@ -159,6 +165,7 @@ def validate_export(skill_name: str, out_dir: Path) -> dict:
         and "generate_eval_review_bundle.py" in workflow_text
         and "stark-finance-trading.live-eval-scorecard.json" in workflow_text
         and "stark-finance-trading.competitive-eval-scorecard.json" in workflow_text
+        and "stark-finance-trading.external-proof-audit.json" in workflow_text
         and "stark-finance-trading.github-actions-workflow.json" in workflow_text
         and "stark-finance-trading.public-tool-catalog.json" in workflow_text
         and "stark-finance-trading.runtime-capabilities.json" in workflow_text
@@ -325,6 +332,7 @@ def write_publication_status(out_dir: Path, skill_name: str) -> None:
         "- Remote CI proof report: included when generated, and may show the current auth/workflow blocker.",
         "- Approved live model eval: pending.",
         "- Reviewed comparative live eval: pending.",
+        "- External proof audit: included as the machine-readable summary of these pending gates.",
         "",
         "## CI Scope Note",
         "",

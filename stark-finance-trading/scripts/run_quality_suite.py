@@ -67,7 +67,7 @@ def main() -> int:
             [
                 py,
                 "-c",
-                "from pathlib import Path\nfor p in ['scripts/generate_eval_review_bundle.py', 'scripts/score_eval_review_bundle.py', 'scripts/generate_release_manifest.py', 'scripts/generate_release_notes.py', 'scripts/validate_github_actions_workflow.py', 'scripts/smoke_github_export.py', 'scripts/validate_release_readiness.py', 'scripts/enable_remote_ci.py', 'scripts/discover_local_skill_inventory.py', 'scripts/validate_public_tool_catalog.py', 'scripts/plan_tool_route.py', 'scripts/runtime_capability_scan.py', 'scripts/live_eval_runner_fixture.py', 'scripts/run_live_eval_harness_smoke.py']:\n    compile(Path(p).read_text(encoding='utf-8'), p, 'exec')",
+                "from pathlib import Path\nfor p in ['scripts/generate_eval_review_bundle.py', 'scripts/score_eval_review_bundle.py', 'scripts/generate_release_manifest.py', 'scripts/generate_release_notes.py', 'scripts/validate_github_actions_workflow.py', 'scripts/smoke_github_export.py', 'scripts/validate_release_readiness.py', 'scripts/audit_external_proofs.py', 'scripts/enable_remote_ci.py', 'scripts/discover_local_skill_inventory.py', 'scripts/validate_public_tool_catalog.py', 'scripts/plan_tool_route.py', 'scripts/runtime_capability_scan.py', 'scripts/live_eval_runner_fixture.py', 'scripts/run_live_eval_harness_smoke.py']:\n    compile(Path(p).read_text(encoding='utf-8'), p, 'exec')",
             ],
         ),
         (
@@ -370,6 +370,22 @@ def main() -> int:
                 str(dist_for_cmd / "stark-finance-trading.competitive-eval-scorecard.json"),
                 "--markdown",
                 str(dist_for_cmd / "stark-finance-trading.competitive-eval-scorecard.md"),
+                "--json",
+            ],
+        ),
+        (
+            "external_proof_audit",
+            [
+                py,
+                "scripts/audit_external_proofs.py",
+                "--dist",
+                str(dist_for_cmd),
+                "--public-repo-url",
+                "https://github.com/starkweng/stark-finance-trading",
+                "--out",
+                str(dist_for_cmd / "stark-finance-trading.external-proof-audit.json"),
+                "--markdown",
+                str(dist_for_cmd / "stark-finance-trading.external-proof-audit.md"),
                 "--json",
             ],
         ),

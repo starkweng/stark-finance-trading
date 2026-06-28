@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "export_root": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/github-export/stark-finance-trading",
+  "export_root": "dist/github-export/stark-finance-trading",
   "skill_name": "stark-finance-trading",
-  "skill_files_copied": 58,
+  "skill_files_copied": 59,
   "release_artifacts_copied": [
     "dist/stark-finance-trading.competitive-eval-harness-smoke.json",
     "dist/stark-finance-trading.competitive-eval-harness-smoke.md",
@@ -16,6 +16,8 @@
     "dist/stark-finance-trading.competitive-eval-signoff.md",
     "dist/stark-finance-trading.competitive-task-benchmark.json",
     "dist/stark-finance-trading.competitive-task-benchmark.md",
+    "dist/stark-finance-trading.external-proof-audit.json",
+    "dist/stark-finance-trading.external-proof-audit.md",
     "dist/stark-finance-trading.github-actions-workflow.json",
     "dist/stark-finance-trading.github-actions-workflow.md",
     "dist/stark-finance-trading.github-export-report.json",
@@ -42,6 +44,7 @@
     "dist/stark-finance-trading.public-tool-catalog.json",
     "dist/stark-finance-trading.public-tool-catalog.md",
     "dist/stark-finance-trading.quality-suite.json",
+    "dist/stark-finance-trading.quality-suite.stdout.json",
     "dist/stark-finance-trading.release-manifest.json",
     "dist/stark-finance-trading.release-manifest.md",
     "dist/stark-finance-trading.release-notes.json",
@@ -64,12 +67,12 @@
     },
     "missing_required_files": [],
     "transient_files": [],
-    "release_package_entry_count": 57
+    "release_package_entry_count": 58
   },
   "archive": {
-    "path": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading-github-repo.zip",
+    "path": "dist/stark-finance-trading-github-repo.zip",
     "status": "PASS",
-    "entry_count": 114
+    "entry_count": 118
   },
   "evidence_boundary": "Local export validation only; does not prove remote GitHub Actions completion."
 }

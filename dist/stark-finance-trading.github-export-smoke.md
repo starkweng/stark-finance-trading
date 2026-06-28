@@ -1,8 +1,8 @@
 # GitHub Export Smoke Test
 
 - Status: PASS
-- ZIP: `/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading-github-repo.zip`
-- Archive entries: 114
+- ZIP: `dist/stark-finance-trading-github-repo.zip`
+- Archive entries: 118
 
 ## Checks
 

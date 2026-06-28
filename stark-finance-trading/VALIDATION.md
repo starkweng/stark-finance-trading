@@ -226,6 +226,19 @@ install_smoke_exported_package: PASS
 ```
 
 ```text
+python3 scripts/audit_external_proofs.py --dist ../dist --public-repo-url https://github.com/starkweng/stark-finance-trading --out ../dist/stark-finance-trading.external-proof-audit.json --markdown ../dist/stark-finance-trading.external-proof-audit.md --json
+PASS
+external_proof_status: PENDING
+goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
+public_repo_url: PROVIDED
+remote_github_actions_run: BLOCKED
+approved_live_model_eval: PENDING
+reviewed_comparative_live_eval: PENDING
+supporting_live_eval_harness_smoke: HARNESS_ONLY_NOT_MODEL_PROOF
+supporting_competitive_eval_harness_smoke: HARNESS_ONLY_NOT_MODEL_PROOF
+```
+
+```text
 python3 scripts/validate_release_readiness.py --skill-root . --dist ../dist --out ../dist/stark-finance-trading.release-readiness.json --markdown ../dist/stark-finance-trading.release-readiness.md --public-repo-url https://github.com/starkweng/stark-finance-trading --json
 PASS
 local_release_status: LOCAL_RELEASE_READY
@@ -238,9 +251,10 @@ source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
 external_public_repo_url: PROVIDED
-external_remote_github_actions_run_url: PENDING
+external_remote_github_actions_run: BLOCKED
 external_approved_live_model_eval: PENDING
 external_reviewed_comparative_live_eval: PENDING
+external_proof_audit_status: PASS
 ```
 
 ```text
@@ -332,6 +346,7 @@ no output
 - Package smoke, GitHub export validation, and GitHub export smoke passed locally.
 - GitHub export smoke proves the standalone repository ZIP can be extracted and core gates rerun locally. It does not prove remote GitHub Actions completion or uploaded artifact availability.
 - Remote CI proof helper exists, audits remote Actions/workflow/run state, and reports the current GitHub CLI permission blocker. It does not enable CI until the token has `workflow` scope and a remote run completes.
+- External proof audit consolidates public repo, remote CI, live eval, comparative eval, and harness-smoke evidence. A PASS means the audit ran; the current goal status remains pending until required external proofs are proven or provided.
 - Release readiness proves local package/source freshness, release artifact consistency, clean package/export ZIPs, status artifacts, and public-claim boundaries. It does not prove public repo publication, remote GitHub Actions completion, approved live model evals, or reviewed comparative live evals.
 - Comparative live benchmark is pending.
 - Live model-service eval is pending and requires explicit approval.

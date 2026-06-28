@@ -19,6 +19,7 @@ Current public repository:
 - Remote CI proof report: included when generated, and may show the current auth/workflow blocker.
 - Approved live model eval: pending.
 - Reviewed comparative live eval: pending.
+- External proof audit: included as the machine-readable summary of these pending gates.
 
 ## CI Scope Note
 

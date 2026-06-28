@@ -6,7 +6,7 @@
 - Eval set: `evals/live-behavior-evals.json`
 - Cases: 9
 - Approval status: MISSING
-- Generated at: 2026-06-28T04:19:19.017671+00:00
+- Generated at: 2026-06-28T04:46:38.175621+00:00
 
 ## Evidence Boundary
 

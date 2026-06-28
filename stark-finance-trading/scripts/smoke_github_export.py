@@ -35,6 +35,7 @@ REQUIRED_EXPORT_FILES = [
     f"{SKILL_NAME}/scripts/validate_public_readiness.py",
     f"{SKILL_NAME}/scripts/validate_github_actions_workflow.py",
     f"{SKILL_NAME}/scripts/validate_release_readiness.py",
+    f"{SKILL_NAME}/scripts/audit_external_proofs.py",
     f"{SKILL_NAME}/scripts/enable_remote_ci.py",
     f"{SKILL_NAME}/scripts/install_package_smoke.py",
     f"{SKILL_NAME}/scripts/smoke_github_export.py",
@@ -45,6 +46,7 @@ REQUIRED_EXPORT_FILES = [
     "dist/stark-finance-trading.github-actions-workflow.json",
     "dist/stark-finance-trading.live-eval-scorecard.json",
     "dist/stark-finance-trading.competitive-eval-scorecard.json",
+    "dist/stark-finance-trading.external-proof-audit.json",
 ]
 
 

@@ -49,6 +49,7 @@ REQUIRED_FILES = [
     "scripts/smoke_github_export.py",
     "scripts/score_eval_review_bundle.py",
     "scripts/validate_release_readiness.py",
+    "scripts/audit_external_proofs.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
@@ -231,6 +232,10 @@ def validate(root: Path) -> int:
     for phrase in ["runner_command", "runner_kind", "fixture_run", "approval_required", "runner_required"]:
         if phrase not in codex_eval_script:
             return fail(f"codex_eval missing live runner harness phrase: {phrase}")
+    external_proof_script = read(root / "scripts/audit_external_proofs.py")
+    for phrase in ["external_proof_status", "remote_github_actions_run", "approved_live_model_eval", "HARNESS_ONLY_NOT_MODEL_PROOF"]:
+        if phrase not in external_proof_script:
+            return fail(f"audit_external_proofs missing phrase: {phrase}")
 
     comparison = json.loads(read(root / "benchmarks/public-comparison-2026-06-28.json"))
     candidates = comparison.get("candidates", [])
