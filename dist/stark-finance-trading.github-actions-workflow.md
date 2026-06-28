@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 50
+- Required artifacts: 52
 
 ## Checks
 
@@ -26,6 +26,8 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading.quality-suite.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.quality-suite.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.md` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-gap-analysis.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.release-manifest.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.release-manifest.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.release-manifest.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.release-manifest.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.release-notes.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.release-notes.json` |

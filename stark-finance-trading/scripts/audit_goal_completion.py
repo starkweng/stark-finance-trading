@@ -35,6 +35,7 @@ INSTALLED_COPY_FRESHNESS_FILES = [
     "scripts/audit_goal_completion.py",
     "scripts/audit_external_proofs.py",
     "scripts/discover_github_finance_tools.py",
+    "scripts/analyze_competitive_gaps.py",
     "scripts/run_quality_suite.py",
 ]
 
@@ -149,6 +150,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     route_plan = read_json(dist / f"{SKILL_NAME}.tool-route-plan.json")
     inventory = read_json(dist / f"{SKILL_NAME}.local-skill-inventory.json")
     public_benchmark = read_json(dist / f"{SKILL_NAME}.public-benchmark.json")
+    competitive_gap = read_json(dist / f"{SKILL_NAME}.competitive-gap-analysis.json")
     release_readiness = read_json(dist / f"{SKILL_NAME}.release-readiness.json")
     external_audit = read_json(dist / f"{SKILL_NAME}.external-proof-audit.json")
     github_smoke = read_json(dist / f"{SKILL_NAME}.github-export-smoke.json")
@@ -234,6 +236,20 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
                 f"score={public_benchmark.get('score')}; claim_status={public_benchmark.get('claim_status')}"
             ),
             required_action="Regenerate public benchmark and keep superiority claims evidence-labeled.",
+        ),
+        requirement(
+            "competitive_gap_backlog_generated",
+            "GitHub discovery is converted into a competitive coverage/backlog analysis",
+            competitive_gap.get("status") in {"PASS", "WARN"}
+            and competitive_gap.get("candidate_count", 0) > 0
+            and "PARTIAL_RUNTIME" in (competitive_gap.get("coverage_status_counts") or {}),
+            evidence=(
+                f"gap_status={competitive_gap.get('status')}; "
+                f"candidates={competitive_gap.get('candidate_count')}; "
+                f"high_priority_backlog={competitive_gap.get('high_priority_backlog_count')}; "
+                f"actions={competitive_gap.get('backlog_action_counts')}"
+            ),
+            required_action="Run scripts/analyze_competitive_gaps.py after GitHub discovery, runtime scan, and route planning.",
         ),
         requirement(
             "quality_suite_green",

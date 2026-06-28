@@ -2,7 +2,7 @@
 
 - Status: PASS
 - Goal completion status: `NOT_COMPLETE_REQUIREMENTS_PENDING`
-- Proven requirements: 9/13
+- Proven requirements: 10/14
 - Partial requirements: 1
 - Missing or blocked requirements: 4
 
@@ -16,9 +16,10 @@
 | `critical_runtime_alignment` | PARTIAL | core_runtime={'dune-mcp': 'configured_mcp', 'alchemy-mcp': 'configured_mcp', 'etherscan-mcp': 'configured_mcp_needs_env', 'binance-skills-hub': 'enabled_plugin'}; etherscan_env_present=False | Set ETHERSCAN_API_KEY if Etherscan live calls are required. |
 | `route_regression_coverage` | PROVEN | route_plan_status=PASS; cases=13/13 | Fix scripts/plan_tool_route.py or evals/tool-routing-cases.json. |
 | `source_level_public_benchmark` | PROVEN | benchmark_status=PASS; score=100.0; claim_status=source_level_benchmark_pass_live_comparison_pending | Regenerate public benchmark and keep superiority claims evidence-labeled. |
-| `quality_suite_green` | PROVEN | quality_status=PASS; steps=45 | Rerun scripts/run_quality_suite.py and fix failing steps. |
-| `package_and_export_ready` | PROVEN | release_status=PASS; package_sha=d74e900d4507a1764d67198bd7e2668a411ed74ad929876f03853378de99c6c8; package_entries=60; github_zip_sha=a75c4fee5b41dbd402068e8546a09753b5e4391d031b1f24e5061125464521ba; github_zip_entries=123; github_smoke=PASS | Regenerate package, GitHub export, export smoke, and release readiness. |
-| `installed_copies_synced` | PROVEN | existing=4; matching=4; checked_files=['SKILL.md', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/run_quality_suite.py'] | Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators. |
+| `competitive_gap_backlog_generated` | PROVEN | gap_status=PASS; candidates=25; high_priority_backlog=20; actions={'add_route_eval': 12, 'maintain_watch': 5, 'requires_secret_or_auth': 8} | Run scripts/analyze_competitive_gaps.py after GitHub discovery, runtime scan, and route planning. |
+| `quality_suite_green` | PROVEN | quality_status=PASS; steps=46 | Rerun scripts/run_quality_suite.py and fix failing steps. |
+| `package_and_export_ready` | PROVEN | release_status=PASS; package_sha=cf97da072e3c9790d1efe3dc29581f035942d0c30b7db8fb99a79d49cd9da324; package_entries=61; github_zip_sha=ff171779e54bfad8028d806d63f6a68023fb623c9b9660cf0455a6e74510a589; github_zip_entries=126; github_smoke=PASS | Regenerate package, GitHub export, export smoke, and release readiness. |
+| `installed_copies_synced` | PROVEN | existing=4; matching=4; checked_files=['SKILL.md', 'scripts/analyze_competitive_gaps.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/run_quality_suite.py'] | Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators. |
 | `public_repository_published` | PROVEN | public_repo_status=PROVIDED; url=https://github.com/starkweng/stark-finance-trading | Publish or provide the public GitHub repository URL. |
 | `remote_github_actions_proven` | MISSING | remote_ci_status=BLOCKED; evidence=GitHub CLI token is missing workflow scope. | Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`. |
 | `approved_live_model_eval_proven` | MISSING | live_eval_status=PENDING; evidence=Scorecard status=PASS; source_mode=dry_run; behavior_proof_status=UNPROVEN_DRY_RUN_ONLY. | Run an approved live eval, generate the review bundle, and score it after human review. |

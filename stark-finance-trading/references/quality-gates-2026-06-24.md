@@ -81,11 +81,17 @@ Use these gates before claiming the skill is GitHub-ready or best-in-class.
 - Public repo URL, remote GitHub Actions run, approved live model eval, and reviewed comparative live eval remain explicit external proofs.
 - A local release-readiness PASS does not prove live market-data correctness, trading performance, public superiority, or remote CI completion.
 
+## Competitive Gap Analysis Gate
+
+- `scripts/analyze_competitive_gaps.py` consumes GitHub discovery, runtime scan, route plan, public benchmark, and the public tool catalog.
+- The gate classifies public candidates into coverage states and emits backlog actions for route evals, runtime-install candidates, or secret/auth requirements.
+- A PASS proves the planning report was generated and route tags were classified; it does not prove installability, entitlement, live API behavior, or public superiority.
+
 ## GitHub Actions Workflow Gate
 
 - `.github/workflows/ci.yml` runs the portable quality suite from the skill subdirectory.
 - CI builds and smoke-tests the `.skill` package.
-- CI uploads package, public benchmark, release manifest/notes, eval review bundles, eval review scorecards, workflow validation, GitHub export artifacts, export-smoke reports, and release-readiness reports.
+- CI uploads package, public benchmark, competitive gap analysis, release manifest/notes, eval review bundles, eval review scorecards, workflow validation, GitHub export artifacts, export-smoke reports, and release-readiness reports.
 - Static workflow validation does not prove remote GitHub Actions completion.
 
 ## Remote CI Proof Gate

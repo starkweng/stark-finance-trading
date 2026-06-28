@@ -1,0 +1,1430 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "competitive_gap_status": "PASS",
+  "generated_at": "2026-06-28T05:35:48.393940+00:00",
+  "skill": "stark-finance-trading",
+  "input_statuses": {
+    "github_tool_discovery": "PASS",
+    "runtime_capabilities": "PASS",
+    "tool_route_plan": "PASS",
+    "public_benchmark": "PASS",
+    "public_tool_catalog": "PASS"
+  },
+  "discovery_mode": "live_github_search",
+  "candidate_count": 25,
+  "covered_count": 16,
+  "partial_count": 8,
+  "gap_count": 0,
+  "watchlist_count": 1,
+  "high_priority_backlog_count": 20,
+  "coverage_status_counts": {
+    "COVERED_GENERIC_MCP": 1,
+    "COVERED_SOURCE_LEVEL": 6,
+    "COVERED_WITH_LIVE_GATING_REQUIRED": 9,
+    "PARTIAL_RUNTIME": 8,
+    "WATCHLIST": 1
+  },
+  "backlog_action_counts": {
+    "add_route_eval": 12,
+    "maintain_watch": 5,
+    "requires_secret_or_auth": 8
+  },
+  "unclassified_tags": [],
+  "category_rollup": [
+    {
+      "category": "bot_framework",
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "default_backlog_action": "add_route_eval",
+      "catalog_tool_ids": [
+        "hummingbot",
+        "freqtrade",
+        "nautilus-trader",
+        "ccxt"
+      ],
+      "runtime_statuses": {
+        "hummingbot": "local_skill_backed",
+        "freqtrade": "local_skill_backed",
+        "nautilus-trader": "external_candidate",
+        "ccxt": "local_skill_backed"
+      },
+      "configured_or_deferred_count": 3,
+      "env_missing_tool_ids": [],
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "candidate_count": 13,
+      "total_stars": 187939,
+      "top_candidate": "hummingbot/hummingbot"
+    },
+    {
+      "category": "backtest",
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "default_backlog_action": "add_route_eval",
+      "catalog_tool_ids": [
+        "quantconnect-mcp",
+        "lean",
+        "nautilus-trader",
+        "freqtrade",
+        "hummingbot",
+        "ccxt"
+      ],
+      "runtime_statuses": {
+        "quantconnect-mcp": "local_skill_backed",
+        "lean": "local_skill_backed",
+        "nautilus-trader": "external_candidate",
+        "freqtrade": "local_skill_backed",
+        "hummingbot": "local_skill_backed",
+        "ccxt": "local_skill_backed"
+      },
+      "configured_or_deferred_count": 5,
+      "env_missing_tool_ids": [],
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "candidate_count": 13,
+      "total_stars": 109000,
+      "top_candidate": "hummingbot/hummingbot"
+    },
+    {
+      "category": "onchain",
+      "coverage_status": "PARTIAL_RUNTIME",
+      "default_backlog_action": "requires_secret_or_auth",
+      "catalog_tool_ids": [
+        "dune-mcp",
+        "alchemy-mcp",
+        "etherscan-mcp",
+        "binance-skills-hub",
+        "coinbase-cdp-agentkit",
+        "quicknode-mcp",
+        "coingecko-mcp",
+        "coinmarketcap-mcp",
+        "token-terminal-mcp",
+        "defillama-api",
+        "helius-mcp",
+        "jupiter-apis",
+        "dexscreener-api"
+      ],
+      "runtime_statuses": {
+        "dune-mcp": "configured_mcp",
+        "alchemy-mcp": "configured_mcp",
+        "etherscan-mcp": "configured_mcp_needs_env",
+        "binance-skills-hub": "enabled_plugin",
+        "coinbase-cdp-agentkit": "external_candidate",
+        "quicknode-mcp": "enabled_plugin",
+        "coingecko-mcp": "external_candidate",
+        "coinmarketcap-mcp": "external_candidate",
+        "token-terminal-mcp": "external_candidate",
+        "defillama-api": "external_candidate",
+        "helius-mcp": "external_candidate",
+        "jupiter-apis": "external_candidate",
+        "dexscreener-api": "external_candidate"
+      },
+      "configured_or_deferred_count": 4,
+      "env_missing_tool_ids": [
+        "etherscan-mcp"
+      ],
+      "stark_response": "Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "candidate_count": 5,
+      "total_stars": 62990,
+      "top_candidate": "hummingbot/hummingbot"
+    },
+    {
+      "category": "mcp",
+      "coverage_status": "COVERED_GENERIC_MCP",
+      "default_backlog_action": "maintain_watch",
+      "catalog_tool_ids": [
+        "dune-mcp",
+        "alchemy-mcp",
+        "etherscan-mcp",
+        "alpaca-mcp",
+        "quicknode-mcp",
+        "coingecko-mcp",
+        "coinmarketcap-mcp"
+      ],
+      "runtime_statuses": {
+        "dune-mcp": "configured_mcp",
+        "alchemy-mcp": "configured_mcp",
+        "etherscan-mcp": "configured_mcp_needs_env",
+        "alpaca-mcp": "deferred_tool_source",
+        "quicknode-mcp": "enabled_plugin",
+        "coingecko-mcp": "external_candidate",
+        "coinmarketcap-mcp": "external_candidate"
+      },
+      "configured_or_deferred_count": 4,
+      "env_missing_tool_ids": [
+        "etherscan-mcp"
+      ],
+      "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
+      "candidate_count": 5,
+      "total_stars": 8662,
+      "top_candidate": "nirholas/UCAI"
+    },
+    {
+      "category": "research",
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "default_backlog_action": "maintain_watch",
+      "catalog_tool_ids": [
+        "openbb",
+        "fmp-mcp",
+        "factset-mcp",
+        "token-terminal-mcp",
+        "defillama-api"
+      ],
+      "runtime_statuses": {
+        "openbb": "local_skill_backed",
+        "fmp-mcp": "local_skill_backed",
+        "factset-mcp": "external_candidate",
+        "token-terminal-mcp": "external_candidate",
+        "defillama-api": "external_candidate"
+      },
+      "configured_or_deferred_count": 2,
+      "env_missing_tool_ids": [],
+      "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
+      "candidate_count": 3,
+      "total_stars": 98974,
+      "top_candidate": "OpenBB-finance/OpenBB"
+    },
+    {
+      "category": "broker_execution",
+      "coverage_status": "PARTIAL_RUNTIME",
+      "default_backlog_action": "requires_secret_or_auth",
+      "catalog_tool_ids": [
+        "alpaca-mcp",
+        "tradier-mcp",
+        "ibkr-tws-api",
+        "ctrader-ai-agent-connect",
+        "coinbase-cdp-agentkit"
+      ],
+      "runtime_statuses": {
+        "alpaca-mcp": "deferred_tool_source",
+        "tradier-mcp": "external_candidate",
+        "ibkr-tws-api": "external_candidate",
+        "ctrader-ai-agent-connect": "external_candidate",
+        "coinbase-cdp-agentkit": "external_candidate"
+      },
+      "configured_or_deferred_count": 1,
+      "env_missing_tool_ids": [],
+      "stark_response": "Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation.",
+      "candidate_count": 3,
+      "total_stars": 23371,
+      "top_candidate": "hummingbot/hummingbot"
+    },
+    {
+      "category": "options_flow",
+      "coverage_status": "PARTIAL_RUNTIME",
+      "default_backlog_action": "requires_secret_or_auth",
+      "catalog_tool_ids": [
+        "unusual-whales-mcp",
+        "alpaca-mcp",
+        "tradier-mcp",
+        "ibkr-tws-api",
+        "massive-polygon-mcp"
+      ],
+      "runtime_statuses": {
+        "unusual-whales-mcp": "external_candidate",
+        "alpaca-mcp": "deferred_tool_source",
+        "tradier-mcp": "external_candidate",
+        "ibkr-tws-api": "external_candidate",
+        "massive-polygon-mcp": "external_candidate"
+      },
+      "configured_or_deferred_count": 1,
+      "env_missing_tool_ids": [],
+      "stark_response": "Treat flow/greeks/dark-pool data as signal evidence, not execution advice; live credentials and redistribution rules remain external.",
+      "candidate_count": 1,
+      "total_stars": 69773,
+      "top_candidate": "OpenBB-finance/OpenBB"
+    },
+    {
+      "category": "general_finance_candidate",
+      "coverage_status": "WATCHLIST",
+      "default_backlog_action": "maintain_watch",
+      "catalog_tool_ids": [
+        "openbb",
+        "alpaca-mcp",
+        "binance-skills-hub"
+      ],
+      "runtime_statuses": {
+        "openbb": "local_skill_backed",
+        "alpaca-mcp": "deferred_tool_source",
+        "binance-skills-hub": "enabled_plugin"
+      },
+      "configured_or_deferred_count": 3,
+      "env_missing_tool_ids": [],
+      "stark_response": "Keep on watchlist until it maps to a concrete data, research, broker, onchain, or strategy workflow.",
+      "candidate_count": 1,
+      "total_stars": 66,
+      "top_candidate": "jiayaoqijia/cryptoskill"
+    },
+    {
+      "category": "market_data",
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "default_backlog_action": "runtime_install_candidate",
+      "catalog_tool_ids": [
+        "alpaca-mcp",
+        "openbb",
+        "alpha-vantage-mcp",
+        "fmp-mcp",
+        "factset-mcp",
+        "twelve-data-mcp",
+        "massive-polygon-mcp",
+        "databento-api",
+        "coingecko-mcp",
+        "coinmarketcap-mcp"
+      ],
+      "runtime_statuses": {
+        "alpaca-mcp": "deferred_tool_source",
+        "openbb": "local_skill_backed",
+        "alpha-vantage-mcp": "external_candidate",
+        "fmp-mcp": "local_skill_backed",
+        "factset-mcp": "external_candidate",
+        "twelve-data-mcp": "external_candidate",
+        "massive-polygon-mcp": "external_candidate",
+        "databento-api": "external_candidate",
+        "coingecko-mcp": "external_candidate",
+        "coinmarketcap-mcp": "external_candidate"
+      },
+      "configured_or_deferred_count": 3,
+      "env_missing_tool_ids": [],
+      "stark_response": "Route by dataset, venue, entitlement, delay status, and timestamp before using market data in decisions.",
+      "candidate_count": 1,
+      "total_stars": 34,
+      "top_candidate": "nirholas/UCAI"
+    }
+  ],
+  "top_backlog": [
+    {
+      "id": "hummingbot/hummingbot",
+      "name": "hummingbot/hummingbot",
+      "url": "https://github.com/hummingbot/hummingbot",
+      "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
+      "stars": 19005,
+      "language": "Python",
+      "route_tags": [
+        "broker_execution",
+        "onchain",
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework",
+        "broker_execution",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 140.95,
+      "matched_catalog_tool_ids": [
+        "hummingbot"
+      ],
+      "matched_runtime_statuses": {
+        "hummingbot": "local_skill_backed"
+      }
+    },
+    {
+      "id": "edtechre/pybroker",
+      "name": "edtechre/pybroker",
+      "url": "https://github.com/edtechre/pybroker",
+      "description": "Algorithmic Trading in Python with Machine Learning",
+      "stars": 3437,
+      "language": "Python",
+      "route_tags": [
+        "broker_execution",
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "broker_execution"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 135.75,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "ccxt/ccxt",
+      "name": "ccxt/ccxt",
+      "url": "https://github.com/ccxt/ccxt",
+      "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
+      "stars": 43093,
+      "language": "Python",
+      "route_tags": [
+        "backtest",
+        "bot_framework",
+        "onchain"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 133.44,
+      "matched_catalog_tool_ids": [
+        "ccxt"
+      ],
+      "matched_runtime_statuses": {
+        "ccxt": "local_skill_backed"
+      }
+    },
+    {
+      "id": "51bitquant/howtrader",
+      "name": "51bitquant/howtrader",
+      "url": "https://github.com/51bitquant/howtrader",
+      "description": "Howtrader: A crypto quant framework for developing, backtesting, and executing your own trading strategies. Seamlessly integrates with TradingView and other third-party signals. Simply send a post request to automate trading and order placement. Supports Binance and Okex exchanges.",
+      "stars": 929,
+      "language": "Python",
+      "route_tags": [
+        "broker_execution",
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework",
+        "broker_execution"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 131.78,
+      "matched_catalog_tool_ids": [
+        "binance-skills-hub"
+      ],
+      "matched_runtime_statuses": {
+        "binance-skills-hub": "enabled_plugin"
+      }
+    },
+    {
+      "id": "nirholas/UCAI",
+      "name": "nirholas/UCAI",
+      "url": "https://github.com/nirholas/UCAI",
+      "description": "Universal Contract AI Interface (UCAI) 🔗 ABI to MCP | The open standard for connecting AI agents to blockchain. MCP server generator for smart contracts. Claude + Uniswap, Aave, ERC20, NFTs, DeFi. Python CLI, Web3 integration, transaction simulation. Polygon, Arbitrum, Base, Ethereum EVM chains. Claude, GPT, LLM tooling, Solidity, OpenAI.",
+      "stars": 34,
+      "language": "Python",
+      "route_tags": [
+        "mcp",
+        "market_data",
+        "onchain"
+      ],
+      "coverage_categories": [
+        "market_data",
+        "mcp",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route by dataset, venue, entitlement, delay status, and timestamp before using market data in decisions. Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 121.72,
+      "matched_catalog_tool_ids": [
+        "massive-polygon-mcp"
+      ],
+      "matched_runtime_statuses": {
+        "massive-polygon-mcp": "external_candidate"
+      }
+    },
+    {
+      "id": "nirholas/cryptocurrency.cv",
+      "name": "nirholas/cryptocurrency.cv",
+      "url": "https://github.com/nirholas/cryptocurrency.cv",
+      "description": "Free crypto news API - real-time aggregator for Bitcoin, Ethereum, DeFi, Solana & altcoins. No API key required. RSS/Atom feeds, JSON REST API, historical archive with market context, embeddable widgets, ChatGPT plugin, Claude MCP server, SDKs (Python, TypeScript, Go, React, PHP). AI/LLM ready. Vibe coding friendly. Open source.",
+      "stars": 248,
+      "language": "TypeScript",
+      "route_tags": [
+        "mcp",
+        "onchain",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework",
+        "mcp",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 117.76,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "freqtrade/freqtrade",
+      "name": "freqtrade/freqtrade",
+      "url": "https://github.com/freqtrade/freqtrade",
+      "description": "Free, open source crypto trading bot",
+      "stars": 51899,
+      "language": "Python",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 115.01,
+      "matched_catalog_tool_ids": [
+        "freqtrade"
+      ],
+      "matched_runtime_statuses": {
+        "freqtrade": "local_skill_backed"
+      }
+    },
+    {
+      "id": "OpenBB-finance/OpenBB",
+      "name": "OpenBB-finance/OpenBB",
+      "url": "https://github.com/OpenBB-finance/OpenBB",
+      "description": "Financial data platform for analysts, quants and AI agents.",
+      "stars": 69773,
+      "language": "Python",
+      "route_tags": [
+        "options_flow",
+        "research"
+      ],
+      "coverage_categories": [
+        "options_flow",
+        "research"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 1,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Treat flow/greeks/dark-pool data as signal evidence, not execution advice; live credentials and redistribution rules remain external. Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 114.91,
+      "matched_catalog_tool_ids": [
+        "openbb"
+      ],
+      "matched_runtime_statuses": {
+        "openbb": "local_skill_backed"
+      }
+    },
+    {
+      "id": "wilsonfreitas/awesome-quant",
+      "name": "wilsonfreitas/awesome-quant",
+      "url": "https://github.com/wilsonfreitas/awesome-quant",
+      "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
+      "stars": 27080,
+      "language": "HTML",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 113.03,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "demcp/awesome-web3-mcp-servers",
+      "name": "demcp/awesome-web3-mcp-servers",
+      "url": "https://github.com/demcp/awesome-web3-mcp-servers",
+      "description": "DeMCP is the first Decentralized MCP network, offering SSE proxies for MCP services and mainstream LLMs, tackling trust and security with TEE and blockchain.",
+      "stars": 610,
+      "language": "",
+      "route_tags": [
+        "mcp",
+        "onchain"
+      ],
+      "coverage_categories": [
+        "mcp",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 2,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 110.5,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "ccxt/binance-trade-bot",
+      "name": "ccxt/binance-trade-bot",
+      "url": "https://github.com/ccxt/binance-trade-bot",
+      "description": "Automated cryptocurrency trading bot",
+      "stars": 8712,
+      "language": "Python",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.58,
+      "matched_catalog_tool_ids": [
+        "binance-skills-hub",
+        "ccxt"
+      ],
+      "matched_runtime_statuses": {
+        "binance-skills-hub": "enabled_plugin",
+        "ccxt": "local_skill_backed"
+      }
+    },
+    {
+      "id": "paperswithbacktest/awesome-systematic-trading",
+      "name": "paperswithbacktest/awesome-systematic-trading",
+      "url": "https://github.com/paperswithbacktest/awesome-systematic-trading",
+      "description": "A curated list of awesome libraries, packages, strategies, books, blogs, tutorials for systematic trading.",
+      "stars": 8443,
+      "language": "Python",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.49,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "DeviaVir/zenbot",
+      "name": "DeviaVir/zenbot",
+      "url": "https://github.com/DeviaVir/zenbot",
+      "description": "Zenbot is a command-line cryptocurrency trading bot using Node.js and MongoDB.",
+      "stars": 8261,
+      "language": "HTML",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.42,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "jesse-ai/jesse",
+      "name": "jesse-ai/jesse",
+      "url": "https://github.com/jesse-ai/jesse",
+      "description": "An advanced crypto trading bot written in Python",
+      "stars": 8110,
+      "language": "JavaScript",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.36,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "Thysrael/Horizon",
+      "name": "Thysrael/Horizon",
+      "url": "https://github.com/Thysrael/Horizon",
+      "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
+      "stars": 7527,
+      "language": "Python",
+      "route_tags": [
+        "mcp",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework",
+        "mcp"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.14,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "blankly-finance/blankly",
+      "name": "blankly-finance/blankly",
+      "url": "https://github.com/blankly-finance/blankly",
+      "description": "🚀 💸  Easily build, backtest and deploy your algo in just a few lines of code. Trade stocks, cryptos, and forex across exchanges w/ one package.",
+      "stars": 2451,
+      "language": "Python",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 105.73,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "barter-rs/barter-rs",
+      "name": "barter-rs/barter-rs",
+      "url": "https://github.com/barter-rs/barter-rs",
+      "description": "Open-source Rust framework for building event-driven live-trading & backtesting systems",
+      "stars": 2181,
+      "language": "Rust",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 105.37,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "kernc/backtesting.py",
+      "name": "kernc/backtesting.py",
+      "url": "https://github.com/kernc/backtesting.py",
+      "description": "🔎 📈 🐍 💰  Backtest trading strategies in Python.",
+      "stars": 8576,
+      "language": "Python",
+      "route_tags": [
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 83.53,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "ricequant/rqalpha",
+      "name": "ricequant/rqalpha",
+      "url": "https://github.com/ricequant/rqalpha",
+      "description": "A extendable, replaceable Python algorithmic backtest && trading framework supporting multiple securities",
+      "stars": 6521,
+      "language": "Python",
+      "route_tags": [
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 82.7,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "fasiondog/hikyuu",
+      "name": "fasiondog/hikyuu",
+      "url": "https://github.com/fasiondog/hikyuu",
+      "description": "Hikyuu Quant Framework 基于C++/Python的超高速开源量化交易研究框架，同时可基于策略部件进行资产重用，快速累积策略资产。",
+      "stars": 3289,
+      "language": "C++",
+      "route_tags": [
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 80.62,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    }
+  ],
+  "candidates": [
+    {
+      "id": "hummingbot/hummingbot",
+      "name": "hummingbot/hummingbot",
+      "url": "https://github.com/hummingbot/hummingbot",
+      "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
+      "stars": 19005,
+      "language": "Python",
+      "route_tags": [
+        "broker_execution",
+        "onchain",
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework",
+        "broker_execution",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 140.95,
+      "matched_catalog_tool_ids": [
+        "hummingbot"
+      ],
+      "matched_runtime_statuses": {
+        "hummingbot": "local_skill_backed"
+      }
+    },
+    {
+      "id": "edtechre/pybroker",
+      "name": "edtechre/pybroker",
+      "url": "https://github.com/edtechre/pybroker",
+      "description": "Algorithmic Trading in Python with Machine Learning",
+      "stars": 3437,
+      "language": "Python",
+      "route_tags": [
+        "broker_execution",
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "broker_execution"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 135.75,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "ccxt/ccxt",
+      "name": "ccxt/ccxt",
+      "url": "https://github.com/ccxt/ccxt",
+      "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
+      "stars": 43093,
+      "language": "Python",
+      "route_tags": [
+        "backtest",
+        "bot_framework",
+        "onchain"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 133.44,
+      "matched_catalog_tool_ids": [
+        "ccxt"
+      ],
+      "matched_runtime_statuses": {
+        "ccxt": "local_skill_backed"
+      }
+    },
+    {
+      "id": "51bitquant/howtrader",
+      "name": "51bitquant/howtrader",
+      "url": "https://github.com/51bitquant/howtrader",
+      "description": "Howtrader: A crypto quant framework for developing, backtesting, and executing your own trading strategies. Seamlessly integrates with TradingView and other third-party signals. Simply send a post request to automate trading and order placement. Supports Binance and Okex exchanges.",
+      "stars": 929,
+      "language": "Python",
+      "route_tags": [
+        "broker_execution",
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework",
+        "broker_execution"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 131.78,
+      "matched_catalog_tool_ids": [
+        "binance-skills-hub"
+      ],
+      "matched_runtime_statuses": {
+        "binance-skills-hub": "enabled_plugin"
+      }
+    },
+    {
+      "id": "nirholas/UCAI",
+      "name": "nirholas/UCAI",
+      "url": "https://github.com/nirholas/UCAI",
+      "description": "Universal Contract AI Interface (UCAI) 🔗 ABI to MCP | The open standard for connecting AI agents to blockchain. MCP server generator for smart contracts. Claude + Uniswap, Aave, ERC20, NFTs, DeFi. Python CLI, Web3 integration, transaction simulation. Polygon, Arbitrum, Base, Ethereum EVM chains. Claude, GPT, LLM tooling, Solidity, OpenAI.",
+      "stars": 34,
+      "language": "Python",
+      "route_tags": [
+        "mcp",
+        "market_data",
+        "onchain"
+      ],
+      "coverage_categories": [
+        "market_data",
+        "mcp",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 4,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Route by dataset, venue, entitlement, delay status, and timestamp before using market data in decisions. Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 121.72,
+      "matched_catalog_tool_ids": [
+        "massive-polygon-mcp"
+      ],
+      "matched_runtime_statuses": {
+        "massive-polygon-mcp": "external_candidate"
+      }
+    },
+    {
+      "id": "nirholas/cryptocurrency.cv",
+      "name": "nirholas/cryptocurrency.cv",
+      "url": "https://github.com/nirholas/cryptocurrency.cv",
+      "description": "Free crypto news API - real-time aggregator for Bitcoin, Ethereum, DeFi, Solana & altcoins. No API key required. RSS/Atom feeds, JSON REST API, historical archive with market context, embeddable widgets, ChatGPT plugin, Claude MCP server, SDKs (Python, TypeScript, Go, React, PHP). AI/LLM ready. Vibe coding friendly. Open source.",
+      "stars": 248,
+      "language": "TypeScript",
+      "route_tags": [
+        "mcp",
+        "onchain",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework",
+        "mcp",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 117.76,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "freqtrade/freqtrade",
+      "name": "freqtrade/freqtrade",
+      "url": "https://github.com/freqtrade/freqtrade",
+      "description": "Free, open source crypto trading bot",
+      "stars": 51899,
+      "language": "Python",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 115.01,
+      "matched_catalog_tool_ids": [
+        "freqtrade"
+      ],
+      "matched_runtime_statuses": {
+        "freqtrade": "local_skill_backed"
+      }
+    },
+    {
+      "id": "OpenBB-finance/OpenBB",
+      "name": "OpenBB-finance/OpenBB",
+      "url": "https://github.com/OpenBB-finance/OpenBB",
+      "description": "Financial data platform for analysts, quants and AI agents.",
+      "stars": 69773,
+      "language": "Python",
+      "route_tags": [
+        "options_flow",
+        "research"
+      ],
+      "coverage_categories": [
+        "options_flow",
+        "research"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 1,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Treat flow/greeks/dark-pool data as signal evidence, not execution advice; live credentials and redistribution rules remain external. Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 114.91,
+      "matched_catalog_tool_ids": [
+        "openbb"
+      ],
+      "matched_runtime_statuses": {
+        "openbb": "local_skill_backed"
+      }
+    },
+    {
+      "id": "wilsonfreitas/awesome-quant",
+      "name": "wilsonfreitas/awesome-quant",
+      "url": "https://github.com/wilsonfreitas/awesome-quant",
+      "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
+      "stars": 27080,
+      "language": "HTML",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 113.03,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "demcp/awesome-web3-mcp-servers",
+      "name": "demcp/awesome-web3-mcp-servers",
+      "url": "https://github.com/demcp/awesome-web3-mcp-servers",
+      "description": "DeMCP is the first Decentralized MCP network, offering SSE proxies for MCP services and mainstream LLMs, tackling trust and security with TEE and blockchain.",
+      "stars": 610,
+      "language": "",
+      "route_tags": [
+        "mcp",
+        "onchain"
+      ],
+      "coverage_categories": [
+        "mcp",
+        "onchain"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 2,
+      "coverage_status": "PARTIAL_RUNTIME",
+      "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata. Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
+      "backlog_action": "requires_secret_or_auth",
+      "priority_score": 110.5,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "ccxt/binance-trade-bot",
+      "name": "ccxt/binance-trade-bot",
+      "url": "https://github.com/ccxt/binance-trade-bot",
+      "description": "Automated cryptocurrency trading bot",
+      "stars": 8712,
+      "language": "Python",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.58,
+      "matched_catalog_tool_ids": [
+        "binance-skills-hub",
+        "ccxt"
+      ],
+      "matched_runtime_statuses": {
+        "binance-skills-hub": "enabled_plugin",
+        "ccxt": "local_skill_backed"
+      }
+    },
+    {
+      "id": "paperswithbacktest/awesome-systematic-trading",
+      "name": "paperswithbacktest/awesome-systematic-trading",
+      "url": "https://github.com/paperswithbacktest/awesome-systematic-trading",
+      "description": "A curated list of awesome libraries, packages, strategies, books, blogs, tutorials for systematic trading.",
+      "stars": 8443,
+      "language": "Python",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.49,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "DeviaVir/zenbot",
+      "name": "DeviaVir/zenbot",
+      "url": "https://github.com/DeviaVir/zenbot",
+      "description": "Zenbot is a command-line cryptocurrency trading bot using Node.js and MongoDB.",
+      "stars": 8261,
+      "language": "HTML",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.42,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "jesse-ai/jesse",
+      "name": "jesse-ai/jesse",
+      "url": "https://github.com/jesse-ai/jesse",
+      "description": "An advanced crypto trading bot written in Python",
+      "stars": 8110,
+      "language": "JavaScript",
+      "route_tags": [
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.36,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "Thysrael/Horizon",
+      "name": "Thysrael/Horizon",
+      "url": "https://github.com/Thysrael/Horizon",
+      "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
+      "stars": 7527,
+      "language": "Python",
+      "route_tags": [
+        "mcp",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "bot_framework",
+        "mcp"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review. Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 109.14,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "blankly-finance/blankly",
+      "name": "blankly-finance/blankly",
+      "url": "https://github.com/blankly-finance/blankly",
+      "description": "🚀 💸  Easily build, backtest and deploy your algo in just a few lines of code. Trade stocks, cryptos, and forex across exchanges w/ one package.",
+      "stars": 2451,
+      "language": "Python",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 105.73,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "barter-rs/barter-rs",
+      "name": "barter-rs/barter-rs",
+      "url": "https://github.com/barter-rs/barter-rs",
+      "description": "Open-source Rust framework for building event-driven live-trading & backtesting systems",
+      "stars": 2181,
+      "language": "Rust",
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "bot_framework"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_WITH_LIVE_GATING_REQUIRED",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 105.37,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "kernc/backtesting.py",
+      "name": "kernc/backtesting.py",
+      "url": "https://github.com/kernc/backtesting.py",
+      "description": "🔎 📈 🐍 💰  Backtest trading strategies in Python.",
+      "stars": 8576,
+      "language": "Python",
+      "route_tags": [
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 83.53,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "ricequant/rqalpha",
+      "name": "ricequant/rqalpha",
+      "url": "https://github.com/ricequant/rqalpha",
+      "description": "A extendable, replaceable Python algorithmic backtest && trading framework supporting multiple securities",
+      "stars": 6521,
+      "language": "Python",
+      "route_tags": [
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 82.7,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "fasiondog/hikyuu",
+      "name": "fasiondog/hikyuu",
+      "url": "https://github.com/fasiondog/hikyuu",
+      "description": "Hikyuu Quant Framework 基于C++/Python的超高速开源量化交易研究框架，同时可基于策略部件进行资产重用，快速累积策略资产。",
+      "stars": 3289,
+      "language": "C++",
+      "route_tags": [
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "backlog_action": "add_route_eval",
+      "priority_score": 80.62,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "akfamily/akquant",
+      "name": "akfamily/akquant",
+      "url": "https://github.com/akfamily/akquant",
+      "description": "AKQuant is a high-performance quantitative research and trading framework built on Rust and Python! 开源量化回测框架",
+      "stars": 1626,
+      "language": "Python",
+      "route_tags": [
+        "backtest",
+        "research"
+      ],
+      "coverage_categories": [
+        "backtest",
+        "research"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution. Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
+      "backlog_action": "maintain_watch",
+      "priority_score": 68.48,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "cinar/indicator",
+      "name": "cinar/indicator",
+      "url": "https://github.com/cinar/indicator",
+      "description": "Indicator Go delivers a rich set of technical analysis indicators, customizable strategies, and a powerful backtesting framework. No dependencies, just pure simplicity. ✨ See how! 👀",
+      "stars": 1188,
+      "language": "Go",
+      "route_tags": [
+        "backtest"
+      ],
+      "coverage_categories": [
+        "backtest"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 3,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
+      "backlog_action": "maintain_watch",
+      "priority_score": 67.52,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "xpaysh/awesome-x402",
+      "name": "xpaysh/awesome-x402",
+      "url": "https://github.com/xpaysh/awesome-x402",
+      "description": "🚀 Curated list of x402 resources: HTTP 402 Payment Required protocol for blockchain payments, crypto micropayments, AI agents, API monetization. Includes SDKs (TypeScript, Python, Rust), examples, facilitators (Coinbase, Cloudflare), MCP integration, tutorials. Accept USDC payments with one line of code. Perfect for AI agent economy.",
+      "stars": 243,
+      "language": "",
+      "route_tags": [
+        "mcp"
+      ],
+      "coverage_categories": [
+        "mcp"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 2,
+      "coverage_status": "COVERED_GENERIC_MCP",
+      "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
+      "backlog_action": "maintain_watch",
+      "priority_score": 60.7,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "Fincept-Corporation/FinceptTerminal",
+      "name": "Fincept-Corporation/FinceptTerminal",
+      "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
+      "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+      "stars": 27575,
+      "language": "C++",
+      "route_tags": [
+        "research"
+      ],
+      "coverage_categories": [
+        "research"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 1,
+      "coverage_status": "COVERED_SOURCE_LEVEL",
+      "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
+      "backlog_action": "maintain_watch",
+      "priority_score": 57.08,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    },
+    {
+      "id": "jiayaoqijia/cryptoskill",
+      "name": "jiayaoqijia/cryptoskill",
+      "url": "https://github.com/jiayaoqijia/cryptoskill",
+      "description": "Skills for Crypto",
+      "stars": 66,
+      "language": "Python",
+      "route_tags": [
+        "finance_or_trading_candidate"
+      ],
+      "coverage_categories": [
+        "general_finance_candidate"
+      ],
+      "unclassified_tags": [],
+      "default_action_tier": 1,
+      "coverage_status": "WATCHLIST",
+      "stark_response": "Keep on watchlist until it maps to a concrete data, research, broker, onchain, or strategy workflow.",
+      "backlog_action": "maintain_watch",
+      "priority_score": 34.74,
+      "matched_catalog_tool_ids": [],
+      "matched_runtime_statuses": {}
+    }
+  ],
+  "next_actions": [
+    "Set or confirm secrets only where needed, especially ETHERSCAN_API_KEY for explorer-backed live calls.",
+    "Promote high-star backtest/bot frameworks into route evals before adding runtime adapters.",
+    "Keep broker and bot paths under Tier 4 live_gating_required controls until account, margin, and kill-switch previews are reviewable.",
+    "Use runtime_install_candidate only for gaps that add a real route, not for generic MCP lists."
+  ],
+  "evidence_boundary": "Competitive gap analysis combines GitHub discovery, local runtime metadata, route regression, public benchmark, and the curated public tool catalog. It is a planning and backlog artifact, not proof of installability, official status, API entitlement, live model behavior, market-data correctness, trading performance, remote CI completion, or public superiority."
+}

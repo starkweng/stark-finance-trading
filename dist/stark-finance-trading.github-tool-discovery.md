@@ -11,8 +11,8 @@
 
 | Repo | Stars | Tags | Tier | URL |
 |---|---:|---|---:|---|
-| OpenBB-finance/OpenBB | 69772 | options_flow, research | 1 | https://github.com/OpenBB-finance/OpenBB |
-| freqtrade/freqtrade | 51898 | bot_framework | 3 | https://github.com/freqtrade/freqtrade |
+| OpenBB-finance/OpenBB | 69773 | options_flow, research | 1 | https://github.com/OpenBB-finance/OpenBB |
+| freqtrade/freqtrade | 51899 | bot_framework | 3 | https://github.com/freqtrade/freqtrade |
 | ccxt/ccxt | 43093 | backtest, bot_framework, onchain | 3 | https://github.com/ccxt/ccxt |
 | Fincept-Corporation/FinceptTerminal | 27575 | research | 1 | https://github.com/Fincept-Corporation/FinceptTerminal |
 | wilsonfreitas/awesome-quant | 27080 | bot_framework | 3 | https://github.com/wilsonfreitas/awesome-quant |
@@ -22,7 +22,7 @@
 | paperswithbacktest/awesome-systematic-trading | 8443 | backtest, bot_framework | 3 | https://github.com/paperswithbacktest/awesome-systematic-trading |
 | DeviaVir/zenbot | 8261 | backtest, bot_framework | 3 | https://github.com/DeviaVir/zenbot |
 | jesse-ai/jesse | 8110 | bot_framework | 3 | https://github.com/jesse-ai/jesse |
-| Thysrael/Horizon | 7525 | mcp, bot_framework | 3 | https://github.com/Thysrael/Horizon |
+| Thysrael/Horizon | 7527 | mcp, bot_framework | 3 | https://github.com/Thysrael/Horizon |
 | ricequant/rqalpha | 6521 | backtest | 3 | https://github.com/ricequant/rqalpha |
 | edtechre/pybroker | 3437 | broker_execution, backtest | 4 | https://github.com/edtechre/pybroker |
 | fasiondog/hikyuu | 3289 | backtest | 3 | https://github.com/fasiondog/hikyuu |

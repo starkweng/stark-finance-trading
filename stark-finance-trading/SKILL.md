@@ -151,6 +151,8 @@ python3 scripts/quick_validate.py .
 python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json
 python3 scripts/plan_tool_route.py --root . --runtime-report dist/stark-finance-trading.runtime-capabilities.json --out dist/stark-finance-trading.tool-route-plan.json --markdown dist/stark-finance-trading.tool-route-plan.md --json
 python3 scripts/validate_public_tool_catalog.py --root . --out dist/stark-finance-trading.public-tool-catalog.json --markdown dist/stark-finance-trading.public-tool-catalog.md --json
+python3 scripts/discover_github_finance_tools.py --root . --auto-live --allow-fallback --out dist/stark-finance-trading.github-tool-discovery.json --markdown dist/stark-finance-trading.github-tool-discovery.md --json
+python3 scripts/analyze_competitive_gaps.py --root . --dist dist --out dist/stark-finance-trading.competitive-gap-analysis.json --markdown dist/stark-finance-trading.competitive-gap-analysis.md --json
 python3 scripts/discover_local_skill_inventory.py --skill-root . --out dist/stark-finance-trading.local-skill-inventory.json --markdown dist/stark-finance-trading.local-skill-inventory.md --json
 ```
 

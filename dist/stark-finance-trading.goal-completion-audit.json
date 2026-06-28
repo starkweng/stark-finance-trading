@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T05:18:42.524233+00:00",
+  "generated_at": "2026-06-28T05:36:16.120094+00:00",
   "skill": "stark-finance-trading",
   "skill_root": "stark-finance-trading",
   "dist": "dist",
   "goal_completion_status": "NOT_COMPLETE_REQUIREMENTS_PENDING",
   "summary": {
-    "requirements": 13,
-    "proven": 9,
+    "requirements": 14,
+    "proven": 10,
     "partial": 1,
     "missing_or_blocked": 4
   },
@@ -68,12 +68,21 @@
       "required_action": "Regenerate public benchmark and keep superiority claims evidence-labeled."
     },
     {
+      "id": "competitive_gap_backlog_generated",
+      "label": "GitHub discovery is converted into a competitive coverage/backlog analysis",
+      "status": "PROVEN",
+      "passed": true,
+      "required_for_goal_completion": true,
+      "evidence": "gap_status=PASS; candidates=25; high_priority_backlog=20; actions={'add_route_eval': 12, 'maintain_watch': 5, 'requires_secret_or_auth': 8}",
+      "required_action": "Run scripts/analyze_competitive_gaps.py after GitHub discovery, runtime scan, and route planning."
+    },
+    {
       "id": "quality_suite_green",
       "label": "Portable quality suite is green",
       "status": "PROVEN",
       "passed": true,
       "required_for_goal_completion": true,
-      "evidence": "quality_status=PASS; steps=45",
+      "evidence": "quality_status=PASS; steps=46",
       "required_action": "Rerun scripts/run_quality_suite.py and fix failing steps."
     },
     {
@@ -82,7 +91,7 @@
       "status": "PROVEN",
       "passed": true,
       "required_for_goal_completion": true,
-      "evidence": "release_status=PASS; package_sha=d74e900d4507a1764d67198bd7e2668a411ed74ad929876f03853378de99c6c8; package_entries=60; github_zip_sha=a75c4fee5b41dbd402068e8546a09753b5e4391d031b1f24e5061125464521ba; github_zip_entries=123; github_smoke=PASS",
+      "evidence": "release_status=PASS; package_sha=cf97da072e3c9790d1efe3dc29581f035942d0c30b7db8fb99a79d49cd9da324; package_entries=61; github_zip_sha=ff171779e54bfad8028d806d63f6a68023fb623c9b9660cf0455a6e74510a589; github_zip_entries=126; github_smoke=PASS",
       "required_action": "Regenerate package, GitHub export, export smoke, and release readiness."
     },
     {
@@ -91,7 +100,7 @@
       "status": "PROVEN",
       "passed": true,
       "required_for_goal_completion": true,
-      "evidence": "existing=4; matching=4; checked_files=['SKILL.md', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/run_quality_suite.py']",
+      "evidence": "existing=4; matching=4; checked_files=['SKILL.md', 'scripts/analyze_competitive_gaps.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/run_quality_suite.py']",
       "required_action": "Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators."
     },
     {
@@ -172,11 +181,12 @@
   "installed_copies": {
     "status": "PASS",
     "source_hashes": {
-      "SKILL.md": "1c857d83abf788f7cf461b45d90d07b4a93e21e251ababd32637a8d61012050c",
-      "scripts/audit_goal_completion.py": "283022dacbeb71a8465c4b0ccaecd8093c217c2de76e0bbe17885aa4aef70fdb",
+      "SKILL.md": "04ede9a9d9761cf9f821623160404549ea8e0b875eb2eb3a36c864dd88502b12",
+      "scripts/audit_goal_completion.py": "bb22392399c44fba1032f215030ca09b0667f1768096d48d4577535fcf94874c",
       "scripts/audit_external_proofs.py": "75c8a3c40beb1a6f345f933f90d710d41dab2bda3d9d3816f5feaedf861f066d",
       "scripts/discover_github_finance_tools.py": "1bb88e139726f53cbd1fc04668a66d8fa84b4abe3459dc193f4bff0cf257880c",
-      "scripts/run_quality_suite.py": "b1ed05ed6fd1126e2ecf875a1db7bfb1868d5476bb90edff1dd98e6433ff7e80"
+      "scripts/analyze_competitive_gaps.py": "2564d0b38de4b7f7ba47fe918ceeb11b5750983b7fe3fe0bc1d51d6b7f9613b9",
+      "scripts/run_quality_suite.py": "de483179a79e2c485e0cfc8e15bb3fe3f77768fd338e9f0fbc79bf411780bc62"
     },
     "copies": [
       {
@@ -200,6 +210,11 @@
           },
           {
             "path": "scripts/discover_github_finance_tools.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
+            "path": "scripts/analyze_competitive_gaps.py",
             "exists": true,
             "hash_matches_source": true
           },
@@ -236,6 +251,11 @@
             "hash_matches_source": true
           },
           {
+            "path": "scripts/analyze_competitive_gaps.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
             "path": "scripts/run_quality_suite.py",
             "exists": true,
             "hash_matches_source": true
@@ -264,6 +284,11 @@
           },
           {
             "path": "scripts/discover_github_finance_tools.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
+            "path": "scripts/analyze_competitive_gaps.py",
             "exists": true,
             "hash_matches_source": true
           },
@@ -300,6 +325,11 @@
             "hash_matches_source": true
           },
           {
+            "path": "scripts/analyze_competitive_gaps.py",
+            "exists": true,
+            "hash_matches_source": true
+          },
+          {
             "path": "scripts/run_quality_suite.py",
             "exists": true,
             "hash_matches_source": true
@@ -313,9 +343,9 @@
   },
   "artifacts": {
     "package": "dist/stark-finance-trading.skill",
-    "package_sha256": "d74e900d4507a1764d67198bd7e2668a411ed74ad929876f03853378de99c6c8",
+    "package_sha256": "cf97da072e3c9790d1efe3dc29581f035942d0c30b7db8fb99a79d49cd9da324",
     "github_export_zip": "dist/stark-finance-trading-github-repo.zip",
-    "github_export_zip_sha256": "a75c4fee5b41dbd402068e8546a09753b5e4391d031b1f24e5061125464521ba"
+    "github_export_zip_sha256": "ff171779e54bfad8028d806d63f6a68023fb623c9b9660cf0455a6e74510a589"
   },
   "evidence_boundary": "This audit maps Stark's original objective to machine-checkable evidence. PASS means the audit ran. The goal is complete only when every required requirement is PROVEN. PARTIAL, MISSING, BLOCKED, or dry-run evidence keeps the goal active."
 }

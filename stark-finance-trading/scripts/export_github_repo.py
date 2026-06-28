@@ -60,6 +60,7 @@ def copy_release_artifacts(skill_name: str, release_dir: Path, out_dir: Path) ->
         f"{skill_name}.github-export-report",
         f"{skill_name}.github-export-smoke",
         f"{skill_name}.github-tool-discovery",
+        f"{skill_name}.competitive-gap-analysis",
         f"{skill_name}.goal-completion-audit",
         f"{skill_name}.remote-ci-proof",
         f"{skill_name}.public-benchmark",
@@ -138,6 +139,7 @@ def validate_export(skill_name: str, out_dir: Path) -> dict:
         f"{skill_name}/scripts/run_quality_suite.py",
         f"{skill_name}/scripts/discover_local_skill_inventory.py",
         f"{skill_name}/scripts/discover_github_finance_tools.py",
+        f"{skill_name}/scripts/analyze_competitive_gaps.py",
         f"{skill_name}/scripts/plan_tool_route.py",
         f"{skill_name}/scripts/runtime_capability_scan.py",
         f"{skill_name}/scripts/validate_public_tool_catalog.py",
@@ -172,6 +174,7 @@ def validate_export(skill_name: str, out_dir: Path) -> dict:
         and "stark-finance-trading.external-proof-audit.json" in workflow_text
         and "stark-finance-trading.goal-completion-audit.json" in workflow_text
         and "stark-finance-trading.github-tool-discovery.json" in workflow_text
+        and "stark-finance-trading.competitive-gap-analysis.json" in workflow_text
         and "stark-finance-trading.github-actions-workflow.json" in workflow_text
         and "stark-finance-trading.public-tool-catalog.json" in workflow_text
         and "stark-finance-trading.runtime-capabilities.json" in workflow_text

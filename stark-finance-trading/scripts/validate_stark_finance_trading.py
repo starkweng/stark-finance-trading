@@ -52,6 +52,7 @@ REQUIRED_FILES = [
     "scripts/audit_external_proofs.py",
     "scripts/audit_goal_completion.py",
     "scripts/discover_github_finance_tools.py",
+    "scripts/analyze_competitive_gaps.py",
     "workflow-templates/stark-finance-trading-ci.yml",
 ]
 
@@ -246,6 +247,10 @@ def validate(root: Path) -> int:
     for phrase in ["github discovery", "github_live_search", "curated_fallback", "execution_tier_candidate_count"]:
         if phrase not in github_discovery_script:
             return fail(f"discover_github_finance_tools missing phrase: {phrase}")
+    competitive_gap_script = read(root / "scripts/analyze_competitive_gaps.py")
+    for phrase in ["competitive_gap_status", "PARTIAL_RUNTIME", "runtime_install_candidate", "live_gating_required"]:
+        if phrase not in competitive_gap_script:
+            return fail(f"analyze_competitive_gaps missing phrase: {phrase}")
 
     comparison = json.loads(read(root / "benchmarks/public-comparison-2026-06-28.json"))
     candidates = comparison.get("candidates", [])
