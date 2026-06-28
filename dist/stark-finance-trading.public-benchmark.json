@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T05:55:13.569330+00:00",
+  "generated_at": "2026-06-28T06:14:36.940535+00:00",
   "skill": "stark-finance-trading",
   "benchmark_type": "source_level_public_readiness",
   "claim_status": "source_level_benchmark_pass_live_comparison_pending",

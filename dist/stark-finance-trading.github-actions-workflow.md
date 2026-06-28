@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 54
+- Required artifacts: 56
 
 ## Checks
 
@@ -42,6 +42,8 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.runtime-capabilities.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.runtime-capabilities.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.runtime-capabilities.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.runtime-capabilities.md` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.integration-activation-plan.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.integration-activation-plan.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.integration-activation-plan.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.integration-activation-plan.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.tool-route-plan.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.tool-route-plan.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.tool-route-plan.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.tool-route-plan.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json` |

@@ -13,8 +13,8 @@ from pathlib import Path
 
 
 SECRET_PATTERNS = [
-    re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
-    re.compile(r"sk_[A-Za-z0-9_-]{20,}"),
+    re.compile(r"(?<![A-Za-z0-9_])sk-[A-Za-z0-9_-]{20,}"),
+    re.compile(r"(?<![A-Za-z0-9_])sk_[A-Za-z0-9_-]{20,}"),
     re.compile(r"(?i)(api[_-]?key|secret|token)\s*=\s*['\"][^'\"]{12,}['\"]"),
 ]
 

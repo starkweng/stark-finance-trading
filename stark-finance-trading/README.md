@@ -21,6 +21,8 @@ The deterministic prompt router lives in `scripts/plan_tool_route.py`. It turns 
 
 `scripts/runtime_capability_scan.py` reconciles the public catalog with local MCP servers, enabled plugins, installed skills, and environment-variable presence. It never prints secret values; it only reports whether a required env var is present.
 
+`scripts/generate_integration_activation_plan.py` turns the catalog plus runtime scan into a prioritized activation plan: ready routes, quick env/auth activations, install/auth backlog, watchlist tools, and Tier 4 surfaces that require explicit confirmation.
+
 ## Why One Skill
 
 Finance/trading work fails when the agent treats every vendor as a separate mental mode. This skill keeps one front door and uses internal route maps:
@@ -65,6 +67,7 @@ python3 scripts/validate_public_readiness.py .
 python3 scripts/quick_validate.py .
 python3 scripts/run_quality_suite.py --json
 python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json
+python3 scripts/generate_integration_activation_plan.py --root . --runtime-report dist/stark-finance-trading.runtime-capabilities.json --out dist/stark-finance-trading.integration-activation-plan.json --markdown dist/stark-finance-trading.integration-activation-plan.md --json
 python3 scripts/plan_tool_route.py --root . --runtime-report dist/stark-finance-trading.runtime-capabilities.json --out dist/stark-finance-trading.tool-route-plan.json --markdown dist/stark-finance-trading.tool-route-plan.md --json
 python3 scripts/audit_public_sources.py --root . --out dist/stark-finance-trading.public-source-audit.json --markdown dist/stark-finance-trading.public-source-audit.md --json
 python3 scripts/validate_public_tool_catalog.py --root . --out dist/stark-finance-trading.public-tool-catalog.json --markdown dist/stark-finance-trading.public-tool-catalog.md --json
@@ -105,4 +108,4 @@ python3 stark-finance-trading/scripts/enable_remote_ci.py --repo-root . --repo s
 
 ## Evidence Boundaries
 
-This v0.1 package has static validation, routing eval seeds, prompt-to-tool route regression, local runtime capability alignment, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, approved-runner harness smokes for live and competitive eval sets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a live-or-fallback GitHub tool discovery report, a competitive gap analysis, a competitive route backlog, a machine-readable public tool catalog, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper with repository/workflow/run-state audit, an external proof audit, a goal completion audit, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.
+This v0.1 package has static validation, routing eval seeds, prompt-to-tool route regression, local runtime capability alignment, integration activation planning, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, approved-runner harness smokes for live and competitive eval sets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a live-or-fallback GitHub tool discovery report, a competitive gap analysis, a competitive route backlog, a machine-readable public tool catalog, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper with repository/workflow/run-state audit, an external proof audit, a goal completion audit, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.

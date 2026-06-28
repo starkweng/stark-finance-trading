@@ -26,6 +26,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Competitive route backlog: `scripts/generate_competitive_route_backlog.py` converts gap findings into candidate route/eval prompts, auth gates, and learn-loop next actions.
 - Prompt-to-tool route plan: `scripts/plan_tool_route.py` validates natural prompts against `evals/tool-routing-cases.json`.
 - Runtime capability scan: `scripts/runtime_capability_scan.py` reconciles catalog tools with local MCP servers, plugins, skills, and env-var presence.
+- Integration activation plan: `scripts/generate_integration_activation_plan.py` converts catalog/runtime evidence into ready routes, quick activations, install/auth backlog, watchlist tools, and high-risk confirmation surfaces.
 - Public benchmark cases: `benchmarks/public-benchmark-cases.json`.
 - Public benchmark generator: `scripts/generate_public_benchmark.py`.
 - Competitive task cases: `benchmarks/competitive-task-cases.json`.
@@ -118,13 +119,17 @@ The review bundle is the handoff layer between automated checks and human judgme
 
 `scripts/runtime_capability_scan.py` reads local Codex MCP/plugin configuration and installed skill names, then classifies catalog tools as configured MCP, enabled plugin, local-skill-backed, deferred tool source, configured-needs-env, or external candidate. It does not print secret values; for env vars it only reports presence/absence. A PASS here proves runtime alignment metadata can be generated and consumed by the route planner. It does not prove OAuth validity, paid entitlement, live API reachability, market-data correctness, or trading performance.
 
+## Integration Activation Plan Gate
+
+`scripts/generate_integration_activation_plan.py` reads the public tool catalog and runtime capability report, then produces `ready_now`, `quick_activations`, `priority_backlog`, and `high_risk_requires_confirmation` lists. A PASS means major public tools have an explicit setup/activation posture without exposing secret values. It does not prove OAuth validity, API entitlement, live tool availability, trading performance, or public superiority.
+
 ## Competitive Task Benchmark
 
 `scripts/generate_competitive_task_benchmark.py` runs eight representative finance/trading/Web3 task scenarios against the current skill source. It checks whether the router covers multi-source workflows and safety boundaries that a single vendor surface usually cannot cover alone. The same case set can also produce a PENDING live-eval signoff packet and a dry-run human-review bundle. A PASS means the source tree contains task-level routing coverage for those scenarios and the eval set is reviewable. It does not prove live model quality, live data accuracy, or public superiority.
 
 ## GitHub Actions Workflow Gate
 
-`scripts/validate_github_actions_workflow.py` statically validates that `.github/workflows/ci.yml` runs the quality suite, builds and smoke-tests the package, and uploads the package, public benchmark, release manifest/notes, live/competitive eval review bundles, workflow validation report, and GitHub export ZIP. A PASS here means the workflow has the expected coverage. It does not prove the workflow has run on GitHub.
+`scripts/validate_github_actions_workflow.py` statically validates that `.github/workflows/ci.yml` runs the quality suite, builds and smoke-tests the package, and uploads the package, public benchmark, runtime capability report, integration activation plan, release manifest/notes, live/competitive eval review bundles, workflow validation report, and GitHub export ZIP. A PASS here means the workflow has the expected coverage. It does not prove the workflow has run on GitHub.
 
 ## Remote CI Proof Gate
 
@@ -136,7 +141,7 @@ The review bundle is the handoff layer between automated checks and human judgme
 
 ## Goal Completion Audit Gate
 
-`scripts/audit_goal_completion.py` maps the original Stark objective into concrete requirements: `stark-` single front door, merged vendor/local routing, public tool catalog coverage, runtime alignment, route regression, public benchmark, quality suite, package/export readiness, installed copy sync, public repository proof, remote CI proof, approved live eval, and reviewed comparative live eval. A PASS means the audit ran. The goal is complete only when every required requirement is `PROVEN`; `PARTIAL`, `MISSING`, `BLOCKED`, dry-run, or fixture-only evidence keeps the goal active.
+`scripts/audit_goal_completion.py` maps the original Stark objective into concrete requirements: `stark-` single front door, merged vendor/local routing, public tool catalog coverage, runtime alignment, integration activation planning, route regression, public benchmark, quality suite, package/export readiness, installed copy sync, public repository proof, remote CI proof, approved live eval, and reviewed comparative live eval. A PASS means the audit ran. The goal is complete only when every required requirement is `PROVEN`; `PARTIAL`, `MISSING`, `BLOCKED`, dry-run, or fixture-only evidence keeps the goal active.
 
 ## GitHub Export Smoke Gate
 

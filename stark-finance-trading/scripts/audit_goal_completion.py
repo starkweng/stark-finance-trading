@@ -37,6 +37,7 @@ INSTALLED_COPY_FRESHNESS_FILES = [
     "scripts/discover_github_finance_tools.py",
     "scripts/analyze_competitive_gaps.py",
     "scripts/generate_competitive_route_backlog.py",
+    "scripts/generate_integration_activation_plan.py",
     "scripts/run_quality_suite.py",
 ]
 
@@ -148,6 +149,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
 
     quality = read_json(dist / f"{SKILL_NAME}.quality-suite.json")
     runtime = read_json(dist / f"{SKILL_NAME}.runtime-capabilities.json")
+    activation_plan = read_json(dist / f"{SKILL_NAME}.integration-activation-plan.json")
     route_plan = read_json(dist / f"{SKILL_NAME}.tool-route-plan.json")
     inventory = read_json(dist / f"{SKILL_NAME}.local-skill-inventory.json")
     public_benchmark = read_json(dist / f"{SKILL_NAME}.public-benchmark.json")
@@ -267,6 +269,23 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
                 f"actions={competitive_route_backlog.get('backlog_action_counts')}"
             ),
             required_action="Run scripts/generate_competitive_route_backlog.py after competitive gap analysis.",
+        ),
+        requirement(
+            "integration_activation_plan_generated",
+            "Public tool catalog is converted into an activation plan",
+            activation_plan.get("status") == "PASS"
+            and activation_plan.get("ready_now_count", 0) > 0
+            and activation_plan.get("quick_activation_count", 0) > 0
+            and activation_plan.get("high_risk_requires_confirmation_count", 0) > 0
+            and not activation_plan.get("required_core_missing"),
+            evidence=(
+                f"activation_status={activation_plan.get('status')}; "
+                f"ready_now={activation_plan.get('ready_now_count')}; "
+                f"quick={activation_plan.get('quick_activation_count')}; "
+                f"priority_backlog={activation_plan.get('priority_backlog_count')}; "
+                f"high_risk={activation_plan.get('high_risk_requires_confirmation_count')}"
+            ),
+            required_action="Run scripts/generate_integration_activation_plan.py after runtime capability scan.",
         ),
         requirement(
             "quality_suite_green",

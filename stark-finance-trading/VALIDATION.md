@@ -10,7 +10,7 @@ PASS
 {
   "ok": true,
   "skill": "stark-finance-trading",
-  "required_files": 45,
+  "required_files": 46,
   "routing_cases": 11,
   "adversarial_cases": 12,
   "live_behavior_cases": 9,
@@ -94,6 +94,17 @@ env_missing_tool_ids: 1
 ```
 
 ```text
+python3 scripts/generate_integration_activation_plan.py --root . --runtime-report ../dist/stark-finance-trading.runtime-capabilities.json --out ../dist/stark-finance-trading.integration-activation-plan.json --markdown ../dist/stark-finance-trading.integration-activation-plan.md --json
+PASS
+catalog_tool_count: 34
+ready_now_count: 11
+quick_activation_count: 2
+priority_backlog_count: 12
+high_risk_requires_confirmation_count: 5
+activation_stage_counts: install_or_auth_candidate=12, lazy_load_available=1, needs_env=1, ready_now=11, watchlist=9
+```
+
+```text
 python3 scripts/discover_local_skill_inventory.py --skill-root . --json
 PASS
 unique_finance_skill_count: 81
@@ -150,6 +161,7 @@ public_tool_catalog: PASS
 public_benchmark: PASS
 github_finance_tool_discovery: PASS
 runtime_capability_scan: PASS
+integration_activation_plan: PASS
 tool_route_plan: PASS
 competitive_gap_analysis: PASS
 competitive_route_backlog: PASS
@@ -172,14 +184,14 @@ competitive_eval_review_scorecard: PASS
 github_export: PASS
 github_export_smoke: PASS
 release_readiness: PASS
-steps: 47
+steps: 48
 ```
 
 ```text
 python3 scripts/validate_github_actions_workflow.py --root . --json
 PASS
 required_snippet_count: 13
-required_artifact_count: 54
+required_artifact_count: 56
 failed_checks: 0
 ```
 
@@ -196,7 +208,7 @@ eval_regression: PASS
 ```text
 python3 /path/to/stark-skiller/scripts/security_scan_skill.py .
 PASS
-files_scanned: 62
+files_scanned: 63
 critical: 0
 high: 0
 medium: 0
@@ -217,29 +229,29 @@ hashes_match: true
 fixed_zip_metadata: true
 entry_counts_match: true
 install_smoke: true
-entry_count: 62
+entry_count: 63
 ```
 
 ```text
 python3 scripts/package_skill.py . ../dist
 python3 scripts/install_package_smoke.py ../dist/stark-finance-trading.skill --json
 PASS
-entry_count: 62
+entry_count: 63
 ```
 
 ```text
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
-skill_files_copied: 63
-release_artifacts_copied: 58
+skill_files_copied: 64
+release_artifacts_copied: 60
 release_package_install_smoke: true
-zip_entry_count: 129
+zip_entry_count: 132
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 129
+zip_entry_count: 132
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -277,7 +289,7 @@ PASS
 goal_completion_status: NOT_COMPLETE_REQUIREMENTS_PENDING
 proven_requirements: see ../dist/stark-finance-trading.goal-completion-audit.json
 partial_requirements: critical_runtime_alignment
-proven_requirements: 11/15
+proven_requirements: 12/16
 blocked_or_missing_requirements: critical_runtime_alignment, remote_github_actions_proven, approved_live_model_eval_proven, reviewed_comparative_live_eval_proven
 ```
 
@@ -288,8 +300,8 @@ local_release_status: LOCAL_RELEASE_READY
 goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
-package_entry_count: 62
-github_export_zip_entry_count: 129
+package_entry_count: 63
+github_export_zip_entry_count: 132
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
@@ -380,6 +392,7 @@ no output
 - Competitive route backlog turns gap findings into candidate route/eval prompts and auth gates. It is a learn-loop artifact, not live eval behavior, installability, entitlement, trading performance, or superiority proof.
 - Public tool catalog validation checks source-ledger alignment, route tags, official-source status, action tiers, and high-risk surfaces. It does not prove credentials, entitlement, live availability, market-data correctness, or execution quality.
 - Runtime capability scan checks local MCP/plugin/skill configuration and env-var presence, while redacting secret values. It does not prove OAuth validity, paid entitlement, live API reachability, market-data correctness, or trading performance.
+- Integration activation plan converts catalog/runtime evidence into ready routes, quick activations, install/auth backlog, watchlist tools, and high-risk confirmation surfaces. It does not prove OAuth validity, entitlement, live availability, trading performance, or superiority.
 - Tool route planner validation checks deterministic natural-language prompt routing into workflow, tool IDs, route tags, local helper hints, risk tier, and safety terms. It does not prove live tool availability, API credentials, market-data correctness, or model behavior.
 - Public benchmark scorecard is source-level and checks routing coverage, evidence depth, safety gates, eval coverage, reproducible packaging, and GitHub readiness. It does not prove market accuracy or live trading performance.
 - Competitive task benchmark is source-level and checks task coverage against representative workflows. It does not prove live model output quality or public superiority.

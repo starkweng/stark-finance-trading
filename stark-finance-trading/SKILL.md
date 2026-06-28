@@ -56,6 +56,7 @@ Load only what the task needs:
 | Local finance/trading skills and merge/delegate boundaries | `references/local-skill-router.md` |
 | Prompt-to-tool deterministic route regression | `evals/tool-routing-cases.json` and `scripts/plan_tool_route.py` |
 | Local runtime availability alignment | `scripts/runtime_capability_scan.py` |
+| Public tool activation and setup priority | `scripts/generate_integration_activation_plan.py` |
 | Execution, wallets, broker accounts, live orders, bots | `references/safety-policy.md` |
 | Market snapshot, token DD, options flow, backtest, MM workflows | `references/workflows.md` |
 | Loop Blueprint and repair/learn cycle | `references/loop-engineering-pattern-2026-06-28.md` |
@@ -149,6 +150,7 @@ Before claiming this skill is installed or GitHub-ready:
 python3 scripts/validate_stark_finance_trading.py .
 python3 scripts/quick_validate.py .
 python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json
+python3 scripts/generate_integration_activation_plan.py --root . --runtime-report dist/stark-finance-trading.runtime-capabilities.json --out dist/stark-finance-trading.integration-activation-plan.json --markdown dist/stark-finance-trading.integration-activation-plan.md --json
 python3 scripts/plan_tool_route.py --root . --runtime-report dist/stark-finance-trading.runtime-capabilities.json --out dist/stark-finance-trading.tool-route-plan.json --markdown dist/stark-finance-trading.tool-route-plan.md --json
 python3 scripts/validate_public_tool_catalog.py --root . --out dist/stark-finance-trading.public-tool-catalog.json --markdown dist/stark-finance-trading.public-tool-catalog.md --json
 python3 scripts/discover_github_finance_tools.py --root . --auto-live --allow-fallback --out dist/stark-finance-trading.github-tool-discovery.json --markdown dist/stark-finance-trading.github-tool-discovery.md --json

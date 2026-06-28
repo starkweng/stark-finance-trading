@@ -67,7 +67,7 @@ def main() -> int:
             [
                 py,
                 "-c",
-                "from pathlib import Path\nfor p in ['scripts/generate_eval_review_bundle.py', 'scripts/score_eval_review_bundle.py', 'scripts/generate_release_manifest.py', 'scripts/generate_release_notes.py', 'scripts/validate_github_actions_workflow.py', 'scripts/smoke_github_export.py', 'scripts/validate_release_readiness.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/analyze_competitive_gaps.py', 'scripts/generate_competitive_route_backlog.py', 'scripts/enable_remote_ci.py', 'scripts/discover_local_skill_inventory.py', 'scripts/validate_public_tool_catalog.py', 'scripts/plan_tool_route.py', 'scripts/runtime_capability_scan.py', 'scripts/live_eval_runner_fixture.py', 'scripts/run_live_eval_harness_smoke.py']:\n    compile(Path(p).read_text(encoding='utf-8'), p, 'exec')",
+                "from pathlib import Path\nfor p in ['scripts/generate_eval_review_bundle.py', 'scripts/score_eval_review_bundle.py', 'scripts/generate_release_manifest.py', 'scripts/generate_release_notes.py', 'scripts/validate_github_actions_workflow.py', 'scripts/smoke_github_export.py', 'scripts/validate_release_readiness.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/analyze_competitive_gaps.py', 'scripts/generate_competitive_route_backlog.py', 'scripts/generate_integration_activation_plan.py', 'scripts/enable_remote_ci.py', 'scripts/discover_local_skill_inventory.py', 'scripts/validate_public_tool_catalog.py', 'scripts/plan_tool_route.py', 'scripts/runtime_capability_scan.py', 'scripts/live_eval_runner_fixture.py', 'scripts/run_live_eval_harness_smoke.py']:\n    compile(Path(p).read_text(encoding='utf-8'), p, 'exec')",
             ],
         ),
         (
@@ -157,6 +157,22 @@ def main() -> int:
                 str(dist_for_cmd / "stark-finance-trading.runtime-capabilities.json"),
                 "--markdown",
                 str(dist_for_cmd / "stark-finance-trading.runtime-capabilities.md"),
+                "--json",
+            ],
+        ),
+        (
+            "integration_activation_plan",
+            [
+                py,
+                "scripts/generate_integration_activation_plan.py",
+                "--root",
+                ".",
+                "--runtime-report",
+                str(dist_for_cmd / "stark-finance-trading.runtime-capabilities.json"),
+                "--out",
+                str(dist_for_cmd / "stark-finance-trading.integration-activation-plan.json"),
+                "--markdown",
+                str(dist_for_cmd / "stark-finance-trading.integration-activation-plan.md"),
                 "--json",
             ],
         ),

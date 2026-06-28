@@ -36,6 +36,7 @@ REQUIRED_FILES = [
     "scripts/discover_local_skill_inventory.py",
     "scripts/plan_tool_route.py",
     "scripts/runtime_capability_scan.py",
+    "scripts/generate_integration_activation_plan.py",
     "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
@@ -109,8 +110,8 @@ REQUIRED_LOCAL_SKILL_TERMS = [
 ]
 
 SECRET_PATTERNS = [
-    re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
-    re.compile(r"sk_[A-Za-z0-9_-]{20,}"),
+    re.compile(r"(?<![A-Za-z0-9_])sk-[A-Za-z0-9_-]{20,}"),
+    re.compile(r"(?<![A-Za-z0-9_])sk_[A-Za-z0-9_-]{20,}"),
     re.compile(r"xox[baprs]-[A-Za-z0-9-]{20,}"),
     re.compile(r"(?i)(api[_-]?key|secret|token)\s*=\s*['\"][^'\"]{12,}['\"]"),
 ]
@@ -232,6 +233,10 @@ def validate(root: Path) -> int:
     for phrase in ["RUNTIME_HINTS", "configured_mcp", "enabled_plugin", "Local runtime capability scan"]:
         if phrase not in runtime_script:
             return fail(f"runtime_capability_scan missing phrase: {phrase}")
+    activation_script = read(root / "scripts/generate_integration_activation_plan.py")
+    for phrase in ["integration_activation_status", "activation_stage", "high_risk_requires_confirmation", "no_secret_values"]:
+        if phrase not in activation_script:
+            return fail(f"generate_integration_activation_plan missing phrase: {phrase}")
     codex_eval_script = read(root / "scripts/codex_eval.py")
     for phrase in ["runner_command", "runner_kind", "fixture_run", "approval_required", "runner_required"]:
         if phrase not in codex_eval_script:
