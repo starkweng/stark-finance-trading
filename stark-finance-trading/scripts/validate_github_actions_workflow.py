@@ -30,6 +30,8 @@ REQUIRED_SNIPPETS = [
 REQUIRED_ARTIFACTS = [
     "stark-finance-trading/dist/stark-finance-trading.skill",
     "stark-finance-trading/dist/stark-finance-trading.quality-suite.json",
+    "stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.json",
+    "stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.md",
     "stark-finance-trading/dist/stark-finance-trading.release-manifest.json",
     "stark-finance-trading/dist/stark-finance-trading.release-manifest.md",
     "stark-finance-trading/dist/stark-finance-trading.release-notes.json",

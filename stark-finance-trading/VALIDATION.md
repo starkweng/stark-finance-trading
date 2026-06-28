@@ -239,6 +239,14 @@ supporting_competitive_eval_harness_smoke: HARNESS_ONLY_NOT_MODEL_PROOF
 ```
 
 ```text
+python3 scripts/discover_github_finance_tools.py --root . --auto-live --allow-fallback --out ../dist/stark-finance-trading.github-tool-discovery.json --markdown ../dist/stark-finance-trading.github-tool-discovery.md --json
+PASS or WARN
+mode: live_github_search or curated_fallback
+candidate_count: see ../dist/stark-finance-trading.github-tool-discovery.json
+evidence_boundary: GitHub search snapshot, not install/live behavior proof
+```
+
+```text
 python3 scripts/audit_goal_completion.py --skill-root . --dist ../dist --public-repo-url https://github.com/starkweng/stark-finance-trading --out ../dist/stark-finance-trading.goal-completion-audit.json --markdown ../dist/stark-finance-trading.goal-completion-audit.md --json
 PASS
 goal_completion_status: NOT_COMPLETE_REQUIREMENTS_PENDING
@@ -341,6 +349,7 @@ no output
 - Routing evals are seeded, not live-run.
 - Public comparison snapshot is source-level, not a live comparative win.
 - Public source audit checks candidate classification and URL reachability only. Live URL audit can return WARN for WAF, bot-blocking, rate-limit, or local TLS/network issues; WARN is not market-data proof and not a source invalidation.
+- GitHub discovery checks public repository search results or a labeled curated fallback. It does not prove official status, installability, entitlement, live API behavior, trading performance, or superiority.
 - Public tool catalog validation checks source-ledger alignment, route tags, official-source status, action tiers, and high-risk surfaces. It does not prove credentials, entitlement, live availability, market-data correctness, or execution quality.
 - Runtime capability scan checks local MCP/plugin/skill configuration and env-var presence, while redacting secret values. It does not prove OAuth validity, paid entitlement, live API reachability, market-data correctness, or trading performance.
 - Tool route planner validation checks deterministic natural-language prompt routing into workflow, tool IDs, route tags, local helper hints, risk tier, and safety terms. It does not prove live tool availability, API credentials, market-data correctness, or model behavior.

@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 48
+- Required artifacts: 50
 
 ## Checks
 
@@ -24,6 +24,8 @@
 | `artifact_upload` | PASS | `actions/upload-artifact@v4` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.skill` | PASS | `stark-finance-trading/dist/stark-finance-trading.skill` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.quality-suite.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.quality-suite.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.github-tool-discovery.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.release-manifest.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.release-manifest.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.release-manifest.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.release-manifest.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.release-notes.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.release-notes.json` |

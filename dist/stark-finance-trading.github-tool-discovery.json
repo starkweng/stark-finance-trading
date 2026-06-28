@@ -1,0 +1,1090 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T05:18:41.180712+00:00",
+  "skill": "stark-finance-trading",
+  "mode": "live_github_search",
+  "query_count": 12,
+  "candidate_count": 25,
+  "tag_counts": {
+    "backtest": 13,
+    "bot_framework": 13,
+    "broker_execution": 3,
+    "finance_or_trading_candidate": 1,
+    "market_data": 1,
+    "mcp": 5,
+    "onchain": 5,
+    "options_flow": 1,
+    "research": 3
+  },
+  "mcp_candidate_count": 5,
+  "execution_tier_candidate_count": 20,
+  "failed_query_count": 0,
+  "queries": [
+    {
+      "command": "gh api -X GET search/repositories -f q=finance mcp server in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "finance_mcp",
+      "query": "finance mcp server in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=trading mcp server in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "trading_mcp",
+      "query": "trading mcp server in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=market data mcp server in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "market_data_mcp",
+      "query": "market data mcp server in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=broker trading mcp in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "broker_mcp",
+      "query": "broker trading mcp in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=crypto mcp server in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "crypto_mcp",
+      "query": "crypto mcp server in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=web3 onchain mcp server in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "web3_mcp",
+      "query": "web3 onchain mcp server in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=backtesting trading framework stars:>500 -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "backtest_framework",
+      "query": "backtesting trading framework stars:>500",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=trading bot cryptocurrency stars:>500 -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "trading_bot_framework",
+      "query": "trading bot cryptocurrency stars:>500",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=quant trading framework stars:>500 -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "quant_framework",
+      "query": "quant trading framework stars:>500",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=OpenBB finance in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "openbb_finance",
+      "query": "OpenBB finance in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=alpaca trading mcp OR alpaca trading api in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "alpaca_trading",
+      "query": "alpaca trading mcp OR alpaca trading api in:name,description,readme",
+      "result_count": 6
+    },
+    {
+      "command": "gh api -X GET search/repositories -f q=dune alchemy etherscan mcp in:name,description,readme -f sort=stars -f order=desc -F per_page=6",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "",
+      "id": "dune_alchemy_etherscan",
+      "query": "dune alchemy etherscan mcp in:name,description,readme",
+      "result_count": 6
+    }
+  ],
+  "failed_queries": [],
+  "candidates": [
+    {
+      "id": "OpenBB-finance/OpenBB",
+      "name": "OpenBB",
+      "full_name": "OpenBB-finance/OpenBB",
+      "html_url": "https://github.com/OpenBB-finance/OpenBB",
+      "description": "Financial data platform for analysts, quants and AI agents.",
+      "query_ids": [
+        "openbb_finance"
+      ],
+      "route_tags": [
+        "options_flow",
+        "research"
+      ],
+      "default_action_tier": 1,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "crypto",
+        "derivatives",
+        "economics",
+        "equity",
+        "finance",
+        "fixed-income",
+        "machine-learning",
+        "openbb",
+        "options",
+        "python",
+        "quantitative-finance",
+        "stocks"
+      ],
+      "stars": 69772,
+      "forks": 7059,
+      "open_issues": 68,
+      "pushed_at": "2026-06-25T14:16:00Z",
+      "license": "NOASSERTION",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "freqtrade/freqtrade",
+      "name": "freqtrade",
+      "full_name": "freqtrade/freqtrade",
+      "html_url": "https://github.com/freqtrade/freqtrade",
+      "description": "Free, open source crypto trading bot",
+      "query_ids": [
+        "trading_bot_framework"
+      ],
+      "route_tags": [
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "algorithmic-trading",
+        "bitcoin",
+        "cryptocurrencies",
+        "cryptocurrency",
+        "freqtrade",
+        "python",
+        "telegram-bot",
+        "trade",
+        "trading-bot"
+      ],
+      "stars": 51898,
+      "forks": 10810,
+      "open_issues": 32,
+      "pushed_at": "2026-06-27T15:19:05Z",
+      "license": "GPL-3.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "ccxt/ccxt",
+      "name": "ccxt",
+      "full_name": "ccxt/ccxt",
+      "html_url": "https://github.com/ccxt/ccxt",
+      "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
+      "query_ids": [
+        "alpaca_trading",
+        "trading_bot_framework"
+      ],
+      "route_tags": [
+        "backtest",
+        "bot_framework",
+        "onchain"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "altcoin",
+        "api",
+        "arbitrage",
+        "bitcoin",
+        "bot",
+        "btc",
+        "crypto",
+        "cryptocurrencies",
+        "cryptocurrency",
+        "eth",
+        "ethereum",
+        "exchange",
+        "invest",
+        "library",
+        "market-data",
+        "memecoin",
+        "merchant",
+        "strategy",
+        "trade",
+        "trading"
+      ],
+      "stars": 43093,
+      "forks": 8719,
+      "open_issues": 1314,
+      "pushed_at": "2026-06-27T11:36:26Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "Fincept-Corporation/FinceptTerminal",
+      "name": "FinceptTerminal",
+      "full_name": "Fincept-Corporation/FinceptTerminal",
+      "html_url": "https://github.com/Fincept-Corporation/FinceptTerminal",
+      "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+      "query_ids": [
+        "alpaca_trading"
+      ],
+      "route_tags": [
+        "research"
+      ],
+      "default_action_tier": 1,
+      "language": "C++",
+      "topics": [
+        "ai-agents",
+        "algorithmic-trading",
+        "bloomberg-terminal",
+        "cpp",
+        "finance",
+        "financial-markets",
+        "fintech",
+        "good-first-issue",
+        "investment",
+        "investment-research",
+        "machine-learning",
+        "opensource",
+        "python",
+        "qt",
+        "quantitative-finance",
+        "stock-market",
+        "trading"
+      ],
+      "stars": 27575,
+      "forks": 3868,
+      "open_issues": 23,
+      "pushed_at": "2026-06-24T08:41:31Z",
+      "license": "NOASSERTION",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "wilsonfreitas/awesome-quant",
+      "name": "awesome-quant",
+      "full_name": "wilsonfreitas/awesome-quant",
+      "html_url": "https://github.com/wilsonfreitas/awesome-quant",
+      "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
+      "query_ids": [
+        "openbb_finance"
+      ],
+      "route_tags": [
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "HTML",
+      "topics": [
+        "algorithmic-trading-engine",
+        "algorithmic-trading-library",
+        "algotrading",
+        "arbitrage-bot",
+        "awesome",
+        "awesome-list",
+        "finance",
+        "finance-api",
+        "financial-data",
+        "financial-instruments",
+        "google-finance",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading",
+        "stock-data",
+        "technical-analysis",
+        "trading-algorithms",
+        "trading-bot",
+        "trading-strategies",
+        "yahoo-finance"
+      ],
+      "stars": 27080,
+      "forks": 3610,
+      "open_issues": 58,
+      "pushed_at": "2026-06-28T01:39:42Z",
+      "license": "",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "hummingbot/hummingbot",
+      "name": "hummingbot",
+      "full_name": "hummingbot/hummingbot",
+      "html_url": "https://github.com/hummingbot/hummingbot",
+      "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
+      "query_ids": [
+        "trading_bot_framework"
+      ],
+      "route_tags": [
+        "broker_execution",
+        "onchain",
+        "backtest",
+        "bot_framework"
+      ],
+      "default_action_tier": 4,
+      "language": "Python",
+      "topics": [
+        "algotrading",
+        "arbitrage",
+        "backtesting",
+        "bitcoin",
+        "bot",
+        "crypto",
+        "cryptocurrency",
+        "cython",
+        "dex",
+        "docker",
+        "ethereum",
+        "hft",
+        "marketmaking",
+        "orderbook",
+        "python",
+        "trading"
+      ],
+      "stars": 19005,
+      "forks": 4760,
+      "open_issues": 151,
+      "pushed_at": "2026-06-26T17:58:35Z",
+      "license": "Apache-2.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "ccxt/binance-trade-bot",
+      "name": "binance-trade-bot",
+      "full_name": "ccxt/binance-trade-bot",
+      "html_url": "https://github.com/ccxt/binance-trade-bot",
+      "description": "Automated cryptocurrency trading bot",
+      "query_ids": [
+        "trading_bot_framework"
+      ],
+      "route_tags": [
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [],
+      "stars": 8712,
+      "forks": 2298,
+      "open_issues": 191,
+      "pushed_at": "2025-03-12T17:36:21Z",
+      "license": "GPL-3.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "kernc/backtesting.py",
+      "name": "backtesting.py",
+      "full_name": "kernc/backtesting.py",
+      "html_url": "https://github.com/kernc/backtesting.py",
+      "description": "🔎 📈 🐍 💰  Backtest trading strategies in Python.",
+      "query_ids": [
+        "backtest_framework"
+      ],
+      "route_tags": [
+        "backtest"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "algo-trading",
+        "algorithmic-trading",
+        "backtesting",
+        "backtesting-engine",
+        "backtesting-frameworks",
+        "backtesting-trading-strategies",
+        "finance",
+        "financial-markets",
+        "forex",
+        "forex-trading",
+        "framework",
+        "hacktoberfest",
+        "investing",
+        "investment",
+        "investment-strategies",
+        "stocks",
+        "trading",
+        "trading-algorithms",
+        "trading-simulator",
+        "trading-strategies"
+      ],
+      "stars": 8576,
+      "forks": 1481,
+      "open_issues": 79,
+      "pushed_at": "2025-12-20T17:50:49Z",
+      "license": "AGPL-3.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "paperswithbacktest/awesome-systematic-trading",
+      "name": "awesome-systematic-trading",
+      "full_name": "paperswithbacktest/awesome-systematic-trading",
+      "html_url": "https://github.com/paperswithbacktest/awesome-systematic-trading",
+      "description": "A curated list of awesome libraries, packages, strategies, books, blogs, tutorials for systematic trading.",
+      "query_ids": [
+        "openbb_finance"
+      ],
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "algorithmic-trading",
+        "algotrading",
+        "alpha",
+        "arbitrage-bot",
+        "awesome",
+        "awesome-list",
+        "book",
+        "finance",
+        "futures",
+        "futures-historical-data",
+        "futures-market",
+        "futuresmarkets",
+        "paper",
+        "quant",
+        "quantitative-finance",
+        "quantitative-trading",
+        "trading-algorithms",
+        "trading-bot",
+        "trading-strategies"
+      ],
+      "stars": 8443,
+      "forks": 1194,
+      "open_issues": 37,
+      "pushed_at": "2025-01-22T07:49:32Z",
+      "license": "",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "DeviaVir/zenbot",
+      "name": "zenbot",
+      "full_name": "DeviaVir/zenbot",
+      "html_url": "https://github.com/DeviaVir/zenbot",
+      "description": "Zenbot is a command-line cryptocurrency trading bot using Node.js and MongoDB.",
+      "query_ids": [
+        "trading_bot_framework"
+      ],
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "HTML",
+      "topics": [
+        "nodejs",
+        "paper-trading",
+        "python",
+        "strategy",
+        "trade",
+        "zenbot"
+      ],
+      "stars": 8261,
+      "forks": 1985,
+      "open_issues": 295,
+      "pushed_at": "2022-02-14T16:11:27Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "jesse-ai/jesse",
+      "name": "jesse",
+      "full_name": "jesse-ai/jesse",
+      "html_url": "https://github.com/jesse-ai/jesse",
+      "description": "An advanced crypto trading bot written in Python",
+      "query_ids": [
+        "trading_bot_framework"
+      ],
+      "route_tags": [
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "JavaScript",
+      "topics": [
+        "algo-trading",
+        "algorithmic-trading",
+        "bitcoin",
+        "bot",
+        "crypto",
+        "crypto-bot",
+        "crypto-bot-trading",
+        "cryptocurrency",
+        "framework",
+        "jesse",
+        "python",
+        "quantitative-finance",
+        "quantitative-trading",
+        "trade",
+        "trading",
+        "trading-algorithms",
+        "trading-bot",
+        "trading-strategies"
+      ],
+      "stars": 8110,
+      "forks": 1156,
+      "open_issues": 6,
+      "pushed_at": "2026-06-27T17:10:42Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "Thysrael/Horizon",
+      "name": "Horizon",
+      "full_name": "Thysrael/Horizon",
+      "html_url": "https://github.com/Thysrael/Horizon",
+      "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
+      "query_ids": [
+        "openbb_finance"
+      ],
+      "route_tags": [
+        "mcp",
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "aggregator",
+        "feishu-bot",
+        "llm",
+        "mcp",
+        "news",
+        "openclaw",
+        "python",
+        "webhook"
+      ],
+      "stars": 7525,
+      "forks": 1060,
+      "open_issues": 6,
+      "pushed_at": "2026-06-28T04:10:58Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "ricequant/rqalpha",
+      "name": "rqalpha",
+      "full_name": "ricequant/rqalpha",
+      "html_url": "https://github.com/ricequant/rqalpha",
+      "description": "A extendable, replaceable Python algorithmic backtest && trading framework supporting multiple securities",
+      "query_ids": [
+        "backtest_framework",
+        "quant_framework"
+      ],
+      "route_tags": [
+        "backtest"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "backtest",
+        "finance",
+        "futures",
+        "python",
+        "quant",
+        "ricequant",
+        "rqalpha",
+        "stock",
+        "ta-lib",
+        "trading"
+      ],
+      "stars": 6521,
+      "forks": 1762,
+      "open_issues": 30,
+      "pushed_at": "2026-06-24T10:06:59Z",
+      "license": "NOASSERTION",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "edtechre/pybroker",
+      "name": "pybroker",
+      "full_name": "edtechre/pybroker",
+      "html_url": "https://github.com/edtechre/pybroker",
+      "description": "Algorithmic Trading in Python with Machine Learning",
+      "query_ids": [
+        "backtest_framework"
+      ],
+      "route_tags": [
+        "broker_execution",
+        "backtest"
+      ],
+      "default_action_tier": 4,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "algorithmic-trading",
+        "algotrading",
+        "artificial-intelligence",
+        "backtesting",
+        "crypto",
+        "cryptocurrency",
+        "data-science",
+        "finance",
+        "framework",
+        "investment",
+        "machine-learning",
+        "python",
+        "quantitative-finance",
+        "stocks",
+        "trading",
+        "trading-strategies"
+      ],
+      "stars": 3437,
+      "forks": 444,
+      "open_issues": 9,
+      "pushed_at": "2026-05-11T04:07:54Z",
+      "license": "NOASSERTION",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "fasiondog/hikyuu",
+      "name": "hikyuu",
+      "full_name": "fasiondog/hikyuu",
+      "html_url": "https://github.com/fasiondog/hikyuu",
+      "description": "Hikyuu Quant Framework 基于C++/Python的超高速开源量化交易研究框架，同时可基于策略部件进行资产重用，快速累积策略资产。",
+      "query_ids": [
+        "backtest_framework",
+        "quant_framework"
+      ],
+      "route_tags": [
+        "backtest"
+      ],
+      "default_action_tier": 3,
+      "language": "C++",
+      "topics": [
+        "algorithms-trading",
+        "backtesting",
+        "finance",
+        "quant",
+        "stock",
+        "system-trading",
+        "trading",
+        "vestment"
+      ],
+      "stars": 3289,
+      "forks": 799,
+      "open_issues": 5,
+      "pushed_at": "2026-06-28T04:35:22Z",
+      "license": "Apache-2.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "blankly-finance/blankly",
+      "name": "blankly",
+      "full_name": "blankly-finance/blankly",
+      "html_url": "https://github.com/blankly-finance/blankly",
+      "description": "🚀 💸  Easily build, backtest and deploy your algo in just a few lines of code. Trade stocks, cryptos, and forex across exchanges w/ one package.",
+      "query_ids": [
+        "backtest_framework"
+      ],
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "algotrading",
+        "binance",
+        "blankly",
+        "bot",
+        "bot-framework",
+        "bots",
+        "coinbase",
+        "crypto",
+        "cryptocurrency",
+        "framework",
+        "investment",
+        "platform",
+        "python",
+        "stocks",
+        "trading",
+        "trading-bot",
+        "trading-strategies"
+      ],
+      "stars": 2451,
+      "forks": 314,
+      "open_issues": 38,
+      "pushed_at": "2024-12-30T20:20:29Z",
+      "license": "LGPL-3.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "barter-rs/barter-rs",
+      "name": "barter-rs",
+      "full_name": "barter-rs/barter-rs",
+      "html_url": "https://github.com/barter-rs/barter-rs",
+      "description": "Open-source Rust framework for building event-driven live-trading & backtesting systems",
+      "query_ids": [
+        "backtest_framework",
+        "quant_framework"
+      ],
+      "route_tags": [
+        "backtest",
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "Rust",
+      "topics": [
+        "algo-trading",
+        "algorithmic-trading",
+        "algotrading",
+        "backtesting",
+        "backtesting-engine",
+        "backtesting-frameworks",
+        "backtesting-trading-strategies",
+        "crypto-bot",
+        "event-driven",
+        "hft",
+        "high-frequency-trading",
+        "market-making",
+        "quant",
+        "quantitative-finance",
+        "rust",
+        "trading-bot",
+        "trading-platform",
+        "trading-simulator",
+        "trading-strategies",
+        "trading-systems"
+      ],
+      "stars": 2181,
+      "forks": 350,
+      "open_issues": 85,
+      "pushed_at": "2026-06-06T10:36:50Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "akfamily/akquant",
+      "name": "akquant",
+      "full_name": "akfamily/akquant",
+      "html_url": "https://github.com/akfamily/akquant",
+      "description": "AKQuant is a high-performance quantitative research and trading framework built on Rust and Python! 开源量化回测框架",
+      "query_ids": [
+        "quant_framework"
+      ],
+      "route_tags": [
+        "backtest",
+        "research"
+      ],
+      "default_action_tier": 3,
+      "language": "Python",
+      "topics": [
+        "akshare",
+        "backtest",
+        "finance",
+        "quant"
+      ],
+      "stars": 1626,
+      "forks": 209,
+      "open_issues": 11,
+      "pushed_at": "2026-06-22T08:22:19Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "cinar/indicator",
+      "name": "indicator",
+      "full_name": "cinar/indicator",
+      "html_url": "https://github.com/cinar/indicator",
+      "description": "Indicator Go delivers a rich set of technical analysis indicators, customizable strategies, and a powerful backtesting framework. No dependencies, just pure simplicity. ✨ See how! 👀",
+      "query_ids": [
+        "quant_framework"
+      ],
+      "route_tags": [
+        "backtest"
+      ],
+      "default_action_tier": 3,
+      "language": "Go",
+      "topics": [
+        "algorithmic-trading",
+        "bollinger-bands",
+        "finance",
+        "financial-instruments",
+        "indicator",
+        "indicators",
+        "macd",
+        "quant",
+        "quantative-finance",
+        "quantative-trading",
+        "quantitative-finance",
+        "stock-analysis",
+        "stock-market",
+        "technical-analysis",
+        "technical-analysis-indicators",
+        "technical-analysis-library",
+        "trading",
+        "trading-algorithms",
+        "trading-strategies",
+        "yahoo-finance"
+      ],
+      "stars": 1188,
+      "forks": 192,
+      "open_issues": 34,
+      "pushed_at": "2026-06-20T00:37:35Z",
+      "license": "AGPL-3.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "51bitquant/howtrader",
+      "name": "howtrader",
+      "full_name": "51bitquant/howtrader",
+      "html_url": "https://github.com/51bitquant/howtrader",
+      "description": "Howtrader: A crypto quant framework for developing, backtesting, and executing your own trading strategies. Seamlessly integrates with TradingView and other third-party signals. Simply send a post request to automate trading and order placement. Supports Binance and Okex exchanges.",
+      "query_ids": [
+        "quant_framework"
+      ],
+      "route_tags": [
+        "broker_execution",
+        "backtest",
+        "bot_framework"
+      ],
+      "default_action_tier": 4,
+      "language": "Python",
+      "topics": [
+        "51bitquant",
+        "algo",
+        "binance",
+        "binance-api",
+        "binance-bot",
+        "binance-trader",
+        "bitcoin",
+        "cryptocurrency",
+        "eth",
+        "okx-exchange",
+        "okx-v5",
+        "python",
+        "quant",
+        "quantitative",
+        "trader",
+        "trading",
+        "tradingview",
+        "tradingview-alert",
+        "tradingview-webhooks",
+        "vnpy"
+      ],
+      "stars": 929,
+      "forks": 333,
+      "open_issues": 25,
+      "pushed_at": "2026-06-07T09:33:24Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "demcp/awesome-web3-mcp-servers",
+      "name": "awesome-web3-mcp-servers",
+      "full_name": "demcp/awesome-web3-mcp-servers",
+      "html_url": "https://github.com/demcp/awesome-web3-mcp-servers",
+      "description": "DeMCP is the first Decentralized MCP network, offering SSE proxies for MCP services and mainstream LLMs, tackling trust and security with TEE and blockchain.",
+      "query_ids": [
+        "dune_alchemy_etherscan"
+      ],
+      "route_tags": [
+        "mcp",
+        "onchain"
+      ],
+      "default_action_tier": 2,
+      "language": "",
+      "topics": [],
+      "stars": 610,
+      "forks": 147,
+      "open_issues": 75,
+      "pushed_at": "2025-05-22T02:39:23Z",
+      "license": "",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "nirholas/cryptocurrency.cv",
+      "name": "cryptocurrency.cv",
+      "full_name": "nirholas/cryptocurrency.cv",
+      "html_url": "https://github.com/nirholas/cryptocurrency.cv",
+      "description": "Free crypto news API - real-time aggregator for Bitcoin, Ethereum, DeFi, Solana & altcoins. No API key required. RSS/Atom feeds, JSON REST API, historical archive with market context, embeddable widgets, ChatGPT plugin, Claude MCP server, SDKs (Python, TypeScript, Go, React, PHP). AI/LLM ready. Vibe coding friendly. Open source.",
+      "query_ids": [
+        "dune_alchemy_etherscan"
+      ],
+      "route_tags": [
+        "mcp",
+        "onchain",
+        "bot_framework"
+      ],
+      "default_action_tier": 3,
+      "language": "TypeScript",
+      "topics": [
+        "ai-agent",
+        "api",
+        "bitcoin",
+        "chatgpt",
+        "claude",
+        "crypto",
+        "cryptocurrency",
+        "defi",
+        "ethereum",
+        "free-api",
+        "javascript",
+        "langchain",
+        "mcp",
+        "molt",
+        "moltbot",
+        "news",
+        "nextjs",
+        "python",
+        "trading-bot",
+        "web3"
+      ],
+      "stars": 248,
+      "forks": 36,
+      "open_issues": 9,
+      "pushed_at": "2026-06-22T06:07:08Z",
+      "license": "NOASSERTION",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "xpaysh/awesome-x402",
+      "name": "awesome-x402",
+      "full_name": "xpaysh/awesome-x402",
+      "html_url": "https://github.com/xpaysh/awesome-x402",
+      "description": "🚀 Curated list of x402 resources: HTTP 402 Payment Required protocol for blockchain payments, crypto micropayments, AI agents, API monetization. Includes SDKs (TypeScript, Python, Rust), examples, facilitators (Coinbase, Cloudflare), MCP integration, tutorials. Accept USDC payments with one line of code. Perfect for AI agent economy.",
+      "query_ids": [
+        "dune_alchemy_etherscan"
+      ],
+      "route_tags": [
+        "mcp"
+      ],
+      "default_action_tier": 2,
+      "language": "",
+      "topics": [
+        "agentic-economy",
+        "agentic-payment",
+        "ai-payments",
+        "awesome",
+        "awesome-list",
+        "http-402",
+        "mcp",
+        "micropayments",
+        "stablecoin-payments",
+        "usdc",
+        "x402"
+      ],
+      "stars": 243,
+      "forks": 466,
+      "open_issues": 12,
+      "pushed_at": "2026-06-27T18:23:50Z",
+      "license": "CC0-1.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "jiayaoqijia/cryptoskill",
+      "name": "cryptoskill",
+      "full_name": "jiayaoqijia/cryptoskill",
+      "html_url": "https://github.com/jiayaoqijia/cryptoskill",
+      "description": "Skills for Crypto",
+      "query_ids": [
+        "dune_alchemy_etherscan"
+      ],
+      "route_tags": [
+        "finance_or_trading_candidate"
+      ],
+      "default_action_tier": 1,
+      "language": "Python",
+      "topics": [],
+      "stars": 66,
+      "forks": 17,
+      "open_issues": 27,
+      "pushed_at": "2026-06-04T03:32:35Z",
+      "license": "AGPL-3.0",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    },
+    {
+      "id": "nirholas/UCAI",
+      "name": "UCAI",
+      "full_name": "nirholas/UCAI",
+      "html_url": "https://github.com/nirholas/UCAI",
+      "description": "Universal Contract AI Interface (UCAI) 🔗 ABI to MCP | The open standard for connecting AI agents to blockchain. MCP server generator for smart contracts. Claude + Uniswap, Aave, ERC20, NFTs, DeFi. Python CLI, Web3 integration, transaction simulation. Polygon, Arbitrum, Base, Ethereum EVM chains. Claude, GPT, LLM tooling, Solidity, OpenAI.",
+      "query_ids": [
+        "dune_alchemy_etherscan"
+      ],
+      "route_tags": [
+        "mcp",
+        "market_data",
+        "onchain"
+      ],
+      "default_action_tier": 4,
+      "language": "Python",
+      "topics": [
+        "abi",
+        "ai-agents",
+        "arbitrum",
+        "blockchain",
+        "claude",
+        "defi",
+        "erc20",
+        "ethereum",
+        "evm",
+        "llm",
+        "mcp",
+        "model-context-protocol",
+        "nft",
+        "polygon",
+        "python",
+        "smart-contracts",
+        "solidity",
+        "uniswap",
+        "web3"
+      ],
+      "stars": 34,
+      "forks": 11,
+      "open_issues": 2,
+      "pushed_at": "2026-05-07T05:09:27Z",
+      "license": "MIT",
+      "source_status": "github_live_search",
+      "stark_relevance": "candidate_for_public_comparison_or_router_source"
+    }
+  ],
+  "evidence_boundary": "GitHub discovery is a public repository search snapshot. It helps maintain the comparison set and router backlog, but it does not prove installability, official status, API entitlement, live model behavior, market-data correctness, trading performance, remote CI completion, or public superiority."
+}

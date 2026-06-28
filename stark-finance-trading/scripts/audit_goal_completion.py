@@ -34,6 +34,7 @@ INSTALLED_COPY_FRESHNESS_FILES = [
     "SKILL.md",
     "scripts/audit_goal_completion.py",
     "scripts/audit_external_proofs.py",
+    "scripts/discover_github_finance_tools.py",
     "scripts/run_quality_suite.py",
 ]
 

@@ -21,6 +21,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Public comparison snapshot: `benchmarks/PUBLIC_COMPARISON_2026-06-28.md` and `benchmarks/public-comparison-2026-06-28.json`.
 - Public source audit: `scripts/audit_public_sources.py` checks candidate classification and can optionally probe public URLs.
 - Public tool catalog: `references/public-tool-catalog.json` and `scripts/validate_public_tool_catalog.py` keep official MCP/API/framework candidates machine-checkable.
+- GitHub discovery: `scripts/discover_github_finance_tools.py` refreshes public GitHub finance/trading/Web3 candidates through live search when available, or marks curated fallback mode.
 - Prompt-to-tool route plan: `scripts/plan_tool_route.py` validates natural prompts against `evals/tool-routing-cases.json`.
 - Runtime capability scan: `scripts/runtime_capability_scan.py` reconciles catalog tools with local MCP servers, plugins, skills, and env-var presence.
 - Public benchmark cases: `benchmarks/public-benchmark-cases.json`.
@@ -94,6 +95,10 @@ The review bundle is the handoff layer between automated checks and human judgme
 ## Public Tool Catalog Gate
 
 `scripts/validate_public_tool_catalog.py` validates `references/public-tool-catalog.json` against required public finance/trading/Web3 tool IDs, required route tags, official or primary source status, source-ledger alignment, high-risk execution/admin/payment surfaces, and the one-skill merge policy. A PASS here means the router has a machine-readable substrate for major public MCP/API/framework candidates. It does not prove credentials, entitlement, live availability, market-data correctness, or execution quality.
+
+## GitHub Discovery Gate
+
+`scripts/discover_github_finance_tools.py` searches public GitHub repositories for finance, trading, market-data, broker, Web3/onchain, backtest, quant, and bot/framework tool candidates. It records route tags, stars, language, topics, default action tier, and query provenance, and falls back to the curated public comparison set when live GitHub search is unavailable. A PASS means the discovery report is generated and evidence-labeled. It does not prove official status, installability, entitlement, live API behavior, trading performance, or public superiority.
 
 ## Tool Route Planner Gate
 

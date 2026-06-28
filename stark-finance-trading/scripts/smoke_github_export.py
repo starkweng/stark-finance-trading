@@ -41,6 +41,7 @@ REQUIRED_EXPORT_FILES = [
     f"{SKILL_NAME}/scripts/install_package_smoke.py",
     f"{SKILL_NAME}/scripts/smoke_github_export.py",
     f"{SKILL_NAME}/scripts/score_eval_review_bundle.py",
+    f"{SKILL_NAME}/scripts/discover_github_finance_tools.py",
     "dist/stark-finance-trading.skill",
     "dist/stark-finance-trading.release-manifest.json",
     "dist/stark-finance-trading.release-notes.json",
@@ -49,6 +50,7 @@ REQUIRED_EXPORT_FILES = [
     "dist/stark-finance-trading.competitive-eval-scorecard.json",
     "dist/stark-finance-trading.external-proof-audit.json",
     "dist/stark-finance-trading.goal-completion-audit.json",
+    "dist/stark-finance-trading.github-tool-discovery.json",
 ]
 
 
