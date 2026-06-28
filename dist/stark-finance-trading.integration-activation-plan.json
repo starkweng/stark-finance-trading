@@ -1,27 +1,27 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T06:45:40.107089+00:00",
+  "generated_at": "2026-06-28T07:07:41.328752+00:00",
   "skill": "stark-finance-trading",
-  "catalog_tool_count": 34,
+  "catalog_tool_count": 39,
   "runtime_report": "dist/stark-finance-trading.runtime-capabilities.json",
   "runtime_status": "PASS",
   "activation_stage_counts": {
-    "install_or_auth_candidate": 12,
+    "install_or_auth_candidate": 13,
     "lazy_load_available": 1,
     "needs_env": 1,
     "ready_now": 11,
-    "watchlist": 9
+    "watchlist": 13
   },
   "safety_gate_counts": {
-    "auth_or_install_review": 10,
+    "auth_or_install_review": 11,
     "high_risk_requires_confirmation": 5,
-    "read_only_ok": 13,
+    "read_only_ok": 17,
     "simulation_or_paper_first": 6
   },
   "ready_now_count": 11,
   "quick_activation_count": 2,
-  "priority_backlog_count": 12,
+  "priority_backlog_count": 13,
   "high_risk_requires_confirmation_count": 5,
   "required_core_missing": [],
   "top_activation_actions": [
@@ -166,6 +166,32 @@
       "safety_gate": "auth_or_install_review",
       "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
       "merge_policy": "Use as high-quality market-data layer.",
+      "no_secret_values": true
+    },
+    {
+      "id": "the-graph-subgraph-mcp",
+      "name": "The Graph Subgraph MCP",
+      "provider": "The Graph",
+      "priority": "core",
+      "priority_rank": 100,
+      "source_status": "official_mcp",
+      "source_url": "https://thegraph.com/docs/en/subgraphs/subgraph-mcp/introduction/",
+      "runtime_status": "external_candidate",
+      "activation_stage": "install_or_auth_candidate",
+      "default_action_tier": 1,
+      "route_tags": [
+        "subgraph",
+        "graphql",
+        "onchain_indexing",
+        "protocol_data",
+        "schema_discovery"
+      ],
+      "best_for": "Subgraph discovery, schema inspection, GraphQL query planning, protocol-specific indexed data, and repeatable onchain data access.",
+      "auth_or_setup": "MCP setup and target subgraph/API configuration; verify subgraph freshness and schema before relying on metrics.",
+      "missing_env": [],
+      "safety_gate": "auth_or_install_review",
+      "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
+      "merge_policy": "Use as a structured indexed-data route behind stark-finance-trading, especially when Dune SQL is not the right shape.",
       "no_secret_values": true
     },
     {
@@ -852,6 +878,32 @@
       "no_secret_values": true
     },
     {
+      "id": "the-graph-subgraph-mcp",
+      "name": "The Graph Subgraph MCP",
+      "provider": "The Graph",
+      "priority": "core",
+      "priority_rank": 100,
+      "source_status": "official_mcp",
+      "source_url": "https://thegraph.com/docs/en/subgraphs/subgraph-mcp/introduction/",
+      "runtime_status": "external_candidate",
+      "activation_stage": "install_or_auth_candidate",
+      "default_action_tier": 1,
+      "route_tags": [
+        "subgraph",
+        "graphql",
+        "onchain_indexing",
+        "protocol_data",
+        "schema_discovery"
+      ],
+      "best_for": "Subgraph discovery, schema inspection, GraphQL query planning, protocol-specific indexed data, and repeatable onchain data access.",
+      "auth_or_setup": "MCP setup and target subgraph/API configuration; verify subgraph freshness and schema before relying on metrics.",
+      "missing_env": [],
+      "safety_gate": "auth_or_install_review",
+      "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
+      "merge_policy": "Use as a structured indexed-data route behind stark-finance-trading, especially when Dune SQL is not the right shape.",
+      "no_secret_values": true
+    },
+    {
       "id": "token-terminal-mcp",
       "name": "Token Terminal MCP",
       "provider": "Token Terminal",
@@ -1373,6 +1425,32 @@
       "safety_gate": "auth_or_install_review",
       "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
       "merge_policy": "Use as high-quality market-data layer.",
+      "no_secret_values": true
+    },
+    {
+      "id": "the-graph-subgraph-mcp",
+      "name": "The Graph Subgraph MCP",
+      "provider": "The Graph",
+      "priority": "core",
+      "priority_rank": 100,
+      "source_status": "official_mcp",
+      "source_url": "https://thegraph.com/docs/en/subgraphs/subgraph-mcp/introduction/",
+      "runtime_status": "external_candidate",
+      "activation_stage": "install_or_auth_candidate",
+      "default_action_tier": 1,
+      "route_tags": [
+        "subgraph",
+        "graphql",
+        "onchain_indexing",
+        "protocol_data",
+        "schema_discovery"
+      ],
+      "best_for": "Subgraph discovery, schema inspection, GraphQL query planning, protocol-specific indexed data, and repeatable onchain data access.",
+      "auth_or_setup": "MCP setup and target subgraph/API configuration; verify subgraph freshness and schema before relying on metrics.",
+      "missing_env": [],
+      "safety_gate": "auth_or_install_review",
+      "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
+      "merge_policy": "Use as a structured indexed-data route behind stark-finance-trading, especially when Dune SQL is not the right shape.",
       "no_secret_values": true
     },
     {
@@ -1910,6 +1988,32 @@
       "no_secret_values": true
     },
     {
+      "id": "goldsky-mcp",
+      "name": "Goldsky MCP / AI Skills",
+      "provider": "Goldsky",
+      "priority": "support",
+      "priority_rank": 60,
+      "source_status": "official_docs_mcp_and_skill",
+      "source_url": "https://docs.goldsky.com/mcp-server",
+      "runtime_status": "external_candidate",
+      "activation_stage": "watchlist",
+      "default_action_tier": 2,
+      "route_tags": [
+        "subgraph",
+        "web3_data_pipeline",
+        "streaming",
+        "graphql",
+        "rpc"
+      ],
+      "best_for": "Goldsky docs/search, subgraphs, Mirror/Turbo data pipelines, Compose, Edge RPC, and Web3 indexing build/debug workflows.",
+      "auth_or_setup": "Goldsky account/API or docs MCP setup depending on workflow; pipeline deployment may require project credentials.",
+      "missing_env": [],
+      "safety_gate": "read_only_ok",
+      "next_action": "Keep in catalog as a watchlist source; promote only when a real task needs it.",
+      "merge_policy": "Use as a Web3 data-pipeline route, not a separate user-facing skill.",
+      "no_secret_values": true
+    },
+    {
       "id": "alpha-vantage-mcp",
       "name": "Alpha Vantage MCP",
       "provider": "Alpha Vantage",
@@ -2017,6 +2121,33 @@
       "no_secret_values": true
     },
     {
+      "id": "goldrush-mcp",
+      "name": "GoldRush MCP",
+      "provider": "Covalent / GoldRush",
+      "priority": "support",
+      "priority_rank": 60,
+      "source_status": "official_mcp",
+      "source_url": "https://github.com/covalenthq/goldrush-mcp-server",
+      "runtime_status": "external_candidate",
+      "activation_stage": "watchlist",
+      "default_action_tier": 1,
+      "route_tags": [
+        "multichain_data",
+        "wallets",
+        "balances",
+        "transactions",
+        "token_prices",
+        "nft"
+      ],
+      "best_for": "Covalent/GoldRush multichain wallet balances, transactions, NFT data, token prices, and structured blockchain API access.",
+      "auth_or_setup": "GoldRush API key and MCP package setup.",
+      "missing_env": [],
+      "safety_gate": "read_only_ok",
+      "next_action": "Keep in catalog as a watchlist source; promote only when a real task needs it.",
+      "merge_policy": "Use as a multichain indexed-data cross-check beside Alchemy, Moralis, Dune, and Etherscan.",
+      "no_secret_values": true
+    },
+    {
       "id": "jupiter-apis",
       "name": "Jupiter APIs",
       "provider": "Jupiter",
@@ -2043,6 +2174,33 @@
       "no_secret_values": true
     },
     {
+      "id": "moralis-cortex-mcp",
+      "name": "Moralis Cortex MCP",
+      "provider": "Moralis",
+      "priority": "support",
+      "priority_rank": 60,
+      "source_status": "official_mcp",
+      "source_url": "https://docs.moralis.com/data-api/cortex-api/overview",
+      "runtime_status": "external_candidate",
+      "activation_stage": "watchlist",
+      "default_action_tier": 1,
+      "route_tags": [
+        "web3_data",
+        "wallets",
+        "tokens",
+        "nft",
+        "evm",
+        "solana"
+      ],
+      "best_for": "AI-native Web3 data questions across wallet activity, token flows, holder context, NFT/token metadata, EVM, and Solana surfaces.",
+      "auth_or_setup": "Moralis API/Cortex access and plan limits.",
+      "missing_env": [],
+      "safety_gate": "read_only_ok",
+      "next_action": "Keep in catalog as a watchlist source; promote only when a real task needs it.",
+      "merge_policy": "Use as a multichain Web3 data route when a natural-language data layer is useful.",
+      "no_secret_values": true
+    },
+    {
       "id": "openbb-docs-mcp",
       "name": "OpenBB Docs MCP",
       "provider": "OpenBB",
@@ -2065,6 +2223,33 @@
       "safety_gate": "read_only_ok",
       "next_action": "Keep in catalog as a watchlist source; promote only when a real task needs it.",
       "merge_policy": "Use as documentation context, not data authority.",
+      "no_secret_values": true
+    },
+    {
+      "id": "sqd-portal-mcp",
+      "name": "SQD Portal MCP",
+      "provider": "SQD / Subsquid",
+      "priority": "support",
+      "priority_rank": 60,
+      "source_status": "official_mcp",
+      "source_url": "https://docs.sqd.dev/en/ai/mcp-server",
+      "runtime_status": "external_candidate",
+      "activation_stage": "watchlist",
+      "default_action_tier": 1,
+      "route_tags": [
+        "multichain_data",
+        "onchain_indexing",
+        "logs",
+        "transactions",
+        "data_pipeline",
+        "hyperliquid"
+      ],
+      "best_for": "High-throughput blockchain data queries, logs, transactions, wallet analysis, chain comparison, and datasets such as Hyperliquid when available.",
+      "auth_or_setup": "Portal MCP setup and network/dataset selection.",
+      "missing_env": [],
+      "safety_gate": "read_only_ok",
+      "next_action": "Keep in catalog as a watchlist source; promote only when a real task needs it.",
+      "merge_policy": "Use as a high-throughput chain-data route for research and indexing workflows.",
       "no_secret_values": true
     },
     {

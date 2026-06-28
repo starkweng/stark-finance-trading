@@ -257,6 +257,56 @@
       "what_stark_must_do_better": "Use display data as one evidence layer only and treat community MCP wrappers as non-official until verified."
     },
     {
+      "name": "The Graph Subgraph MCP",
+      "category": "subgraph_indexing_mcp",
+      "source_url": "https://thegraph.com/docs/en/subgraphs/subgraph-mcp/introduction/",
+      "source_status": "official_mcp",
+      "strengths": ["subgraph discovery", "schema inspection", "GraphQL query planning", "protocol-specific indexed data"],
+      "default_risk_tier": 0,
+      "route_role": "Subgraph and indexed protocol-data route when a task needs schema-aware historical or protocol-specific evidence.",
+      "what_stark_must_do_better": "Label schema freshness, index lag, and protocol-specific assumptions before turning indexed data into conclusions."
+    },
+    {
+      "name": "Goldsky MCP / AI Skills",
+      "category": "web3_data_pipeline_mcp_skill",
+      "source_url": "https://docs.goldsky.com/mcp-server",
+      "source_status": "official_docs_mcp_and_skill",
+      "strengths": ["Goldsky docs search", "subgraph and data-pipeline context", "Mirror and Turbo context", "Compose and Edge RPC guidance"],
+      "default_risk_tier": 1,
+      "route_role": "Web3 data-pipeline route for Goldsky docs, subgraphs, streaming, and infrastructure context.",
+      "what_stark_must_do_better": "Separate data-pipeline design from token-risk or trading conclusions and verify product surface, entitlement, and freshness."
+    },
+    {
+      "name": "Moralis Cortex MCP",
+      "category": "web3_ai_data_mcp",
+      "source_url": "https://docs.moralis.com/data-api/cortex-api/overview",
+      "source_status": "official_mcp",
+      "strengths": ["natural-language Web3 data", "wallet context", "token and NFT context", "EVM and Solana coverage"],
+      "default_risk_tier": 0,
+      "route_role": "Multichain Web3 data route for wallet, token, NFT, and transaction context.",
+      "what_stark_must_do_better": "Resolve token contracts and chain identity, label freshness, and cross-check with explorer or chain-state sources."
+    },
+    {
+      "name": "GoldRush MCP",
+      "category": "multichain_data_mcp",
+      "source_url": "https://github.com/covalenthq/goldrush-mcp-server",
+      "source_status": "official_mcp",
+      "strengths": ["multichain balances", "transactions", "NFTs", "token prices", "portfolio-style data"],
+      "default_risk_tier": 0,
+      "route_role": "Multichain data cross-check route for balances, transactions, NFTs, and token price context.",
+      "what_stark_must_do_better": "Treat portfolio and price data as evidence only, not as a direct risk label or trade recommendation."
+    },
+    {
+      "name": "SQD Portal MCP",
+      "category": "multichain_indexing_mcp",
+      "source_url": "https://docs.sqd.dev/en/ai/mcp-server",
+      "source_status": "official_mcp",
+      "strengths": ["logs and transaction data", "network and dataset coverage", "high-throughput chain data", "Hyperliquid-adjacent dataset potential"],
+      "default_risk_tier": 0,
+      "route_role": "Indexed multichain data route for logs, transactions, datasets, and high-volume chain analysis.",
+      "what_stark_must_do_better": "Preserve dataset, chain, query-window, and indexing assumptions before using results in DD or trading analysis."
+    },
+    {
       "name": "Stripe MCP / Agent Toolkit",
       "category": "financial_payments_infrastructure",
       "source_url": "https://docs.stripe.com/agents/toolkit",

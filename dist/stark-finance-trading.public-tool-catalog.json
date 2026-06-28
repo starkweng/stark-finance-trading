@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T06:45:25.022087+00:00",
+  "generated_at": "2026-06-28T07:07:27.880243+00:00",
   "skill": "stark-finance-trading",
   "catalog_path": "references/public-tool-catalog.json",
-  "tool_count": 34,
-  "required_tool_count": 33,
+  "tool_count": 39,
+  "required_tool_count": 38,
   "missing_required_tool_ids": [],
-  "official_or_primary_count": 34,
-  "route_tag_count": 140,
+  "official_or_primary_count": 39,
+  "route_tag_count": 153,
   "missing_required_route_tags": [],
   "high_risk_surface_count": 5,
   "high_risk_surfaces": [
@@ -20,32 +20,33 @@
   ],
   "priority_counts": {
     "connector_substrate": 1,
-    "core": 13,
+    "core": 14,
     "execution_candidate": 3,
     "execution_framework": 3,
     "finance_ops": 2,
     "institutional": 2,
-    "support": 9,
+    "support": 13,
     "web3_execution_candidate": 1
   },
   "source_status_counts": {
     "official_api": 5,
     "official_api_with_community_mcp_candidates": 1,
     "official_docs_mcp": 1,
-    "official_mcp": 17,
+    "official_docs_mcp_and_skill": 1,
+    "official_mcp": 21,
     "official_mcp_and_skill": 2,
     "official_mcp_or_agent_toolkit": 1,
     "official_open_source": 6,
     "official_skill_hub": 1
   },
   "default_action_tier_counts": {
-    "1": 17,
-    "2": 5,
+    "1": 21,
+    "2": 6,
     "3": 7,
     "4": 5
   },
   "installed_status_counts": {
-    "external_candidate": 28,
+    "external_candidate": 33,
     "installed_needs_key_check": 1,
     "installed_on_stark_machine": 3,
     "lazy_loadable_connector_candidate": 2
@@ -66,6 +67,7 @@
       "massive-polygon-mcp",
       "openbb",
       "quantconnect-mcp",
+      "the-graph-subgraph-mcp",
       "token-terminal-mcp",
       "unusual-whales-mcp"
     ],
@@ -93,9 +95,13 @@
       "defillama-api",
       "dexscreener-api",
       "fmp-mcp",
+      "goldrush-mcp",
+      "goldsky-mcp",
       "jupiter-apis",
+      "moralis-cortex-mcp",
       "openbb-docs-mcp",
       "quicknode-mcp",
+      "sqd-portal-mcp",
       "twelve-data-mcp"
     ],
     "web3_execution_candidate": [

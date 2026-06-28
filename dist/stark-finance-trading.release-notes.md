@@ -3,7 +3,7 @@
 - Status: PASS
 - Release date: 2026-06-28
 - Package: `stark-finance-trading.skill`
-- SHA256: `5df9964e2461cf204c7e00f3996bf5d7cc34120369c0a560e0577bed981dbbe3`
+- SHA256: `4d366b79ae28718f76837254ea38d9e787d876eb2b55ff2f64ee46af9083e012`
 - Entry count: 64
 - Install smoke: PASS
 - Live eval signoff: PASS / approval PENDING
@@ -33,6 +33,7 @@
 - Added competitive gap analysis that converts GitHub finance/trading discovery into coverage status, partial-runtime gaps, and route/backlog actions.
 - Added competitive route backlog generation that turns gap findings into route/eval proposals, auth gates, and learn-loop next actions.
 - Added integration activation plan generation that turns catalog/runtime evidence into ready routes, quick activations, install/auth backlog, watchlist tools, and Tier 4 confirmation surfaces.
+- Added The Graph, Goldsky, Moralis Cortex, GoldRush/Covalent, and SQD as official Web3 indexed-data/source routes in the public catalog and router.
 
 ## Evidence Boundary
 

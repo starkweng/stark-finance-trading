@@ -15,14 +15,14 @@
 | freqtrade/freqtrade | 51901 | bot_framework | 3 | https://github.com/freqtrade/freqtrade |
 | ccxt/ccxt | 43096 | backtest, bot_framework, onchain | 3 | https://github.com/ccxt/ccxt |
 | Fincept-Corporation/FinceptTerminal | 27579 | research | 1 | https://github.com/Fincept-Corporation/FinceptTerminal |
-| wilsonfreitas/awesome-quant | 27082 | bot_framework | 3 | https://github.com/wilsonfreitas/awesome-quant |
+| wilsonfreitas/awesome-quant | 27083 | bot_framework | 3 | https://github.com/wilsonfreitas/awesome-quant |
 | hummingbot/hummingbot | 19007 | broker_execution, onchain, backtest, bot_framework | 4 | https://github.com/hummingbot/hummingbot |
 | ccxt/binance-trade-bot | 8712 | bot_framework | 3 | https://github.com/ccxt/binance-trade-bot |
 | kernc/backtesting.py | 8576 | backtest | 3 | https://github.com/kernc/backtesting.py |
 | paperswithbacktest/awesome-systematic-trading | 8443 | backtest, bot_framework | 3 | https://github.com/paperswithbacktest/awesome-systematic-trading |
 | DeviaVir/zenbot | 8261 | backtest, bot_framework | 3 | https://github.com/DeviaVir/zenbot |
 | jesse-ai/jesse | 8110 | bot_framework | 3 | https://github.com/jesse-ai/jesse |
-| Thysrael/Horizon | 7532 | mcp, bot_framework | 3 | https://github.com/Thysrael/Horizon |
+| Thysrael/Horizon | 7534 | mcp, bot_framework | 3 | https://github.com/Thysrael/Horizon |
 | ricequant/rqalpha | 6521 | backtest | 3 | https://github.com/ricequant/rqalpha |
 | edtechre/pybroker | 3437 | broker_execution, backtest | 4 | https://github.com/edtechre/pybroker |
 | fasiondog/hikyuu | 3289 | backtest | 3 | https://github.com/fasiondog/hikyuu |
@@ -33,7 +33,7 @@
 | 51bitquant/howtrader | 929 | broker_execution, backtest, bot_framework | 4 | https://github.com/51bitquant/howtrader |
 | demcp/awesome-web3-mcp-servers | 610 | mcp, onchain | 2 | https://github.com/demcp/awesome-web3-mcp-servers |
 | nirholas/cryptocurrency.cv | 248 | mcp, onchain, bot_framework | 3 | https://github.com/nirholas/cryptocurrency.cv |
-| xpaysh/awesome-x402 | 243 | mcp | 2 | https://github.com/xpaysh/awesome-x402 |
+| xpaysh/awesome-x402 | 244 | mcp | 2 | https://github.com/xpaysh/awesome-x402 |
 | jiayaoqijia/cryptoskill | 66 | finance_or_trading_candidate | 1 | https://github.com/jiayaoqijia/cryptoskill |
 | nirholas/UCAI | 34 | mcp, market_data, onchain | 4 | https://github.com/nirholas/UCAI |
 

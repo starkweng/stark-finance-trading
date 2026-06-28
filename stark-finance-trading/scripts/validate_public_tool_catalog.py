@@ -37,6 +37,11 @@ REQUIRED_TOOL_IDS = {
     "helius-mcp",
     "jupiter-apis",
     "dexscreener-api",
+    "the-graph-subgraph-mcp",
+    "goldsky-mcp",
+    "moralis-cortex-mcp",
+    "goldrush-mcp",
+    "sqd-portal-mcp",
     "stripe-agent-toolkit",
     "plaid-api",
     "databento-api",
@@ -65,6 +70,10 @@ REQUIRED_ROUTE_TAGS = {
     "payments",
     "bank_data",
     "web3_infrastructure",
+    "subgraph",
+    "onchain_indexing",
+    "web3_data_pipeline",
+    "multichain_data",
 }
 
 REQUIRED_FIELDS = [

@@ -47,6 +47,11 @@ Use these when installing new data/execution surfaces or writing a public README
 | Helius MCP | Official Solana MCP / agent tools | Solana wallet, tx, token/NFT/DAS, webhooks, streaming, token launch analysis | Solana and pump.fun-adjacent route; distinguish reads, infra changes, and transactions. |
 | Jupiter APIs | Official Solana liquidity APIs | Solana swap quotes, routing, token/lending/liquidity integrations | Quote/intelligence route unless wallet signing is explicitly requested and confirmed. |
 | DexScreener API | Official DEX market API | DEX pairs, liquidity, price action, token market display behavior | Market-display cross-check only; community MCP wrappers are non-official until verified. |
+| The Graph Subgraph MCP | Official subgraph MCP | Subgraph discovery, schema inspection, GraphQL query planning, protocol-specific indexed data | Use for indexed protocol data; validate schema freshness and index lag. |
+| Goldsky MCP / AI Skills | Official MCP/docs skill route | Goldsky docs, subgraph/data-pipeline context, Mirror/Turbo, Compose, Edge RPC | Data-pipeline route; verify product surface and entitlement before relying on live data. |
+| Moralis Cortex MCP | Official Web3 AI data MCP | Wallet, token, NFT, EVM/Solana data via natural-language Web3 data layer | Good multichain data route; resolve token contracts and freshness before conclusions. |
+| GoldRush MCP | Official Covalent/GoldRush MCP | Multichain balances, transactions, NFTs, token prices, portfolio-style data | Use as multichain data cross-check, not a risk label by itself. |
+| SQD Portal MCP | Official indexed-data MCP | Multichain logs, transactions, datasets, high-throughput indexed chain data | Use for raw indexed data; preserve dataset, chain, and query-window assumptions. |
 | Stripe MCP / Agent Toolkit | Official financial/payment agent toolkit | Payment, billing, checkout, treasury/revenue operations | Finance-ops route, not trading research or market signal. State changes require confirmation. |
 | Plaid API | Official financial connectivity API | Bank/account connectivity, balances, transactions, cashflow evidence | Finance-data route, not brokerage execution. Sensitive financial data requires minimal-scope handling. |
 | Databento API | Official institutional data API | Historical/live market data for serious strategy research | Check dataset, venue, entitlement, latency, and cost before relying on it. |
@@ -72,14 +77,19 @@ Use:
 3. Dune for historical holder/transfer/volume cohorts.
 4. Alchemy for wallet/token/tx state.
 5. Etherscan for verified contracts and explorer truth.
-6. GMGN/DexScreener/Dex surfaces for liquidity and market display behavior.
-7. CoinGecko/CoinMarketCap for neutral market cap, pair, category, and price context.
+6. The Graph, Goldsky, Moralis, GoldRush, or SQD when the question needs indexed subgraph, multichain, or data-pipeline evidence.
+7. GMGN/DexScreener/Dex surfaces for liquidity and market display behavior.
+8. CoinGecko/CoinMarketCap for neutral market cap, pair, category, and price context.
 
 Do not treat honeypot/mintable/proxy labels as final until cross-checked with contract behavior or simulation when needed.
 
 ### Solana / Pump.fun / Launch Flow
 
 Use Helius for Solana account, transaction, token/NFT/DAS, webhook, and streaming context. Use Jupiter for Solana quote/liquidity route checks and DexScreener for pair/liquidity display. Use Dune for historical issuance/cohort metrics when the data is indexed. Use CoinGecko/CoinMarketCap only after token identity is resolved. Swaps, transfers, approvals, and wallet signatures are Tier 4.
+
+### Subgraph / Indexed Data / Web3 Data Pipelines
+
+Use The Graph for subgraph discovery, schemas, and GraphQL query planning. Use Goldsky when the work is closer to Web3 data pipelines, subgraphs, Mirror/Turbo, Compose, or Edge RPC context. Use Moralis, GoldRush, and SQD as multichain indexed-data cross-checks when wallet, token, NFT, transaction, log, or dataset coverage matters. Always label chain, schema/table, freshness, and index lag; do not treat an indexed-data surface as execution truth.
 
 ### Smart-Money And Meme Scan
 

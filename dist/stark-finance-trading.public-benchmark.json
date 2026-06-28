@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T06:45:25.059627+00:00",
+  "generated_at": "2026-06-28T07:07:27.916303+00:00",
   "skill": "stark-finance-trading",
   "benchmark_type": "source_level_public_readiness",
   "claim_status": "source_level_benchmark_pass_live_comparison_pending",
   "score": 100.0,
   "max_score": 100,
   "minimum_pass_score": 90,
-  "candidate_count": 34,
-  "official_or_primary_sources": 34,
+  "candidate_count": 39,
+  "official_or_primary_sources": 39,
   "dimensions": [
     {
       "id": "routing_precision",

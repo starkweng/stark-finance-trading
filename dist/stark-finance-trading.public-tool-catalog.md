@@ -1,10 +1,10 @@
 # stark-finance-trading Public Tool Catalog
 
 - Status: PASS
-- Tools: 34
-- Required tools covered: 33/33
-- Official or primary source-backed: 34
-- Route tags: 140
+- Tools: 39
+- Required tools covered: 38/38
+- Official or primary source-backed: 39
+- Route tags: 153
 - High-risk execution/admin/payment surfaces: 5
 
 ## Priority Mix
@@ -12,20 +12,20 @@
 | Priority | Count |
 |---|---:|
 | `connector_substrate` | 1 |
-| `core` | 13 |
+| `core` | 14 |
 | `execution_candidate` | 3 |
 | `execution_framework` | 3 |
 | `finance_ops` | 2 |
 | `institutional` | 2 |
-| `support` | 9 |
+| `support` | 13 |
 | `web3_execution_candidate` | 1 |
 
 ## Default Action Tiers
 
 | Tier | Count |
 |---|---:|
-| `1` | 17 |
-| `2` | 5 |
+| `1` | 21 |
+| `2` | 6 |
 | `3` | 7 |
 | `4` | 5 |
 

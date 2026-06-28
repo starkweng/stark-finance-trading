@@ -40,6 +40,11 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 | Dune MCP docs | https://docs.dune.com/api-reference/agents/mcp | Official Dune MCP docs. |
 | Alchemy MCP | https://github.com/alchemyplatform/alchemy-mcp-server | Official Alchemy MCP server. |
 | Etherscan MCP docs | https://docs.etherscan.io/etherscan-mcp-server | Official Etherscan MCP docs. |
+| The Graph Subgraph MCP | https://thegraph.com/docs/en/subgraphs/subgraph-mcp/introduction/ | Official The Graph Subgraph MCP docs for subgraph discovery, schemas, and GraphQL query workflows. |
+| Goldsky MCP / AI Skills | https://docs.goldsky.com/mcp-server | Official Goldsky MCP server docs for AI access to Goldsky docs and Web3 data tooling. |
+| Moralis Cortex API / MCP | https://docs.moralis.com/data-api/cortex-api/overview | Official Moralis Cortex docs for AI/Web3 data layer and MCP-oriented access. |
+| GoldRush MCP | https://github.com/covalenthq/goldrush-mcp-server | Official Covalent/GoldRush MCP server source. |
+| SQD Portal MCP | https://docs.sqd.dev/en/ai/mcp-server | Official SQD Portal MCP docs for indexed multichain data access. |
 | Hummingbot | https://hummingbot.org/ | Open-source crypto market-making and trading bot framework. |
 | Freqtrade | https://www.freqtrade.io/en/stable/ | Open-source crypto trading bot framework. |
 | LEAN | https://www.lean.io/ | Open-source QuantConnect algorithmic trading engine. |
@@ -51,6 +56,7 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 - `official_mcp`: first-party MCP server or MCP docs from the product/vendor.
 - `official_mcp_and_skill`: first-party MCP plus installable skill or agent integration package.
 - `official_docs_mcp`: first-party documentation MCP, useful for source context but not market data or execution.
+- `official_docs_mcp_and_skill`: first-party documentation MCP plus skill/AI integration docs.
 - `official_api`: first-party API/docs without a first-party MCP surface.
 - `official_open_source`: first-party open-source framework or engine.
 - `official_api_with_community_mcp_candidates`: first-party API exists, but MCP wrappers are community-maintained unless separately verified.

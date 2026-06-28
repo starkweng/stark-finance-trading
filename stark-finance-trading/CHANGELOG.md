@@ -25,3 +25,4 @@
 - Added competitive gap analysis that converts GitHub finance/trading discovery into coverage status, partial-runtime gaps, and route/backlog actions.
 - Added competitive route backlog generation that turns gap findings into route/eval proposals, auth gates, and learn-loop next actions.
 - Added integration activation plan generation that turns catalog/runtime evidence into ready routes, quick activations, install/auth backlog, watchlist tools, and Tier 4 confirmation surfaces.
+- Added The Graph, Goldsky, Moralis Cortex, GoldRush/Covalent, and SQD as official Web3 indexed-data/source routes in the public catalog and router.

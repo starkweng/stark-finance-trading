@@ -8,9 +8,10 @@ source discipline, safety boundaries, and package evidence.
 
 The strongest public finance/trading surfaces are vendor-deep: Alpaca, Tradier,
 Robinhood, IBKR, and cTrader for broker/platform workflows; Dune, Alchemy,
-Etherscan, Coinbase, QuickNode, CoinGecko, CoinMarketCap, Token Terminal,
-DeFiLlama, Helius, Jupiter, DexScreener, and Binance for crypto/Web3 data,
-infrastructure, and actions; QuantConnect, LEAN, NautilusTrader, Hummingbot,
+Etherscan, The Graph, Goldsky, Moralis, GoldRush/Covalent, SQD, Coinbase,
+QuickNode, CoinGecko, CoinMarketCap, Token Terminal, DeFiLlama, Helius,
+Jupiter, DexScreener, and Binance for crypto/Web3 data, infrastructure,
+indexed data, and actions; QuantConnect, LEAN, NautilusTrader, Hummingbot,
 Freqtrade, and CCXT for strategy or bot engineering; OpenBB, Databento,
 FactSet, FMP, Twelve Data, Alpha Vantage, Massive/Polygon.io, and Unusual
 Whales for research and data; and Stripe/Plaid for adjacent financial
@@ -39,6 +40,11 @@ escalation.
 | Dune MCP | Official | Onchain SQL and dashboards | Validate table semantics before platform totals. |
 | Alchemy MCP | Official | Wallet/token/NFT/tx RPC data | Separate reads from signing and network/app selection. |
 | Etherscan MCP | Official | Verified contracts and explorer truth | Cross-check explorer facts with behavior/risk evidence. |
+| The Graph Subgraph MCP | Official | Subgraph discovery, schema inspection, and GraphQL query planning | Label schema freshness, index lag, and protocol-specific assumptions. |
+| Goldsky MCP / AI Skills | Official | Web3 data-pipeline, subgraph, and Goldsky docs context | Route pipeline questions separately from token-risk or execution claims. |
+| Moralis Cortex MCP | Official | Natural-language Web3 data across wallets, tokens, NFTs, EVM, and Solana | Resolve contracts and freshness before using data in DD. |
+| GoldRush MCP | Official | Multichain balances, transactions, NFTs, token prices, and portfolio-style data | Treat as a cross-check, not final safety judgment. |
+| SQD Portal MCP | Official | Indexed multichain logs, transactions, datasets, and high-throughput chain data | Preserve dataset, chain, and query-window assumptions. |
 | Coinbase CDP / AgentKit MCP | Official MCP | Web3 agent wallets, CDP operations, and agent tooling | Separate docs/context from wallet actions; gate transfers and payments. |
 | QuickNode MCP | Official MCP | Web3 RPC endpoints and endpoint security | Keep infra/admin changes separate from market analysis and require confirmation. |
 | CoinGecko MCP / Skill | Official MCP + skill | Crypto market data, token metadata, OHLCV, DeFi/onchain data | Resolve token identity and cross-check venue liquidity. |

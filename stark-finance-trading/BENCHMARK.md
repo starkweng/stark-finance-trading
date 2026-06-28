@@ -66,7 +66,7 @@ These are not enemies; they are the bar this skill should learn from.
 | FactSet MCP | Institutional financial-data layer | Use only when entitlement and redistribution constraints are clear; preserve metric definitions. |
 | Robinhood / cTrader / IBKR candidates | Broker/platform agent surfaces | Treat as Tier 4; preserve account, margin, lot, paper/live, and wrapper provenance boundaries. |
 | Binance Skills Hub | Strong crypto/Web3 execution and market data skills | One Stark-level router that calls Binance only when it is the right surface. |
-| Dune / Alchemy / Etherscan / Coinbase / QuickNode / CoinGecko / CoinMarketCap MCPs | Best-in-class onchain, wallet, infra, and crypto-data surfaces | Better workflow for table semantics, wallet truth, token identity, endpoint admin, and state-changing action gates. |
+| Dune / Alchemy / Etherscan / The Graph / Goldsky / Moralis / GoldRush / SQD / Coinbase / QuickNode / CoinGecko / CoinMarketCap MCPs | Best-in-class onchain, wallet, indexed-data, infra, and crypto-data surfaces | Better workflow for table semantics, schema freshness, wallet truth, token identity, endpoint admin, and state-changing action gates. |
 | Token Terminal / DeFiLlama | Crypto protocol fundamentals and aggregate data | Use methodology-aware evidence, not direct safety or trade labels. |
 | Helius / Jupiter / DexScreener | Solana, liquidity, and DEX market surfaces | Resolve token identity, separate quotes from swaps, and cross-check display liquidity. |
 | Stripe / Plaid | Financial infrastructure rather than trading surfaces | Route payments/account connectivity separately from market signals and broker execution. |

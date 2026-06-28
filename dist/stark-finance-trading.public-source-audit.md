@@ -2,8 +2,8 @@
 
 - Status: PASS
 - Audit mode: `offline`
-- Candidates: 34
-- Official or primary sources: 34
+- Candidates: 39
+- Official or primary sources: 39
 - Execution-capable candidates: 7
 
 ## Candidate Results
@@ -35,6 +35,11 @@
 | Helius MCP | `official_mcp` | PASS | https://www.helius.dev/docs/agents/mcp |
 | Jupiter APIs | `official_api` | PASS | https://dev.jup.ag/docs |
 | DexScreener API | `official_api` | PASS | https://docs.dexscreener.com/api/reference |
+| The Graph Subgraph MCP | `official_mcp` | PASS | https://thegraph.com/docs/en/subgraphs/subgraph-mcp/introduction/ |
+| Goldsky MCP / AI Skills | `official_docs_mcp_and_skill` | PASS | https://docs.goldsky.com/mcp-server |
+| Moralis Cortex MCP | `official_mcp` | PASS | https://docs.moralis.com/data-api/cortex-api/overview |
+| GoldRush MCP | `official_mcp` | PASS | https://github.com/covalenthq/goldrush-mcp-server |
+| SQD Portal MCP | `official_mcp` | PASS | https://docs.sqd.dev/en/ai/mcp-server |
 | Stripe MCP / Agent Toolkit | `official_mcp_or_agent_toolkit` | PASS | https://docs.stripe.com/agents/toolkit |
 | Plaid API | `official_api` | PASS | https://plaid.com/docs/ |
 | Databento API | `official_api` | PASS | https://databento.com/docs |

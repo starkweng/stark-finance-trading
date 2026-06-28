@@ -33,7 +33,7 @@ Never skip from analysis to live orders, wallet signing, CEX order placement, tr
 
 - 股票、期权、外汇、商品、加密货币、永续、现货、链上 token、DEX/CEX liquidity 的行情和研究。
 - market scan、leaderboard、smart-money signal、meme/token discovery、options flow、dark pool、news/fundamental check。
-- Dune/Alchemy/Etherscan/Binance/GMGN/Alpaca/OpenBB/QuantConnect/Unusual Whales/Alpha Vantage/FMP/Twelve Data/Massive 等工具路由。
+- Dune/Alchemy/Etherscan/The Graph/Goldsky/Moralis/GoldRush/SQD/Binance/GMGN/Alpaca/OpenBB/QuantConnect/Unusual Whales/Alpha Vantage/FMP/Twelve Data/Massive 等工具路由。
 - 策略回测、参数验证、paper trading plan、bot risk review、market-making / liquidity war room。
 - 交易执行前的预检查、订单草案、风险边界和人工确认清单。
 
@@ -79,6 +79,7 @@ This skill has a Loop Blueprint, a Loop Engineering Gate, a Learn Loop, a Live E
 | Crypto CEX spot/futures/account data | `binance` skill | Binance CLI docs, exchange page |
 | DEX token market, meme, smart money | Binance Web3 skills, GMGN skills | Dune, Alchemy, Etherscan |
 | Onchain dashboard / holder / transfer / protocol metrics | Dune MCP | Alchemy/Etherscan |
+| Subgraph or indexed multichain Web3 data | The Graph, Goldsky, Moralis, GoldRush, SQD | Dune, Alchemy, Etherscan |
 | Wallet balances, tx, NFT, asset changes | Alchemy MCP | Etherscan/Solana explorer |
 | Verified contracts, tx logs, token explorer truth | Etherscan MCP | Alchemy/Dune |
 | Equity fundamentals, filings-style research, macro data | OpenBB/FMP/Alpha Vantage | official filings/news |

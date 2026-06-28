@@ -1,22 +1,22 @@
 # stark-finance-trading Integration Activation Plan
 
 - Status: PASS
-- Catalog tools: 34
+- Catalog tools: 39
 - Runtime report status: `PASS`
 - Ready now: 11
 - Quick activations: 2
-- Priority install/auth backlog: 12
+- Priority install/auth backlog: 13
 - High-risk confirmation surfaces: 5
 
 ## Activation Stage Counts
 
 | Stage | Count |
 |---|---:|
-| `install_or_auth_candidate` | 12 |
+| `install_or_auth_candidate` | 13 |
 | `lazy_load_available` | 1 |
 | `needs_env` | 1 |
 | `ready_now` | 11 |
-| `watchlist` | 9 |
+| `watchlist` | 13 |
 
 ## Top Activation Actions
 
@@ -27,6 +27,7 @@
 | `helius-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `coingecko-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `massive-polygon-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
+| `the-graph-subgraph-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `token-terminal-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `unusual-whales-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `nautilus-trader` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |

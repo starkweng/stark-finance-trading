@@ -6,7 +6,7 @@ It is designed for Stark's workflow: one natural entry point that quietly routes
 
 ## What It Routes
 
-- Web3/onchain: Dune, Alchemy, Etherscan, Coinbase CDP/AgentKit, QuickNode, CoinGecko, CoinMarketCap, Token Terminal, DeFiLlama, Helius, Jupiter, DexScreener, Binance Web3 skills, GMGN, BNB Agent Studio.
+- Web3/onchain: Dune, Alchemy, Etherscan, The Graph, Goldsky, Moralis Cortex, GoldRush/Covalent, SQD, Coinbase CDP/AgentKit, QuickNode, CoinGecko, CoinMarketCap, Token Terminal, DeFiLlama, Helius, Jupiter, DexScreener, Binance Web3 skills, GMGN, BNB Agent Studio.
 - CEX/DEX trading research: Binance CLI, Binance Agentic Wallet, GMGN, token audit/info/rank/signal skills.
 - TradFi/market data candidates: Alpaca, OpenBB, FactSet, Alpha Vantage, Financial Modeling Prep, Twelve Data, Massive/Polygon.io, Databento.
 - Options and flow candidates: Unusual Whales, Alpaca options, Tradier, IBKR/TWS candidates.
