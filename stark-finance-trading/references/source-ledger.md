@@ -1,0 +1,60 @@
+# Source Ledger
+
+Last refreshed: 2026-06-28. Live-check before installing or citing exact capabilities.
+
+## Official / Primary Sources
+
+| Source | URL | Use |
+|---|---|---|
+| Alpaca MCP docs | https://docs.alpaca.markets/us/docs/alpaca-mcp-server | Official Alpaca MCP setup and tool scope. |
+| OpenBB Docs MCP | https://github.com/OpenBB-finance/openbb-docs-mcp | Official OpenBB documentation MCP server. |
+| OpenBB | https://github.com/OpenBB-finance/OpenBB | Open-source finance platform and research workbench. |
+| QuantConnect MCP | https://www.quantconnect.com/mcp | Official QuantConnect AI/MCP workflow for strategy and backtesting. |
+| Alpha Vantage MCP | https://github.com/alphavantage/alpha_vantage_mcp | Official Alpha Vantage MCP server. |
+| Financial Modeling Prep MCP | https://site.financialmodelingprep.com/developer/docs/mcp-server | Official FMP MCP server docs. |
+| Twelve Data MCP | https://github.com/twelvedata/mcp | Official Twelve Data MCP server. |
+| Unusual Whales MCP | https://unusualwhales.com/public-api/mcp | Official options/dark-pool/congressional-trading MCP and skill. |
+| Massive / Polygon.io MCP | https://github.com/massive-com/mcp_massive | Official market-data MCP for the Polygon.io/Massive ecosystem. |
+| Tradier MCP | https://docs.tradier.com/docs/tradier-mcp | Official Tradier MCP docs. |
+| Robinhood Agentic Trading | https://robinhood.com/us/en/agentic-trading/ | Official Robinhood agentic trading product page. |
+| cTrader AI Agent Connect | https://help.ctrader.com/ctrader-ai-agent-connect/ | Official cTrader MCP / AI agent connection docs. |
+| Coinbase CDP CLI MCP | https://docs.cdp.coinbase.com/get-started/build-with-ai/cdp-cli/mcp | Official Coinbase CDP CLI MCP integration. |
+| Coinbase AgentKit MCP | https://docs.cdp.coinbase.com/agent-kit/core-concepts/model-context-protocol | Official AgentKit MCP extension docs. |
+| CoinGecko MCP | https://docs.coingecko.com/ai-integration/mcp-server.md | Official CoinGecko MCP server docs. |
+| CoinGecko Agent Skill | https://docs.coingecko.com/ai-integration/agent-skill.md | Official CoinGecko skill integration docs. |
+| DeFiLlama API | https://api-docs.defillama.com/ | Official DeFiLlama API docs. |
+| Databento docs | https://databento.com/docs | Official Databento data API docs. |
+| IBKR TWS API | https://interactivebrokers.github.io/tws-api/ | Official Interactive Brokers TWS API docs; community MCPs must not be treated as official. |
+| Binance Skills Hub | https://github.com/binance/binance-skills-hub | Official Binance skill set. |
+| Dune MCP docs | https://docs.dune.com/api-reference/agents/mcp | Official Dune MCP docs. |
+| Alchemy MCP | https://github.com/alchemyplatform/alchemy-mcp-server | Official Alchemy MCP server. |
+| Etherscan MCP docs | https://docs.etherscan.io/etherscan-mcp-server | Official Etherscan MCP docs. |
+| Hummingbot | https://hummingbot.org/ | Open-source crypto market-making and trading bot framework. |
+| Freqtrade | https://www.freqtrade.io/en/stable/ | Open-source crypto trading bot framework. |
+| LEAN | https://www.lean.io/ | Open-source QuantConnect algorithmic trading engine. |
+| NautilusTrader | https://github.com/nautechsystems/nautilus_trader | Official open-source event-driven trading platform. |
+| CCXT | https://github.com/ccxt/ccxt | Official open-source crypto exchange library. |
+
+## Candidate Classification Rules
+
+- `official_mcp`: first-party MCP server or MCP docs from the product/vendor.
+- `official_mcp_and_skill`: first-party MCP plus installable skill or agent integration package.
+- `official_docs_mcp`: first-party documentation MCP, useful for source context but not market data or execution.
+- `official_api`: first-party API/docs without a first-party MCP surface.
+- `official_open_source`: first-party open-source framework or engine.
+- `official_api_with_community_mcp_candidates`: first-party API exists, but MCP wrappers are community-maintained unless separately verified.
+
+## Drift Policy
+
+Always live-verify:
+
+- package install commands;
+- API key names;
+- paper vs live trading support;
+- supported markets and venues;
+- auth method;
+- order types;
+- pricing/subscription limits;
+- official vs community MCP status.
+
+Treat non-official MCP repos as candidates only. Prefer official APIs or a controlled local adapter for broker/exchange execution.

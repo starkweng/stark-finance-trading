@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T01:00:58.322952+00:00",
+  "title": "stark-finance-trading Competitive Task Eval Review",
+  "source_mode": "dry_run",
+  "approval_status": "MISSING",
+  "case_count": 8,
+  "score": 100,
+  "min_score": 90,
+  "behavior_proof_status": "UNPROVEN_DRY_RUN_ONLY",
+  "require_live": false,
+  "checks": [
+    {
+      "id": "bundle_status_pass",
+      "passed": true,
+      "weight": 15
+    },
+    {
+      "id": "source_status_pass",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "cases_present",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "case_count_matches",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "all_cases_reviewable",
+      "passed": true,
+      "weight": 25
+    },
+    {
+      "id": "source_mode_labeled",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "approval_status_labeled",
+      "passed": true,
+      "weight": 5
+    },
+    {
+      "id": "evidence_boundary_labeled",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "live_required_if_requested",
+      "passed": true,
+      "weight": 5
+    }
+  ],
+  "failed_checks": [],
+  "cases": [
+    {
+      "id": "multi_asset_market_snapshot",
+      "category": "market_snapshot",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 10
+    },
+    {
+      "id": "pumpfun_daily_issuance",
+      "category": "onchain_analytics",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 9
+    },
+    {
+      "id": "options_flow_to_order_draft",
+      "category": "options_execution_prep",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 8
+    },
+    {
+      "id": "crypto_bot_strategy_review",
+      "category": "strategy_bot_review",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 11
+    },
+    {
+      "id": "fx_cfd_xau_margin_review",
+      "category": "fx_cfd_risk",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 9
+    },
+    {
+      "id": "web3_wallet_payment_action",
+      "category": "wallet_action_safety",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 9
+    },
+    {
+      "id": "defi_protocol_market_research",
+      "category": "defi_research",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 9
+    },
+    {
+      "id": "ibkr_api_wrapper_boundary",
+      "category": "broker_api_boundary",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 9
+    }
+  ],
+  "evidence_boundary": "Eval scorecard covers reviewability and evidence labeling. A PASS on a dry-run bundle does not prove live model behavior, market-data correctness, trading performance, or public superiority."
+}

@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T01:00:57.910236+00:00",
+  "skill": "stark-finance-trading",
+  "benchmark_type": "source_level_public_readiness",
+  "claim_status": "source_level_benchmark_pass_live_comparison_pending",
+  "score": 100.0,
+  "max_score": 100,
+  "minimum_pass_score": 90,
+  "candidate_count": 25,
+  "official_or_primary_sources": 25,
+  "dimensions": [
+    {
+      "id": "routing_precision",
+      "weight": 20,
+      "score": 20.0,
+      "passed_checks": 4,
+      "total_checks": 4,
+      "checks": [
+        {
+          "id": "description_load_and_do_not_load",
+          "passed": true
+        },
+        {
+          "id": "routing_cases_min_8",
+          "passed": true
+        },
+        {
+          "id": "negative_cases_present",
+          "passed": true
+        },
+        {
+          "id": "one_skill_merge_logic",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "source_discipline",
+      "weight": 15,
+      "score": 15.0,
+      "passed_checks": 5,
+      "total_checks": 5,
+      "checks": [
+        {
+          "id": "source_ledger_exists",
+          "passed": true
+        },
+        {
+          "id": "official_or_primary_sources_min_20",
+          "passed": true
+        },
+        {
+          "id": "evidence_labels_required",
+          "passed": true
+        },
+        {
+          "id": "dune_semantics_gotcha",
+          "passed": true
+        },
+        {
+          "id": "public_source_audit_script",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "safety_boundary",
+      "weight": 20,
+      "score": 20.0,
+      "passed_checks": 4,
+      "total_checks": 4,
+      "checks": [
+        {
+          "id": "risk_tiers",
+          "passed": true
+        },
+        {
+          "id": "tier_4_confirmation",
+          "passed": true
+        },
+        {
+          "id": "full_execution_checklist",
+          "passed": true
+        },
+        {
+          "id": "adversarial_safety_cases",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "workflow_coverage",
+      "weight": 15,
+      "score": 15.0,
+      "passed_checks": 2,
+      "total_checks": 2,
+      "checks": [
+        {
+          "id": "workflow_sections",
+          "passed": true
+        },
+        {
+          "id": "live_behavior_categories",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "portability",
+      "weight": 10,
+      "score": 10.0,
+      "passed_checks": 5,
+      "total_checks": 5,
+      "checks": [
+        {
+          "id": "deterministic_packager",
+          "passed": true
+        },
+        {
+          "id": "install_smoke",
+          "passed": true
+        },
+        {
+          "id": "quality_suite",
+          "passed": true
+        },
+        {
+          "id": "github_export_subdir_validation",
+          "passed": true
+        },
+        {
+          "id": "ci_quality_suite_subdir",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "eval_coverage",
+      "weight": 10,
+      "score": 10.0,
+      "passed_checks": 5,
+      "total_checks": 5,
+      "checks": [
+        {
+          "id": "routing_evals",
+          "passed": true
+        },
+        {
+          "id": "codex_evals",
+          "passed": true
+        },
+        {
+          "id": "adversarial_evals",
+          "passed": true
+        },
+        {
+          "id": "live_behavior_evals",
+          "passed": true
+        },
+        {
+          "id": "live_signoff_script",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "public_readiness",
+      "weight": 10,
+      "score": 10.0,
+      "passed_checks": 7,
+      "total_checks": 7,
+      "checks": [
+        {
+          "id": "public_docs",
+          "passed": true
+        },
+        {
+          "id": "release_evidence_scripts",
+          "passed": true
+        },
+        {
+          "id": "github_actions_workflow_validator",
+          "passed": true
+        },
+        {
+          "id": "public_comparison_report",
+          "passed": true
+        },
+        {
+          "id": "public_source_audit",
+          "passed": true
+        },
+        {
+          "id": "competitive_task_benchmark",
+          "passed": true
+        },
+        {
+          "id": "no_superiority_claim_status",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "evidence_boundary": "Source-level benchmark over the current skill tree. This does not prove live model behavior, remote GitHub CI, or public superiority over competing projects."
+}

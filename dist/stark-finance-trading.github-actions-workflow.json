@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "created_at": "2026-06-28T01:00:57.854258+00:00",
+  "workflow": ".github/workflows/ci.yml",
+  "checks": [
+    {
+      "id": "workflow_name",
+      "passed": true,
+      "evidence": "name: stark-finance-trading-ci"
+    },
+    {
+      "id": "push_trigger",
+      "passed": true,
+      "evidence": "push:"
+    },
+    {
+      "id": "pull_request_trigger",
+      "passed": true,
+      "evidence": "pull_request:"
+    },
+    {
+      "id": "manual_trigger",
+      "passed": true,
+      "evidence": "workflow_dispatch:"
+    },
+    {
+      "id": "ubuntu_runner",
+      "passed": true,
+      "evidence": "runs-on: ubuntu-latest"
+    },
+    {
+      "id": "checkout",
+      "passed": true,
+      "evidence": "actions/checkout@v4"
+    },
+    {
+      "id": "python_setup",
+      "passed": true,
+      "evidence": "actions/setup-python@v5"
+    },
+    {
+      "id": "python_312",
+      "passed": true,
+      "evidence": "python-version: \"3.12\""
+    },
+    {
+      "id": "subdir_working_directory",
+      "passed": true,
+      "evidence": "working-directory: stark-finance-trading"
+    },
+    {
+      "id": "quality_suite",
+      "passed": true,
+      "evidence": "python3 scripts/run_quality_suite.py --json"
+    },
+    {
+      "id": "package_build",
+      "passed": true,
+      "evidence": "python3 scripts/package_skill.py . dist"
+    },
+    {
+      "id": "install_smoke",
+      "passed": true,
+      "evidence": "python3 scripts/install_package_smoke.py dist/stark-finance-trading.skill --json"
+    },
+    {
+      "id": "artifact_upload",
+      "passed": true,
+      "evidence": "actions/upload-artifact@v4"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.skill",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.skill"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.quality-suite.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.quality-suite.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.release-manifest.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.release-manifest.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.release-manifest.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.release-manifest.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.release-notes.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.release-notes.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.release-notes.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.release-notes.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.public-source-audit.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.public-source-audit.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.public-source-audit.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.public-source-audit.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.public-benchmark.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.public-benchmark.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.public-benchmark.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.public-benchmark.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-review/**",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-review/**"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.live-eval-scorecard.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-eval-signoff.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-review/**",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-eval-review/**"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.competitive-eval-scorecard.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.github-export-report.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.github-export-report.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.github-export-report.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.github-export-report.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.github-export-smoke.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.github-export-smoke.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.github-export-smoke.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.github-export-smoke.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.release-readiness.json",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.release-readiness.json"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading.release-readiness.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading.release-readiness.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/dist/stark-finance-trading-github-repo.zip",
+      "passed": true,
+      "evidence": "stark-finance-trading/dist/stark-finance-trading-github-repo.zip"
+    },
+    {
+      "id": "artifact:stark-finance-trading/VALIDATION.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/VALIDATION.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/BENCHMARK.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/BENCHMARK.md"
+    },
+    {
+      "id": "artifact:stark-finance-trading/benchmarks/PUBLIC_COMPARISON_2026-06-28.md",
+      "passed": true,
+      "evidence": "stark-finance-trading/benchmarks/PUBLIC_COMPARISON_2026-06-28.md"
+    }
+  ],
+  "required_snippet_count": 13,
+  "required_artifact_count": 32,
+  "failed_checks": [],
+  "evidence_boundary": "Static workflow coverage validation only. It does not prove remote GitHub Actions execution, uploaded artifact availability, or live model behavior."
+}

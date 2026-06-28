@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "approval_status": "PENDING",
+  "approval": {
+    "status": "PENDING",
+    "exact_command_to_approve": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/competitive-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.competitive-eval-signoff.json --max-cases 8"
+  },
+  "created_at": "2026-06-28T01:00:58.240027+00:00",
+  "skill_path": ".",
+  "eval_set": "benchmarks/competitive-task-cases.json",
+  "case_count": 8,
+  "case_hashes": [
+    {
+      "id": "multi_asset_market_snapshot",
+      "category": "market_snapshot",
+      "prompt_sha256": "5ff440241cb79337e87e74c0f3ad5524f3adcc5aca076d8cee1e01eb19227d0f",
+      "required_check_count": 10
+    },
+    {
+      "id": "pumpfun_daily_issuance",
+      "category": "onchain_analytics",
+      "prompt_sha256": "0062882f5a657da31f203717d2b37428a236b798022819e01e2982aa2d86f590",
+      "required_check_count": 9
+    },
+    {
+      "id": "options_flow_to_order_draft",
+      "category": "options_execution_prep",
+      "prompt_sha256": "98e509c58eabf9e43af3d800dbf2dc71f51bd89f030e56d8c0f11a53f6392142",
+      "required_check_count": 8
+    },
+    {
+      "id": "crypto_bot_strategy_review",
+      "category": "strategy_bot_review",
+      "prompt_sha256": "c47ec8871629925dc5c99f8e8c02cbcfb556e2509d73ae79a545b9a5d87643f8",
+      "required_check_count": 11
+    },
+    {
+      "id": "fx_cfd_xau_margin_review",
+      "category": "fx_cfd_risk",
+      "prompt_sha256": "a41f8bdfb40c7eb19af91e1e16212dc41cdc97b9ba1b357df3425bab3a91346f",
+      "required_check_count": 9
+    },
+    {
+      "id": "web3_wallet_payment_action",
+      "category": "wallet_action_safety",
+      "prompt_sha256": "c058b924024884a639f357a47ed083c7ee3a95308f5d00b72e6750d15b563bf1",
+      "required_check_count": 9
+    },
+    {
+      "id": "defi_protocol_market_research",
+      "category": "defi_research",
+      "prompt_sha256": "e599c04268c8cfe0e3c998ac864c75d92282ffeccbc1a521b4d3d3cebd47f099",
+      "required_check_count": 9
+    },
+    {
+      "id": "ibkr_api_wrapper_boundary",
+      "category": "broker_api_boundary",
+      "prompt_sha256": "c825fd18c9d3e1274796d270c8b28f9d5444cdb9eceecfdc6f4072357e5873f9",
+      "required_check_count": 9
+    }
+  ],
+  "sandbox": "read-only",
+  "timeout": 180,
+  "model": "",
+  "exact_command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/competitive-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.competitive-eval-signoff.json --max-cases 8",
+  "data_surfaces": [
+    "skill source files",
+    "eval prompts identified by hashes",
+    "no broker credentials",
+    "no wallet keys",
+    "no CEX API secrets",
+    "no live order tools unless separately approved"
+  ],
+  "must_not_do": [
+    "place live trades",
+    "send wallet transactions",
+    "approve token allowances",
+    "start live bots",
+    "claim benchmark superiority from dry-run or signoff evidence"
+  ],
+  "evidence_boundary": "This packet proves live-eval readiness and approval status only. It does not prove model behavior."
+}

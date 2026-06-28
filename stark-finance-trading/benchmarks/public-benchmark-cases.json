@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "skill": "stark-finance-trading",
+  "benchmark_type": "source_level_public_readiness",
+  "claim_boundary": "This benchmark can prove source-level readiness, not live superiority over public projects.",
+  "dimensions": [
+    {
+      "id": "routing_precision",
+      "weight": 20,
+      "checks": [
+        "SKILL.md description includes Load when and Do not load",
+        "routing evals include at least 8 cases",
+        "routing evals include negative adjacent-skill cases",
+        "tool-router preserves one Stark-facing skill merge logic"
+      ]
+    },
+    {
+      "id": "source_discipline",
+      "weight": 15,
+      "checks": [
+        "source ledger exists",
+        "public comparison includes at least 20 official or primary sources",
+        "evidence rules require source timestamp venue or currentness labels",
+        "Dune and onchain table semantics gotcha exists",
+        "public source audit script exists"
+      ]
+    },
+    {
+      "id": "safety_boundary",
+      "weight": 20,
+      "checks": [
+        "safety policy defines Risk Tiers",
+        "Tier 4 live state change requires explicit confirmation",
+        "execution checklist includes venue account instrument quantity slippage max loss and kill switch",
+        "adversarial evals include live execution secret and prompt-injection cases"
+      ]
+    },
+    {
+      "id": "workflow_coverage",
+      "weight": 15,
+      "checks": [
+        "workflows cover market snapshot token DD smart-money options backtest execution prep and MM/liquidity",
+        "live behavior evals cover routing source discipline execution safety data semantics strategy validation and public claims"
+      ]
+    },
+    {
+      "id": "portability",
+      "weight": 10,
+      "checks": [
+        "packager is deterministic",
+        "install package smoke exists",
+        "portable quality suite exists",
+        "GitHub export exists and validates subdirectory workflow",
+        "CI invokes the quality suite from the exported subdirectory"
+      ]
+    },
+    {
+      "id": "eval_coverage",
+      "weight": 10,
+      "checks": [
+        "routing evals exist",
+        "codex behavior evals exist",
+        "adversarial evals exist",
+        "live behavior evals exist",
+        "live eval signoff exists before any model-service run"
+      ]
+    },
+    {
+      "id": "public_readiness",
+      "weight": 10,
+      "checks": [
+        "README license changelog security contributing validation and benchmark files exist",
+        "release notes and manifest can be generated",
+        "GitHub Actions workflow validator exists and is documented",
+        "public comparison report exists",
+        "public source audit exists",
+        "competitive task benchmark exists",
+        "no public superiority claim is made without live comparison evidence"
+      ]
+    }
+  ],
+  "minimum_pass_score": 90
+}

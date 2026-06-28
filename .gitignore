@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.env
+.env.*
+stark-finance-trading/dist/
+stark-finance-trading/evals/artifacts/
+
+# Root dist/ is intentionally committed as release evidence.

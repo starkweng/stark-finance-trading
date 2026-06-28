@@ -1,0 +1,22 @@
+{
+  "skill": "stark-finance-trading",
+  "version": "0.1.0",
+  "status": "READY_FOR_APPROVAL",
+  "approval_status": "PENDING",
+  "purpose": "Run live behavior evals for routing precision, safety gating, and source discipline.",
+  "exact_command": "python3 scripts/run_live_eval.py --cases evals/codex-evals.json --dry-run false",
+  "data_surfaces": [
+    "eval prompts in evals/codex-evals.json",
+    "skill source files",
+    "no user secrets",
+    "no broker credentials",
+    "no wallet keys"
+  ],
+  "must_not_do": [
+    "place live trades",
+    "send wallet transactions",
+    "call broker APIs with production credentials",
+    "claim benchmark superiority from a single eval run"
+  ],
+  "approval_note": "Do not run live model-service evals until Stark explicitly approves the exact command and data surfaces."
+}

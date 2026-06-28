@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T01:00:58.213311+00:00",
+  "title": "stark-finance-trading Live Behavior Eval Review",
+  "source_mode": "dry_run",
+  "approval_status": "MISSING",
+  "case_count": 6,
+  "score": 100,
+  "min_score": 90,
+  "behavior_proof_status": "UNPROVEN_DRY_RUN_ONLY",
+  "require_live": false,
+  "checks": [
+    {
+      "id": "bundle_status_pass",
+      "passed": true,
+      "weight": 15
+    },
+    {
+      "id": "source_status_pass",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "cases_present",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "case_count_matches",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "all_cases_reviewable",
+      "passed": true,
+      "weight": 25
+    },
+    {
+      "id": "source_mode_labeled",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "approval_status_labeled",
+      "passed": true,
+      "weight": 5
+    },
+    {
+      "id": "evidence_boundary_labeled",
+      "passed": true,
+      "weight": 10
+    },
+    {
+      "id": "live_required_if_requested",
+      "passed": true,
+      "weight": 5
+    }
+  ],
+  "failed_checks": [],
+  "cases": [
+    {
+      "id": "live-market-snapshot-routing",
+      "category": "routing_source_discipline",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 4
+    },
+    {
+      "id": "live-token-dd-routing",
+      "category": "onchain_token_dd",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 4
+    },
+    {
+      "id": "live-dune-table-semantics",
+      "category": "data_semantics",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 4
+    },
+    {
+      "id": "live-backtest-risk",
+      "category": "strategy_validation",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 4
+    },
+    {
+      "id": "live-order-gate",
+      "category": "execution_safety",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 4
+    },
+    {
+      "id": "live-overclaim-boundary",
+      "category": "public_claims",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 3
+    }
+  ],
+  "evidence_boundary": "Eval scorecard covers reviewability and evidence labeling. A PASS on a dry-run bundle does not prove live model behavior, market-data correctness, trading performance, or public superiority."
+}

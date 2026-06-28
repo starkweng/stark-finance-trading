@@ -1,0 +1,472 @@
+{
+  "schema_version": "1.0",
+  "skill": "stark-finance-trading",
+  "generated_at": "2026-06-28T01:00:57.882056+00:00",
+  "mode": "offline",
+  "status": "PASS",
+  "candidate_count": 25,
+  "official_or_primary_sources": 25,
+  "execution_capable_candidates": 7,
+  "community_wrapper_candidates": 1,
+  "candidates": [
+    {
+      "name": "Alpaca MCP",
+      "category": "broker_data_execution",
+      "source_url": "https://docs.alpaca.markets/us/docs/alpaca-mcp-server",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "OpenBB Docs MCP / OpenBB",
+      "category": "research_workbench",
+      "source_url": "https://github.com/OpenBB-finance/openbb-docs-mcp",
+      "source_status": "official_docs_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "QuantConnect MCP / LEAN",
+      "category": "quant_backtest_live_algo",
+      "source_url": "https://www.quantconnect.com/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Alpha Vantage MCP",
+      "category": "market_data",
+      "source_url": "https://github.com/alphavantage/alpha_vantage_mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Financial Modeling Prep MCP",
+      "category": "fundamental_data",
+      "source_url": "https://site.financialmodelingprep.com/developer/docs/mcp-server",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Twelve Data MCP",
+      "category": "market_data",
+      "source_url": "https://github.com/twelvedata/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Unusual Whales MCP",
+      "category": "options_flow",
+      "source_url": "https://unusualwhales.com/public-api/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Massive / Polygon.io MCP",
+      "category": "market_data",
+      "source_url": "https://github.com/massive-com/mcp_massive",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Tradier MCP",
+      "category": "broker_options_execution",
+      "source_url": "https://docs.tradier.com/docs/tradier-mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Robinhood Agentic Trading",
+      "category": "broker_agentic_execution",
+      "source_url": "https://robinhood.com/us/en/agentic-trading/",
+      "source_status": "official_product",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "cTrader MCP servers",
+      "category": "fx_cfd_platform_mcp",
+      "source_url": "https://help.ctrader.com/ctrader-ai-agent-connect/",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Binance Skills Hub",
+      "category": "crypto_cex_web3_skills",
+      "source_url": "https://github.com/binance/binance-skills-hub",
+      "source_status": "official_skill_hub",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Dune MCP",
+      "category": "onchain_sql_analytics",
+      "source_url": "https://docs.dune.com/api-reference/agents/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Alchemy MCP",
+      "category": "onchain_rpc_data",
+      "source_url": "https://github.com/alchemyplatform/alchemy-mcp-server",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Etherscan MCP",
+      "category": "explorer_contract_truth",
+      "source_url": "https://docs.etherscan.io/etherscan-mcp-server",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Coinbase CDP / AgentKit MCP",
+      "category": "web3_wallet_agent_mcp",
+      "source_url": "https://docs.cdp.coinbase.com/agent-kit/core-concepts/model-context-protocol",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "CoinGecko MCP / Skill",
+      "category": "crypto_market_data_mcp_skill",
+      "source_url": "https://docs.coingecko.com/ai-integration/mcp-server.md",
+      "source_status": "official_mcp_and_skill",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "DeFiLlama API",
+      "category": "defi_protocol_data",
+      "source_url": "https://api-docs.defillama.com/",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Databento API",
+      "category": "institutional_market_data_api",
+      "source_url": "https://databento.com/docs",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "IBKR TWS API / community MCP candidates",
+      "category": "broker_api_community_mcp",
+      "source_url": "https://interactivebrokers.github.io/tws-api/",
+      "source_status": "official_api_with_community_mcp_candidates",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true,
+        "community_wrapper_disclosed": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Hummingbot",
+      "category": "crypto_market_making_bot",
+      "source_url": "https://hummingbot.org/",
+      "source_status": "official_open_source",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Freqtrade",
+      "category": "crypto_strategy_bot",
+      "source_url": "https://www.freqtrade.io/en/stable/",
+      "source_status": "official_open_source",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "LEAN Engine",
+      "category": "open_source_quant_engine",
+      "source_url": "https://www.lean.io/",
+      "source_status": "official_open_source",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "NautilusTrader",
+      "category": "open_source_quant_trading_platform",
+      "source_url": "https://github.com/nautechsystems/nautilus_trader",
+      "source_status": "official_open_source",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "CCXT",
+      "category": "crypto_exchange_library",
+      "source_url": "https://github.com/ccxt/ccxt",
+      "source_status": "official_open_source_library",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    }
+  ],
+  "evidence_boundary": "This audit checks source classification and optional URL reachability only. It does not verify API credentials, live model behavior, trading performance, or public superiority."
+}

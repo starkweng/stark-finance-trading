@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.1",
+  "skill": "stark-finance-trading",
+  "snapshot_date": "2026-06-28",
+  "claim_status": "benchmark_defined_no_superiority_claim",
+  "evidence_boundary": "Source-level public comparison. URLs and product capabilities should be live-verified before installation, trading, or public superiority claims.",
+  "comparison_goal": "Show why a single Stark finance/trading router is useful even when many excellent vendor MCPs, skills, APIs, and trading frameworks already exist.",
+  "candidates": [
+    {
+      "name": "Alpaca MCP",
+      "category": "broker_data_execution",
+      "source_url": "https://docs.alpaca.markets/us/docs/alpaca-mcp-server",
+      "source_status": "official_mcp",
+      "strengths": ["broker-backed market data", "account tools", "paper/live trading surface"],
+      "default_risk_tier": 3,
+      "route_role": "US equities, options, crypto snapshots, paper trading, and broker execution drafts.",
+      "what_stark_must_do_better": "Gate live actions, separate data lookup from trade execution, and label paper versus live environments."
+    },
+    {
+      "name": "OpenBB Docs MCP / OpenBB",
+      "category": "research_workbench",
+      "source_url": "https://github.com/OpenBB-finance/openbb-docs-mcp",
+      "source_status": "official_docs_mcp",
+      "strengths": ["OpenBB documentation MCP", "broad finance research platform", "Python ecosystem"],
+      "default_risk_tier": 0,
+      "route_role": "TradFi, macro, equity, ETF, and crypto research workbench plus OpenBB documentation routing.",
+      "what_stark_must_do_better": "Provide lighter natural-language routing across Web3, TradFi, and execution safety."
+    },
+    {
+      "name": "QuantConnect MCP / LEAN",
+      "category": "quant_backtest_live_algo",
+      "source_url": "https://www.quantconnect.com/mcp",
+      "source_status": "official_mcp",
+      "strengths": ["strategy authoring", "backtesting", "optimization", "algorithm deployment"],
+      "default_risk_tier": 2,
+      "route_role": "Strategy research, reproducible backtests, paper deployment, and live algorithm handoff.",
+      "what_stark_must_do_better": "Force assumptions, fees, slippage, drawdown, out-of-sample checks, and live approval boundaries."
+    },
+    {
+      "name": "Alpha Vantage MCP",
+      "category": "market_data",
+      "source_url": "https://github.com/alphavantage/alpha_vantage_mcp",
+      "source_status": "official_mcp",
+      "strengths": ["stocks", "ETFs", "FX", "crypto", "technical indicators", "macro data"],
+      "default_risk_tier": 0,
+      "route_role": "Low-friction market data fallback and indicator source.",
+      "what_stark_must_do_better": "Cross-check delayed or rate-limited data and avoid turning indicators into recommendations."
+    },
+    {
+      "name": "Financial Modeling Prep MCP",
+      "category": "fundamental_data",
+      "source_url": "https://site.financialmodelingprep.com/developer/docs/mcp-server",
+      "source_status": "official_mcp",
+      "strengths": ["financial statements", "fundamentals", "valuation data", "news"],
+      "default_risk_tier": 0,
+      "route_role": "Equity due diligence, comps, valuation inputs, and fundamentals.",
+      "what_stark_must_do_better": "Tie fundamentals to timestamps, filings, and market-data caveats."
+    },
+    {
+      "name": "Twelve Data MCP",
+      "category": "market_data",
+      "source_url": "https://github.com/twelvedata/mcp",
+      "source_status": "official_mcp",
+      "strengths": ["global market data", "FX", "crypto", "indicators", "streaming-ready ecosystem"],
+      "default_risk_tier": 0,
+      "route_role": "Multi-asset quotes and technical data cross-check.",
+      "what_stark_must_do_better": "Mark venue, delay status, and whether a feed is decision-grade."
+    },
+    {
+      "name": "Unusual Whales MCP",
+      "category": "options_flow",
+      "source_url": "https://unusualwhales.com/public-api/mcp",
+      "source_status": "official_mcp",
+      "strengths": ["options flow", "dark pool", "congressional trading", "volatility and Greeks"],
+      "default_risk_tier": 0,
+      "route_role": "Options-flow and market-structure signal source.",
+      "what_stark_must_do_better": "Treat flow as signal evidence, not a trade recommendation, and require quote/liquidity confirmation."
+    },
+    {
+      "name": "Massive / Polygon.io MCP",
+      "category": "market_data",
+      "source_url": "https://github.com/massive-com/mcp_massive",
+      "source_status": "official_mcp",
+      "strengths": ["institutional market data", "stocks", "options", "FX", "crypto", "news"],
+      "default_risk_tier": 0,
+      "route_role": "High-quality data feed candidate for snapshots, bars, and news.",
+      "what_stark_must_do_better": "Route by data need and explain subscription/data-gap limits."
+    },
+    {
+      "name": "Tradier MCP",
+      "category": "broker_options_execution",
+      "source_url": "https://docs.tradier.com/docs/tradier-mcp",
+      "source_status": "official_mcp",
+      "strengths": ["stocks", "options", "orders", "multi-leg options", "paper/live brokerage"],
+      "default_risk_tier": 3,
+      "route_role": "Options quotes, contract checks, paper orders, and broker execution drafts.",
+      "what_stark_must_do_better": "Demand order previews, max-loss checks, and explicit confirmation before live submission."
+    },
+    {
+      "name": "Robinhood Agentic Trading",
+      "category": "broker_agentic_execution",
+      "source_url": "https://robinhood.com/us/en/agentic-trading/",
+      "source_status": "official_product",
+      "strengths": ["budget-isolated agentic trading account", "retail brokerage surface", "AI trading workflow"],
+      "default_risk_tier": 4,
+      "route_role": "Agentic brokerage surface candidate only when the user has explicitly configured limits and account scope.",
+      "what_stark_must_do_better": "Treat setup and trading as high-risk live execution; require account, budget, max-loss, and confirmation gates."
+    },
+    {
+      "name": "cTrader MCP servers",
+      "category": "fx_cfd_platform_mcp",
+      "source_url": "https://help.ctrader.com/ctrader-ai-agent-connect/",
+      "source_status": "official_mcp",
+      "strengths": ["local MCP", "remote MCP", "account data", "market data", "order management", "desktop chart control"],
+      "default_risk_tier": 4,
+      "route_role": "FX/CFD broker-platform route for account review, chart analysis, demo trading, and gated live actions.",
+      "what_stark_must_do_better": "Preserve broker-specific risk assumptions, lot sizing, margin, stop-out, and explicit demo/live separation."
+    },
+    {
+      "name": "Binance Skills Hub",
+      "category": "crypto_cex_web3_skills",
+      "source_url": "https://github.com/binance/binance-skills-hub",
+      "source_status": "official_skill_hub",
+      "strengths": ["crypto exchange workflows", "Web3 skills", "wallet and market tooling"],
+      "default_risk_tier": 3,
+      "route_role": "Crypto market data, token research, account reads, and execution-capable Binance surfaces.",
+      "what_stark_must_do_better": "Keep Binance as an internal route, not the user-facing mental model; gate every state-changing command."
+    },
+    {
+      "name": "Dune MCP",
+      "category": "onchain_sql_analytics",
+      "source_url": "https://docs.dune.com/api-reference/agents/mcp",
+      "source_status": "official_mcp",
+      "strengths": ["onchain SQL", "dashboards", "protocol metrics", "community data tables"],
+      "default_risk_tier": 0,
+      "route_role": "Historical onchain metrics, cohort analysis, token issuance, holder and transfer studies.",
+      "what_stark_must_do_better": "Validate table semantics, bound queries, and cross-check with chain/explorer truth."
+    },
+    {
+      "name": "Alchemy MCP",
+      "category": "onchain_rpc_data",
+      "source_url": "https://github.com/alchemyplatform/alchemy-mcp-server",
+      "source_status": "official_mcp",
+      "strengths": ["EVM/Solana RPC", "balances", "NFT/token data", "transaction checks"],
+      "default_risk_tier": 1,
+      "route_role": "Wallet, token, NFT, transaction, and simulation-adjacent chain checks.",
+      "what_stark_must_do_better": "Keep reads separate from signing and select the correct app/network before queries."
+    },
+    {
+      "name": "Etherscan MCP",
+      "category": "explorer_contract_truth",
+      "source_url": "https://docs.etherscan.io/etherscan-mcp-server",
+      "source_status": "official_mcp",
+      "strengths": ["verified contracts", "transactions", "logs", "explorer-backed metadata"],
+      "default_risk_tier": 0,
+      "route_role": "Explorer truth for verified source, logs, transactions, and contract facts.",
+      "what_stark_must_do_better": "Use explorer data as evidence, not as final risk judgment without behavior checks."
+    },
+    {
+      "name": "Coinbase CDP / AgentKit MCP",
+      "category": "web3_wallet_agent_mcp",
+      "source_url": "https://docs.cdp.coinbase.com/agent-kit/core-concepts/model-context-protocol",
+      "source_status": "official_mcp",
+      "strengths": ["CDP API MCP", "AgentKit MCP extension", "wallet actions", "x402/payment-adjacent agent workflows"],
+      "default_risk_tier": 4,
+      "route_role": "Coinbase developer stack route for Web3 agent wallets, CDP operations, and payment-capable workflows.",
+      "what_stark_must_do_better": "Separate docs/context MCP from wallet/action MCP and require confirmation for transfers, swaps, payments, and key-sensitive operations."
+    },
+    {
+      "name": "CoinGecko MCP / Skill",
+      "category": "crypto_market_data_mcp_skill",
+      "source_url": "https://docs.coingecko.com/ai-integration/mcp-server.md",
+      "source_status": "official_mcp_and_skill",
+      "strengths": ["crypto prices", "OHLCV", "market cap", "volume", "NFT", "DeFi/onchain data", "agent skill"],
+      "default_risk_tier": 0,
+      "route_role": "Crypto market-data and token metadata route, especially when a neutral market-data source is needed.",
+      "what_stark_must_do_better": "Resolve token IDs/contracts carefully and cross-check venue liquidity before turning market data into a thesis."
+    },
+    {
+      "name": "DeFiLlama API",
+      "category": "defi_protocol_data",
+      "source_url": "https://api-docs.defillama.com/",
+      "source_status": "official_api",
+      "strengths": ["TVL", "yields", "fees", "stablecoins", "protocol revenue", "DeFi category data"],
+      "default_risk_tier": 0,
+      "route_role": "DeFi market-structure, protocol, yield, TVL, and fees/revenue evidence layer.",
+      "what_stark_must_do_better": "Label methodology gaps and avoid using aggregate TVL/yield as a direct safety or trade signal."
+    },
+    {
+      "name": "Databento API",
+      "category": "institutional_market_data_api",
+      "source_url": "https://databento.com/docs",
+      "source_status": "official_api",
+      "strengths": ["institutional market data", "historical data", "live data", "futures", "equities", "options"],
+      "default_risk_tier": 0,
+      "route_role": "High-grade data candidate for serious strategy research when direct MCP is unavailable or unnecessary.",
+      "what_stark_must_do_better": "Treat it as a data backbone candidate; require dataset, venue, entitlement, latency, and cost clarity."
+    },
+    {
+      "name": "IBKR TWS API / community MCP candidates",
+      "category": "broker_api_community_mcp",
+      "source_url": "https://interactivebrokers.github.io/tws-api/",
+      "source_status": "official_api_with_community_mcp_candidates",
+      "strengths": ["multi-asset brokerage API", "TWS/Gateway integration", "community MCP wrappers"],
+      "default_risk_tier": 4,
+      "route_role": "Broker API route for advanced users only after local TWS/Gateway, account, paper/live, and permissions are explicit.",
+      "what_stark_must_do_better": "Do not treat community wrappers as official; require local environment, paper-mode proof, order preview, and kill-switch checks."
+    },
+    {
+      "name": "Hummingbot",
+      "category": "crypto_market_making_bot",
+      "source_url": "https://hummingbot.org/",
+      "source_status": "official_open_source",
+      "strengths": ["market making", "arbitrage", "exchange connectors", "bot framework"],
+      "default_risk_tier": 2,
+      "route_role": "Market-making and bot configuration review before sandbox or live deployment.",
+      "what_stark_must_do_better": "Require inventory, rate-limit, cancel-failure, stale-data, max-loss, and kill-switch review."
+    },
+    {
+      "name": "Freqtrade",
+      "category": "crypto_strategy_bot",
+      "source_url": "https://www.freqtrade.io/en/stable/",
+      "source_status": "official_open_source",
+      "strengths": ["strategy bot", "backtesting", "dry-run", "hyperopt", "exchange connectors"],
+      "default_risk_tier": 2,
+      "route_role": "Crypto strategy testing, dry-run execution, and bot risk review.",
+      "what_stark_must_do_better": "Reject decision-grade claims without fees, slippage, sizing, drawdown, and live bot guardrails."
+    },
+    {
+      "name": "LEAN Engine",
+      "category": "open_source_quant_engine",
+      "source_url": "https://www.lean.io/",
+      "source_status": "official_open_source",
+      "strengths": ["multi-asset algorithmic trading engine", "research", "backtest", "live architecture"],
+      "default_risk_tier": 2,
+      "route_role": "Reproducible quant engine target for serious strategy workflows.",
+      "what_stark_must_do_better": "Translate natural-language hypotheses into audited backtest specs and risk gates."
+    },
+    {
+      "name": "NautilusTrader",
+      "category": "open_source_quant_trading_platform",
+      "source_url": "https://github.com/nautechsystems/nautilus_trader",
+      "source_status": "official_open_source",
+      "strengths": ["high-performance backtesting", "live trading architecture", "event-driven engine", "multi-venue adapters"],
+      "default_risk_tier": 2,
+      "route_role": "Advanced quant/backtest/live architecture candidate when strategy engineering needs production-grade event loops.",
+      "what_stark_must_do_better": "Convert natural-language strategy requests into explicit data, venue, clock, risk, and deployment specs before touching live adapters."
+    },
+    {
+      "name": "CCXT",
+      "category": "crypto_exchange_library",
+      "source_url": "https://github.com/ccxt/ccxt",
+      "source_status": "official_open_source_library",
+      "strengths": ["large crypto exchange connector library", "market data", "trading methods", "multi-language ecosystem"],
+      "default_risk_tier": 3,
+      "route_role": "Exchange connector substrate for custom crypto data/trading adapters when vendor MCPs are missing.",
+      "what_stark_must_do_better": "Treat library access as low-level power, not a safe agent surface; enforce rate limits, order preview, balances, and exchange-specific failure handling."
+    }
+  ],
+  "scoring_dimensions": [
+    {"dimension": "routing_precision", "weight": 20},
+    {"dimension": "source_discipline", "weight": 15},
+    {"dimension": "safety_boundary", "weight": 20},
+    {"dimension": "workflow_coverage", "weight": 15},
+    {"dimension": "portability", "weight": 10},
+    {"dimension": "eval_coverage", "weight": 10},
+    {"dimension": "public_readiness", "weight": 10}
+  ]
+}
