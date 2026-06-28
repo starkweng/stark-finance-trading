@@ -8,10 +8,13 @@ source discipline, safety boundaries, and package evidence.
 
 The strongest public finance/trading surfaces are vendor-deep: Alpaca, Tradier,
 Robinhood, IBKR, and cTrader for broker/platform workflows; Dune, Alchemy,
-Etherscan, Coinbase, CoinGecko, DeFiLlama, and Binance for crypto/Web3 data and
-actions; QuantConnect, LEAN, NautilusTrader, Hummingbot, Freqtrade, and CCXT for
-strategy or bot engineering; and OpenBB, Databento, FMP, Twelve Data, Alpha
-Vantage, Massive/Polygon.io, and Unusual Whales for research and data. The
+Etherscan, Coinbase, QuickNode, CoinGecko, CoinMarketCap, Token Terminal,
+DeFiLlama, Helius, Jupiter, DexScreener, and Binance for crypto/Web3 data,
+infrastructure, and actions; QuantConnect, LEAN, NautilusTrader, Hummingbot,
+Freqtrade, and CCXT for strategy or bot engineering; OpenBB, Databento,
+FactSet, FMP, Twelve Data, Alpha Vantage, Massive/Polygon.io, and Unusual
+Whales for research and data; and Stripe/Plaid for adjacent financial
+infrastructure. The
 Stark skill should not try to replace them. Its edge is a single Stark-facing
 route that chooses the right surface, labels evidence quality, and blocks unsafe
 escalation.
@@ -25,6 +28,7 @@ escalation.
 | QuantConnect MCP / LEAN | Official | Backtests, optimization, live algorithm handoff | Force assumptions, slippage, MDD, and approval gates. |
 | Alpha Vantage MCP | Official | Market data and indicators | Cross-check data gaps and avoid indicator-as-advice. |
 | Financial Modeling Prep MCP | Official | Fundamentals and valuation inputs | Tie fundamentals to timestamped DD workflow. |
+| FactSet MCP | Official | Institutional financial data and analytics | Label entitlement, definitions, timestamps, and redistribution limits. |
 | Twelve Data MCP | Official | Global multi-asset data | Label venue, delay status, and decision-grade limits. |
 | Unusual Whales MCP | Official | Options flow and dark-pool signals | Treat flow as signal evidence, not trade instruction. |
 | Massive / Polygon.io MCP | Official | Institutional-style market data | Route by feed need and explain subscription gaps. |
@@ -36,8 +40,16 @@ escalation.
 | Alchemy MCP | Official | Wallet/token/NFT/tx RPC data | Separate reads from signing and network/app selection. |
 | Etherscan MCP | Official | Verified contracts and explorer truth | Cross-check explorer facts with behavior/risk evidence. |
 | Coinbase CDP / AgentKit MCP | Official MCP | Web3 agent wallets, CDP operations, and agent tooling | Separate docs/context from wallet actions; gate transfers and payments. |
+| QuickNode MCP | Official MCP | Web3 RPC endpoints and endpoint security | Keep infra/admin changes separate from market analysis and require confirmation. |
 | CoinGecko MCP / Skill | Official MCP + skill | Crypto market data, token metadata, OHLCV, DeFi/onchain data | Resolve token identity and cross-check venue liquidity. |
+| CoinMarketCap MCP | Official MCP | Crypto rankings, quotes, market pairs, and exchange/category data | Resolve IDs/contracts and do not treat rank as advice. |
+| Token Terminal MCP | Official MCP | Protocol revenue, fees, users, and sector fundamentals | Cross-check methodology and separate fundamentals from trade calls. |
 | DeFiLlama API | Official API | TVL, yields, fees, stablecoins, protocol data | Label methodology gaps; do not treat aggregates as direct trade signals. |
+| Helius MCP | Official MCP | Solana assets, wallets, transactions, webhooks, streaming | Use for Solana/pump.fun evidence while separating reads from transactions. |
+| Jupiter APIs | Official API | Solana liquidity and swap quote/routing APIs | Treat quotes as execution prep until wallet/slippage/confirmation are explicit. |
+| DexScreener API | Official API | DEX pairs, liquidity, price action, token profiles | Use display data as one evidence layer, not final risk truth. |
+| Stripe MCP / Agent Toolkit | Official toolkit | Payments, billing, checkout, and financial operations | Keep finance ops separate from market signals; confirm state changes. |
+| Plaid API | Official API | Bank connectivity, balances, transactions, account verification | Treat account data as sensitive and not as broker execution. |
 | Databento API | Official API | Institutional market data and history | Require dataset, venue, entitlement, latency, and cost clarity. |
 | IBKR TWS API / community MCP candidates | Official API + community MCP candidates | Multi-asset brokerage API | Do not treat community MCP wrappers as official; paper/live proof first. |
 | Hummingbot | Official open source | Market-making and arbitrage bots | Review inventory, rate limits, cancel failures, kill switch. |

@@ -12,6 +12,7 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 | QuantConnect MCP | https://www.quantconnect.com/mcp | Official QuantConnect AI/MCP workflow for strategy and backtesting. |
 | Alpha Vantage MCP | https://github.com/alphavantage/alpha_vantage_mcp | Official Alpha Vantage MCP server. |
 | Financial Modeling Prep MCP | https://site.financialmodelingprep.com/developer/docs/mcp-server | Official FMP MCP server docs. |
+| FactSet MCP | https://developer.factset.com/mcp | Official FactSet MCP developer surface for institutional financial data. |
 | Twelve Data MCP | https://github.com/twelvedata/mcp | Official Twelve Data MCP server. |
 | Unusual Whales MCP | https://unusualwhales.com/public-api/mcp | Official options/dark-pool/congressional-trading MCP and skill. |
 | Massive / Polygon.io MCP | https://github.com/massive-com/mcp_massive | Official market-data MCP for the Polygon.io/Massive ecosystem. |
@@ -20,9 +21,17 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 | cTrader AI Agent Connect | https://help.ctrader.com/ctrader-ai-agent-connect/ | Official cTrader MCP / AI agent connection docs. |
 | Coinbase CDP CLI MCP | https://docs.cdp.coinbase.com/get-started/build-with-ai/cdp-cli/mcp | Official Coinbase CDP CLI MCP integration. |
 | Coinbase AgentKit MCP | https://docs.cdp.coinbase.com/agent-kit/core-concepts/model-context-protocol | Official AgentKit MCP extension docs. |
+| QuickNode MCP | https://www.quicknode.com/docs/build-with-ai/quicknode-mcp | Official QuickNode MCP for endpoint and Web3 infrastructure management. |
 | CoinGecko MCP | https://docs.coingecko.com/ai-integration/mcp-server.md | Official CoinGecko MCP server docs. |
 | CoinGecko Agent Skill | https://docs.coingecko.com/ai-integration/agent-skill.md | Official CoinGecko skill integration docs. |
+| CoinMarketCap MCP | https://coinmarketcap.com/api/mcp/ | Official CoinMarketCap MCP/API agent integration. |
+| Token Terminal MCP | https://tokenterminal.com/docs/mcp/introduction | Official Token Terminal MCP docs for crypto and protocol fundamentals. |
 | DeFiLlama API | https://api-docs.defillama.com/ | Official DeFiLlama API docs. |
+| Helius MCP | https://www.helius.dev/docs/agents/mcp | Official Helius MCP and agent docs for Solana data/infrastructure. |
+| Jupiter APIs | https://dev.jup.ag/docs | Official Jupiter developer docs for Solana liquidity/swap APIs. |
+| DexScreener API | https://docs.dexscreener.com/api/reference | Official DexScreener public API docs; community MCP wrappers must be treated as non-official unless verified. |
+| Stripe MCP / Agent Toolkit | https://docs.stripe.com/agents/toolkit | Official Stripe agent toolkit and MCP-style integration for payments and financial operations, not trading signals. |
+| Plaid docs | https://plaid.com/docs/ | Official Plaid docs for bank/account connectivity; use as financial data infrastructure, not broker execution. |
 | Databento docs | https://databento.com/docs | Official Databento data API docs. |
 | IBKR TWS API | https://interactivebrokers.github.io/tws-api/ | Official Interactive Brokers TWS API docs; community MCPs must not be treated as official. |
 | Binance Skills Hub | https://github.com/binance/binance-skills-hub | Official Binance skill set. |

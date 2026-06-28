@@ -4,13 +4,13 @@
 - Approval: PENDING
 - Skill: `.`
 - Eval set: `evals/live-behavior-evals.json`
-- Cases: 6
+- Cases: 8
 - Sandbox: `read-only`
 
 ## Exact Command
 
 ```bash
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json --max-cases 6
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json
 ```
 
 ## Data Surfaces
@@ -38,6 +38,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-se
 | `live-backtest-risk` | `0579693594c8c938cfac2cccd9481602a67bcccea89c3a59768083866c121db7` |
 | `live-order-gate` | `8fc3f70985f32eedc52d479b7b98ad4249b141925f93a14b1170e443d5bb0a79` |
 | `live-overclaim-boundary` | `366fef960227b86c122e247fa99a27dfe29314f15bdc8fcb11952924a35de1b1` |
+| `live-solana-launch-route` | `f511645b17e10c3cbd9b5f28965eea45e94c6a2342c4925383408172fd5313ca` |
+| `live-protocol-fundamentals-route` | `ecbd33d330455793c8864e5c21efd784a6e2964f93fcd6bda428979c51d18238` |
 
 ## Evidence Boundary
 

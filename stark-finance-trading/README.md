@@ -6,12 +6,13 @@ It is designed for Stark's workflow: one natural entry point that quietly routes
 
 ## What It Routes
 
-- Web3/onchain: Dune, Alchemy, Etherscan, Coinbase CDP/AgentKit, CoinGecko, DeFiLlama, Binance Web3 skills, GMGN, BNB Agent Studio.
+- Web3/onchain: Dune, Alchemy, Etherscan, Coinbase CDP/AgentKit, QuickNode, CoinGecko, CoinMarketCap, Token Terminal, DeFiLlama, Helius, Jupiter, DexScreener, Binance Web3 skills, GMGN, BNB Agent Studio.
 - CEX/DEX trading research: Binance CLI, Binance Agentic Wallet, GMGN, token audit/info/rank/signal skills.
-- TradFi/market data candidates: Alpaca, OpenBB, Alpha Vantage, Financial Modeling Prep, Twelve Data, Massive/Polygon.io, Databento.
+- TradFi/market data candidates: Alpaca, OpenBB, FactSet, Alpha Vantage, Financial Modeling Prep, Twelve Data, Massive/Polygon.io, Databento.
 - Options and flow candidates: Unusual Whales, Alpaca options, Tradier, IBKR/TWS candidates.
 - Quant/backtest frameworks: QuantConnect, LEAN, NautilusTrader, Hummingbot, Freqtrade, CCXT-backed local adapters.
 - Execution-capable candidates: Binance, Coinbase CDP/AgentKit wallet actions, Alpaca, Tradier, Robinhood Agentic Trading, cTrader, IBKR/TWS, Hummingbot, Freqtrade, CCXT, NautilusTrader, QuantConnect live.
+- Adjacent finance infrastructure: Stripe and Plaid for payments, billing, account connectivity, cashflow, and treasury context. These are not trading-signal routes.
 
 ## Why One Skill
 
@@ -61,13 +62,13 @@ python3 scripts/validate_github_actions_workflow.py --root . --out dist/stark-fi
 python3 scripts/package_skill.py . dist
 python3 scripts/install_package_smoke.py dist/stark-finance-trading.skill --json
 python3 scripts/generate_release_manifest.py dist/stark-finance-trading.skill --skill-root . --out dist/stark-finance-trading.release-manifest.json --markdown dist/stark-finance-trading.release-manifest.md --json
-python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set evals/live-behavior-evals.json --out dist/stark-finance-trading.live-eval-signoff.json --markdown dist/stark-finance-trading.live-eval-signoff.md --sandbox read-only --max-cases 6
+python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set evals/live-behavior-evals.json --out dist/stark-finance-trading.live-eval-signoff.json --markdown dist/stark-finance-trading.live-eval-signoff.md --sandbox read-only
 python3 scripts/generate_release_notes.py --skill-root . --release-manifest dist/stark-finance-trading.release-manifest.json --live-signoff dist/stark-finance-trading.live-eval-signoff.json --out dist/stark-finance-trading.release-notes.json --markdown dist/stark-finance-trading.release-notes.md --json
-python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir dist/live-eval-dry-run --max-cases 6 --json
+python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir dist/live-eval-dry-run --json
 python3 scripts/generate_eval_review_bundle.py dist/live-eval-dry-run --eval-set evals/live-behavior-evals.json --out-dir dist/stark-finance-trading.live-eval-review --title "stark-finance-trading Live Behavior Eval Review" --json
 python3 scripts/score_eval_review_bundle.py dist/stark-finance-trading.live-eval-review --out dist/stark-finance-trading.live-eval-scorecard.json --markdown dist/stark-finance-trading.live-eval-scorecard.md --json
-python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out dist/stark-finance-trading.competitive-eval-signoff.json --markdown dist/stark-finance-trading.competitive-eval-signoff.md --sandbox read-only --max-cases 8
-python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir dist/competitive-eval-dry-run --max-cases 8 --json
+python3 scripts/generate_live_eval_signoff.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out dist/stark-finance-trading.competitive-eval-signoff.json --markdown dist/stark-finance-trading.competitive-eval-signoff.md --sandbox read-only
+python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir dist/competitive-eval-dry-run --json
 python3 scripts/generate_eval_review_bundle.py dist/competitive-eval-dry-run --eval-set benchmarks/competitive-task-cases.json --out-dir dist/stark-finance-trading.competitive-eval-review --title "stark-finance-trading Competitive Task Eval Review" --json
 python3 scripts/score_eval_review_bundle.py dist/stark-finance-trading.competitive-eval-review --out dist/stark-finance-trading.competitive-eval-scorecard.json --markdown dist/stark-finance-trading.competitive-eval-scorecard.md --json
 python3 scripts/export_github_repo.py --skill-root . --out-dir dist/github-export/stark-finance-trading --release-artifacts-dir dist --zip dist/stark-finance-trading-github-repo.zip --json

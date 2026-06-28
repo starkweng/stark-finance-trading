@@ -15,6 +15,7 @@ This router keeps one user-facing skill while preserving tool-specific safety an
 | GMGN skills | Installed | Meme/token market, portfolio, smart money, tracking, swap | Swap is high risk. Keep read-only unless explicitly confirmed. |
 | BNB Agent Studio | Installed | BNB agent identity/job/tx/block/contract view, ERC-8004/8183/x402 workflows | Default testnet and read-only. Paid or signing actions require confirmation. |
 | Alpaca connector | Lazy-loadable via Codex app tools | US equities, options, crypto market data, snapshots, bars, order books | Treat current tool surface as market-data first unless authenticated trading tools are explicitly available. |
+| QuickNode connector | Lazy-loadable via Codex app tools | Web3 endpoint inventory, endpoint creation, chain support, endpoint security rules | Infrastructure/admin route only. Do not expose endpoint secrets; avoid changing endpoint security without explicit confirmation. |
 
 ## Public Official Or High-Quality External Candidates
 
@@ -27,6 +28,7 @@ Use these when installing new data/execution surfaces or writing a public README
 | QuantConnect MCP / LEAN | Official quant platform | Strategy creation, backtests, optimization, live algorithm deployment | Backtest and paper before live. |
 | Alpha Vantage MCP | Official MCP | Stocks, ETFs, FX, crypto, indicators, macro | Low-cost research/data fallback. |
 | Financial Modeling Prep MCP | Official MCP | Fundamentals, financial statements, valuation, news, analyst-style data | Equity/DD and comps layer. |
+| FactSet MCP | Official MCP | Institutional financial data, estimates, fundamentals, portfolio/security analytics | High-grade data route; check entitlement, usage limits, and redistribution constraints. |
 | Twelve Data MCP | Official MCP | Global market data, FX, crypto, indicators, WebSocket | Multi-asset market-data layer. |
 | Unusual Whales MCP | Official MCP + skill | Options flow, dark pool, congressional trading, Greek exposure, vol/flow | Research only unless paired with broker execution. |
 | Massive / Polygon.io MCP | Official market-data MCP | Stocks, options, FX, crypto, futures, news, fundamentals | Strong institutional data layer. |
@@ -36,7 +38,14 @@ Use these when installing new data/execution surfaces or writing a public README
 | TradeStation MCP | Official broker connection announced | Broker-account AI integration | Verify availability and account constraints before use. |
 | Coinbase CDP / AgentKit MCP | Official Web3 agent MCP stack | CDP API operations, AgentKit, wallet actions, x402/payment-adjacent workflows | Separate docs/context from wallet actions; transfers/payments are Tier 4. |
 | CoinGecko MCP / Skill | Official crypto data MCP + skill | Prices, OHLCV, market cap, NFT, DeFi/onchain data, token metadata | Resolve token IDs/contracts; market data is not execution advice. |
+| CoinMarketCap MCP | Official crypto market-data MCP/API | Crypto rankings, quotes, market pairs, exchange/category market data | Good neutral market-rank cross-check. Resolve IDs/contracts; data is not execution advice. |
+| Token Terminal MCP | Official crypto fundamentals MCP | Protocol revenue, fees, users, sectors, chain/project financial metrics | Use for protocol DD and investable narrative evidence; methodology caveats required. |
 | DeFiLlama API | Official DeFi API | TVL, yields, fees, stablecoins, protocol revenue/category data | Methodology caveats; aggregate data is evidence, not a safety label. |
+| Helius MCP | Official Solana MCP / agent tools | Solana wallet, tx, token/NFT/DAS, webhooks, streaming, token launch analysis | Solana and pump.fun-adjacent route; distinguish reads, infra changes, and transactions. |
+| Jupiter APIs | Official Solana liquidity APIs | Solana swap quotes, routing, token/lending/liquidity integrations | Quote/intelligence route unless wallet signing is explicitly requested and confirmed. |
+| DexScreener API | Official DEX market API | DEX pairs, liquidity, price action, token market display behavior | Market-display cross-check only; community MCP wrappers are non-official until verified. |
+| Stripe MCP / Agent Toolkit | Official financial/payment agent toolkit | Payment, billing, checkout, treasury/revenue operations | Finance-ops route, not trading research or market signal. State changes require confirmation. |
+| Plaid API | Official financial connectivity API | Bank/account connectivity, balances, transactions, cashflow evidence | Finance-data route, not brokerage execution. Sensitive financial data requires minimal-scope handling. |
 | Databento API | Official institutional data API | Historical/live market data for serious strategy research | Check dataset, venue, entitlement, latency, and cost before relying on it. |
 | IBKR TWS API / community MCP candidates | Official API plus community MCP wrappers | Multi-asset broker API via TWS/Gateway | Do not treat community MCP as official; paper/live and permissions must be explicit. |
 | Hummingbot | Open-source trading framework | Crypto market-making, arbitrage, exchange connectors | Use sandbox/config review before any live bot. |
@@ -49,7 +58,7 @@ Use these when installing new data/execution surfaces or writing a public README
 
 ### Market Snapshot
 
-Use Alpaca for equities/options/US crypto when visible. Use Binance/GMGN/CoinGecko for crypto venue reality. Use Alpha Vantage/Twelve Data/Massive/Databento as external candidates. Return timestamp, venue/feed, delay status, and spread/depth if the user is trading.
+Use Alpaca for equities/options/US crypto when visible. Use Binance/GMGN/CoinGecko/CoinMarketCap for crypto venue reality. Use Alpha Vantage/Twelve Data/Massive/Databento/FactSet as external candidates. Return timestamp, venue/feed, delay status, and spread/depth if the user is trading.
 
 ### Token And Onchain Due Diligence
 
@@ -60,17 +69,28 @@ Use:
 3. Dune for historical holder/transfer/volume cohorts.
 4. Alchemy for wallet/token/tx state.
 5. Etherscan for verified contracts and explorer truth.
-6. GMGN/Dex surfaces for liquidity and market display behavior.
+6. GMGN/DexScreener/Dex surfaces for liquidity and market display behavior.
+7. CoinGecko/CoinMarketCap for neutral market cap, pair, category, and price context.
 
 Do not treat honeypot/mintable/proxy labels as final until cross-checked with contract behavior or simulation when needed.
 
+### Solana / Pump.fun / Launch Flow
+
+Use Helius for Solana account, transaction, token/NFT/DAS, webhook, and streaming context. Use Jupiter for Solana quote/liquidity route checks and DexScreener for pair/liquidity display. Use Dune for historical issuance/cohort metrics when the data is indexed. Use CoinGecko/CoinMarketCap only after token identity is resolved. Swaps, transfers, approvals, and wallet signatures are Tier 4.
+
 ### Smart-Money And Meme Scan
 
-Use `crypto-market-rank`, `trading-signal`, `meme-rush`, and GMGN. Summaries must include freshness, signal count, exit rate or invalidation signal when available, liquidity, holder risk, and whether smart money already exited.
+Use `crypto-market-rank`, `trading-signal`, `meme-rush`, GMGN, DexScreener, and chain-specific sources such as Helius for Solana. Summaries must include freshness, signal count, exit rate or invalidation signal when available, liquidity, holder risk, and whether smart money already exited.
 
 ### Equity / Fundamental Research
 
-Use OpenBB/FMP/Alpha Vantage/Massive/Twelve Data/Databento where installed or available. For DeFi protocol or crypto sector claims, add DeFiLlama/CoinGecko where useful. DeFiLlama TVL, yields, and fees have methodology gaps and are not a direct safety or trade signal. For current public-company or macro claims, verify against official filings, exchange pages, or primary news when high stakes.
+Use OpenBB/FMP/Alpha Vantage/Massive/Twelve Data/Databento/FactSet where installed or available. For DeFi protocol or crypto sector claims, add Token Terminal, DeFiLlama, Dune, CoinGecko, and CoinMarketCap where useful. DeFiLlama TVL, yields, and fees have methodology gaps and are not a direct safety or trade signal. Token Terminal financial metrics are stronger for protocol fundamentals, but still need methodology and timestamp caveats. For current public-company or macro claims, verify against official filings, exchange pages, or primary news when high stakes.
+
+For institutional or investor-grade TradFi work, consider FactSet before lower-grade sources if entitlement exists. Preserve source timestamps, metric definitions, and redistribution limits.
+
+### Protocol Fundamentals
+
+Use Token Terminal for protocol revenue, fees, users, sector, chain, and project financial metrics. Cross-check DeFiLlama TVL/fees/yields, Dune onchain cohorts, and CoinGecko/CoinMarketCap token market context. Never convert revenue/TVL growth directly into a buy/sell recommendation.
 
 ### Options Flow
 
@@ -83,6 +103,14 @@ Use QuantConnect/LEAN, NautilusTrader, Freqtrade, Hummingbot, CCXT-backed local 
 ### Execution
 
 Execution-capable routes include Binance CLI, Binance Agentic Wallet, Coinbase CDP/AgentKit wallet actions, Alpaca trading, Tradier, Robinhood Agentic Trading, cTrader, IBKR/TWS wrappers, Hummingbot, Freqtrade, CCXT-backed adapters, NautilusTrader, and QuantConnect live. All must pass `references/safety-policy.md`.
+
+### Financial Infrastructure / Payments
+
+Use Stripe for payment, billing, checkout, treasury/revenue, and financial-ops workflows. Use Plaid for account connectivity, balances, transactions, and cashflow evidence. These are not market-data or trade-execution surfaces; route them as financial infrastructure unless the user explicitly connects them to portfolio, treasury, or risk analysis. Treat sensitive banking/payment data with minimal-scope handling.
+
+### Web3 Infrastructure
+
+Use QuickNode and Alchemy infrastructure routes for endpoint inventory, chain/network support, RPC access, webhook-style routing, and security rules. Endpoint creation or security-rule changes are administrative state changes and need explicit confirmation. Never print endpoint tokens or RPC secrets.
 
 ### FX / CFD / XAUUSD
 

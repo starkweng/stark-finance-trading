@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T01:36:46.396321+00:00",
+  "generated_at": "2026-06-28T01:58:15.370235+00:00",
   "title": "stark-finance-trading Competitive Task Eval Review",
   "source_mode": "dry_run",
   "approval_status": "MISSING",
-  "case_count": 8,
+  "case_count": 11,
   "score": 100,
   "min_score": 90,
   "behavior_proof_status": "UNPROVEN_DRY_RUN_ONLY",
@@ -154,6 +154,42 @@
         "response_evidence_or_dry_run": true
       },
       "required_item_count": 9
+    },
+    {
+      "id": "solana_meme_launch_route",
+      "category": "solana_meme_liquidity",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 13
+    },
+    {
+      "id": "protocol_fundamentals_router",
+      "category": "crypto_protocol_fundamentals",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 13
+    },
+    {
+      "id": "finance_infra_not_trading",
+      "category": "payments_banking_boundary",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 11
     }
   ],
   "evidence_boundary": "Eval scorecard covers reviewability and evidence labeling. A PASS on a dry-run bundle does not prove live model behavior, market-data correctness, trading performance, or public superiority."

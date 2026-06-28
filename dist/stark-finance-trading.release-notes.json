@@ -6,8 +6,8 @@
   "release_date": "2026-06-28",
   "package": {
     "name": "stark-finance-trading.skill",
-    "sha256": "b35bf7cf62b403fa9e404e1bebd7305035455bb9dc09b8667b66e460f818a8cb",
-    "size_bytes": 105165,
+    "sha256": "b1460a933b8da4426c0552ebac745d21fa0aa5d196320a75d128af6b5dc84846",
+    "size_bytes": 111983,
     "entry_count": 48
   },
   "install_smoke": {
@@ -26,7 +26,7 @@
   "live_eval_signoff": {
     "status": "PASS",
     "approval_status": "PENDING",
-    "exact_command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json --max-cases 6"
+    "exact_command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json"
   },
   "changes": [
     "- Created `stark-finance-trading` as a unified finance/trading router skill.",

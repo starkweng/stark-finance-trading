@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-27T23:37:46.277902+00:00",
+  "generated_at": "2026-06-28T01:55:38.045626+00:00",
   "mode": "live",
   "status": "WARN",
-  "candidate_count": 25,
-  "official_or_primary_sources": 25,
+  "candidate_count": 34,
+  "official_or_primary_sources": 34,
   "execution_capable_candidates": 7,
   "community_wrapper_candidates": 1,
   "candidates": [
@@ -93,7 +93,7 @@
       "category": "market_data",
       "source_url": "https://github.com/alphavantage/alpha_vantage_mcp",
       "source_status": "official_mcp",
-      "status": "PASS",
+      "status": "WARN",
       "checks": {
         "name": true,
         "category": true,
@@ -106,12 +106,12 @@
         "live_url_not_failed": true
       },
       "live_probe": {
-        "reachable": true,
-        "network_status": "PASS",
-        "http_status": 200,
+        "reachable": false,
+        "network_status": "WARN",
+        "http_status": 0,
         "effective_url": "https://github.com/alphavantage/alpha_vantage_mcp",
-        "returncode": 0,
-        "stderr_tail": ""
+        "returncode": 35,
+        "stderr_tail": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 \n"
       }
     },
     {
@@ -136,6 +136,32 @@
         "network_status": "WARN",
         "http_status": 403,
         "effective_url": "https://site.financialmodelingprep.com/developer/docs/mcp-server",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "FactSet MCP",
+      "category": "institutional_financial_data",
+      "source_url": "https://developer.factset.com/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://developer.factset.com/mcp",
         "returncode": 0,
         "stderr_tail": ""
       }
@@ -171,7 +197,7 @@
       "category": "options_flow",
       "source_url": "https://unusualwhales.com/public-api/mcp",
       "source_status": "official_mcp",
-      "status": "WARN",
+      "status": "PASS",
       "checks": {
         "name": true,
         "category": true,
@@ -184,12 +210,12 @@
         "live_url_not_failed": true
       },
       "live_probe": {
-        "reachable": false,
-        "network_status": "WARN",
-        "http_status": 0,
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
         "effective_url": "https://unusualwhales.com/public-api/mcp",
-        "returncode": 35,
-        "stderr_tail": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to unusualwhales.com:443 \n"
+        "returncode": 0,
+        "stderr_tail": ""
       }
     },
     {
@@ -277,7 +303,7 @@
       "category": "fx_cfd_platform_mcp",
       "source_url": "https://help.ctrader.com/ctrader-ai-agent-connect/",
       "source_status": "official_mcp",
-      "status": "WARN",
+      "status": "PASS",
       "checks": {
         "name": true,
         "category": true,
@@ -291,12 +317,12 @@
         "live_url_not_failed": true
       },
       "live_probe": {
-        "reachable": false,
-        "network_status": "WARN",
-        "http_status": 0,
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
         "effective_url": "https://help.ctrader.com/ctrader-ai-agent-connect/",
-        "returncode": 35,
-        "stderr_tail": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to help.ctrader.com:443 \n"
+        "returncode": 0,
+        "stderr_tail": ""
       }
     },
     {
@@ -304,7 +330,7 @@
       "category": "crypto_cex_web3_skills",
       "source_url": "https://github.com/binance/binance-skills-hub",
       "source_status": "official_skill_hub",
-      "status": "PASS",
+      "status": "WARN",
       "checks": {
         "name": true,
         "category": true,
@@ -317,12 +343,12 @@
         "live_url_not_failed": true
       },
       "live_probe": {
-        "reachable": true,
-        "network_status": "PASS",
-        "http_status": 200,
+        "reachable": false,
+        "network_status": "WARN",
+        "http_status": 0,
         "effective_url": "https://github.com/binance/binance-skills-hub",
-        "returncode": 0,
-        "stderr_tail": ""
+        "returncode": 35,
+        "stderr_tail": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 \n"
       }
     },
     {
@@ -431,6 +457,32 @@
       }
     },
     {
+      "name": "QuickNode MCP",
+      "category": "web3_infrastructure_mcp",
+      "source_url": "https://www.quicknode.com/docs/build-with-ai/quicknode-mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://www.quicknode.com/docs/build-with-ai/quicknode-mcp",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
       "name": "CoinGecko MCP / Skill",
       "category": "crypto_market_data_mcp_skill",
       "source_url": "https://docs.coingecko.com/ai-integration/mcp-server.md",
@@ -457,6 +509,58 @@
       }
     },
     {
+      "name": "CoinMarketCap MCP",
+      "category": "crypto_market_data_mcp",
+      "source_url": "https://coinmarketcap.com/api/mcp/",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://coinmarketcap.com/api/mcp/",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "Token Terminal MCP",
+      "category": "crypto_protocol_fundamentals_mcp",
+      "source_url": "https://tokenterminal.com/docs/mcp/introduction",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://tokenterminal.com/docs/mcp/introduction",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
       "name": "DeFiLlama API",
       "category": "defi_protocol_data",
       "source_url": "https://api-docs.defillama.com/",
@@ -478,6 +582,136 @@
         "network_status": "PASS",
         "http_status": 200,
         "effective_url": "https://api-docs.defillama.com/",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "Helius MCP",
+      "category": "solana_data_infra_mcp",
+      "source_url": "https://www.helius.dev/docs/agents/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://www.helius.dev/docs/agents/mcp",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "Jupiter APIs",
+      "category": "solana_liquidity_api",
+      "source_url": "https://dev.jup.ag/docs",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://developers.jup.ag/docs/get-started",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "DexScreener API",
+      "category": "dex_market_display_api",
+      "source_url": "https://docs.dexscreener.com/api/reference",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://docs.dexscreener.com/api/reference",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "Stripe MCP / Agent Toolkit",
+      "category": "financial_payments_infrastructure",
+      "source_url": "https://docs.stripe.com/agents/toolkit",
+      "source_status": "official_mcp_or_agent_toolkit",
+      "status": "WARN",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": false,
+        "network_status": "WARN",
+        "http_status": 0,
+        "effective_url": "https://docs.stripe.com/agents/toolkit",
+        "returncode": 35,
+        "stderr_tail": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to docs.stripe.com:443 \n"
+      }
+    },
+    {
+      "name": "Plaid API",
+      "category": "financial_connectivity_api",
+      "source_url": "https://plaid.com/docs/",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://plaid.com/docs/",
         "returncode": 0,
         "stderr_tail": ""
       }
@@ -593,7 +827,7 @@
       "category": "open_source_quant_engine",
       "source_url": "https://www.lean.io/",
       "source_status": "official_open_source",
-      "status": "WARN",
+      "status": "PASS",
       "checks": {
         "name": true,
         "category": true,
@@ -606,12 +840,12 @@
         "live_url_not_failed": true
       },
       "live_probe": {
-        "reachable": false,
-        "network_status": "WARN",
-        "http_status": 0,
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
         "effective_url": "https://www.lean.io/",
-        "returncode": 35,
-        "stderr_tail": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.lean.io:443 \n"
+        "returncode": 0,
+        "stderr_tail": ""
       }
     },
     {

@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T01:36:46.287656+00:00",
+  "generated_at": "2026-06-28T01:58:15.260305+00:00",
   "title": "stark-finance-trading Live Behavior Eval Review",
   "source_mode": "dry_run",
   "approval_status": "MISSING",
-  "case_count": 6,
+  "case_count": 8,
   "score": 100,
   "min_score": 90,
   "behavior_proof_status": "UNPROVEN_DRY_RUN_ONLY",
@@ -130,6 +130,30 @@
         "response_evidence_or_dry_run": true
       },
       "required_item_count": 3
+    },
+    {
+      "id": "live-solana-launch-route",
+      "category": "solana_launch_liquidity",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 5
+    },
+    {
+      "id": "live-protocol-fundamentals-route",
+      "category": "protocol_fundamentals",
+      "score": 100.0,
+      "checks": {
+        "prompt_present": true,
+        "prompt_hash": true,
+        "required_items": true,
+        "response_evidence_or_dry_run": true
+      },
+      "required_item_count": 4
     }
   ],
   "evidence_boundary": "Eval scorecard covers reviewability and evidence labeling. A PASS on a dry-run bundle does not prove live model behavior, market-data correctness, trading performance, or public superiority."

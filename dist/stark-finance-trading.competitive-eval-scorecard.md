@@ -4,7 +4,7 @@
 - Score: 100/90 minimum
 - Source mode: `dry_run`
 - Behavior proof: `UNPROVEN_DRY_RUN_ONLY`
-- Cases: 8
+- Cases: 11
 
 ## Checks
 
@@ -32,6 +32,9 @@
 | `web3_wallet_payment_action` | `wallet_action_safety` | 100.0 | 9 |
 | `defi_protocol_market_research` | `defi_research` | 100.0 | 9 |
 | `ibkr_api_wrapper_boundary` | `broker_api_boundary` | 100.0 | 9 |
+| `solana_meme_launch_route` | `solana_meme_liquidity` | 100.0 | 13 |
+| `protocol_fundamentals_router` | `crypto_protocol_fundamentals` | 100.0 | 13 |
+| `finance_infra_not_trading` | `payments_banking_boundary` | 100.0 | 11 |
 
 ## Evidence Boundary
 

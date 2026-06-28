@@ -3,7 +3,7 @@
 - Status: PASS
 - Release date: 2026-06-28
 - Package: `stark-finance-trading.skill`
-- SHA256: `b35bf7cf62b403fa9e404e1bebd7305035455bb9dc09b8667b66e460f818a8cb`
+- SHA256: `b1460a933b8da4426c0552ebac745d21fa0aa5d196320a75d128af6b5dc84846`
 - Entry count: 48
 - Install smoke: PASS
 - Live eval signoff: PASS / approval PENDING
@@ -39,5 +39,5 @@
 ## Live Eval Command Requiring Approval
 
 ```bash
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json --max-cases 6
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json
 ```

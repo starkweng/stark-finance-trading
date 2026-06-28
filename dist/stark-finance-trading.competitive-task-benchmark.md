@@ -2,10 +2,10 @@
 
 - Status: PASS
 - Score: 100.0/100
-- Cases: 8
+- Cases: 11
 - Average router score: 100.0
-- Average single-surface ceiling: 69.38
-- Average router edge: 30.62
+- Average single-surface ceiling: 68.73
+- Average router edge: 31.27
 
 ## Task Scorecard
 
@@ -19,6 +19,9 @@
 | `web3_wallet_payment_action` | 100.0 | 66 | 34.0 | PASS |
 | `defi_protocol_market_research` | 100.0 | 74 | 26.0 | PASS |
 | `ibkr_api_wrapper_boundary` | 100.0 | 62 | 38.0 | PASS |
+| `solana_meme_launch_route` | 100.0 | 70 | 30.0 | PASS |
+| `protocol_fundamentals_router` | 100.0 | 76 | 24.0 | PASS |
+| `finance_infra_not_trading` | 100.0 | 55 | 45.0 | PASS |
 
 ## Evidence Boundary
 

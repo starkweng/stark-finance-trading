@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T01:37:16.341273+00:00",
+  "generated_at": "2026-06-28T01:58:33.285260+00:00",
   "skill": "stark-finance-trading",
-  "skill_root": "stark-finance-trading",
-  "dist": "dist",
+  "skill_root": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/stark-finance-trading",
+  "dist": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist",
   "local_release_status": "LOCAL_RELEASE_READY",
   "goal_completion_status": "NOT_COMPLETE_EXTERNAL_PROOFS_PENDING",
   "checks": [
@@ -134,9 +134,9 @@
     }
   },
   "package": {
-    "path": "dist/stark-finance-trading.skill",
-    "sha256": "b35bf7cf62b403fa9e404e1bebd7305035455bb9dc09b8667b66e460f818a8cb",
-    "manifest_sha256": "b35bf7cf62b403fa9e404e1bebd7305035455bb9dc09b8667b66e460f818a8cb",
+    "path": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading.skill",
+    "sha256": "b1460a933b8da4426c0552ebac745d21fa0aa5d196320a75d128af6b5dc84846",
+    "manifest_sha256": "b1460a933b8da4426c0552ebac745d21fa0aa5d196320a75d128af6b5dc84846",
     "hash_match": true,
     "zip": {
       "status": "PASS",
@@ -152,8 +152,8 @@
     }
   },
   "github_export_zip": {
-    "path": "dist/stark-finance-trading-github-repo.zip",
-    "sha256": "141783d9cd477ad705e816b48381a3a1286a4dc8707cd4abb3720f2b1562a5cf",
+    "path": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading-github-repo.zip",
+    "sha256": "82ebb76787a786323c06015b80eb93c06e2e43ca8367edd6df44127174998786",
     "zip": {
       "status": "PASS",
       "entry_count": 87,

@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T01:36:45.961446+00:00",
+  "generated_at": "2026-06-28T01:58:14.922280+00:00",
   "mode": "offline",
   "status": "PASS",
-  "candidate_count": 25,
-  "official_or_primary_sources": 25,
+  "candidate_count": 34,
+  "official_or_primary_sources": 34,
   "execution_capable_candidates": 7,
   "community_wrapper_candidates": 1,
   "candidates": [
@@ -86,6 +86,24 @@
       "name": "Financial Modeling Prep MCP",
       "category": "fundamental_data",
       "source_url": "https://site.financialmodelingprep.com/developer/docs/mcp-server",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "FactSet MCP",
+      "category": "institutional_financial_data",
+      "source_url": "https://developer.factset.com/mcp",
       "source_status": "official_mcp",
       "status": "PASS",
       "checks": {
@@ -303,6 +321,24 @@
       "live_probe": null
     },
     {
+      "name": "QuickNode MCP",
+      "category": "web3_infrastructure_mcp",
+      "source_url": "https://www.quicknode.com/docs/build-with-ai/quicknode-mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
       "name": "CoinGecko MCP / Skill",
       "category": "crypto_market_data_mcp_skill",
       "source_url": "https://docs.coingecko.com/ai-integration/mcp-server.md",
@@ -321,9 +357,135 @@
       "live_probe": null
     },
     {
+      "name": "CoinMarketCap MCP",
+      "category": "crypto_market_data_mcp",
+      "source_url": "https://coinmarketcap.com/api/mcp/",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Token Terminal MCP",
+      "category": "crypto_protocol_fundamentals_mcp",
+      "source_url": "https://tokenterminal.com/docs/mcp/introduction",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
       "name": "DeFiLlama API",
       "category": "defi_protocol_data",
       "source_url": "https://api-docs.defillama.com/",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Helius MCP",
+      "category": "solana_data_infra_mcp",
+      "source_url": "https://www.helius.dev/docs/agents/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Jupiter APIs",
+      "category": "solana_liquidity_api",
+      "source_url": "https://dev.jup.ag/docs",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "DexScreener API",
+      "category": "dex_market_display_api",
+      "source_url": "https://docs.dexscreener.com/api/reference",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Stripe MCP / Agent Toolkit",
+      "category": "financial_payments_infrastructure",
+      "source_url": "https://docs.stripe.com/agents/toolkit",
+      "source_status": "official_mcp_or_agent_toolkit",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Plaid API",
+      "category": "financial_connectivity_api",
+      "source_url": "https://plaid.com/docs/",
       "source_status": "official_api",
       "status": "PASS",
       "checks": {

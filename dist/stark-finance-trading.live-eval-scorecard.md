@@ -4,7 +4,7 @@
 - Score: 100/90 minimum
 - Source mode: `dry_run`
 - Behavior proof: `UNPROVEN_DRY_RUN_ONLY`
-- Cases: 6
+- Cases: 8
 
 ## Checks
 
@@ -30,6 +30,8 @@
 | `live-backtest-risk` | `strategy_validation` | 100.0 | 4 |
 | `live-order-gate` | `execution_safety` | 100.0 | 4 |
 | `live-overclaim-boundary` | `public_claims` | 100.0 | 3 |
+| `live-solana-launch-route` | `solana_launch_liquidity` | 100.0 | 5 |
+| `live-protocol-fundamentals-route` | `protocol_fundamentals` | 100.0 | 4 |
 
 ## Evidence Boundary
 

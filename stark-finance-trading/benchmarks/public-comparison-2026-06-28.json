@@ -57,6 +57,16 @@
       "what_stark_must_do_better": "Tie fundamentals to timestamps, filings, and market-data caveats."
     },
     {
+      "name": "FactSet MCP",
+      "category": "institutional_financial_data",
+      "source_url": "https://developer.factset.com/mcp",
+      "source_status": "official_mcp",
+      "strengths": ["institutional financial data", "estimates", "fundamentals", "portfolio and security analytics"],
+      "default_risk_tier": 0,
+      "route_role": "Institutional-grade TradFi data route when entitlement and redistribution constraints are known.",
+      "what_stark_must_do_better": "Label entitlement, source definitions, timestamp, and redistribution limits before using institutional data in public artifacts."
+    },
+    {
       "name": "Twelve Data MCP",
       "category": "market_data",
       "source_url": "https://github.com/twelvedata/mcp",
@@ -167,6 +177,16 @@
       "what_stark_must_do_better": "Separate docs/context MCP from wallet/action MCP and require confirmation for transfers, swaps, payments, and key-sensitive operations."
     },
     {
+      "name": "QuickNode MCP",
+      "category": "web3_infrastructure_mcp",
+      "source_url": "https://www.quicknode.com/docs/build-with-ai/quicknode-mcp",
+      "source_status": "official_mcp",
+      "strengths": ["RPC endpoint management", "chain/network support", "endpoint security rules", "OpenAI builder integration"],
+      "default_risk_tier": 2,
+      "route_role": "Web3 infrastructure route for endpoint inventory, creation, and security-rule management.",
+      "what_stark_must_do_better": "Keep infrastructure admin separate from market analysis and require explicit confirmation before endpoint or security-rule changes."
+    },
+    {
       "name": "CoinGecko MCP / Skill",
       "category": "crypto_market_data_mcp_skill",
       "source_url": "https://docs.coingecko.com/ai-integration/mcp-server.md",
@@ -177,6 +197,26 @@
       "what_stark_must_do_better": "Resolve token IDs/contracts carefully and cross-check venue liquidity before turning market data into a thesis."
     },
     {
+      "name": "CoinMarketCap MCP",
+      "category": "crypto_market_data_mcp",
+      "source_url": "https://coinmarketcap.com/api/mcp/",
+      "source_status": "official_mcp",
+      "strengths": ["crypto quotes", "rankings", "market pairs", "exchange and category market data"],
+      "default_risk_tier": 0,
+      "route_role": "Crypto market-rank and neutral price context route alongside CoinGecko and exchange data.",
+      "what_stark_must_do_better": "Resolve assets by ID/contract when possible and avoid treating rank or momentum as a direct trade signal."
+    },
+    {
+      "name": "Token Terminal MCP",
+      "category": "crypto_protocol_fundamentals_mcp",
+      "source_url": "https://tokenterminal.com/docs/mcp/introduction",
+      "source_status": "official_mcp",
+      "strengths": ["protocol revenue", "fees", "users", "sector metrics", "chain/project financial data"],
+      "default_risk_tier": 0,
+      "route_role": "Protocol-fundamentals route for DeFi/crypto DD, investable narratives, and sector comparisons.",
+      "what_stark_must_do_better": "Cross-check methodology with Dune/DeFiLlama and keep financial metrics separate from trade recommendations."
+    },
+    {
       "name": "DeFiLlama API",
       "category": "defi_protocol_data",
       "source_url": "https://api-docs.defillama.com/",
@@ -185,6 +225,56 @@
       "default_risk_tier": 0,
       "route_role": "DeFi market-structure, protocol, yield, TVL, and fees/revenue evidence layer.",
       "what_stark_must_do_better": "Label methodology gaps and avoid using aggregate TVL/yield as a direct safety or trade signal."
+    },
+    {
+      "name": "Helius MCP",
+      "category": "solana_data_infra_mcp",
+      "source_url": "https://www.helius.dev/docs/agents/mcp",
+      "source_status": "official_mcp",
+      "strengths": ["Solana RPC", "DAS assets", "wallet and transaction context", "webhooks and streaming"],
+      "default_risk_tier": 1,
+      "route_role": "Solana/pump.fun-adjacent route for token, transaction, wallet, and launch-flow evidence.",
+      "what_stark_must_do_better": "Separate Solana reads from transactions, cross-check token identity, and pair launch-flow metrics with liquidity and holder evidence."
+    },
+    {
+      "name": "Jupiter APIs",
+      "category": "solana_liquidity_api",
+      "source_url": "https://dev.jup.ag/docs",
+      "source_status": "official_api",
+      "strengths": ["Solana routing", "swap quotes", "liquidity and token APIs", "trading API surface"],
+      "default_risk_tier": 3,
+      "route_role": "Solana quote/liquidity route for execution prep and market structure checks.",
+      "what_stark_must_do_better": "Treat quotes as prep only until wallet, slippage, route, token address, and explicit confirmation are present."
+    },
+    {
+      "name": "DexScreener API",
+      "category": "dex_market_display_api",
+      "source_url": "https://docs.dexscreener.com/api/reference",
+      "source_status": "official_api",
+      "strengths": ["DEX pairs", "liquidity", "price action", "token profiles", "market display behavior"],
+      "default_risk_tier": 0,
+      "route_role": "DEX market-display cross-check for liquidity, pair identity, and token market behavior.",
+      "what_stark_must_do_better": "Use display data as one evidence layer only and treat community MCP wrappers as non-official until verified."
+    },
+    {
+      "name": "Stripe MCP / Agent Toolkit",
+      "category": "financial_payments_infrastructure",
+      "source_url": "https://docs.stripe.com/agents/toolkit",
+      "source_status": "official_mcp_or_agent_toolkit",
+      "strengths": ["payments", "billing", "checkout", "financial operations", "agent tool integration"],
+      "default_risk_tier": 2,
+      "route_role": "Payments and revenue-ops route when a finance workflow touches billing, checkout, treasury, or x402/payment context.",
+      "what_stark_must_do_better": "Keep payments separate from market signals and require explicit confirmation for state-changing payment or billing actions."
+    },
+    {
+      "name": "Plaid API",
+      "category": "financial_connectivity_api",
+      "source_url": "https://plaid.com/docs/",
+      "source_status": "official_api",
+      "strengths": ["bank connectivity", "balances", "transactions", "cashflow data", "account verification"],
+      "default_risk_tier": 1,
+      "route_role": "Financial account-data route for cashflow, treasury, and risk context outside brokerage execution.",
+      "what_stark_must_do_better": "Treat account data as sensitive, avoid over-broad collection, and never confuse bank connectivity with broker trade execution."
     },
     {
       "name": "Databento API",

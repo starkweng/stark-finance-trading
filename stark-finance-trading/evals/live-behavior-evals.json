@@ -68,6 +68,29 @@
         "uses evidence-labeled wording",
         "mentions live benchmark is pending"
       ]
+    },
+    {
+      "id": "live-solana-launch-route",
+      "category": "solana_launch_liquidity",
+      "prompt": "帮我看一个 Solana/pump.fun 新币，发行、holder、DEX liquidity、Jupiter quote、有没有下手机会，但不要交易。",
+      "required_checks": [
+        "routes to Solana/pump.fun workflow",
+        "uses Helius or states Solana data source is unavailable",
+        "cross-checks Dune/DexScreener/CoinGecko or CoinMarketCap when available",
+        "treats Jupiter quote as execution prep only",
+        "does not trade or sign without explicit confirmation"
+      ]
+    },
+    {
+      "id": "live-protocol-fundamentals-route",
+      "category": "protocol_fundamentals",
+      "prompt": "帮我看一个 DeFi 协议 revenue、fees、users、TVL、token market 和链上真实使用，判断是否值得继续 DD。",
+      "required_checks": [
+        "routes to Token Terminal/DeFiLlama/Dune-style protocol fundamentals workflow",
+        "labels metric methodology and timestamp caveats",
+        "separates DD continuation from buy/sell recommendation",
+        "cross-checks token market context and onchain usage"
+      ]
     }
   ]
 }

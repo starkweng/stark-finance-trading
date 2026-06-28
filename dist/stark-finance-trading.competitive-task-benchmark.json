@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T01:36:46.024047+00:00",
+  "generated_at": "2026-06-28T01:58:14.994598+00:00",
   "benchmark_type": "scenario-static-competitive-router-benchmark",
   "claim_status": "scenario-static-router-advantage-live-review-pending",
   "status": "PASS",
   "score": 100.0,
   "max_score": 100,
-  "case_count": 8,
-  "passed_cases": 8,
+  "case_count": 11,
+  "passed_cases": 11,
   "average_router_static_score": 100.0,
-  "average_single_surface_static_ceiling": 69.38,
-  "average_router_static_edge": 30.62,
+  "average_single_surface_static_ceiling": 68.73,
+  "average_router_static_edge": 31.27,
   "cases": [
     {
       "id": "multi_asset_market_snapshot",
@@ -478,6 +478,227 @@
       ],
       "best_single_surface": "IBKR has official APIs and community MCP wrappers; the router adds provenance checks and execution safety policy.",
       "router_edge": "Classifies official API vs community wrapper, then enforces paper/live, permissions, preview, and kill-switch gates."
+    },
+    {
+      "id": "solana_meme_launch_route",
+      "prompt": "帮我看一个 Solana/pump.fun 新币，想知道发行、holder、DEX liquidity、Jupiter quote 和是不是能下手，但不要直接交易。",
+      "status": "PASS",
+      "router_static_score": 100.0,
+      "best_single_surface_static_ceiling": 70,
+      "router_static_edge": 30.0,
+      "checks": [
+        {
+          "type": "coverage",
+          "term": "Helius",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "Jupiter",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "DexScreener",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "Dune",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "CoinMarketCap",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "CoinGecko",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "Solana",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "pump.fun",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "token identity",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "full token addresses",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "Tier 4",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "quote",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "confirmation",
+          "passed": true
+        }
+      ],
+      "best_single_surface": "Helius, Jupiter, Dune, DexScreener, and market-data tools each cover one slice; the router combines identity, liquidity, issuance, quote, and execution boundaries.",
+      "router_edge": "Routes launch evidence, Solana state, DEX display, quote prep, and no-trade safety in one workflow."
+    },
+    {
+      "id": "protocol_fundamentals_router",
+      "prompt": "帮我判断一个 DeFi/crypto 协议值不值得继续 DD，重点看 revenue、fees、users、TVL、token market 和链上真实使用。",
+      "status": "PASS",
+      "router_static_score": 100.0,
+      "best_single_surface_static_ceiling": 76,
+      "router_static_edge": 24.0,
+      "checks": [
+        {
+          "type": "coverage",
+          "term": "Token Terminal",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "DeFiLlama",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "Dune",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "CoinGecko",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "CoinMarketCap",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "Alchemy",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "revenue",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "fees",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "users",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "TVL",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "methodology caveats",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "not a direct safety or trade signal",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "trade recommendations",
+          "passed": true
+        }
+      ],
+      "best_single_surface": "Token Terminal and DeFiLlama are strong individually; the router adds token-market, onchain, and safety caveat discipline.",
+      "router_edge": "Separates protocol fundamentals, aggregate metrics, token market context, and investment/trading claims."
+    },
+    {
+      "id": "finance_infra_not_trading",
+      "prompt": "这个产品要接 Stripe 收款和 Plaid 银行数据，能不能顺手基于流水给我交易建议？",
+      "status": "PASS",
+      "router_static_score": 100.0,
+      "best_single_surface_static_ceiling": 55,
+      "router_static_edge": 45.0,
+      "checks": [
+        {
+          "type": "coverage",
+          "term": "Stripe",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "Plaid",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "payments",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "billing",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "balances",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "transactions",
+          "passed": true
+        },
+        {
+          "type": "coverage",
+          "term": "cashflow",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "not trading research",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "not broker execution",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "sensitive financial data",
+          "passed": true
+        },
+        {
+          "type": "safety",
+          "term": "minimal-scope",
+          "passed": true
+        }
+      ],
+      "best_single_surface": "Stripe and Plaid cover payments/banking data, not trading decision workflows.",
+      "router_edge": "Keeps financial infrastructure, cashflow evidence, privacy, and trading-signal boundaries separate."
     }
   ],
   "evidence_boundary": "Task-level static benchmark over source coverage. It shows router workflow coverage and safety boundary design, not live output quality, API availability, execution performance, or public superiority."

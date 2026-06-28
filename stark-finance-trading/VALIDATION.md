@@ -11,32 +11,32 @@ PASS
   "ok": true,
   "skill": "stark-finance-trading",
   "required_files": 31,
-  "routing_cases": 8,
-  "adversarial_cases": 10,
-  "live_behavior_cases": 6,
-  "public_comparison_candidates": 25,
+  "routing_cases": 10,
+  "adversarial_cases": 11,
+  "live_behavior_cases": 8,
+  "public_comparison_candidates": 34,
   "public_benchmark_dimensions": 7,
-  "competitive_task_cases": 8,
-  "router_terms": 22
+  "competitive_task_cases": 11,
+  "router_terms": 31
 }
 ```
 
 ```text
 python3 scripts/validate_public_readiness.py .
 PASS
-candidates: 25
-official_or_primary_sources: 25
-adversarial_cases: 10
-live_behavior_cases: 6
+candidates: 34
+official_or_primary_sources: 34
+adversarial_cases: 11
+live_behavior_cases: 8
 public_benchmark_dimensions: 7
-competitive_task_cases: 8
+competitive_task_cases: 11
 ```
 
 ```text
 python3 scripts/audit_public_sources.py --root . --json
 PASS
-candidates: 25
-official_or_primary_sources: 25
+candidates: 34
+official_or_primary_sources: 34
 execution_capable_candidates: 7
 community_wrapper_candidates: 1
 ```
@@ -44,8 +44,8 @@ community_wrapper_candidates: 1
 ```text
 python3 scripts/audit_public_sources.py --root . --live --json
 WARN
-candidates: 25
-PASS: 21
+candidates: 34
+PASS: 30
 WARN: 4
 FAIL: 0
 ```
@@ -61,8 +61,8 @@ dimensions: 7
 python3 scripts/generate_competitive_task_benchmark.py --root . --json
 PASS
 score: 100/100
-cases: 8
-average_router_static_edge: 30.62
+cases: 11
+average_router_static_edge: 31.27
 ```
 
 ```text
@@ -206,7 +206,7 @@ required_action: gh auth refresh -h github.com -s workflow
 ```text
 python3 scripts/generate_eval_review_bundle.py ../dist/live-eval-dry-run --eval-set evals/live-behavior-evals.json --out-dir ../dist/stark-finance-trading.live-eval-review --json
 PASS
-cases: 6
+cases: 8
 review_md: ../dist/stark-finance-trading.live-eval-review/review.md
 review_html: ../dist/stark-finance-trading.live-eval-review/review.html
 ```
@@ -216,13 +216,13 @@ python3 scripts/score_eval_review_bundle.py ../dist/stark-finance-trading.live-e
 PASS
 score: 100/100
 behavior_proof_status: UNPROVEN_DRY_RUN_ONLY
-cases: 6
+cases: 8
 ```
 
 ```text
 python3 scripts/generate_eval_review_bundle.py ../dist/competitive-eval-dry-run --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/stark-finance-trading.competitive-eval-review --json
 PASS
-cases: 8
+cases: 11
 review_md: ../dist/stark-finance-trading.competitive-eval-review/review.md
 review_html: ../dist/stark-finance-trading.competitive-eval-review/review.html
 ```
@@ -232,7 +232,7 @@ python3 scripts/score_eval_review_bundle.py ../dist/stark-finance-trading.compet
 PASS
 score: 100/100
 behavior_proof_status: UNPROVEN_DRY_RUN_ONLY
-cases: 8
+cases: 11
 ```
 
 ```text

@@ -4,13 +4,13 @@
 - Approval: PENDING
 - Skill: `.`
 - Eval set: `benchmarks/competitive-task-cases.json`
-- Cases: 8
+- Cases: 11
 - Sandbox: `read-only`
 
 ## Exact Command
 
 ```bash
-PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/competitive-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.competitive-eval-signoff.json --max-cases 8
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/competitive-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.competitive-eval-signoff.json
 ```
 
 ## Data Surfaces
@@ -40,6 +40,9 @@ PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-se
 | `web3_wallet_payment_action` | `c058b924024884a639f357a47ed083c7ee3a95308f5d00b72e6750d15b563bf1` |
 | `defi_protocol_market_research` | `e599c04268c8cfe0e3c998ac864c75d92282ffeccbc1a521b4d3d3cebd47f099` |
 | `ibkr_api_wrapper_boundary` | `c825fd18c9d3e1274796d270c8b28f9d5444cdb9eceecfdc6f4072357e5873f9` |
+| `solana_meme_launch_route` | `a2f210de1ebf84e21382c270be69ef1f5f2764cead50fcc6321a72a6130d8cb0` |
+| `protocol_fundamentals_router` | `c57a1c663cf51f16dd070bd59639b037cb1f03af5bf0c64d1c818e04cff06c66` |
+| `finance_infra_not_trading` | `f28e313b64d60e212d43543f93b6de392f2c2cad4b2550e12fa39e1f1f813bc2` |
 
 ## Evidence Boundary
 

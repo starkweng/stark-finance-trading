@@ -154,8 +154,58 @@ Steps:
 
 1. Use DeFiLlama for aggregate TVL, yields, fees, revenue, and category data when useful.
 2. Use Dune for protocol-specific cohorts and onchain usage when a dashboard/table is suitable.
-3. Use CoinGecko and token sources for token identity, market cap, volume, liquidity, and listing context.
-4. Use Alchemy/Etherscan for wallet, transaction, and contract truth where needed.
-5. State methodology gaps, missing coverage, and whether metrics are estimated, delayed, or protocol-reported.
+3. Use Token Terminal for protocol revenue, fees, users, sector, chain, and project financial metrics when available.
+4. Use CoinGecko/CoinMarketCap and token sources for token identity, market cap, volume, liquidity, and listing context.
+5. Use Alchemy/Etherscan for wallet, transaction, and contract truth where needed.
+6. State methodology gaps, missing coverage, and whether metrics are estimated, delayed, or protocol-reported.
 
-Aggregate TVL, yield, or fee data is not a direct safety or trade signal. Treat it as evidence for further due diligence, not as a recommendation.
+Aggregate TVL, yield, fee, revenue, or user data is not a direct safety or trade signal. Treat it as evidence for further due diligence, not as a recommendation. Never convert protocol fundamentals directly into trade recommendations.
+
+## 11. Solana / Pump.fun Launch Review
+
+Use for Solana launches, pump.fun issuance, meme token discovery, Jupiter quotes, DexScreener pairs, Helius data, or Solana wallet/token checks.
+
+Steps:
+
+1. Resolve mint address, chain, pool/pair, launch source, and time window. Never trade by symbol alone.
+2. Use Helius for Solana wallet, asset, transaction, and launch-flow context when available.
+3. Use Dune for historical issuance/cohort metrics if indexed data exists.
+4. Use DexScreener for pair/liquidity/price display behavior and Jupiter for quote/liquidity route checks.
+5. Cross-check market context with CoinGecko/CoinMarketCap after token identity is resolved.
+6. Treat Jupiter quotes as execution prep only; swaps/signatures remain Tier 4 and require explicit confirmation.
+
+Required output:
+
+- mint and pair identity;
+- launch/issuance method caveat;
+- liquidity and holder risk;
+- quote/liquidity route caveat;
+- no-execution boundary.
+
+## 12. Financial Infrastructure / Payments Boundary
+
+Use for Stripe, Plaid, payments, billing, checkout, banking connectivity, account balances, cashflow, treasury context, or product finance ops.
+
+Steps:
+
+1. Classify the request as finance infrastructure, not market-data research or broker execution.
+2. Use Stripe for payments, billing, checkout, revenue, and financial operations context.
+3. Use Plaid for bank/account connectivity, balances, transactions, account verification, and cashflow evidence.
+4. Minimize sensitive data scope and avoid exposing account/payment identifiers.
+5. If the user asks for a trade based on cashflow, separate cashflow evidence from trading advice and require fresh market/risk analysis.
+
+Payments, bank connectivity, and cashflow are not trading signals. They can inform treasury/risk context, but not a full-position recommendation by themselves.
+
+## 13. Web3 Infrastructure Admin
+
+Use for QuickNode, Alchemy infra, RPC endpoints, endpoint creation, chain/network support, webhooks, security rules, or endpoint hardening.
+
+Steps:
+
+1. Classify infra reads separately from admin changes.
+2. List endpoint/chain/network context without exposing RPC secrets or endpoint tokens.
+3. For endpoint creation, security rules, CORS, tokens, IP allowlists, or domain masks, prepare a preview first.
+4. Require explicit confirmation before changing infrastructure state.
+5. Record the network, endpoint id, rule type, and rollback path.
+
+Infrastructure health can affect data quality and bot reliability, but it is not a market signal by itself.

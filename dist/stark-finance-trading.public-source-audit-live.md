@@ -2,8 +2,8 @@
 
 - Status: WARN
 - Audit mode: `live`
-- Candidates: 25
-- Official or primary sources: 25
+- Candidates: 34
+- Official or primary sources: 34
 - Execution-capable candidates: 7
 
 ## Candidate Results
@@ -13,26 +13,35 @@
 | Alpaca MCP | `official_mcp` | PASS | https://docs.alpaca.markets/us/docs/alpaca-mcp-server |
 | OpenBB Docs MCP / OpenBB | `official_docs_mcp` | PASS | https://github.com/OpenBB-finance/openbb-docs-mcp |
 | QuantConnect MCP / LEAN | `official_mcp` | PASS | https://www.quantconnect.com/mcp |
-| Alpha Vantage MCP | `official_mcp` | PASS | https://github.com/alphavantage/alpha_vantage_mcp |
+| Alpha Vantage MCP | `official_mcp` | WARN | https://github.com/alphavantage/alpha_vantage_mcp |
 | Financial Modeling Prep MCP | `official_mcp` | WARN | https://site.financialmodelingprep.com/developer/docs/mcp-server |
+| FactSet MCP | `official_mcp` | PASS | https://developer.factset.com/mcp |
 | Twelve Data MCP | `official_mcp` | PASS | https://github.com/twelvedata/mcp |
-| Unusual Whales MCP | `official_mcp` | WARN | https://unusualwhales.com/public-api/mcp |
+| Unusual Whales MCP | `official_mcp` | PASS | https://unusualwhales.com/public-api/mcp |
 | Massive / Polygon.io MCP | `official_mcp` | PASS | https://github.com/massive-com/mcp_massive |
 | Tradier MCP | `official_mcp` | PASS | https://docs.tradier.com/docs/tradier-mcp |
 | Robinhood Agentic Trading | `official_product` | PASS | https://robinhood.com/us/en/agentic-trading/ |
-| cTrader MCP servers | `official_mcp` | WARN | https://help.ctrader.com/ctrader-ai-agent-connect/ |
-| Binance Skills Hub | `official_skill_hub` | PASS | https://github.com/binance/binance-skills-hub |
+| cTrader MCP servers | `official_mcp` | PASS | https://help.ctrader.com/ctrader-ai-agent-connect/ |
+| Binance Skills Hub | `official_skill_hub` | WARN | https://github.com/binance/binance-skills-hub |
 | Dune MCP | `official_mcp` | PASS | https://docs.dune.com/api-reference/agents/mcp |
 | Alchemy MCP | `official_mcp` | PASS | https://github.com/alchemyplatform/alchemy-mcp-server |
 | Etherscan MCP | `official_mcp` | PASS | https://docs.etherscan.io/etherscan-mcp-server |
 | Coinbase CDP / AgentKit MCP | `official_mcp` | PASS | https://docs.cdp.coinbase.com/agent-kit/core-concepts/model-context-protocol |
+| QuickNode MCP | `official_mcp` | PASS | https://www.quicknode.com/docs/build-with-ai/quicknode-mcp |
 | CoinGecko MCP / Skill | `official_mcp_and_skill` | PASS | https://docs.coingecko.com/ai-integration/mcp-server.md |
+| CoinMarketCap MCP | `official_mcp` | PASS | https://coinmarketcap.com/api/mcp/ |
+| Token Terminal MCP | `official_mcp` | PASS | https://tokenterminal.com/docs/mcp/introduction |
 | DeFiLlama API | `official_api` | PASS | https://api-docs.defillama.com/ |
+| Helius MCP | `official_mcp` | PASS | https://www.helius.dev/docs/agents/mcp |
+| Jupiter APIs | `official_api` | PASS | https://dev.jup.ag/docs |
+| DexScreener API | `official_api` | PASS | https://docs.dexscreener.com/api/reference |
+| Stripe MCP / Agent Toolkit | `official_mcp_or_agent_toolkit` | WARN | https://docs.stripe.com/agents/toolkit |
+| Plaid API | `official_api` | PASS | https://plaid.com/docs/ |
 | Databento API | `official_api` | PASS | https://databento.com/docs |
 | IBKR TWS API / community MCP candidates | `official_api_with_community_mcp_candidates` | PASS | https://interactivebrokers.github.io/tws-api/ |
 | Hummingbot | `official_open_source` | PASS | https://hummingbot.org/ |
 | Freqtrade | `official_open_source` | PASS | https://www.freqtrade.io/en/stable/ |
-| LEAN Engine | `official_open_source` | WARN | https://www.lean.io/ |
+| LEAN Engine | `official_open_source` | PASS | https://www.lean.io/ |
 | NautilusTrader | `official_open_source` | PASS | https://github.com/nautechsystems/nautilus_trader |
 | CCXT | `official_open_source_library` | PASS | https://github.com/ccxt/ccxt |
 

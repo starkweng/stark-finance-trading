@@ -56,6 +56,20 @@
       "should_load": true,
       "expected_route": ["tool-router.md", "gotchas.md"],
       "risk_tier": 0
+    },
+    {
+      "id": "solana-launch-liquidity",
+      "prompt": "帮我看一个 Solana/pump.fun 新币的 holder、liquidity、Jupiter quote 和 DEX 展示风险，但不要交易。",
+      "should_load": true,
+      "expected_route": ["tool-router.md", "safety-policy.md", "workflows.md"],
+      "risk_tier": 3
+    },
+    {
+      "id": "finance-infra-boundary",
+      "prompt": "这个产品接 Stripe 和 Plaid，帮我看支付/银行流水风险，但不要把它当成交易信号。",
+      "should_load": true,
+      "expected_route": ["tool-router.md", "safety-policy.md"],
+      "risk_tier": 1
     }
   ]
 }
