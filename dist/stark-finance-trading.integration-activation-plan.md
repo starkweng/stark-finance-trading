@@ -1,22 +1,22 @@
 # stark-finance-trading Integration Activation Plan
 
 - Status: PASS
-- Catalog tools: 39
+- Catalog tools: 49
 - Runtime report status: `PASS`
 - Ready now: 11
 - Quick activations: 2
-- Priority install/auth backlog: 13
-- High-risk confirmation surfaces: 5
+- Priority install/auth backlog: 22
+- High-risk confirmation surfaces: 13
 
 ## Activation Stage Counts
 
 | Stage | Count |
 |---|---:|
-| `install_or_auth_candidate` | 13 |
+| `install_or_auth_candidate` | 22 |
 | `lazy_load_available` | 1 |
 | `needs_env` | 1 |
 | `ready_now` | 11 |
-| `watchlist` | 13 |
+| `watchlist` | 14 |
 
 ## Top Activation Actions
 
@@ -31,12 +31,12 @@
 | `token-terminal-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `unusual-whales-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `nautilus-trader` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
+| `bingx-ai-skills` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
+| `bybit-ai-trading-skills` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `ctrader-ai-agent-connect` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
+| `deribit-api` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 | `ibkr-tws-api` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
-| `tradier-mcp` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
-| `coinbase-cdp-agentkit` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
-| `factset-mcp` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
-| `databento-api` | `install_or_auth_candidate` | `auth_or_install_review` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
+| `kraken-mcp` | `install_or_auth_candidate` | `high_risk_requires_confirmation` | Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals. |
 
 ## Ready Now
 
@@ -58,9 +58,17 @@
 
 | Tool | Tier | Gate |
 |---|---:|---|
+| `bingx-ai-skills` | 4 | `high_risk_requires_confirmation` |
+| `bybit-ai-trading-skills` | 4 | `high_risk_requires_confirmation` |
 | `ctrader-ai-agent-connect` | 4 | `high_risk_requires_confirmation` |
+| `deribit-api` | 4 | `high_risk_requires_confirmation` |
 | `ibkr-tws-api` | 4 | `high_risk_requires_confirmation` |
+| `kraken-mcp` | 4 | `high_risk_requires_confirmation` |
+| `metatrader5-python` | 4 | `high_risk_requires_confirmation` |
+| `oanda-v20-api` | 4 | `high_risk_requires_confirmation` |
+| `okx-api` | 4 | `high_risk_requires_confirmation` |
 | `tradier-mcp` | 4 | `high_risk_requires_confirmation` |
+| `tradingview-broker-api` | 4 | `high_risk_requires_confirmation` |
 | `coinbase-cdp-agentkit` | 4 | `high_risk_requires_confirmation` |
 | `stripe-agent-toolkit` | 4 | `high_risk_requires_confirmation` |
 

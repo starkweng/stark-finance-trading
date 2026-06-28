@@ -3,7 +3,7 @@
 - Status: PASS
 - Release date: 2026-06-28
 - Package: `stark-finance-trading.skill`
-- SHA256: `4d366b79ae28718f76837254ea38d9e787d876eb2b55ff2f64ee46af9083e012`
+- SHA256: `e0dd5fdc6bb8eb04e5e518865e5acf6d65fa6f1b04bc054cd9297ed95f6e994a`
 - Entry count: 64
 - Install smoke: PASS
 - Live eval signoff: PASS / approval PENDING
@@ -34,6 +34,7 @@
 - Added competitive route backlog generation that turns gap findings into route/eval proposals, auth gates, and learn-loop next actions.
 - Added integration activation plan generation that turns catalog/runtime evidence into ready routes, quick activations, install/auth backlog, watchlist tools, and Tier 4 confirmation surfaces.
 - Added The Graph, Goldsky, Moralis Cortex, GoldRush/Covalent, and SQD as official Web3 indexed-data/source routes in the public catalog and router.
+- Added Bybit AI Trading Skills, Kraken MCP, OKX API, BingX API AI Skills, Deribit API, OANDA, MetaTrader 5, TradingView Broker API, Finnhub, and Nasdaq Data Link as official exchange, FX/CFD, chart-signal, and market-data routes.
 
 ## Evidence Boundary
 

@@ -33,7 +33,7 @@ Never skip from analysis to live orders, wallet signing, CEX order placement, tr
 
 - 股票、期权、外汇、商品、加密货币、永续、现货、链上 token、DEX/CEX liquidity 的行情和研究。
 - market scan、leaderboard、smart-money signal、meme/token discovery、options flow、dark pool、news/fundamental check。
-- Dune/Alchemy/Etherscan/The Graph/Goldsky/Moralis/GoldRush/SQD/Binance/GMGN/Alpaca/OpenBB/QuantConnect/Unusual Whales/Alpha Vantage/FMP/Twelve Data/Massive 等工具路由。
+- Dune/Alchemy/Etherscan/The Graph/Goldsky/Moralis/GoldRush/SQD/Binance/Bybit/Kraken/OKX/BingX/Deribit/GMGN/Alpaca/OpenBB/QuantConnect/Unusual Whales/Alpha Vantage/FMP/Twelve Data/Massive/Finnhub/Nasdaq/OANDA/MetaTrader/TradingView 等工具路由。
 - 策略回测、参数验证、paper trading plan、bot risk review、market-making / liquidity war room。
 - 交易执行前的预检查、订单草案、风险边界和人工确认清单。
 
@@ -77,6 +77,7 @@ This skill has a Loop Blueprint, a Loop Engineering Gate, a Learn Loop, a Live E
 |---|---|---|
 | Current stock/ETF/crypto bars, snapshots, order book | Alpaca connector if available | Alpha Vantage, Twelve Data, Massive, web |
 | Crypto CEX spot/futures/account data | `binance` skill | Binance CLI docs, exchange page |
+| CEX derivatives, exchange-specific skills, crypto options | Binance, Bybit, Kraken, OKX, BingX, Deribit | CCXT, venue docs, safety policy |
 | DEX token market, meme, smart money | Binance Web3 skills, GMGN skills | Dune, Alchemy, Etherscan |
 | Onchain dashboard / holder / transfer / protocol metrics | Dune MCP | Alchemy/Etherscan |
 | Subgraph or indexed multichain Web3 data | The Graph, Goldsky, Moralis, GoldRush, SQD | Dune, Alchemy, Etherscan |
@@ -84,6 +85,7 @@ This skill has a Loop Blueprint, a Loop Engineering Gate, a Learn Loop, a Live E
 | Verified contracts, tx logs, token explorer truth | Etherscan MCP | Alchemy/Dune |
 | Equity fundamentals, filings-style research, macro data | OpenBB/FMP/Alpha Vantage | official filings/news |
 | Options flow, dark pool, unusual activity | Unusual Whales | Alpaca/Tradier option quotes |
+| TradingView alert, Pine signal, chart-to-order boundary | TradingView Broker API | broker route, execution safety policy |
 | Backtest / strategy research | QuantConnect / LEAN / local scripts | out-of-sample sanity checks |
 | Crypto bot / MM framework | Hummingbot/Freqtrade docs or local project | exchange sandbox, kill switch |
 | Any live order, swap, transfer, leverage, bot launch | Safety policy first | paper/demo, explicit confirmation |

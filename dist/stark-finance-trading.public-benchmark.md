@@ -3,8 +3,8 @@
 - Status: PASS
 - Score: 100.0/100
 - Claim status: `source_level_benchmark_pass_live_comparison_pending`
-- Public candidates: 39
-- Official or primary sources: 39
+- Public candidates: 49
+- Official or primary sources: 49
 
 ## Scorecard
 

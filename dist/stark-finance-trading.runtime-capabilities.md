@@ -1,11 +1,11 @@
 # stark-finance-trading Runtime Capabilities
 
 - Status: PASS
-- Catalog tools: 39
+- Catalog tools: 49
 - Observed runtime-backed tools: 13
 - Configured MCP servers: 8
 - Enabled plugins: 27
-- Local skill names: 519
+- Local skill names: 520
 
 ## Runtime Status Counts
 
@@ -15,7 +15,7 @@
 | `configured_mcp_needs_env` | 1 |
 | `deferred_tool_source` | 1 |
 | `enabled_plugin` | 2 |
-| `external_candidate` | 26 |
+| `external_candidate` | 36 |
 | `local_skill_backed` | 7 |
 
 ## Observed Tools

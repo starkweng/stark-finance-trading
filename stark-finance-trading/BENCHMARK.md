@@ -62,10 +62,10 @@ These are not enemies; they are the bar this skill should learn from.
 | QuantConnect / LEAN | Serious backtest and algorithm deployment stack | Better natural-language intake and risk-gated handoff into backtest/paper/live phases. |
 | Alpha Vantage / FMP / Twelve Data MCPs | Useful official data APIs | Unified source selection and cross-check policy. |
 | Unusual Whales MCP | Options/dark-pool/flow specialty | Better distinction between signal, thesis, and execution. |
-| Massive/Polygon.io / Databento | Higher-grade market-data layers | Route by dataset, venue, entitlement, latency, and subscription limits. |
+| Massive/Polygon.io / Databento / Finnhub / Nasdaq Data Link | Higher-grade market-data, news, fundamental, and dataset layers | Route by dataset, venue, entitlement, latency, source timestamp, and subscription limits. |
 | FactSet MCP | Institutional financial-data layer | Use only when entitlement and redistribution constraints are clear; preserve metric definitions. |
-| Robinhood / cTrader / IBKR candidates | Broker/platform agent surfaces | Treat as Tier 4; preserve account, margin, lot, paper/live, and wrapper provenance boundaries. |
-| Binance Skills Hub | Strong crypto/Web3 execution and market data skills | One Stark-level router that calls Binance only when it is the right surface. |
+| Robinhood / cTrader / OANDA / MetaTrader 5 / TradingView / IBKR candidates | Broker/platform agent surfaces | Treat as Tier 4; preserve account, margin, lot, paper/live, signal-vs-order, and wrapper provenance boundaries. |
+| Binance / Bybit / Kraken / OKX / BingX / Deribit | Strong CEX, derivatives, crypto options, MCP/API/skill surfaces | One Stark-level router that calls a venue only when it is the right surface and blocks unsafe execution escalation. |
 | Dune / Alchemy / Etherscan / The Graph / Goldsky / Moralis / GoldRush / SQD / Coinbase / QuickNode / CoinGecko / CoinMarketCap MCPs | Best-in-class onchain, wallet, indexed-data, infra, and crypto-data surfaces | Better workflow for table semantics, schema freshness, wallet truth, token identity, endpoint admin, and state-changing action gates. |
 | Token Terminal / DeFiLlama | Crypto protocol fundamentals and aggregate data | Use methodology-aware evidence, not direct safety or trade labels. |
 | Helius / Jupiter / DexScreener | Solana, liquidity, and DEX market surfaces | Resolve token identity, separate quotes from swaps, and cross-check display liquidity. |
@@ -114,7 +114,7 @@ The review bundle is the handoff layer between automated checks and human judgme
 
 ## Tool Route Planner Gate
 
-`scripts/plan_tool_route.py` turns representative natural prompts into route plans: whether the skill should load, which workflow to use, which public tool IDs to prefer, which route tags and local helper hints apply, the max risk tier, and the safety terms required before any state-changing path. `evals/tool-routing-cases.json` covers market snapshots, options flow, pump.fun/Dune, token DD, protocol fundamentals, bot/backtest, Binance live order pressure, XAU/cTrader, IBKR wrapper provenance, Stripe/Plaid finance-infra boundaries, local earnings helper routing, and negative marketing/tokenomics handoffs. A PASS here proves deterministic route coverage, not live API access or model behavior.
+`scripts/plan_tool_route.py` turns representative natural prompts into route plans: whether the skill should load, which workflow to use, which public tool IDs to prefer, which route tags and local helper hints apply, the max risk tier, and the safety terms required before any state-changing path. `evals/tool-routing-cases.json` covers market snapshots, options flow, pump.fun/Dune, token DD, protocol fundamentals, bot/backtest, Binance/Bybit/Kraken/OKX/BingX/Deribit execution pressure, TradingView alert boundaries, XAU/cTrader/OANDA/MetaTrader, IBKR wrapper provenance, Stripe/Plaid finance-infra boundaries, local earnings helper routing, and negative marketing/tokenomics handoffs. A PASS here proves deterministic route coverage, not live API access or model behavior.
 
 ## Runtime Capability Gate
 

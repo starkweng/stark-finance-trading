@@ -38,6 +38,9 @@ Use these when installing new data/execution surfaces or writing a public README
 | Tradier MCP | Official broker MCP | Stocks/options quotes, orders, multi-leg options, paper/live | Execution-capable; paper first. |
 | Robinhood Agentic Trading | Official agentic account | Budget-isolated AI trading account | Very high risk; use only with explicit user setup and limits. |
 | cTrader MCP / AI Agent Connect | Official trading-platform MCP | FX/CFD broker workflows, local/remote AI agent connection | Demo first; broker rules matter. |
+| OANDA v20 REST API | Official FX/CFD broker API | FX/CFD pricing, candles, account, and order workflows | Practice first; live orders and margin actions are Tier 4. |
+| MetaTrader 5 Python Integration | Official terminal API | MT5 terminal/account data, FX/CFD/XAUUSD workflows, broker-specific contract specs | Demo/live and broker contract specs must be verified before any order draft. |
+| TradingView Broker API | Official broker integration API | Chart/signal/broker-integration boundary, alerts, order-flow design | Alerts/signals are not orders; broker actions require preview and confirmation. |
 | TradeStation MCP | Official broker connection announced | Broker-account AI integration | Verify availability and account constraints before use. |
 | Coinbase CDP / AgentKit MCP | Official Web3 agent MCP stack | CDP API operations, AgentKit, wallet actions, x402/payment-adjacent workflows | Separate docs/context from wallet actions; transfers/payments are Tier 4. |
 | CoinGecko MCP / Skill | Official crypto data MCP + skill | Prices, OHLCV, market cap, NFT, DeFi/onchain data, token metadata | Resolve token IDs/contracts; market data is not execution advice. |
@@ -52,9 +55,16 @@ Use these when installing new data/execution surfaces or writing a public README
 | Moralis Cortex MCP | Official Web3 AI data MCP | Wallet, token, NFT, EVM/Solana data via natural-language Web3 data layer | Good multichain data route; resolve token contracts and freshness before conclusions. |
 | GoldRush MCP | Official Covalent/GoldRush MCP | Multichain balances, transactions, NFTs, token prices, portfolio-style data | Use as multichain data cross-check, not a risk label by itself. |
 | SQD Portal MCP | Official indexed-data MCP | Multichain logs, transactions, datasets, high-throughput indexed chain data | Use for raw indexed data; preserve dataset, chain, and query-window assumptions. |
+| Bybit AI Trading Skills | Official skill | Bybit exchange market/account/trading skill workflows | Vendor execution route; every order/leverage/transfer action is Tier 4. |
+| Kraken MCP | Official MCP | Kraken market/account/execution-capable exchange workflows | Market reads first; mutations require explicit confirmation and venue limits. |
+| OKX API | Official API | OKX spot, futures, perpetuals, options, account, and market data | Prefer official docs/controlled adapter; options and margin actions are Tier 4. |
+| BingX API AI Skills | Official skill hub | BingX exchange skill workflows when BingX-specific coverage is needed | Vendor route only; state-changing actions require confirmation. |
+| Deribit API | Official API | Crypto options, futures/perpetuals, IV/volatility and derivatives workflows | Use for crypto options/volatility; orders and margin are Tier 4. |
 | Stripe MCP / Agent Toolkit | Official financial/payment agent toolkit | Payment, billing, checkout, treasury/revenue operations | Finance-ops route, not trading research or market signal. State changes require confirmation. |
 | Plaid API | Official financial connectivity API | Bank/account connectivity, balances, transactions, cashflow evidence | Finance-data route, not brokerage execution. Sensitive financial data requires minimal-scope handling. |
 | Databento API | Official institutional data API | Historical/live market data for serious strategy research | Check dataset, venue, entitlement, latency, and cost before relying on it. |
+| Finnhub API | Official API | Equity market data, company news, fundamentals, earnings, sentiment | Use as research/news evidence; not standalone trade advice. |
+| Nasdaq Data Link API | Official API | Nasdaq datasets, macro, alternative data, structured research inputs | Check dataset entitlement, vintage, redistribution, and methodology. |
 | IBKR TWS API / community MCP candidates | Official API plus community MCP wrappers | Multi-asset broker API via TWS/Gateway | Do not treat community MCP as official; paper/live and permissions must be explicit. |
 | Hummingbot | Open-source trading framework | Crypto market-making, arbitrage, exchange connectors | Use sandbox/config review before any live bot. |
 | Freqtrade | Open-source trading bot | Crypto strategy research, backtesting, dry-run bot execution | Dry-run first, strict risk config. |
@@ -66,7 +76,7 @@ Use these when installing new data/execution surfaces or writing a public README
 
 ### Market Snapshot
 
-Use Alpaca for equities/options/US crypto when visible. Use Binance/GMGN/CoinGecko/CoinMarketCap for crypto venue reality. Use Alpha Vantage/Twelve Data/Massive/Databento/FactSet as external candidates. Return timestamp, venue/feed, delay status, and spread/depth if the user is trading.
+Use Alpaca for equities/options/US crypto when visible. Use Binance/Bybit/Kraken/OKX/BingX/GMGN/CoinGecko/CoinMarketCap for crypto venue reality when the venue is named. Use Alpha Vantage/Twelve Data/Massive/Databento/FactSet/Finnhub/Nasdaq Data Link as external candidates. Return timestamp, venue/feed, delay status, and spread/depth if the user is trading.
 
 ### Token And Onchain Due Diligence
 
@@ -95,6 +105,10 @@ Use The Graph for subgraph discovery, schemas, and GraphQL query planning. Use G
 
 Use `crypto-market-rank`, `trading-signal`, `meme-rush`, GMGN, DexScreener, and chain-specific sources such as Helius for Solana. Summaries must include freshness, signal count, exit rate or invalidation signal when available, liquidity, holder risk, and whether smart money already exited.
 
+### CEX / Crypto Derivatives / Exchange Skills
+
+Use Binance Skills Hub first when the task is Binance-specific and local skills are installed. Use Bybit AI Trading Skills when the user explicitly names Bybit or wants Bybit skill coverage. Use Kraken MCP for Kraken-specific market/account/execution-capable routes. Use OKX API for OKX spot, futures, perpetuals, options, or account-mode questions. Use BingX API AI Skills only for BingX-specific tasks. Use Deribit for crypto options, IV/volatility, futures/perpetuals, and derivatives margin questions. For all exchange routes, separate market data from account reads and account reads from orders, transfers, leverage, or bot actions.
+
 ### Equity / Fundamental Research
 
 Use OpenBB/FMP/Alpha Vantage/Massive/Twelve Data/Databento/FactSet where installed or available. Use `references/local-skill-router.md` for local helpers such as `equity-research`, `earnings-preview`, `earnings-analysis`, `dcf-model`, `comps-analysis`, `model-update`, and `catalyst-calendar`. For DeFi protocol or crypto sector claims, add Token Terminal, DeFiLlama, Dune, CoinGecko, and CoinMarketCap where useful. DeFiLlama TVL, yields, and fees have methodology gaps and are not a direct safety or trade signal. Token Terminal financial metrics are stronger for protocol fundamentals, but still need methodology and timestamp caveats. For current public-company or macro claims, verify against official filings, exchange pages, or primary news when high stakes.
@@ -107,7 +121,7 @@ Use Token Terminal for protocol revenue, fees, users, sector, chain, and project
 
 ### Options Flow
 
-Use Unusual Whales for flow/dark-pool/congressional data, then Alpaca/Tradier for quotes/contracts if available. Never infer an option trade recommendation from flow alone.
+Use Unusual Whales for equity/options flow, dark-pool, and congressional data, then Alpaca/Tradier for quotes/contracts if available. Use Deribit for crypto options, IV/volatility, and derivatives venue context. Never infer an option trade recommendation from flow alone.
 
 ### Backtest / Strategy Research
 
@@ -117,7 +131,7 @@ For local specialist skills, consult `references/local-skill-router.md`: `option
 
 ### Execution
 
-Execution-capable routes include Binance CLI, Binance Agentic Wallet, Coinbase CDP/AgentKit wallet actions, Alpaca trading, Tradier, Robinhood Agentic Trading, cTrader, IBKR/TWS wrappers, Hummingbot, Freqtrade, CCXT-backed adapters, NautilusTrader, and QuantConnect live. All must pass `references/safety-policy.md`.
+Execution-capable routes include Binance CLI, Binance Agentic Wallet, Bybit AI Trading Skills, Kraken MCP, OKX API, BingX API AI Skills, Deribit API, Coinbase CDP/AgentKit wallet actions, Alpaca trading, Tradier, Robinhood Agentic Trading, cTrader, OANDA, MetaTrader 5, TradingView Broker API, IBKR/TWS wrappers, Hummingbot, Freqtrade, CCXT-backed adapters, NautilusTrader, and QuantConnect live. All must pass `references/safety-policy.md`.
 
 ### Financial Infrastructure / Payments
 
@@ -129,7 +143,11 @@ Use QuickNode and Alchemy infrastructure routes for endpoint inventory, chain/ne
 
 ### FX / CFD / XAUUSD
 
-Use cTrader and broker-specific evidence for FX/CFD workflows, especially XAUUSD margin, lot, leverage, stop-out, and account-risk questions. Keep account reads separate from order preview and live actions.
+Use cTrader, OANDA, MetaTrader 5, TradingView broker-integration context, and broker-specific evidence for FX/CFD workflows, especially XAUUSD margin, lot, leverage, stop-out, and account-risk questions. Keep account reads separate from order preview and live actions.
+
+### TradingView / Alerts / Chart Signals
+
+Use TradingView as chart, alert, signal, and broker-integration context. Do not treat a TradingView alert, Pine signal, or chart pattern as an executable order. If the user wants alert-to-order automation, route it through the execution safety policy with broker, account, instrument, quantity, slippage, max loss, cancel path, and explicit confirmation.
 
 ### IBKR / TWS
 

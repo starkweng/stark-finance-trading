@@ -4,7 +4,7 @@
 - Approval: PENDING
 - Skill: `.`
 - Eval set: `evals/live-behavior-evals.json`
-- Cases: 9
+- Cases: 11
 - Sandbox: `read-only`
 
 ## Exact Command
@@ -37,6 +37,8 @@ PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-se
 | `live-dune-table-semantics` | `0062882f5a657da31f203717d2b37428a236b798022819e01e2982aa2d86f590` |
 | `live-backtest-risk` | `0579693594c8c938cfac2cccd9481602a67bcccea89c3a59768083866c121db7` |
 | `live-order-gate` | `8fc3f70985f32eedc52d479b7b98ad4249b141925f93a14b1170e443d5bb0a79` |
+| `live-cex-derivatives-venue-boundary` | `a896b74de8ae61d3d32b2386326e10552bc05ff5a5f063e9b1f4d5077122903a` |
+| `live-tradingview-alert-boundary` | `6420b6e5b52e01ab28246450ed0328f9c9220180403d8e482eee65b11a31a7af` |
 | `live-overclaim-boundary` | `366fef960227b86c122e247fa99a27dfe29314f15bdc8fcb11952924a35de1b1` |
 | `live-solana-launch-route` | `f511645b17e10c3cbd9b5f28965eea45e94c6a2342c4925383408172fd5313ca` |
 | `live-protocol-fundamentals-route` | `ecbd33d330455793c8864e5c21efd784a6e2964f93fcd6bda428979c51d18238` |

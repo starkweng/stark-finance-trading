@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T07:07:41.554872+00:00",
+  "generated_at": "2026-06-28T07:32:18.403015+00:00",
   "skill": "stark-finance-trading",
   "scan_roots": [
     {
@@ -12,7 +12,7 @@
     {
       "path": "~/Documents/AI Space/Projects/Skill&Plugin repo",
       "exists": true,
-      "skill_files": 6
+      "skill_files": 7
     },
     {
       "path": "~/.agents/skills",
@@ -22,7 +22,7 @@
     {
       "path": "~/.codex/skills",
       "exists": true,
-      "skill_files": 75
+      "skill_files": 76
     },
     {
       "path": "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills",
@@ -35,13 +35,13 @@
       "skill_files": 3
     }
   ],
-  "total_skill_files_seen": 190,
-  "unique_finance_skill_count": 81,
+  "total_skill_files_seen": 192,
+  "unique_finance_skill_count": 82,
   "category_counts": {
     "core_router": 1,
     "equity_research": 24,
-    "execution_capable": 24,
-    "finance_ops_accounting": 12,
+    "execution_capable": 25,
+    "finance_ops_accounting": 13,
     "fixed_income_fx_derivatives": 9,
     "other_finance_candidate": 4,
     "portfolio_risk": 15,
@@ -138,6 +138,10 @@
     },
     {
       "name": "query-token-info",
+      "copies": 2
+    },
+    {
+      "name": "stark-budget",
       "copies": 2
     },
     {
@@ -894,6 +898,18 @@
       ],
       "paths": [
         "~/.agents/skills/roll-forward"
+      ]
+    },
+    {
+      "name": "stark-budget",
+      "description": "Create, adapt, audit, and repair budget workbooks and financial planning spreadsheets for Stark's Web3, AI, RWA, trading, operations, event, team, launch, market-making, and general business budgeting tasks. Use when the user asks to make a budget, convert a budget into a monthly plan, update or verify Excel/WPS/Google Sheets budget files, compare scenarios, classify required vs optional spend, preserve formulas and formatting, check totals, build a clean .xlsx budget model, or diagnose formula/layout problems in budget workbooks.",
+      "categories": [
+        "execution_capable",
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/stark-budget",
+        "~/.codex/skills/stark-budget"
       ]
     },
     {

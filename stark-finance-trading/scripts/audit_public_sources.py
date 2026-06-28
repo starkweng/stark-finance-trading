@@ -22,8 +22,15 @@ EXECUTION_CATEGORIES = {
     "broker_options_execution",
     "broker_agentic_execution",
     "fx_cfd_platform_mcp",
+    "fx_broker_api",
+    "fx_terminal_api",
     "web3_wallet_agent_mcp",
     "broker_api_community_mcp",
+    "broker_integration_api",
+    "crypto_cex_agent_skill",
+    "crypto_exchange_mcp",
+    "crypto_exchange_api",
+    "crypto_derivatives_api",
     "crypto_exchange_library",
 }
 COMMUNITY_WRAPPER_STATUSES = {

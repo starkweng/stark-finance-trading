@@ -7,14 +7,16 @@ source discipline, safety boundaries, and package evidence.
 ## Conclusion
 
 The strongest public finance/trading surfaces are vendor-deep: Alpaca, Tradier,
-Robinhood, IBKR, and cTrader for broker/platform workflows; Dune, Alchemy,
+Robinhood, IBKR, cTrader, OANDA, MetaTrader 5, and TradingView for
+broker/platform workflows; Binance, Bybit, Kraken, OKX, BingX, and Deribit for
+CEX, derivatives, and crypto-options workflows; Dune, Alchemy,
 Etherscan, The Graph, Goldsky, Moralis, GoldRush/Covalent, SQD, Coinbase,
 QuickNode, CoinGecko, CoinMarketCap, Token Terminal, DeFiLlama, Helius,
 Jupiter, DexScreener, and Binance for crypto/Web3 data, infrastructure,
 indexed data, and actions; QuantConnect, LEAN, NautilusTrader, Hummingbot,
 Freqtrade, and CCXT for strategy or bot engineering; OpenBB, Databento,
 FactSet, FMP, Twelve Data, Alpha Vantage, Massive/Polygon.io, and Unusual
-Whales for research and data; and Stripe/Plaid for adjacent financial
+Whales, Finnhub, and Nasdaq Data Link for research and data; and Stripe/Plaid for adjacent financial
 infrastructure. The
 Stark skill should not try to replace them. Its edge is a single Stark-facing
 route that chooses the right surface, labels evidence quality, and blocks unsafe
@@ -37,6 +39,11 @@ escalation.
 | Robinhood Agentic Trading | Official product | Budget-isolated agentic brokerage workflow | Treat as Tier 4; require account scope, limits, and confirmation. |
 | cTrader MCP servers | Official MCP | FX/CFD account, market, chart, and order operations | Preserve broker lot/margin assumptions and demo/live separation. |
 | Binance Skills Hub | Official | Crypto exchange and Web3 skills | Keep vendor skills internal; gate state changes. |
+| Bybit AI Trading Skills | Official | Bybit exchange market/account/trading skill workflows | Keep Bybit as a venue route; gate orders, leverage, and transfers. |
+| Kraken MCP | Official MCP | Kraken market/account/execution-capable exchange workflows | Separate market reads from account mutations and orders. |
+| OKX API | Official API | OKX spot, futures, perpetuals, options, account, and market data | Prefer official docs or controlled adapters; gate derivatives and margin actions. |
+| BingX API AI Skills | Official | BingX exchange skill workflows | Load only for BingX-specific tasks and gate every state-changing action. |
+| Deribit API | Official API | Crypto options, futures/perpetuals, IV, and volatility venue data | Treat options/margin as Tier 4 and require greeks/liquidation review. |
 | Dune MCP | Official | Onchain SQL and dashboards | Validate table semantics before platform totals. |
 | Alchemy MCP | Official | Wallet/token/NFT/tx RPC data | Separate reads from signing and network/app selection. |
 | Etherscan MCP | Official | Verified contracts and explorer truth | Cross-check explorer facts with behavior/risk evidence. |
@@ -57,6 +64,8 @@ escalation.
 | Stripe MCP / Agent Toolkit | Official toolkit | Payments, billing, checkout, and financial operations | Keep finance ops separate from market signals; confirm state changes. |
 | Plaid API | Official API | Bank connectivity, balances, transactions, account verification | Treat account data as sensitive and not as broker execution. |
 | Databento API | Official API | Institutional market data and history | Require dataset, venue, entitlement, latency, and cost clarity. |
+| Finnhub API | Official API | Market data, company news, fundamentals, earnings, and sentiment | Label news/source timestamps and avoid sentiment-as-advice. |
+| Nasdaq Data Link API | Official API | Dataset, macro, alternative-data, and structured research inputs | Preserve dataset vintage, entitlement, and redistribution constraints. |
 | IBKR TWS API / community MCP candidates | Official API + community MCP candidates | Multi-asset brokerage API | Do not treat community MCP wrappers as official; paper/live proof first. |
 | Hummingbot | Official open source | Market-making and arbitrage bots | Review inventory, rate limits, cancel failures, kill switch. |
 | Freqtrade | Official open source | Crypto bot backtest and dry-run | Reject live claims without backtest and risk config. |

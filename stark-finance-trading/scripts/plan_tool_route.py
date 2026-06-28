@@ -38,11 +38,20 @@ ROUTE_RULES = [
     {
         "id": "options_flow",
         "patterns": [r"期权", r"options?", r"dark pool", r"unusual", r"flow", r"greek", r"iv\b"],
-        "tool_ids": ["unusual-whales-mcp", "tradier-mcp", "alpaca-mcp"],
+        "tool_ids": ["unusual-whales-mcp", "tradier-mcp", "alpaca-mcp", "deribit-api"],
         "workflow": "Options Flow",
-        "route_tags": ["options_flow", "broker"],
+        "route_tags": ["options_flow", "crypto_options", "broker"],
         "risk_tier": 4,
         "safety_terms": ["order_preview_only", "explicit_confirmation_required"],
+    },
+    {
+        "id": "cex_derivatives_execution",
+        "patterns": [r"bybit", r"kraken", r"\bokx\b", r"bingx", r"deribit", r"perp", r"perpetual", r"永续", r"合约交易", r"cex", r"crypto options?", r"加密期权"],
+        "tool_ids": ["binance-skills-hub", "bybit-ai-trading-skills", "kraken-mcp", "okx-api", "bingx-ai-skills", "deribit-api", "ccxt"],
+        "workflow": "CEX / Crypto Derivatives / Exchange Skills Boundary",
+        "route_tags": ["cex", "derivatives", "perpetuals", "crypto_options"],
+        "risk_tier": 4,
+        "safety_terms": ["venue_specific", "order_preview_only", "explicit_confirmation_required", "max_loss", "kill_switch"],
     },
     {
         "id": "pumpfun_solana",
@@ -91,12 +100,21 @@ ROUTE_RULES = [
     },
     {
         "id": "fx_cfd_xau",
-        "patterns": [r"xau", r"gold", r"黄金", r"ctrader", r"cfd", r"forex", r"fx", r"stop-?out", r"lot", r"margin"],
-        "tool_ids": ["ctrader-ai-agent-connect"],
+        "patterns": [r"xau", r"gold", r"黄金", r"ctrader", r"oanda", r"metatrader", r"\bmt5\b", r"cfd", r"forex", r"fx", r"stop-?out", r"lot", r"margin"],
+        "tool_ids": ["ctrader-ai-agent-connect", "oanda-v20-api", "metatrader5-python"],
         "workflow": "FX / CFD / XAUUSD Margin Review",
         "route_tags": ["fx", "xauusd", "broker"],
         "risk_tier": 4,
         "safety_terms": ["demo_first", "broker_assumptions", "explicit_confirmation_required"],
+    },
+    {
+        "id": "tradingview_signal_boundary",
+        "patterns": [r"tradingview", r"pine", r"alert", r"webhook", r"图表.*信号", r"信号.*下单"],
+        "tool_ids": ["tradingview-broker-api"],
+        "workflow": "TradingView / Alerts / Chart Signal Boundary",
+        "route_tags": ["charting", "signals", "broker"],
+        "risk_tier": 4,
+        "safety_terms": ["signal_not_order", "broker_preview_required", "explicit_confirmation_required"],
     },
     {
         "id": "ibkr_boundary",
@@ -118,10 +136,10 @@ ROUTE_RULES = [
     },
     {
         "id": "equity_fundamentals",
-        "patterns": [r"\b(aapl|nvda|tsla|msft|googl|meta|amzn)\b", r"股票", r"earnings", r"preview", r"dcf", r"估值", r"catalyst", r"portfolio"],
-        "tool_ids": ["alpaca-mcp", "openbb", "fmp-mcp", "massive-polygon-mcp", "alpha-vantage-mcp"],
+        "patterns": [r"\b(aapl|nvda|tsla|msft|googl|meta|amzn)\b", r"股票", r"earnings", r"preview", r"dcf", r"估值", r"catalyst", r"portfolio", r"news", r"sentiment"],
+        "tool_ids": ["alpaca-mcp", "openbb", "fmp-mcp", "massive-polygon-mcp", "alpha-vantage-mcp", "finnhub-api", "nasdaq-data-link-api"],
         "workflow": "Equity / Macro / Fundamentals Research",
-        "route_tags": ["us_equities", "fundamentals", "market_data"],
+        "route_tags": ["us_equities", "fundamentals", "market_data", "news"],
         "risk_tier": 2,
         "local_skill_hints": ["earnings-preview", "equity-research", "dcf-model", "catalyst-calendar", "portfolio-rebalance"],
         "safety_terms": ["fresh_market_data", "not_trade_order"],
@@ -129,7 +147,7 @@ ROUTE_RULES = [
     {
         "id": "market_snapshot",
         "patterns": [r"行情", r"盘口", r"spread", r"depth", r"当前状态", r"1h", r"1小时", r"btc", r"eth", r"xauusd"],
-        "tool_ids": ["alpaca-mcp", "binance-skills-hub", "coingecko-mcp", "massive-polygon-mcp", "twelve-data-mcp"],
+        "tool_ids": ["alpaca-mcp", "binance-skills-hub", "coingecko-mcp", "massive-polygon-mcp", "twelve-data-mcp", "finnhub-api", "nasdaq-data-link-api"],
         "workflow": "Market Snapshot",
         "route_tags": ["market_data"],
         "risk_tier": 1,
@@ -223,7 +241,7 @@ def plan_route(prompt: str, root: Path, runtime_report: Path | None = None) -> d
     risk_tier = max(int(rule.get("risk_tier", 1)) for rule in matched)
     if risk_tier == 4 and "explicit_confirmation_required" not in safety_terms:
         safety_terms.append("explicit_confirmation_required")
-    if any(term in lowered for term in ["不要交易", "先不要执行", "不要直接交易", "不要下单", "不要启动", "不要直接实盘", "不要把它变成直接交易建议"]):
+    if any(term in lowered for term in ["不要交易", "先不要执行", "不要执行", "不要直接交易", "不要下单", "不要直接下单", "不要启动", "不要直接实盘", "不要把它变成直接交易建议"]):
         safety_terms.append("no_execution_requested")
 
     tools = [

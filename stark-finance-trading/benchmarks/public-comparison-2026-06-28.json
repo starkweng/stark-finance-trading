@@ -127,6 +127,36 @@
       "what_stark_must_do_better": "Preserve broker-specific risk assumptions, lot sizing, margin, stop-out, and explicit demo/live separation."
     },
     {
+      "name": "OANDA v20 REST API",
+      "category": "fx_broker_api",
+      "source_url": "https://developer.oanda.com/rest-live-v20/introduction/",
+      "source_status": "official_api",
+      "strengths": ["FX/CFD pricing", "historical candles", "account context", "order workflows"],
+      "default_risk_tier": 4,
+      "route_role": "FX/CFD broker API route when OANDA account, pricing, candle, or order-prep evidence matters.",
+      "what_stark_must_do_better": "Force practice/live separation, broker margin assumptions, order previews, and explicit confirmation before any live action."
+    },
+    {
+      "name": "MetaTrader 5 Python Integration",
+      "category": "fx_terminal_api",
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5",
+      "source_status": "official_api",
+      "strengths": ["MT5 terminal access", "broker account context", "FX/CFD/XAUUSD data", "order-prep workflows"],
+      "default_risk_tier": 4,
+      "route_role": "Local terminal route for broker-specific FX/CFD/XAUUSD evidence and guarded order preparation.",
+      "what_stark_must_do_better": "Verify terminal state, demo/live mode, lot contract specs, margin, stop-out, and kill-switch before trading paths."
+    },
+    {
+      "name": "TradingView Broker API",
+      "category": "broker_integration_api",
+      "source_url": "https://www.tradingview.com/broker-api-docs/",
+      "source_status": "official_api",
+      "strengths": ["chart and signal context", "broker integration", "alerts", "order-flow design"],
+      "default_risk_tier": 4,
+      "route_role": "Chart/signal/broker-integration route for TradingView alert and broker API boundary design.",
+      "what_stark_must_do_better": "Treat alerts and Pine signals as evidence, not orders; require broker preview, quantity, slippage, and confirmation."
+    },
+    {
       "name": "Binance Skills Hub",
       "category": "crypto_cex_web3_skills",
       "source_url": "https://github.com/binance/binance-skills-hub",
@@ -135,6 +165,56 @@
       "default_risk_tier": 3,
       "route_role": "Crypto market data, token research, account reads, and execution-capable Binance surfaces.",
       "what_stark_must_do_better": "Keep Binance as an internal route, not the user-facing mental model; gate every state-changing command."
+    },
+    {
+      "name": "Bybit AI Trading Skills",
+      "category": "crypto_cex_agent_skill",
+      "source_url": "https://github.com/bybit-exchange/skills",
+      "source_status": "official_skill",
+      "strengths": ["installable AI trading skills", "Bybit market workflows", "account/trading routes", "derivatives venue context"],
+      "default_risk_tier": 4,
+      "route_role": "Bybit-specific exchange route for market, account, and execution-prep workflows exposed as skills.",
+      "what_stark_must_do_better": "Keep Bybit vendor-specific, separate reads from orders/leverage/transfers, and require explicit confirmation plus limits."
+    },
+    {
+      "name": "Kraken MCP",
+      "category": "crypto_exchange_mcp",
+      "source_url": "https://docs.kraken.com/home/mcp",
+      "source_status": "official_mcp",
+      "strengths": ["official MCP surface", "Kraken market context", "account context", "execution-capable exchange route"],
+      "default_risk_tier": 4,
+      "route_role": "Kraken-specific route for market/account evidence and gated exchange actions.",
+      "what_stark_must_do_better": "Use market data read-only first and gate all account mutations, orders, transfers, or leverage-like actions."
+    },
+    {
+      "name": "OKX API",
+      "category": "crypto_exchange_api",
+      "source_url": "https://www.okx.com/docs-v5/en/",
+      "source_status": "official_api",
+      "strengths": ["spot", "futures", "perpetuals", "options", "account and market APIs"],
+      "default_risk_tier": 4,
+      "route_role": "OKX venue route for exchange data, derivatives, options, account mode, and controlled adapter design.",
+      "what_stark_must_do_better": "Prefer official docs or controlled adapters; require account mode, margin/leverage, order preview, and cancel path."
+    },
+    {
+      "name": "BingX API AI Skills",
+      "category": "crypto_cex_agent_skill",
+      "source_url": "https://github.com/BingX-API/api-ai-skills",
+      "source_status": "official_skill_hub",
+      "strengths": ["installable API AI skills", "BingX market workflows", "account/trading routes"],
+      "default_risk_tier": 4,
+      "route_role": "BingX-specific route when the user names BingX or needs BingX API skill coverage.",
+      "what_stark_must_do_better": "Avoid broad loading; gate all state-changing BingX actions with explicit confirmation and venue limits."
+    },
+    {
+      "name": "Deribit API",
+      "category": "crypto_derivatives_api",
+      "source_url": "https://docs.deribit.com/",
+      "source_status": "official_api",
+      "strengths": ["crypto options", "futures and perpetuals", "volatility context", "derivatives order workflows"],
+      "default_risk_tier": 4,
+      "route_role": "Crypto options and derivatives venue route for IV/volatility, contract, margin, and execution-prep workflows.",
+      "what_stark_must_do_better": "Require greeks, liquidation/margin review, instrument checks, order preview, and explicit confirmation."
     },
     {
       "name": "Dune MCP",
@@ -335,6 +415,26 @@
       "default_risk_tier": 0,
       "route_role": "High-grade data candidate for serious strategy research when direct MCP is unavailable or unnecessary.",
       "what_stark_must_do_better": "Treat it as a data backbone candidate; require dataset, venue, entitlement, latency, and cost clarity."
+    },
+    {
+      "name": "Finnhub API",
+      "category": "market_news_fundamental_api",
+      "source_url": "https://finnhub.io/docs/api",
+      "source_status": "official_api",
+      "strengths": ["market data", "company news", "fundamentals", "earnings", "sentiment"],
+      "default_risk_tier": 0,
+      "route_role": "Research/news/fundamental evidence layer for equities and market-context workflows.",
+      "what_stark_must_do_better": "Label timestamps, source provenance, and sentiment limitations before using it in a thesis."
+    },
+    {
+      "name": "Nasdaq Data Link API",
+      "category": "market_dataset_api",
+      "source_url": "https://docs.data.nasdaq.com/",
+      "source_status": "official_api",
+      "strengths": ["Nasdaq datasets", "macro data", "alternative data", "structured research inputs"],
+      "default_risk_tier": 0,
+      "route_role": "Dataset route for investor-grade research, macro/alternative-data work, and structured time-series inputs.",
+      "what_stark_must_do_better": "Preserve dataset vintage, entitlement, methodology, transformation assumptions, and redistribution constraints."
     },
     {
       "name": "IBKR TWS API / community MCP candidates",

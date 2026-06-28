@@ -1,8 +1,8 @@
 # stark-finance-trading Local Skill Inventory
 
 - Status: PASS
-- Unique finance/trading skills: 81
-- Total SKILL.md files seen: 190
+- Unique finance/trading skills: 82
+- Total SKILL.md files seen: 192
 - Recommended matched: 45/45
 
 ## Category Counts
@@ -11,8 +11,8 @@
 |---|---:|
 | `core_router` | 1 |
 | `equity_research` | 24 |
-| `execution_capable` | 24 |
-| `finance_ops_accounting` | 12 |
+| `execution_capable` | 25 |
+| `finance_ops_accounting` | 13 |
 | `fixed_income_fx_derivatives` | 9 |
 | `other_finance_candidate` | 4 |
 | `portfolio_risk` | 15 |
@@ -81,6 +81,7 @@
 - `query-address-info`: 2 copies
 - `query-token-audit`: 2 copies
 - `query-token-info`: 2 copies
+- `stark-budget`: 2 copies
 - `stark-finance-trading`: 6 copies
 - `stark-mkt-ops`: 5 copies
 - `trading-signal`: 2 copies
@@ -157,6 +158,7 @@
 | `query-token-info` | `web3_market_onchain` | 2 |
 | `returns-analysis` | `private_markets_deal`, `valuation_modeling` | 1 |
 | `roll-forward` | `finance_ops_accounting` | 1 |
+| `stark-budget` | `execution_capable`, `finance_ops_accounting` | 2 |
 | `stark-capital-strategy` | `execution_capable`, `stark_boundary_or_adjacent`, `web3_market_onchain` | 1 |
 | `stark-data-analytics` | `equity_research`, `finance_ops_accounting`, `stark_boundary_or_adjacent`, `web3_market_onchain` | 1 |
 | `stark-deck` | `other_finance_candidate` | 1 |

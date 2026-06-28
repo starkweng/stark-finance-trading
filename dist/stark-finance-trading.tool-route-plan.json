@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T07:07:41.366469+00:00",
+  "generated_at": "2026-06-28T07:32:18.197865+00:00",
   "skill": "stark-finance-trading",
-  "case_count": 18,
-  "passed_cases": 18,
+  "case_count": 23,
+  "passed_cases": 23,
   "failed_cases": [],
   "cases": [
     {
@@ -55,6 +55,8 @@
           "alpaca-mcp",
           "massive-polygon-mcp",
           "alpha-vantage-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api",
           "coingecko-mcp",
           "twelve-data-mcp"
         ],
@@ -120,6 +122,26 @@
             "availability_rank": 10
           },
           {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
             "id": "coingecko-mcp",
             "name": "CoinGecko MCP",
             "provider": "CoinGecko",
@@ -143,7 +165,8 @@
         "route_tags": [
           "us_equities",
           "fundamentals",
-          "market_data"
+          "market_data",
+          "news"
         ],
         "local_skill_hints": [
           "earnings-preview",
@@ -218,8 +241,11 @@
           "alpaca-mcp",
           "unusual-whales-mcp",
           "tradier-mcp",
+          "deribit-api",
           "massive-polygon-mcp",
-          "alpha-vantage-mcp"
+          "alpha-vantage-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -273,6 +299,16 @@
             "availability_rank": 10
           },
           {
+            "id": "deribit-api",
+            "name": "Deribit API",
+            "provider": "Deribit",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
             "id": "massive-polygon-mcp",
             "name": "Massive / Polygon.io MCP",
             "provider": "Massive / Polygon.io",
@@ -291,14 +327,36 @@
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
             "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
           "options_flow",
+          "crypto_options",
           "broker",
           "us_equities",
           "fundamentals",
-          "market_data"
+          "market_data",
+          "news"
         ],
         "local_skill_hints": [
           "earnings-preview",
@@ -811,7 +869,9 @@
           "nautilus-trader",
           "coingecko-mcp",
           "massive-polygon-mcp",
-          "twelve-data-mcp"
+          "twelve-data-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -919,6 +979,26 @@
             "name": "Twelve Data MCP",
             "provider": "Twelve Data",
             "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
             "default_action_tier": 1,
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
@@ -1017,7 +1097,9 @@
           "nautilus-trader",
           "coingecko-mcp",
           "massive-polygon-mcp",
-          "twelve-data-mcp"
+          "twelve-data-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -1125,6 +1207,26 @@
             "name": "Twelve Data MCP",
             "provider": "Twelve Data",
             "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
             "default_action_tier": 1,
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
@@ -1505,8 +1607,11 @@
           "alpaca-mcp",
           "unusual-whales-mcp",
           "tradier-mcp",
+          "deribit-api",
           "massive-polygon-mcp",
-          "alpha-vantage-mcp"
+          "alpha-vantage-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -1560,6 +1665,16 @@
             "availability_rank": 10
           },
           {
+            "id": "deribit-api",
+            "name": "Deribit API",
+            "provider": "Deribit",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
             "id": "massive-polygon-mcp",
             "name": "Massive / Polygon.io MCP",
             "provider": "Massive / Polygon.io",
@@ -1578,14 +1693,36 @@
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
             "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
           "options_flow",
+          "crypto_options",
           "broker",
           "us_equities",
           "fundamentals",
-          "market_data"
+          "market_data",
+          "news"
         ],
         "local_skill_hints": [
           "earnings-preview",
@@ -1680,7 +1817,9 @@
           "tradier-mcp",
           "ibkr-tws-api",
           "massive-polygon-mcp",
-          "alpha-vantage-mcp"
+          "alpha-vantage-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -1752,6 +1891,26 @@
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
             "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -1760,7 +1919,8 @@
           "orders",
           "us_equities",
           "fundamentals",
-          "market_data"
+          "market_data",
+          "news"
         ],
         "local_skill_hints": [
           "earnings-preview",
@@ -1831,7 +1991,9 @@
           "alpaca-mcp",
           "coingecko-mcp",
           "massive-polygon-mcp",
-          "twelve-data-mcp"
+          "twelve-data-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -1883,6 +2045,26 @@
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
             "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -1900,6 +2082,658 @@
           "timestamp",
           "venue",
           "delay_status"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "cex-derivatives-venue-boundary",
+      "prompt": "比较 Bybit、Kraken、OKX、BingX 的 BTC perpetual 流动性和费率，最多准备 order preview，不要直接下单。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:bybit-ai-trading-skills",
+          "passed": true
+        },
+        {
+          "id": "tool:kraken-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:okx-api",
+          "passed": true
+        },
+        {
+          "id": "tool:bingx-ai-skills",
+          "passed": true
+        },
+        {
+          "id": "tag:cex",
+          "passed": true
+        },
+        {
+          "id": "tag:derivatives",
+          "passed": true
+        },
+        {
+          "id": "tag:perpetuals",
+          "passed": true
+        },
+        {
+          "id": "safety:venue_specific",
+          "passed": true
+        },
+        {
+          "id": "safety:order_preview_only",
+          "passed": true
+        },
+        {
+          "id": "safety:explicit_confirmation_required",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "比较 Bybit、Kraken、OKX、BingX 的 BTC perpetual 流动性和费率，最多准备 order preview，不要直接下单。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "broker_api_execution",
+          "cex_derivatives_execution",
+          "live_order_execution",
+          "equity_fundamentals",
+          "market_snapshot"
+        ],
+        "workflow": "Broker API / Paper-Live Execution Boundary + CEX / Crypto Derivatives / Exchange Skills Boundary + Execution Prep + Equity / Macro / Fundamentals Research + Market Snapshot",
+        "tool_ids": [
+          "binance-skills-hub",
+          "ccxt",
+          "openbb",
+          "fmp-mcp",
+          "alpaca-mcp",
+          "tradier-mcp",
+          "ibkr-tws-api",
+          "bybit-ai-trading-skills",
+          "kraken-mcp",
+          "okx-api",
+          "bingx-ai-skills",
+          "deribit-api",
+          "massive-polygon-mcp",
+          "alpha-vantage-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api",
+          "coingecko-mcp",
+          "twelve-data-mcp"
+        ],
+        "tools": [
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
+          },
+          {
+            "id": "ccxt",
+            "name": "CCXT",
+            "provider": "CCXT",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "openbb",
+            "name": "OpenBB",
+            "provider": "OpenBB",
+            "source_status": "official_open_source",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "fmp-mcp",
+            "name": "Financial Modeling Prep MCP",
+            "provider": "Financial Modeling Prep",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "tradier-mcp",
+            "name": "Tradier MCP",
+            "provider": "Tradier",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "ibkr-tws-api",
+            "name": "IBKR TWS API",
+            "provider": "Interactive Brokers",
+            "source_status": "official_api_with_community_mcp_candidates",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "bybit-ai-trading-skills",
+            "name": "Bybit AI Trading Skills",
+            "provider": "Bybit",
+            "source_status": "official_skill",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "kraken-mcp",
+            "name": "Kraken MCP",
+            "provider": "Kraken",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "okx-api",
+            "name": "OKX API",
+            "provider": "OKX",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "bingx-ai-skills",
+            "name": "BingX API AI Skills",
+            "provider": "BingX",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "deribit-api",
+            "name": "Deribit API",
+            "provider": "Deribit",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "alpha-vantage-mcp",
+            "name": "Alpha Vantage MCP",
+            "provider": "Alpha Vantage",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "broker",
+          "paper_trading",
+          "orders",
+          "cex",
+          "derivatives",
+          "perpetuals",
+          "crypto_options",
+          "us_equities",
+          "fundamentals",
+          "market_data",
+          "news"
+        ],
+        "local_skill_hints": [
+          "earnings-preview",
+          "equity-research",
+          "dcf-model",
+          "catalyst-calendar",
+          "portfolio-rebalance"
+        ],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "paper_first",
+          "order_preview_only",
+          "explicit_confirmation_required",
+          "kill_switch",
+          "venue_specific",
+          "max_loss",
+          "fresh_market_data",
+          "not_trade_order",
+          "timestamp",
+          "venue",
+          "delay_status",
+          "no_execution_requested"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "deribit-crypto-options-route",
+      "prompt": "用 Deribit 看 BTC crypto options 的 IV、skew、greeks 和保证金风险，只做研究不要下单。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:deribit-api",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_options",
+          "passed": true
+        },
+        {
+          "id": "tag:derivatives",
+          "passed": true
+        },
+        {
+          "id": "safety:order_preview_only",
+          "passed": true
+        },
+        {
+          "id": "safety:explicit_confirmation_required",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "用 Deribit 看 BTC crypto options 的 IV、skew、greeks 和保证金风险，只做研究不要下单。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "options_flow",
+          "cex_derivatives_execution",
+          "market_snapshot"
+        ],
+        "workflow": "Options Flow + CEX / Crypto Derivatives / Exchange Skills Boundary + Market Snapshot",
+        "tool_ids": [
+          "binance-skills-hub",
+          "ccxt",
+          "alpaca-mcp",
+          "unusual-whales-mcp",
+          "tradier-mcp",
+          "deribit-api",
+          "bybit-ai-trading-skills",
+          "kraken-mcp",
+          "okx-api",
+          "bingx-ai-skills",
+          "coingecko-mcp",
+          "massive-polygon-mcp",
+          "twelve-data-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
+        ],
+        "tools": [
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
+          },
+          {
+            "id": "ccxt",
+            "name": "CCXT",
+            "provider": "CCXT",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "unusual-whales-mcp",
+            "name": "Unusual Whales MCP",
+            "provider": "Unusual Whales",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "tradier-mcp",
+            "name": "Tradier MCP",
+            "provider": "Tradier",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "deribit-api",
+            "name": "Deribit API",
+            "provider": "Deribit",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "bybit-ai-trading-skills",
+            "name": "Bybit AI Trading Skills",
+            "provider": "Bybit",
+            "source_status": "official_skill",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "kraken-mcp",
+            "name": "Kraken MCP",
+            "provider": "Kraken",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "okx-api",
+            "name": "OKX API",
+            "provider": "OKX",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "bingx-ai-skills",
+            "name": "BingX API AI Skills",
+            "provider": "BingX",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "options_flow",
+          "crypto_options",
+          "broker",
+          "cex",
+          "derivatives",
+          "perpetuals",
+          "market_data"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "order_preview_only",
+          "explicit_confirmation_required",
+          "venue_specific",
+          "max_loss",
+          "kill_switch",
+          "timestamp",
+          "venue",
+          "delay_status",
+          "no_execution_requested"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "tradingview-alert-boundary",
+      "prompt": "TradingView Pine alert 能不能接 broker webhook 自动下单？先做边界和预检查，不要执行。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:tradingview-broker-api",
+          "passed": true
+        },
+        {
+          "id": "tag:charting",
+          "passed": true
+        },
+        {
+          "id": "tag:signals",
+          "passed": true
+        },
+        {
+          "id": "tag:broker",
+          "passed": true
+        },
+        {
+          "id": "safety:signal_not_order",
+          "passed": true
+        },
+        {
+          "id": "safety:broker_preview_required",
+          "passed": true
+        },
+        {
+          "id": "safety:explicit_confirmation_required",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "TradingView Pine alert 能不能接 broker webhook 自动下单？先做边界和预检查，不要执行。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "tradingview_signal_boundary"
+        ],
+        "workflow": "TradingView / Alerts / Chart Signal Boundary",
+        "tool_ids": [
+          "tradingview-broker-api"
+        ],
+        "tools": [
+          {
+            "id": "tradingview-broker-api",
+            "name": "TradingView Broker API",
+            "provider": "TradingView",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "charting",
+          "signals",
+          "broker"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "signal_not_order",
+          "broker_preview_required",
+          "explicit_confirmation_required",
+          "no_execution_requested"
         ],
         "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
@@ -1951,9 +2785,13 @@
           "binance-skills-hub",
           "alpaca-mcp",
           "ctrader-ai-agent-connect",
+          "oanda-v20-api",
+          "metatrader5-python",
           "coingecko-mcp",
           "massive-polygon-mcp",
-          "twelve-data-mcp"
+          "twelve-data-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -1987,6 +2825,26 @@
             "availability_rank": 10
           },
           {
+            "id": "oanda-v20-api",
+            "name": "OANDA v20 REST API",
+            "provider": "OANDA",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "metatrader5-python",
+            "name": "MetaTrader 5 Python Integration",
+            "provider": "MetaQuotes",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
             "id": "coingecko-mcp",
             "name": "CoinGecko MCP",
             "provider": "CoinGecko",
@@ -2011,6 +2869,219 @@
             "name": "Twelve Data MCP",
             "provider": "Twelve Data",
             "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "fx",
+          "xauusd",
+          "broker",
+          "market_data"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "demo_first",
+          "broker_assumptions",
+          "explicit_confirmation_required",
+          "timestamp",
+          "venue",
+          "delay_status"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "xauusd-oanda-mt5-risk",
+      "prompt": "XAUUSD 如果走 OANDA 或 MetaTrader 5，要先核对 lot、margin、stop-out、demo/live 和订单预览。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:oanda-v20-api",
+          "passed": true
+        },
+        {
+          "id": "tool:metatrader5-python",
+          "passed": true
+        },
+        {
+          "id": "tag:fx",
+          "passed": true
+        },
+        {
+          "id": "tag:xauusd",
+          "passed": true
+        },
+        {
+          "id": "tag:broker",
+          "passed": true
+        },
+        {
+          "id": "safety:demo_first",
+          "passed": true
+        },
+        {
+          "id": "safety:broker_assumptions",
+          "passed": true
+        },
+        {
+          "id": "safety:explicit_confirmation_required",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "XAUUSD 如果走 OANDA 或 MetaTrader 5，要先核对 lot、margin、stop-out、demo/live 和订单预览。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "fx_cfd_xau",
+          "market_snapshot"
+        ],
+        "workflow": "FX / CFD / XAUUSD Margin Review + Market Snapshot",
+        "tool_ids": [
+          "binance-skills-hub",
+          "alpaca-mcp",
+          "ctrader-ai-agent-connect",
+          "oanda-v20-api",
+          "metatrader5-python",
+          "coingecko-mcp",
+          "massive-polygon-mcp",
+          "twelve-data-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
+        ],
+        "tools": [
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "ctrader-ai-agent-connect",
+            "name": "cTrader AI Agent Connect",
+            "provider": "cTrader",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "oanda-v20-api",
+            "name": "OANDA v20 REST API",
+            "provider": "OANDA",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "metatrader5-python",
+            "name": "MetaTrader 5 Python Integration",
+            "provider": "MetaQuotes",
+            "source_status": "official_api",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
             "default_action_tier": 1,
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
@@ -2283,7 +3354,9 @@
           "fmp-mcp",
           "alpaca-mcp",
           "massive-polygon-mcp",
-          "alpha-vantage-mcp"
+          "alpha-vantage-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
         ],
         "tools": [
           {
@@ -2335,12 +3408,33 @@
             "installed_status": "external_candidate",
             "runtime_status": "external_candidate",
             "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
           "us_equities",
           "fundamentals",
-          "market_data"
+          "market_data",
+          "news"
         ],
         "local_skill_hints": [
           "earnings-preview",
@@ -2355,6 +3449,155 @@
           "fresh_market_data",
           "not_trade_order",
           "no_execution_requested"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "finnhub-nasdaq-research-data",
+      "prompt": "用 Finnhub 和 Nasdaq Data Link 看 AAPL news、sentiment、earnings 和 dataset 证据，只做 research。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:finnhub-api",
+          "passed": true
+        },
+        {
+          "id": "tool:nasdaq-data-link-api",
+          "passed": true
+        },
+        {
+          "id": "tag:news",
+          "passed": true
+        },
+        {
+          "id": "tag:fundamentals",
+          "passed": true
+        },
+        {
+          "id": "tag:market_data",
+          "passed": true
+        },
+        {
+          "id": "max_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "用 Finnhub 和 Nasdaq Data Link 看 AAPL news、sentiment、earnings 和 dataset 证据，只做 research。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "equity_fundamentals"
+        ],
+        "workflow": "Equity / Macro / Fundamentals Research",
+        "tool_ids": [
+          "openbb",
+          "fmp-mcp",
+          "alpaca-mcp",
+          "massive-polygon-mcp",
+          "alpha-vantage-mcp",
+          "finnhub-api",
+          "nasdaq-data-link-api"
+        ],
+        "tools": [
+          {
+            "id": "openbb",
+            "name": "OpenBB",
+            "provider": "OpenBB",
+            "source_status": "official_open_source",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "fmp-mcp",
+            "name": "Financial Modeling Prep MCP",
+            "provider": "Financial Modeling Prep",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "alpha-vantage-mcp",
+            "name": "Alpha Vantage MCP",
+            "provider": "Alpha Vantage",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "finnhub-api",
+            "name": "Finnhub API",
+            "provider": "Finnhub",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "nasdaq-data-link-api",
+            "name": "Nasdaq Data Link API",
+            "provider": "Nasdaq",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "us_equities",
+          "fundamentals",
+          "market_data",
+          "news"
+        ],
+        "local_skill_hints": [
+          "earnings-preview",
+          "equity-research",
+          "dcf-model",
+          "catalyst-calendar",
+          "portfolio-rebalance"
+        ],
+        "risk_tier": 2,
+        "risk_mode": "read_only_or_research",
+        "safety_terms": [
+          "fresh_market_data",
+          "not_trade_order"
         ],
         "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",

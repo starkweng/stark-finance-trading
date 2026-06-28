@@ -6,10 +6,10 @@
     "status": "PENDING",
     "exact_command_to_approve": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set evals/live-behavior-evals.json --out-dir ../dist/live-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.live-eval-signoff.json"
   },
-  "created_at": "2026-06-28T07:07:41.815929+00:00",
+  "created_at": "2026-06-28T07:32:18.672987+00:00",
   "skill_path": ".",
   "eval_set": "evals/live-behavior-evals.json",
-  "case_count": 9,
+  "case_count": 11,
   "case_hashes": [
     {
       "id": "live-market-snapshot-routing",
@@ -39,6 +39,18 @@
       "id": "live-order-gate",
       "category": "execution_safety",
       "prompt_sha256": "8fc3f70985f32eedc52d479b7b98ad4249b141925f93a14b1170e443d5bb0a79",
+      "required_check_count": 4
+    },
+    {
+      "id": "live-cex-derivatives-venue-boundary",
+      "category": "execution_safety",
+      "prompt_sha256": "a896b74de8ae61d3d32b2386326e10552bc05ff5a5f063e9b1f4d5077122903a",
+      "required_check_count": 4
+    },
+    {
+      "id": "live-tradingview-alert-boundary",
+      "category": "execution_safety",
+      "prompt_sha256": "6420b6e5b52e01ab28246450ed0328f9c9220180403d8e482eee65b11a31a7af",
       "required_check_count": 4
     },
     {

@@ -2,9 +2,9 @@
 
 - Status: PASS
 - Audit mode: `offline`
-- Candidates: 39
-- Official or primary sources: 39
-- Execution-capable candidates: 7
+- Candidates: 49
+- Official or primary sources: 49
+- Execution-capable candidates: 15
 
 ## Candidate Results
 
@@ -22,7 +22,15 @@
 | Tradier MCP | `official_mcp` | PASS | https://docs.tradier.com/docs/tradier-mcp |
 | Robinhood Agentic Trading | `official_product` | PASS | https://robinhood.com/us/en/agentic-trading/ |
 | cTrader MCP servers | `official_mcp` | PASS | https://help.ctrader.com/ctrader-ai-agent-connect/ |
+| OANDA v20 REST API | `official_api` | PASS | https://developer.oanda.com/rest-live-v20/introduction/ |
+| MetaTrader 5 Python Integration | `official_api` | PASS | https://www.mql5.com/en/docs/python_metatrader5 |
+| TradingView Broker API | `official_api` | PASS | https://www.tradingview.com/broker-api-docs/ |
 | Binance Skills Hub | `official_skill_hub` | PASS | https://github.com/binance/binance-skills-hub |
+| Bybit AI Trading Skills | `official_skill` | PASS | https://github.com/bybit-exchange/skills |
+| Kraken MCP | `official_mcp` | PASS | https://docs.kraken.com/home/mcp |
+| OKX API | `official_api` | PASS | https://www.okx.com/docs-v5/en/ |
+| BingX API AI Skills | `official_skill_hub` | PASS | https://github.com/BingX-API/api-ai-skills |
+| Deribit API | `official_api` | PASS | https://docs.deribit.com/ |
 | Dune MCP | `official_mcp` | PASS | https://docs.dune.com/api-reference/agents/mcp |
 | Alchemy MCP | `official_mcp` | PASS | https://github.com/alchemyplatform/alchemy-mcp-server |
 | Etherscan MCP | `official_mcp` | PASS | https://docs.etherscan.io/etherscan-mcp-server |
@@ -43,6 +51,8 @@
 | Stripe MCP / Agent Toolkit | `official_mcp_or_agent_toolkit` | PASS | https://docs.stripe.com/agents/toolkit |
 | Plaid API | `official_api` | PASS | https://plaid.com/docs/ |
 | Databento API | `official_api` | PASS | https://databento.com/docs |
+| Finnhub API | `official_api` | PASS | https://finnhub.io/docs/api |
+| Nasdaq Data Link API | `official_api` | PASS | https://docs.data.nasdaq.com/ |
 | IBKR TWS API / community MCP candidates | `official_api_with_community_mcp_candidates` | PASS | https://interactivebrokers.github.io/tws-api/ |
 | Hummingbot | `official_open_source` | PASS | https://hummingbot.org/ |
 | Freqtrade | `official_open_source` | PASS | https://www.freqtrade.io/en/stable/ |

@@ -21,6 +21,9 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 | Tradier MCP | https://docs.tradier.com/docs/tradier-mcp | Official Tradier MCP docs. |
 | Robinhood Agentic Trading | https://robinhood.com/us/en/agentic-trading/ | Official Robinhood agentic trading product page. |
 | cTrader AI Agent Connect | https://help.ctrader.com/ctrader-ai-agent-connect/ | Official cTrader MCP / AI agent connection docs. |
+| OANDA v20 REST API | https://developer.oanda.com/rest-live-v20/introduction/ | Official OANDA v20 REST API docs for FX/CFD account, pricing, and order workflows. |
+| MetaTrader 5 Python Integration | https://www.mql5.com/en/docs/python_metatrader5 | Official MetaQuotes Python integration docs for MetaTrader 5 terminal workflows. |
+| TradingView Broker API | https://www.tradingview.com/broker-api-docs/ | Official TradingView Broker API docs for broker integration and order-flow boundary design. |
 | Coinbase CDP CLI MCP | https://docs.cdp.coinbase.com/get-started/build-with-ai/cdp-cli/mcp | Official Coinbase CDP CLI MCP integration. |
 | Coinbase AgentKit MCP | https://docs.cdp.coinbase.com/agent-kit/core-concepts/model-context-protocol | Official AgentKit MCP extension docs. |
 | QuickNode MCP | https://www.quicknode.com/docs/build-with-ai/quicknode-mcp | Official QuickNode MCP for endpoint and Web3 infrastructure management. |
@@ -35,8 +38,15 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 | Stripe MCP / Agent Toolkit | https://docs.stripe.com/agents/toolkit | Official Stripe agent toolkit and MCP-style integration for payments and financial operations, not trading signals. |
 | Plaid docs | https://plaid.com/docs/ | Official Plaid docs for bank/account connectivity; use as financial data infrastructure, not broker execution. |
 | Databento docs | https://databento.com/docs | Official Databento data API docs. |
+| Finnhub API | https://finnhub.io/docs/api | Official Finnhub API docs for market data, news, fundamentals, earnings, and sentiment. |
+| Nasdaq Data Link API | https://docs.data.nasdaq.com/ | Official Nasdaq Data Link docs for datasets, market data, macro, and alternative data. |
 | IBKR TWS API | https://interactivebrokers.github.io/tws-api/ | Official Interactive Brokers TWS API docs; community MCPs must not be treated as official. |
 | Binance Skills Hub | https://github.com/binance/binance-skills-hub | Official Binance skill set. |
+| Bybit AI Trading Skills | https://github.com/bybit-exchange/skills | Official Bybit AI trading skills source. |
+| Kraken MCP | https://docs.kraken.com/home/mcp | Official Kraken MCP docs. |
+| OKX API | https://www.okx.com/docs-v5/en/ | Official OKX API v5 docs. |
+| BingX API AI Skills | https://github.com/BingX-API/api-ai-skills | Official BingX API AI skills source. |
+| Deribit API | https://docs.deribit.com/ | Official Deribit API docs for crypto options, futures, and market data. |
 | Dune MCP docs | https://docs.dune.com/api-reference/agents/mcp | Official Dune MCP docs. |
 | Alchemy MCP | https://github.com/alchemyplatform/alchemy-mcp-server | Official Alchemy MCP server. |
 | Etherscan MCP docs | https://docs.etherscan.io/etherscan-mcp-server | Official Etherscan MCP docs. |
@@ -55,6 +65,7 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 
 - `official_mcp`: first-party MCP server or MCP docs from the product/vendor.
 - `official_mcp_and_skill`: first-party MCP plus installable skill or agent integration package.
+- `official_skill`: first-party installable agent skill or skill source.
 - `official_docs_mcp`: first-party documentation MCP, useful for source context but not market data or execution.
 - `official_docs_mcp_and_skill`: first-party documentation MCP plus skill/AI integration docs.
 - `official_api`: first-party API/docs without a first-party MCP surface.

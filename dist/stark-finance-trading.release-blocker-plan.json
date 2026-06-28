@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T07:08:52.473652+00:00",
+  "generated_at": "2026-06-28T07:32:47.351321+00:00",
   "skill": "stark-finance-trading",
   "dist": "dist",
   "release_blocker_plan_status": "ACTIONABLE_BLOCKERS_OPEN",

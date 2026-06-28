@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T07:07:27.846882+00:00",
+  "generated_at": "2026-06-28T07:32:04.445721+00:00",
   "mode": "offline",
   "status": "PASS",
-  "candidate_count": 39,
-  "official_or_primary_sources": 39,
-  "execution_capable_candidates": 7,
+  "candidate_count": 49,
+  "official_or_primary_sources": 49,
+  "execution_capable_candidates": 15,
   "community_wrapper_candidates": 1,
   "candidates": [
     {
@@ -230,6 +230,63 @@
       "live_probe": null
     },
     {
+      "name": "OANDA v20 REST API",
+      "category": "fx_broker_api",
+      "source_url": "https://developer.oanda.com/rest-live-v20/introduction/",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "MetaTrader 5 Python Integration",
+      "category": "fx_terminal_api",
+      "source_url": "https://www.mql5.com/en/docs/python_metatrader5",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "TradingView Broker API",
+      "category": "broker_integration_api",
+      "source_url": "https://www.tradingview.com/broker-api-docs/",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
       "name": "Binance Skills Hub",
       "category": "crypto_cex_web3_skills",
       "source_url": "https://github.com/binance/binance-skills-hub",
@@ -244,6 +301,101 @@
         "stark_edge": true,
         "strengths": true,
         "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Bybit AI Trading Skills",
+      "category": "crypto_cex_agent_skill",
+      "source_url": "https://github.com/bybit-exchange/skills",
+      "source_status": "official_skill",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Kraken MCP",
+      "category": "crypto_exchange_mcp",
+      "source_url": "https://docs.kraken.com/home/mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "OKX API",
+      "category": "crypto_exchange_api",
+      "source_url": "https://www.okx.com/docs-v5/en/",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "BingX API AI Skills",
+      "category": "crypto_cex_agent_skill",
+      "source_url": "https://github.com/BingX-API/api-ai-skills",
+      "source_status": "official_skill_hub",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Deribit API",
+      "category": "crypto_derivatives_api",
+      "source_url": "https://docs.deribit.com/",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
       },
       "live_probe": null
     },
@@ -594,6 +746,42 @@
       "name": "Databento API",
       "category": "institutional_market_data_api",
       "source_url": "https://databento.com/docs",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Finnhub API",
+      "category": "market_news_fundamental_api",
+      "source_url": "https://finnhub.io/docs/api",
+      "source_status": "official_api",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "Nasdaq Data Link API",
+      "category": "market_dataset_api",
+      "source_url": "https://docs.data.nasdaq.com/",
       "source_status": "official_api",
       "status": "PASS",
       "checks": {

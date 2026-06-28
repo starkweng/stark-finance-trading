@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "competitive_gap_status": "PASS",
-  "generated_at": "2026-06-28T07:07:41.401847+00:00",
+  "generated_at": "2026-06-28T07:32:18.238688+00:00",
   "skill": "stark-finance-trading",
   "input_statuses": {
     "github_tool_discovery": "PASS",
@@ -52,7 +52,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
       "candidate_count": 13,
-      "total_stars": 187956,
+      "total_stars": 187963,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -153,7 +153,7 @@
       ],
       "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
       "candidate_count": 5,
-      "total_stars": 8670,
+      "total_stars": 8675,
       "top_candidate": "nirholas/UCAI"
     },
     {
@@ -520,7 +520,7 @@
       "name": "wilsonfreitas/awesome-quant",
       "url": "https://github.com/wilsonfreitas/awesome-quant",
       "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
-      "stars": 27083,
+      "stars": 27085,
       "language": "HTML",
       "route_tags": [
         "bot_framework"
@@ -664,7 +664,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7534,
+      "stars": 7539,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -1030,7 +1030,7 @@
       "name": "wilsonfreitas/awesome-quant",
       "url": "https://github.com/wilsonfreitas/awesome-quant",
       "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
-      "stars": 27083,
+      "stars": 27085,
       "language": "HTML",
       "route_tags": [
         "bot_framework"
@@ -1174,7 +1174,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7534,
+      "stars": 7539,
       "language": "Python",
       "route_tags": [
         "mcp",
