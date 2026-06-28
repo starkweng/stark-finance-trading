@@ -33,6 +33,7 @@ REQUIRED_FILES = [
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
     "scripts/plan_tool_route.py",
+    "scripts/runtime_capability_scan.py",
     "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
@@ -217,9 +218,13 @@ def validate(root: Path) -> int:
     if not any("binance-skills-hub" in case.get("expected_tool_ids", []) and case.get("min_risk_tier") == 4 for case in tool_routing_cases):
         return fail("tool routing cases need a Binance live execution gated case")
     plan_tool_route_script = read(root / "scripts/plan_tool_route.py")
-    for phrase in ["ROUTE_RULES", "NEGATIVE_RULES", "plan_route", "tool-routing-cases.json"]:
+    for phrase in ["ROUTE_RULES", "NEGATIVE_RULES", "plan_route", "runtime_report", "tool-routing-cases.json"]:
         if phrase not in plan_tool_route_script:
             return fail(f"plan_tool_route missing phrase: {phrase}")
+    runtime_script = read(root / "scripts/runtime_capability_scan.py")
+    for phrase in ["RUNTIME_HINTS", "configured_mcp", "enabled_plugin", "Local runtime capability scan"]:
+        if phrase not in runtime_script:
+            return fail(f"runtime_capability_scan missing phrase: {phrase}")
 
     comparison = json.loads(read(root / "benchmarks/public-comparison-2026-06-28.json"))
     candidates = comparison.get("candidates", [])

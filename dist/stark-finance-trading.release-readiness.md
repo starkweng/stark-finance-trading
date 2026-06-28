@@ -3,8 +3,8 @@
 - Status: PASS
 - Local release status: `LOCAL_RELEASE_READY`
 - Goal completion status: `NOT_COMPLETE_EXTERNAL_PROOFS_PENDING`
-- Package SHA256: `153b6c08df0adfe6d72eb333124a20d3f7bcd723a153e4fb2dc7afc805a21af7`
-- GitHub ZIP SHA256: `a16b141bad47e391a38b011ecf3ecafbe2f0fe83c0dde0f9dbb083492d3b3835`
+- Package SHA256: `edd701ebbeb890bba73decde630d37de669cf395e918ac605b3db17757852736`
+- GitHub ZIP SHA256: `7d1993edeada19615516e394b31178575fd215c1085513d0a68b8b7d62cf6fd0`
 
 ## Local Checks
 

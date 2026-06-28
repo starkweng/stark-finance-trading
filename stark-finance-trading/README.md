@@ -19,6 +19,8 @@ The machine-readable route substrate lives in `references/public-tool-catalog.js
 
 The deterministic prompt router lives in `scripts/plan_tool_route.py`. It turns natural finance/trading prompts into a route plan with `should_load`, workflow, tool IDs, route tags, local helper hints, risk tier, and safety terms. The regression set is `evals/tool-routing-cases.json`.
 
+`scripts/runtime_capability_scan.py` reconciles the public catalog with local MCP servers, enabled plugins, installed skills, and environment-variable presence. It never prints secret values; it only reports whether a required env var is present.
+
 ## Why One Skill
 
 Finance/trading work fails when the agent treats every vendor as a separate mental mode. This skill keeps one front door and uses internal route maps:
@@ -62,7 +64,8 @@ python3 scripts/validate_stark_finance_trading.py .
 python3 scripts/validate_public_readiness.py .
 python3 scripts/quick_validate.py .
 python3 scripts/run_quality_suite.py --json
-python3 scripts/plan_tool_route.py --root . --out dist/stark-finance-trading.tool-route-plan.json --markdown dist/stark-finance-trading.tool-route-plan.md --json
+python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json
+python3 scripts/plan_tool_route.py --root . --runtime-report dist/stark-finance-trading.runtime-capabilities.json --out dist/stark-finance-trading.tool-route-plan.json --markdown dist/stark-finance-trading.tool-route-plan.md --json
 python3 scripts/audit_public_sources.py --root . --out dist/stark-finance-trading.public-source-audit.json --markdown dist/stark-finance-trading.public-source-audit.md --json
 python3 scripts/validate_public_tool_catalog.py --root . --out dist/stark-finance-trading.public-tool-catalog.json --markdown dist/stark-finance-trading.public-tool-catalog.md --json
 python3 scripts/generate_public_benchmark.py --root . --out dist/stark-finance-trading.public-benchmark.json --markdown dist/stark-finance-trading.public-benchmark.md --json
@@ -95,4 +98,4 @@ python3 stark-finance-trading/scripts/enable_remote_ci.py --repo-root . --repo s
 
 ## Evidence Boundaries
 
-This v0.1 package has static validation, routing eval seeds, prompt-to-tool route regression, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a machine-readable public tool catalog, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.
+This v0.1 package has static validation, routing eval seeds, prompt-to-tool route regression, local runtime capability alignment, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a machine-readable public tool catalog, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.

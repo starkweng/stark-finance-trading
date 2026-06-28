@@ -100,6 +100,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
             ("deterministic_packager", "FIXED_ZIP_TIMESTAMP" in packager),
             ("install_smoke", (root / "scripts/install_package_smoke.py").exists()),
             ("quality_suite", (root / "scripts/run_quality_suite.py").exists()),
+            ("runtime_capability_scan", (root / "scripts/runtime_capability_scan.py").exists()),
             ("github_export_subdir_validation", "github_actions_subdir_workflow" in exporter),
             ("ci_quality_suite_subdir", "working-directory: stark-finance-trading" in workflow_ci and "scripts/run_quality_suite.py" in workflow_ci),
         ]
@@ -134,6 +135,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
             ("local_skill_inventory", (root / "scripts/discover_local_skill_inventory.py").exists() and (root / "references/local-skill-router.md").exists()),
             ("public_tool_catalog_report", (root / "scripts/validate_public_tool_catalog.py").exists() and (root / "references/public-tool-catalog.json").exists()),
             ("tool_route_planner", (root / "scripts/plan_tool_route.py").exists() and (root / "evals/tool-routing-cases.json").exists()),
+            ("runtime_capability_report", (root / "scripts/runtime_capability_scan.py").exists()),
             ("competitive_task_benchmark", (root / "scripts/generate_competitive_task_benchmark.py").exists() and (root / "benchmarks/competitive-task-cases.json").exists()),
             ("no_superiority_claim_status", comparison.get("claim_status") == "benchmark_defined_no_superiority_claim" and "Avoid public superiority claims" in benchmark),
         ]

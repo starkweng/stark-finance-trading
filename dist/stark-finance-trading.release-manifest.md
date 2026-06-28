@@ -2,9 +2,9 @@
 
 - Status: PASS
 - Package: `stark-finance-trading.skill`
-- Size bytes: 142276
-- SHA256: `153b6c08df0adfe6d72eb333124a20d3f7bcd723a153e4fb2dc7afc805a21af7`
-- Entry count: 54
+- Size bytes: 147147
+- SHA256: `edd701ebbeb890bba73decde630d37de669cf395e918ac605b3db17757852736`
+- Entry count: 55
 - Install smoke: PASS
 
 ## Install Smoke Checks

@@ -22,6 +22,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Public source audit: `scripts/audit_public_sources.py` checks candidate classification and can optionally probe public URLs.
 - Public tool catalog: `references/public-tool-catalog.json` and `scripts/validate_public_tool_catalog.py` keep official MCP/API/framework candidates machine-checkable.
 - Prompt-to-tool route plan: `scripts/plan_tool_route.py` validates natural prompts against `evals/tool-routing-cases.json`.
+- Runtime capability scan: `scripts/runtime_capability_scan.py` reconciles catalog tools with local MCP servers, plugins, skills, and env-var presence.
 - Public benchmark cases: `benchmarks/public-benchmark-cases.json`.
 - Public benchmark generator: `scripts/generate_public_benchmark.py`.
 - Competitive task cases: `benchmarks/competitive-task-cases.json`.
@@ -91,6 +92,10 @@ The review bundle is the handoff layer between automated checks and human judgme
 ## Tool Route Planner Gate
 
 `scripts/plan_tool_route.py` turns representative natural prompts into route plans: whether the skill should load, which workflow to use, which public tool IDs to prefer, which route tags and local helper hints apply, the max risk tier, and the safety terms required before any state-changing path. `evals/tool-routing-cases.json` covers market snapshots, options flow, pump.fun/Dune, token DD, protocol fundamentals, bot/backtest, Binance live order pressure, XAU/cTrader, IBKR wrapper provenance, Stripe/Plaid finance-infra boundaries, local earnings helper routing, and negative marketing/tokenomics handoffs. A PASS here proves deterministic route coverage, not live API access or model behavior.
+
+## Runtime Capability Gate
+
+`scripts/runtime_capability_scan.py` reads local Codex MCP/plugin configuration and installed skill names, then classifies catalog tools as configured MCP, enabled plugin, local-skill-backed, deferred tool source, configured-needs-env, or external candidate. It does not print secret values; for env vars it only reports presence/absence. A PASS here proves runtime alignment metadata can be generated and consumed by the route planner. It does not prove OAuth validity, paid entitlement, live API reachability, market-data correctness, or trading performance.
 
 ## Competitive Task Benchmark
 

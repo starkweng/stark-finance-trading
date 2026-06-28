@@ -40,6 +40,8 @@ REQUIRED_ARTIFACTS = [
     "stark-finance-trading/dist/stark-finance-trading.public-benchmark.md",
     "stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.json",
     "stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.md",
+    "stark-finance-trading/dist/stark-finance-trading.runtime-capabilities.json",
+    "stark-finance-trading/dist/stark-finance-trading.runtime-capabilities.md",
     "stark-finance-trading/dist/stark-finance-trading.tool-route-plan.json",
     "stark-finance-trading/dist/stark-finance-trading.tool-route-plan.md",
     "stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json",

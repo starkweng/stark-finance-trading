@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T02:57:15.530668+00:00",
+  "generated_at": "2026-06-28T03:11:27.053688+00:00",
   "skill": "stark-finance-trading",
   "benchmark_type": "source_level_public_readiness",
   "claim_status": "source_level_benchmark_pass_live_comparison_pending",
@@ -123,8 +123,8 @@
       "id": "portability",
       "weight": 10,
       "score": 10.0,
-      "passed_checks": 5,
-      "total_checks": 5,
+      "passed_checks": 6,
+      "total_checks": 6,
       "checks": [
         {
           "id": "deterministic_packager",
@@ -136,6 +136,10 @@
         },
         {
           "id": "quality_suite",
+          "passed": true
+        },
+        {
+          "id": "runtime_capability_scan",
           "passed": true
         },
         {
@@ -185,8 +189,8 @@
       "id": "public_readiness",
       "weight": 10,
       "score": 10.0,
-      "passed_checks": 10,
-      "total_checks": 10,
+      "passed_checks": 11,
+      "total_checks": 11,
       "checks": [
         {
           "id": "public_docs",
@@ -218,6 +222,10 @@
         },
         {
           "id": "tool_route_planner",
+          "passed": true
+        },
+        {
+          "id": "runtime_capability_report",
           "passed": true
         },
         {

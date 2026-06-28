@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T02:57:15.557883+00:00",
+  "generated_at": "2026-06-28T03:11:27.266289+00:00",
   "skill": "stark-finance-trading",
   "case_count": 13,
   "passed_cases": 13,
@@ -49,23 +49,25 @@
         ],
         "workflow": "Equity / Macro / Fundamentals Research + Market Snapshot",
         "tool_ids": [
-          "alpaca-mcp",
+          "binance-skills-hub",
           "openbb",
           "fmp-mcp",
+          "alpaca-mcp",
           "massive-polygon-mcp",
           "alpha-vantage-mcp",
-          "binance-skills-hub",
           "coingecko-mcp",
           "twelve-data-mcp"
         ],
         "tools": [
           {
-            "id": "alpaca-mcp",
-            "name": "Alpaca MCP",
-            "provider": "Alpaca",
-            "source_status": "official_mcp",
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
             "default_action_tier": 2,
-            "installed_status": "lazy_loadable_connector_candidate"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
           },
           {
             "id": "openbb",
@@ -73,7 +75,9 @@
             "provider": "OpenBB",
             "source_status": "official_open_source",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "fmp-mcp",
@@ -81,7 +85,19 @@
             "provider": "Financial Modeling Prep",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
           },
           {
             "id": "massive-polygon-mcp",
@@ -89,7 +105,9 @@
             "provider": "Massive / Polygon.io",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "alpha-vantage-mcp",
@@ -97,15 +115,9 @@
             "provider": "Alpha Vantage",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "binance-skills-hub",
-            "name": "Binance Skills Hub",
-            "provider": "Binance",
-            "source_status": "official_skill_hub",
-            "default_action_tier": 2,
-            "installed_status": "installed_on_stark_machine"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "coingecko-mcp",
@@ -113,7 +125,9 @@
             "provider": "CoinGecko",
             "source_status": "official_mcp_and_skill",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "twelve-data-mcp",
@@ -121,7 +135,9 @@
             "provider": "Twelve Data",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -146,6 +162,7 @@
           "delay_status",
           "no_execution_requested"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -196,46 +213,24 @@
         ],
         "workflow": "Options Flow + Equity / Macro / Fundamentals Research",
         "tool_ids": [
-          "unusual-whales-mcp",
-          "tradier-mcp",
-          "alpaca-mcp",
           "openbb",
           "fmp-mcp",
+          "alpaca-mcp",
+          "unusual-whales-mcp",
+          "tradier-mcp",
           "massive-polygon-mcp",
           "alpha-vantage-mcp"
         ],
         "tools": [
-          {
-            "id": "unusual-whales-mcp",
-            "name": "Unusual Whales MCP",
-            "provider": "Unusual Whales",
-            "source_status": "official_mcp_and_skill",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "tradier-mcp",
-            "name": "Tradier MCP",
-            "provider": "Tradier",
-            "source_status": "official_mcp",
-            "default_action_tier": 4,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "alpaca-mcp",
-            "name": "Alpaca MCP",
-            "provider": "Alpaca",
-            "source_status": "official_mcp",
-            "default_action_tier": 2,
-            "installed_status": "lazy_loadable_connector_candidate"
-          },
           {
             "id": "openbb",
             "name": "OpenBB",
             "provider": "OpenBB",
             "source_status": "official_open_source",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "fmp-mcp",
@@ -243,7 +238,39 @@
             "provider": "Financial Modeling Prep",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "unusual-whales-mcp",
+            "name": "Unusual Whales MCP",
+            "provider": "Unusual Whales",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "tradier-mcp",
+            "name": "Tradier MCP",
+            "provider": "Tradier",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "massive-polygon-mcp",
@@ -251,7 +278,9 @@
             "provider": "Massive / Polygon.io",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "alpha-vantage-mcp",
@@ -259,7 +288,9 @@
             "provider": "Alpha Vantage",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -285,6 +316,7 @@
           "not_trade_order",
           "no_execution_requested"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -339,11 +371,11 @@
         "workflow": "Solana / Pump.fun Launch Review",
         "tool_ids": [
           "dune-mcp",
+          "alchemy-mcp",
           "helius-mcp",
           "jupiter-apis",
           "dexscreener-api",
-          "coingecko-mcp",
-          "alchemy-mcp"
+          "coingecko-mcp"
         ],
         "tools": [
           {
@@ -352,39 +384,9 @@
             "provider": "Dune",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "installed_on_stark_machine"
-          },
-          {
-            "id": "helius-mcp",
-            "name": "Helius MCP",
-            "provider": "Helius",
-            "source_status": "official_mcp",
-            "default_action_tier": 2,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "jupiter-apis",
-            "name": "Jupiter APIs",
-            "provider": "Jupiter",
-            "source_status": "official_api",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "dexscreener-api",
-            "name": "DexScreener API",
-            "provider": "DexScreener",
-            "source_status": "official_api",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "coingecko-mcp",
-            "name": "CoinGecko MCP",
-            "provider": "CoinGecko",
-            "source_status": "official_mcp_and_skill",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "configured_mcp",
+            "availability_rank": 100
           },
           {
             "id": "alchemy-mcp",
@@ -392,7 +394,49 @@
             "provider": "Alchemy",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "installed_on_stark_machine"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "configured_mcp",
+            "availability_rank": 100
+          },
+          {
+            "id": "helius-mcp",
+            "name": "Helius MCP",
+            "provider": "Helius",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "jupiter-apis",
+            "name": "Jupiter APIs",
+            "provider": "Jupiter",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "dexscreener-api",
+            "name": "DexScreener API",
+            "provider": "DexScreener",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -407,6 +451,7 @@
           "token_identity",
           "quote_not_swap"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -472,29 +517,23 @@
         ],
         "workflow": "Token Due Diligence",
         "tool_ids": [
-          "binance-skills-hub",
           "dune-mcp",
           "alchemy-mcp",
+          "binance-skills-hub",
           "etherscan-mcp",
           "dexscreener-api",
           "coingecko-mcp"
         ],
         "tools": [
           {
-            "id": "binance-skills-hub",
-            "name": "Binance Skills Hub",
-            "provider": "Binance",
-            "source_status": "official_skill_hub",
-            "default_action_tier": 2,
-            "installed_status": "installed_on_stark_machine"
-          },
-          {
             "id": "dune-mcp",
             "name": "Dune MCP",
             "provider": "Dune",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "installed_on_stark_machine"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "configured_mcp",
+            "availability_rank": 100
           },
           {
             "id": "alchemy-mcp",
@@ -502,7 +541,19 @@
             "provider": "Alchemy",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "installed_on_stark_machine"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "configured_mcp",
+            "availability_rank": 100
+          },
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
           },
           {
             "id": "etherscan-mcp",
@@ -510,7 +561,9 @@
             "provider": "Etherscan",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "installed_needs_key_check"
+            "installed_status": "installed_needs_key_check",
+            "runtime_status": "configured_mcp_needs_env",
+            "availability_rank": 70
           },
           {
             "id": "dexscreener-api",
@@ -518,7 +571,9 @@
             "provider": "DexScreener",
             "source_status": "official_api",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "coingecko-mcp",
@@ -526,7 +581,9 @@
             "provider": "CoinGecko",
             "source_status": "official_mcp_and_skill",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -542,6 +599,7 @@
           "full_token_addresses",
           "cross_check_contract"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -599,53 +657,23 @@
         ],
         "workflow": "DeFi Protocol Research",
         "tool_ids": [
+          "dune-mcp",
+          "alchemy-mcp",
           "token-terminal-mcp",
           "defillama-api",
-          "dune-mcp",
           "coingecko-mcp",
-          "coinmarketcap-mcp",
-          "alchemy-mcp"
+          "coinmarketcap-mcp"
         ],
         "tools": [
-          {
-            "id": "token-terminal-mcp",
-            "name": "Token Terminal MCP",
-            "provider": "Token Terminal",
-            "source_status": "official_mcp",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "defillama-api",
-            "name": "DeFiLlama API",
-            "provider": "DeFiLlama",
-            "source_status": "official_api",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
-          },
           {
             "id": "dune-mcp",
             "name": "Dune MCP",
             "provider": "Dune",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "installed_on_stark_machine"
-          },
-          {
-            "id": "coingecko-mcp",
-            "name": "CoinGecko MCP",
-            "provider": "CoinGecko",
-            "source_status": "official_mcp_and_skill",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "coinmarketcap-mcp",
-            "name": "CoinMarketCap MCP",
-            "provider": "CoinMarketCap",
-            "source_status": "official_mcp",
-            "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "configured_mcp",
+            "availability_rank": 100
           },
           {
             "id": "alchemy-mcp",
@@ -653,7 +681,49 @@
             "provider": "Alchemy",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "installed_on_stark_machine"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "configured_mcp",
+            "availability_rank": 100
+          },
+          {
+            "id": "token-terminal-mcp",
+            "name": "Token Terminal MCP",
+            "provider": "Token Terminal",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "defillama-api",
+            "name": "DeFiLlama API",
+            "provider": "DeFiLlama",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "coinmarketcap-mcp",
+            "name": "CoinMarketCap MCP",
+            "provider": "CoinMarketCap",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -668,6 +738,7 @@
           "methodology_caveats",
           "not_trade_signal"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -730,26 +801,38 @@
         ],
         "workflow": "Strategy Backtest + Market Snapshot",
         "tool_ids": [
+          "binance-skills-hub",
           "quantconnect-mcp",
           "lean",
           "hummingbot",
           "freqtrade",
-          "nautilus-trader",
           "ccxt",
           "alpaca-mcp",
-          "binance-skills-hub",
+          "nautilus-trader",
           "coingecko-mcp",
           "massive-polygon-mcp",
           "twelve-data-mcp"
         ],
         "tools": [
           {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
+          },
+          {
             "id": "quantconnect-mcp",
             "name": "QuantConnect MCP",
             "provider": "QuantConnect",
             "source_status": "official_mcp",
             "default_action_tier": 3,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "lean",
@@ -757,7 +840,9 @@
             "provider": "QuantConnect",
             "source_status": "official_open_source",
             "default_action_tier": 3,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "hummingbot",
@@ -765,7 +850,9 @@
             "provider": "Hummingbot Foundation",
             "source_status": "official_open_source",
             "default_action_tier": 3,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "freqtrade",
@@ -773,15 +860,9 @@
             "provider": "Freqtrade",
             "source_status": "official_open_source",
             "default_action_tier": 3,
-            "installed_status": "external_candidate"
-          },
-          {
-            "id": "nautilus-trader",
-            "name": "NautilusTrader",
-            "provider": "NautilusTrader",
-            "source_status": "official_open_source",
-            "default_action_tier": 3,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "ccxt",
@@ -789,7 +870,9 @@
             "provider": "CCXT",
             "source_status": "official_open_source",
             "default_action_tier": 3,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "alpaca-mcp",
@@ -797,15 +880,19 @@
             "provider": "Alpaca",
             "source_status": "official_mcp",
             "default_action_tier": 2,
-            "installed_status": "lazy_loadable_connector_candidate"
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
           },
           {
-            "id": "binance-skills-hub",
-            "name": "Binance Skills Hub",
-            "provider": "Binance",
-            "source_status": "official_skill_hub",
-            "default_action_tier": 2,
-            "installed_status": "installed_on_stark_machine"
+            "id": "nautilus-trader",
+            "name": "NautilusTrader",
+            "provider": "NautilusTrader",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "coingecko-mcp",
@@ -813,7 +900,9 @@
             "provider": "CoinGecko",
             "source_status": "official_mcp_and_skill",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "massive-polygon-mcp",
@@ -821,7 +910,9 @@
             "provider": "Massive / Polygon.io",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "twelve-data-mcp",
@@ -829,7 +920,9 @@
             "provider": "Twelve Data",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -850,6 +943,7 @@
           "venue",
           "delay_status"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -909,7 +1003,9 @@
             "provider": "Binance",
             "source_status": "official_skill_hub",
             "default_action_tier": 2,
-            "installed_status": "installed_on_stark_machine"
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
           },
           {
             "id": "alpaca-mcp",
@@ -917,7 +1013,9 @@
             "provider": "Alpaca",
             "source_status": "official_mcp",
             "default_action_tier": 2,
-            "installed_status": "lazy_loadable_connector_candidate"
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
           },
           {
             "id": "coingecko-mcp",
@@ -925,7 +1023,9 @@
             "provider": "CoinGecko",
             "source_status": "official_mcp_and_skill",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "massive-polygon-mcp",
@@ -933,7 +1033,9 @@
             "provider": "Massive / Polygon.io",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "twelve-data-mcp",
@@ -941,7 +1043,9 @@
             "provider": "Twelve Data",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -960,6 +1064,7 @@
           "venue",
           "delay_status"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -1006,21 +1111,23 @@
         ],
         "workflow": "FX / CFD / XAUUSD Margin Review + Market Snapshot",
         "tool_ids": [
-          "ctrader-ai-agent-connect",
-          "alpaca-mcp",
           "binance-skills-hub",
+          "alpaca-mcp",
+          "ctrader-ai-agent-connect",
           "coingecko-mcp",
           "massive-polygon-mcp",
           "twelve-data-mcp"
         ],
         "tools": [
           {
-            "id": "ctrader-ai-agent-connect",
-            "name": "cTrader AI Agent Connect",
-            "provider": "cTrader",
-            "source_status": "official_mcp",
-            "default_action_tier": 4,
-            "installed_status": "external_candidate"
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
           },
           {
             "id": "alpaca-mcp",
@@ -1028,15 +1135,19 @@
             "provider": "Alpaca",
             "source_status": "official_mcp",
             "default_action_tier": 2,
-            "installed_status": "lazy_loadable_connector_candidate"
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
           },
           {
-            "id": "binance-skills-hub",
-            "name": "Binance Skills Hub",
-            "provider": "Binance",
-            "source_status": "official_skill_hub",
-            "default_action_tier": 2,
-            "installed_status": "installed_on_stark_machine"
+            "id": "ctrader-ai-agent-connect",
+            "name": "cTrader AI Agent Connect",
+            "provider": "cTrader",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "coingecko-mcp",
@@ -1044,7 +1155,9 @@
             "provider": "CoinGecko",
             "source_status": "official_mcp_and_skill",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "massive-polygon-mcp",
@@ -1052,7 +1165,9 @@
             "provider": "Massive / Polygon.io",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "twelve-data-mcp",
@@ -1060,7 +1175,9 @@
             "provider": "Twelve Data",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -1080,6 +1197,7 @@
           "venue",
           "delay_status"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -1130,7 +1248,9 @@
             "provider": "Interactive Brokers",
             "source_status": "official_api_with_community_mcp_candidates",
             "default_action_tier": 4,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -1147,6 +1267,7 @@
           "kill_switch",
           "explicit_confirmation_required"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -1202,7 +1323,9 @@
             "provider": "Stripe",
             "source_status": "official_mcp_or_agent_toolkit",
             "default_action_tier": 4,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "plaid-api",
@@ -1210,7 +1333,9 @@
             "provider": "Plaid",
             "source_status": "official_api",
             "default_action_tier": 2,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -1225,6 +1350,7 @@
           "not_trading_signal",
           "explicit_confirmation_required"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }
@@ -1290,28 +1416,22 @@
         ],
         "workflow": "Equity / Macro / Fundamentals Research",
         "tool_ids": [
-          "alpaca-mcp",
           "openbb",
           "fmp-mcp",
+          "alpaca-mcp",
           "massive-polygon-mcp",
           "alpha-vantage-mcp"
         ],
         "tools": [
-          {
-            "id": "alpaca-mcp",
-            "name": "Alpaca MCP",
-            "provider": "Alpaca",
-            "source_status": "official_mcp",
-            "default_action_tier": 2,
-            "installed_status": "lazy_loadable_connector_candidate"
-          },
           {
             "id": "openbb",
             "name": "OpenBB",
             "provider": "OpenBB",
             "source_status": "official_open_source",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
           },
           {
             "id": "fmp-mcp",
@@ -1319,7 +1439,19 @@
             "provider": "Financial Modeling Prep",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
           },
           {
             "id": "massive-polygon-mcp",
@@ -1327,7 +1459,9 @@
             "provider": "Massive / Polygon.io",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           },
           {
             "id": "alpha-vantage-mcp",
@@ -1335,7 +1469,9 @@
             "provider": "Alpha Vantage",
             "source_status": "official_mcp",
             "default_action_tier": 1,
-            "installed_status": "external_candidate"
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
           }
         ],
         "route_tags": [
@@ -1357,6 +1493,7 @@
           "not_trade_order",
           "no_execution_requested"
         ],
+        "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
       }

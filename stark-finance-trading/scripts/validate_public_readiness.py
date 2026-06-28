@@ -24,6 +24,7 @@ REQUIRED_BENCHMARK_FILES = [
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
     "scripts/plan_tool_route.py",
+    "scripts/runtime_capability_scan.py",
     "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",

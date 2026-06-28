@@ -134,6 +134,13 @@ def load_catalog(root: Path) -> dict[str, dict]:
     return {item["id"]: item for item in doc.get("catalog", [])}
 
 
+def load_runtime_report(path: Path | None) -> dict[str, dict]:
+    if not path or not path.exists():
+        return {}
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    return {item["id"]: item for item in doc.get("tools", [])}
+
+
 def matches_any(text: str, patterns: list[str]) -> bool:
     return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in patterns)
 
@@ -148,7 +155,18 @@ def dedupe(items: list[str]) -> list[str]:
     return result
 
 
-def plan_route(prompt: str, root: Path) -> dict:
+def rank_tool(tool_id: str, catalog: dict[str, dict], runtime: dict[str, dict]) -> tuple[int, int]:
+    runtime_rank = int((runtime.get(tool_id) or {}).get("availability_rank", 0))
+    catalog_rank = {
+        "installed_on_stark_machine": 50,
+        "installed_needs_key_check": 45,
+        "lazy_loadable_connector_candidate": 35,
+        "external_candidate": 10,
+    }.get(str(catalog.get(tool_id, {}).get("installed_status", "")), 0)
+    return runtime_rank, catalog_rank
+
+
+def plan_route(prompt: str, root: Path, runtime_report: Path | None = None) -> dict:
     text = prompt.strip()
     lowered = text.lower()
     for rule in NEGATIVE_RULES:
@@ -169,6 +187,7 @@ def plan_route(prompt: str, root: Path) -> dict:
             }
 
     catalog = load_catalog(root)
+    runtime = load_runtime_report(runtime_report)
     matched = [rule for rule in ROUTE_RULES if matches_any(lowered, rule["patterns"])]
     if not matched:
         return {
@@ -187,6 +206,7 @@ def plan_route(prompt: str, root: Path) -> dict:
         }
 
     tool_ids = dedupe([tool_id for rule in matched for tool_id in rule.get("tool_ids", []) if tool_id in catalog])
+    tool_ids = sorted(tool_ids, key=lambda tool_id: (-rank_tool(tool_id, catalog, runtime)[0], -rank_tool(tool_id, catalog, runtime)[1], tool_ids.index(tool_id)))
     route_tags = dedupe([tag for rule in matched for tag in rule.get("route_tags", [])])
     local_skill_hints = dedupe([hint for rule in matched for hint in rule.get("local_skill_hints", [])])
     safety_terms = dedupe([term for rule in matched for term in rule.get("safety_terms", [])])
@@ -205,6 +225,8 @@ def plan_route(prompt: str, root: Path) -> dict:
             "source_status": catalog[tool_id]["source_status"],
             "default_action_tier": catalog[tool_id]["default_action_tier"],
             "installed_status": catalog[tool_id]["installed_status"],
+            "runtime_status": (runtime.get(tool_id) or {}).get("runtime_status", "not_scanned"),
+            "availability_rank": (runtime.get(tool_id) or {}).get("availability_rank", rank_tool(tool_id, catalog, runtime)[1]),
         }
         for tool_id in tool_ids
     ]
@@ -223,16 +245,17 @@ def plan_route(prompt: str, root: Path) -> dict:
         "risk_tier": risk_tier,
         "risk_mode": "read_only_or_research" if risk_tier <= 2 else "paper_or_live_gated",
         "safety_terms": safety_terms,
+        "runtime_report_used": bool(runtime),
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
         "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior.",
     }
 
 
-def validate_cases(root: Path, cases_path: Path) -> dict:
+def validate_cases(root: Path, cases_path: Path, runtime_report: Path | None = None) -> dict:
     doc = json.loads(cases_path.read_text(encoding="utf-8"))
     results = []
     for case in doc.get("cases", []):
-        plan = plan_route(case["prompt"], root)
+        plan = plan_route(case["prompt"], root, runtime_report)
         checks = [
             {"id": "should_load", "passed": plan["should_load"] is case.get("should_load")},
         ]
@@ -307,16 +330,18 @@ def main() -> int:
     parser.add_argument("--root", default=".")
     parser.add_argument("--prompt")
     parser.add_argument("--cases", default="evals/tool-routing-cases.json")
+    parser.add_argument("--runtime-report")
     parser.add_argument("--out")
     parser.add_argument("--markdown")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
+    runtime_report = Path(args.runtime_report).resolve() if args.runtime_report else None
     if args.prompt:
-        report = plan_route(args.prompt, root)
+        report = plan_route(args.prompt, root, runtime_report)
     else:
-        report = validate_cases(root, root / args.cases)
+        report = validate_cases(root, root / args.cases, runtime_report)
 
     if args.out:
         out = Path(args.out)
