@@ -1,0 +1,1064 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T02:21:23.456018+00:00",
+  "skill": "stark-finance-trading",
+  "scan_roots": [
+    {
+      "path": "~/Documents/AI Space/Projects/Skill&Plugin repo/stark-finance-trading",
+      "exists": true,
+      "skill_files": 1
+    },
+    {
+      "path": "~/Documents/AI Space/Projects/Skill&Plugin repo",
+      "exists": true,
+      "skill_files": 6
+    },
+    {
+      "path": "~/.agents/skills",
+      "exists": true,
+      "skill_files": 91
+    },
+    {
+      "path": "~/.codex/skills",
+      "exists": true,
+      "skill_files": 75
+    },
+    {
+      "path": "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills",
+      "exists": true,
+      "skill_files": 14
+    },
+    {
+      "path": "~/Documents/AI Space/Projects/Skill&Plugin repo/.codex/skills",
+      "exists": true,
+      "skill_files": 3
+    }
+  ],
+  "total_skill_files_seen": 190,
+  "unique_finance_skill_count": 81,
+  "category_counts": {
+    "core_router": 1,
+    "equity_research": 24,
+    "execution_capable": 24,
+    "finance_ops_accounting": 12,
+    "fixed_income_fx_derivatives": 9,
+    "other_finance_candidate": 4,
+    "portfolio_risk": 15,
+    "private_markets_deal": 22,
+    "stark_boundary_or_adjacent": 6,
+    "valuation_modeling": 14,
+    "web3_market_onchain": 20
+  },
+  "recommended_skill_count": 45,
+  "matched_recommended_skills": [
+    "alchemy",
+    "audit-xls",
+    "binance",
+    "binance-agentic-wallet",
+    "bond-futures-basis",
+    "bond-relative-value",
+    "break-trace",
+    "cim-builder",
+    "comps-analysis",
+    "crypto-market-rank",
+    "dcf-model",
+    "dd-checklist",
+    "deal-screening",
+    "deal-sourcing",
+    "deal-tracker",
+    "dune",
+    "earnings-analysis",
+    "earnings-preview",
+    "equity-research",
+    "fixed-income-portfolio",
+    "fx-carry-trade",
+    "gl-recon",
+    "gmgn-market",
+    "gmgn-portfolio",
+    "gmgn-swap",
+    "gmgn-token",
+    "gmgn-track",
+    "ic-memo",
+    "meme-rush",
+    "option-vol-analysis",
+    "portfolio-monitoring",
+    "portfolio-rebalance",
+    "query-address-info",
+    "query-token-audit",
+    "query-token-info",
+    "roll-forward",
+    "stark-capital-strategy",
+    "stark-data-analytics",
+    "stark-finance-trading",
+    "stark-liquidity-strategy",
+    "stark-market-ops",
+    "stark-mkt-ops",
+    "stark-tokenomics-planner",
+    "swap-curve-strategy",
+    "trading-signal"
+  ],
+  "missing_recommended_skills": [],
+  "duplicate_skill_names": [
+    {
+      "name": "alchemy",
+      "copies": 2
+    },
+    {
+      "name": "binance-agentic-wallet",
+      "copies": 2
+    },
+    {
+      "name": "binance-tokenized-securities-info",
+      "copies": 2
+    },
+    {
+      "name": "bnb-agent-studio",
+      "copies": 2
+    },
+    {
+      "name": "crypto-market-rank",
+      "copies": 2
+    },
+    {
+      "name": "dune",
+      "copies": 2
+    },
+    {
+      "name": "meme-rush",
+      "copies": 2
+    },
+    {
+      "name": "query-address-info",
+      "copies": 2
+    },
+    {
+      "name": "query-token-audit",
+      "copies": 2
+    },
+    {
+      "name": "query-token-info",
+      "copies": 2
+    },
+    {
+      "name": "stark-finance-trading",
+      "copies": 6
+    },
+    {
+      "name": "stark-mkt-ops",
+      "copies": 5
+    },
+    {
+      "name": "trading-signal",
+      "copies": 2
+    }
+  ],
+  "skills": [
+    {
+      "name": "3-statement-model",
+      "description": "Complete, populate and fill out 3-statement financial model templates (Income Statement, Balance Sheet, Cash Flow Statement) . Use when asked to fill out model templates, complete existing model frameworks, populate financial models with data, complete a partially filled IS/BS/CF framework, or link integrated financial statements within an existing template structure. Triggers include requests to fill in, complete, or populate a 3-statement model template",
+      "categories": [
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/3-statement-model"
+      ]
+    },
+    {
+      "name": "accrual-schedule",
+      "description": "Build the period-end accrual schedule — for each accrual, compute the entry, cite the support, and draft the JE. Use during month-end close; the JE is a draft for controller approval, not a posting.",
+      "categories": [
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/.agents/skills/accrual-schedule"
+      ]
+    },
+    {
+      "name": "ai-readiness",
+      "description": "Scan the portfolio for the highest-leverage AI opportunities and rank where to deploy operating-partner time. Ingests quarterly updates and financials across multiple portfolio companies, identifies quick wins at each, and stacks them into a single ranked action list. Use during quarterly portfolio reviews, annual planning, or when deciding which companies get AI investment first. Triggers on \"AI readiness\", \"AI opportunity scan\", \"where should we deploy AI\", \"AI across the portfolio\", \"AI quick wins\", or \"which portcos are ready for AI\".",
+      "categories": [
+        "portfolio_risk"
+      ],
+      "paths": [
+        "~/.agents/skills/ai-readiness"
+      ]
+    },
+    {
+      "name": "alchemy",
+      "description": "|",
+      "categories": [
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/alchemy",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/alchemy"
+      ]
+    },
+    {
+      "name": "alpha",
+      "description": "Binance Alpha request using the Binance API. Authentication requires API key and secret key.",
+      "categories": [
+        "execution_capable"
+      ],
+      "paths": [
+        "~/.codex/skills/alpha"
+      ]
+    },
+    {
+      "name": "audit-xls",
+      "description": "Audit a spreadsheet for formula accuracy, errors, and common mistakes. Scopes to a selected range, a single sheet, or the entire model (including financial-model integrity checks like BS balance, cash tie-out, and logic sanity). Triggers on \"audit this sheet\", \"check my formulas\", \"find formula errors\", \"QA this spreadsheet\", \"sanity check this\", \"debug model\", \"model check\", \"model won't balance\", \"something's off in my model\", \"model review\".",
+      "categories": [
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/.agents/skills/audit-xls"
+      ]
+    },
+    {
+      "name": "binance",
+      "description": "Use binance-cli for Binance Spot, Futures (USD-S), and Convert. Requires auth.",
+      "categories": [
+        "execution_capable"
+      ],
+      "paths": [
+        "~/.agents/skills/binance"
+      ]
+    },
+    {
+      "name": "binance-agentic-wallet",
+      "description": "|",
+      "categories": [
+        "execution_capable",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/binance-agentic-wallet",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/binance-agentic-wallet"
+      ]
+    },
+    {
+      "name": "binance-tokenized-securities-info",
+      "description": "|",
+      "categories": [
+        "execution_capable",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/binance-tokenized-securities-info",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/binance-tokenized-securities-info"
+      ]
+    },
+    {
+      "name": "bnb-agent-studio",
+      "description": "BNB Agent Studio and bag CLI workflow for building, running, and deploying BNB Chain on-chain AI agents. Use when the user mentions bnbagent-studio, bag, BNB Chain agents, ERC-8004 agent identity, ERC-8183 agent commerce, x402, Pieverse LLM, AWS AgentCore, BNB Chain MCP, or upgrading the old bnbchain-mcp skill. Covers pip install bnbagent-studio, two-layer seller projects, read-only MCP queries, wallet and signing safety, and migration from npx @bnb-chain/mcp.",
+      "categories": [
+        "execution_capable",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/bnb-agent-studio",
+        "~/.agents/skills/bnb-agent-studio"
+      ]
+    },
+    {
+      "name": "bond-futures-basis",
+      "description": "Analyze the bond futures basis by pricing futures, identifying the cheapest-to-deliver, and comparing with yield curves to assess delivery option value and basis trading opportunities. Use when analyzing bond futures, computing the basis, identifying CTD bonds, calculating implied repo rates, or evaluating basis trades.",
+      "categories": [
+        "execution_capable",
+        "fixed_income_fx_derivatives"
+      ],
+      "paths": [
+        "~/.agents/skills/bond-futures-basis"
+      ]
+    },
+    {
+      "name": "bond-relative-value",
+      "description": "Perform relative value analysis on bonds by combining pricing, yield curve context, credit spreads, and scenario stress testing. Use when analyzing bond richness/cheapness, computing spread decomposition, comparing bonds, assessing bond value vs curves, or running rate shock scenarios.",
+      "categories": [
+        "fixed_income_fx_derivatives"
+      ],
+      "paths": [
+        "~/.agents/skills/bond-relative-value"
+      ]
+    },
+    {
+      "name": "break-trace",
+      "description": "Root-cause a reconciliation break to its source transaction or posting — follow the audit trail from the break row back to the originating entry on each side and state what differs and why. Use after gl-recon has classified a break.",
+      "categories": [
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/.agents/skills/break-trace"
+      ]
+    },
+    {
+      "name": "buyer-list",
+      "description": "Build and organize a universe of potential acquirers for sell-side M&A processes. Identifies strategic and financial buyers, assesses fit, and prioritizes outreach. Use when preparing for a sell-side mandate, building a buyer universe, or evaluating potential partners. Triggers on \"buyer list\", \"buyer universe\", \"potential acquirers\", \"who would buy this\", \"strategic buyers\", or \"financial sponsors\".",
+      "categories": [
+        "execution_capable",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/buyer-list"
+      ]
+    },
+    {
+      "name": "catalyst-calendar",
+      "description": "Build and maintain a calendar of upcoming catalysts across a coverage universe — earnings dates, conferences, product launches, regulatory decisions, and macro events. Helps prioritize attention and position ahead of events. Triggers on \"catalyst calendar\", \"upcoming events\", \"what's coming up\", \"earnings calendar\", \"event calendar\", or \"catalyst tracker\".",
+      "categories": [
+        "equity_research",
+        "execution_capable"
+      ],
+      "paths": [
+        "~/.agents/skills/catalyst-calendar"
+      ]
+    },
+    {
+      "name": "cim-builder",
+      "description": "Structure and draft a Confidential Information Memorandum for sell-side M&A processes. Organizes company information into a professional, investor-ready document with consistent formatting and narrative flow. Use when preparing sell-side materials, drafting a CIM, or organizing company data for a sale process. Triggers on \"CIM\", \"confidential information memorandum\", \"offering memorandum\", \"info memo\", \"draft CIM\", or \"sell-side materials\".",
+      "categories": [
+        "equity_research",
+        "execution_capable",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/cim-builder"
+      ]
+    },
+    {
+      "name": "client-report",
+      "description": "Generate professional client-facing performance reports with portfolio returns, allocation breakdowns, and market commentary. Suitable for quarterly or annual distribution. Triggers on \"client report\", \"performance report\", \"quarterly report for [client]\", \"generate reports\", or \"client statement\".",
+      "categories": [
+        "portfolio_risk",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/client-report"
+      ]
+    },
+    {
+      "name": "client-review",
+      "description": "Prepare for client review meetings with portfolio performance summary, allocation analysis, talking points, and action items. Pulls together account data into a concise meeting-ready format. Use before quarterly reviews, annual checkups, or ad-hoc client meetings. Triggers on \"client review\", \"meeting prep for [client]\", \"quarterly review\", \"prep for [client name]\", or \"client meeting\".",
+      "categories": [
+        "portfolio_risk"
+      ],
+      "paths": [
+        "~/.agents/skills/client-review"
+      ]
+    },
+    {
+      "name": "comps-analysis",
+      "description": "|",
+      "categories": [
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/comps-analysis"
+      ]
+    },
+    {
+      "name": "crypto-market-rank",
+      "description": "|",
+      "categories": [
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/crypto-market-rank",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/crypto-market-rank"
+      ]
+    },
+    {
+      "name": "daisy-financial-research",
+      "description": "Use when user asks for stock / company / sector deep-dive research, DCF or valuation, financial comparison, market-catalyst analysis, or stock screening across A-share, Hong Kong, or US markets. Plans, gathers data via Tushare and web search, validates numbers, and produces a sourced report.",
+      "categories": [
+        "equity_research",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/daisy-financial-research"
+      ]
+    },
+    {
+      "name": "datapack-builder",
+      "description": "Build professional financial services data packs from various sources including CIMs, offering memorandums, SEC filings, web search, or MCP servers. Extract, normalize, and standardize financial data into investment committee-ready Excel workbooks with consistent structure, proper formatting, and documented assumptions. Use for M&A due diligence, private equity analysis, investment committee materials, and standardizing financial reporting across portfolio companies. Do not use for simple financial calculations or working with already-completed data packs.",
+      "categories": [
+        "equity_research",
+        "portfolio_risk",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/datapack-builder"
+      ]
+    },
+    {
+      "name": "dcf-model",
+      "description": "Real DCF (Discounted Cash Flow) model creation for equity valuation. Retrieves financial data from SEC filings and analyst reports, builds comprehensive cash flow projections with proper WACC calculations, performs sensitivity analysis, and outputs professional Excel models with executive summaries. Use when users need to value a company using DCF methodology, request intrinsic value analysis, or ask for detailed financial modeling with growth projections and terminal value calculations.",
+      "categories": [
+        "equity_research",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/dcf-model"
+      ]
+    },
+    {
+      "name": "dd-checklist",
+      "description": "Generate and track comprehensive due diligence checklists tailored to the target company's sector, deal type, and complexity. Covers all major workstreams with request lists, status tracking, and red flag escalation. Use when kicking off diligence, organizing a data room review, or tracking outstanding items. Triggers on \"dd checklist\", \"due diligence tracker\", \"diligence request list\", \"what do we still need\", or \"data room review\".",
+      "categories": [
+        "equity_research",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/dd-checklist"
+      ]
+    },
+    {
+      "name": "dd-meeting-prep",
+      "description": "Prepare for due diligence meetings — management presentations, expert network calls, customer references, and advisor sessions. Generates targeted question lists, benchmarks to reference, and red flags to probe. Use before any diligence meeting or call. Triggers on \"prep for management meeting\", \"diligence call prep\", \"expert call questions\", \"customer reference questions\", or \"meeting prep for [company]\".",
+      "categories": [
+        "equity_research",
+        "fixed_income_fx_derivatives",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/dd-meeting-prep"
+      ]
+    },
+    {
+      "name": "deal-screening",
+      "description": "Quickly screen inbound deal flow — CIMs, teasers, and broker materials — against the fund's investment criteria. Extracts key deal metrics, runs a pass/fail framework, and outputs a one-page screening memo. Use when reviewing new deal flow, triaging inbound materials, or deciding whether to take a first call. Triggers on \"screen this deal\", \"review this CIM\", \"should we look at this\", \"triage this teaser\", or \"deal screening\".",
+      "categories": [
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/deal-screening"
+      ]
+    },
+    {
+      "name": "deal-sourcing",
+      "description": "PE deal sourcing workflow — discover target companies, check CRM for existing relationships, and draft personalized founder outreach emails. Use when sourcing new deals, prospecting companies in a sector, or reaching out to founders. Triggers on \"find companies\", \"source deals\", \"draft founder email\", \"check if we've seen this company\", or \"outreach to founder\".",
+      "categories": [
+        "equity_research",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/deal-sourcing"
+      ]
+    },
+    {
+      "name": "deal-tracker",
+      "description": "Track multiple live deals with milestones, deadlines, action items, and status updates. Maintains a deal pipeline view and surfaces upcoming deadlines and overdue items. Use when managing a book of business, tracking process milestones, or preparing for weekly deal reviews. Triggers on \"deal tracker\", \"deal status\", \"where are we on\", \"process update\", \"deal pipeline\", or \"weekly deal review\".",
+      "categories": [
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/deal-tracker"
+      ]
+    },
+    {
+      "name": "deck-refresh",
+      "description": "Updates a presentation with new numbers — quarterly refreshes, earnings updates, comp rolls, rebased market data. Use whenever the user asks to \"update the deck with Q4 numbers\", \"refresh the comps\", \"roll this forward\", \"swap in the new earnings\", \"change all the $485M to $512M\", or any request to swap figures across an existing deck without rebuilding it.",
+      "categories": [
+        "equity_research",
+        "execution_capable",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/deck-refresh"
+      ]
+    },
+    {
+      "name": "derivatives-trading-coin-futures",
+      "description": "Binance Derivatives-trading-coin-futures request using the Binance API. Authentication requires API key and secret key. Supports testnet and mainnet.",
+      "categories": [
+        "execution_capable"
+      ],
+      "paths": [
+        "~/.codex/skills/derivatives-trading-coin-futures"
+      ]
+    },
+    {
+      "name": "dune",
+      "description": "|",
+      "categories": [
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/dune",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/dune"
+      ]
+    },
+    {
+      "name": "earnings-analysis",
+      "description": "Create professional equity research earnings update reports (8-12 pages, 3,000-5,000 words) analyzing quarterly results for companies already under coverage. Fast-turnaround format focusing on beat/miss analysis, key metrics, updated estimates, and revised thesis. Includes 1-3 summary tables and 8-12 charts. Use when user requests \"earnings update\", \"quarterly update\", \"earnings analysis\", \"Q1/Q2/Q3/Q4 results\", or post-earnings report.",
+      "categories": [
+        "equity_research"
+      ],
+      "paths": [
+        "~/.agents/skills/earnings-analysis"
+      ]
+    },
+    {
+      "name": "earnings-preview",
+      "description": "Build pre-earnings analysis with estimate models, scenario frameworks, and key metrics to watch. Use before a company reports quarterly earnings to prepare positioning notes, set up bull/bear scenarios, and identify what will move the stock. Triggers on \"earnings preview\", \"what to watch for [company] earnings\", \"pre-earnings\", \"earnings setup\", or \"preview Q[X] for [company]\".",
+      "categories": [
+        "equity_research"
+      ],
+      "paths": [
+        "~/.agents/skills/earnings-preview"
+      ]
+    },
+    {
+      "name": "earnings-preview-single",
+      "description": "Generate a concise 4-5 page equity research earnings preview for a single company. Analyzes the most recent earnings transcript, competitor landscape, valuation, and recent news to produce a professional HTML report.",
+      "categories": [
+        "equity_research",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/earnings-preview-beta"
+      ]
+    },
+    {
+      "name": "equity-research",
+      "description": "Generate comprehensive equity research snapshots combining analyst consensus estimates, company fundamentals, historical prices, and macroeconomic context. Use when researching stocks, comparing estimates to actuals, analyzing company financials, assessing equity valuations, or building investment cases.",
+      "categories": [
+        "equity_research",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/equity-research"
+      ]
+    },
+    {
+      "name": "financial-plan",
+      "description": "Build or update a comprehensive financial plan covering retirement projections, education funding, estate planning, and cash flow analysis. Use for new client onboarding, annual plan reviews, or scenario modeling. Triggers on \"financial plan\", \"retirement plan\", \"can I retire\", \"education funding\", \"estate plan\", \"cash flow analysis\", or \"plan update\".",
+      "categories": [
+        "other_finance_candidate"
+      ],
+      "paths": [
+        "~/.agents/skills/financial-plan"
+      ]
+    },
+    {
+      "name": "fixed-income-portfolio",
+      "description": "Review fixed income portfolios by pricing multiple bonds, retrieving reference data, analyzing cashflows, and running scenario analysis. Use when reviewing bond portfolios, computing portfolio duration and DV01, analyzing cashflow waterfalls, stress testing rate scenarios, or assessing portfolio composition.",
+      "categories": [
+        "fixed_income_fx_derivatives",
+        "portfolio_risk"
+      ],
+      "paths": [
+        "~/.agents/skills/fixed-income-portfolio"
+      ]
+    },
+    {
+      "name": "funding-digest",
+      "description": "Generate a polished one-page PowerPoint slide summarizing key takeaways from recent funding rounds and notable capital markets activity across a user's watched sectors or companies. Use this skill when the user asks for a deal flow summary, weekly recap, funding digest, transaction roundup, or capital markets briefing. Triggers on: 'deal flow digest', 'weekly funding recap', 'deal roundup', 'transaction summary this week', 'what happened in [sector] this week', 'capital markets update', or any request to compile recent funding activity into a briefing slide. Produces a professional single-slide PPTX with key takeaways, valuation data, and Capital IQ deal links.",
+      "categories": [
+        "equity_research",
+        "private_markets_deal",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/funding-digest"
+      ]
+    },
+    {
+      "name": "fx-carry-trade",
+      "description": "Evaluate FX carry trade opportunities by combining spot rates, forward points, interest rate differentials, volatility surface analysis, and historical price trends. Use when analyzing carry trades, comparing FX forward curves, assessing carry-to-vol ratios, or evaluating currency pair opportunities.",
+      "categories": [
+        "fixed_income_fx_derivatives"
+      ],
+      "paths": [
+        "~/.agents/skills/fx-carry-trade"
+      ]
+    },
+    {
+      "name": "gl-recon",
+      "description": "Reconcile general ledger to subledger for a trade date or period — match at the position or transaction level, surface breaks, and classify each break by likely cause. Use for daily or month-end recon runs across asset classes.",
+      "categories": [
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/.agents/skills/gl-recon"
+      ]
+    },
+    {
+      "name": "gmgn-cooking",
+      "description": "[FINANCIAL EXECUTION] Create and launch meme coins and crypto tokens on launchpads (Pump.fun, PancakeSwap, FourMeme, Bonk, BAGS, Flap, Raydium, etc.) via bonding curve fair launch, or query token creation stats by launchpad via GMGN API. Requires explicit user confirmation. Use when user asks to create a token, launch a meme coin, cook a coin, deploy on a launchpad, or check launchpad creation stats on Solana, BSC, Base, ETH, or TON.",
+      "categories": [
+        "execution_capable",
+        "fixed_income_fx_derivatives",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/gmgn-cooking"
+      ]
+    },
+    {
+      "name": "gmgn-market",
+      "description": "Get crypto and meme token price charts (K-line, candlestick, OHLCV), trending meme coin rankings by volume, and newly launched tokens on launchpads (pump.fun, fourmeme, letsbonk, Raydium, etc.) via GMGN API on Solana, BSC, Base, or Ethereum. Use when user asks for price chart, trending tokens, what's pumping, hot coins, new launches, token signals, or wants to discover early-stage opportunities.",
+      "categories": [
+        "execution_capable",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/gmgn-market"
+      ]
+    },
+    {
+      "name": "gmgn-portfolio",
+      "description": "Analyze any crypto wallet by address — holdings, realized/unrealized P&L, win rate, trading history, performance stats, specific token balance, and tokens created by a developer wallet (with ATH market cap and DEX graduation status) via GMGN API on Solana, BSC, Base, or Ethereum. Use when user asks about a wallet's holdings, P&L, win rate, what tokens a dev has launched, the highest ATH token a dev ever created, or wants a wallet report to decide whether to copy-trade or follow.",
+      "categories": [
+        "execution_capable",
+        "portfolio_risk",
+        "private_markets_deal",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/gmgn-portfolio"
+      ]
+    },
+    {
+      "name": "gmgn-swap",
+      "description": "[FINANCIAL EXECUTION] Buy and sell meme coins and crypto tokens on Solana, BSC, Base, or Ethereum — single swap, multi-wallet batch trading, limit orders, stop loss, take profit, trailing stop loss, trailing take profit via GMGN API. Requires explicit user confirmation. Use when user asks to buy, sell, or swap a token, trade from multiple wallets, set a limit order, stop loss, take profit, or check order status.",
+      "categories": [
+        "execution_capable",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/gmgn-swap"
+      ]
+    },
+    {
+      "name": "gmgn-token",
+      "description": "Research any crypto or meme token by address — real-time price, market cap, liquidity, holder list, trader list, top Smart Money and KOL positions, security audit (honeypot, rug pull risk, dev wallet, renounced status), social links (Twitter/X, website) via GMGN API on Solana, BSC, Base, or Ethereum. Use when user asks about a token's price, safety, holders, traders, smart money exposure, or wants due diligence before buying.",
+      "categories": [
+        "execution_capable",
+        "finance_ops_accounting",
+        "portfolio_risk",
+        "private_markets_deal",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/gmgn-token"
+      ]
+    },
+    {
+      "name": "gmgn-track",
+      "description": "Get real-time crypto buy/sell activity from Smart Money wallets, KOL influencer wallets, and personally followed wallets via GMGN API — alpha signals, whale tracking, meme token copy-trading ideas on Solana, BSC, Base, or Ethereum. Also query which tokens a wallet has followed (bookmarked) on GMGN. Use when user asks what smart money or KOLs are buying, wants whale alerts, on-chain alpha, copy-trade signals, or wants to check a wallet's followed tokens. (For a specific wallet address's portfolio, use gmgn-portfolio.)",
+      "categories": [
+        "execution_capable",
+        "portfolio_risk",
+        "private_markets_deal",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/gmgn-track"
+      ]
+    },
+    {
+      "name": "ib-check-deck",
+      "description": "Investment banking presentation quality checker. Reviews a pitch deck or client-ready presentation for (1) number consistency across slides, (2) data-narrative alignment, (3) language polish against IB standards, (4) visual and formatting QC. Use whenever the user asks to review, check, QC, proof, or do a final pass on a deck, pitch, or client materials — including requests like \"check my numbers\", \"reconcile figures across slides\", \"is this client-ready\", or \"what am I missing before I send this out\".",
+      "categories": [
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/.agents/skills/ib-check-deck"
+      ]
+    },
+    {
+      "name": "ic-memo",
+      "description": "Draft a structured investment committee memo for PE deal approval. Synthesizes due diligence findings, financial analysis, and deal terms into a professional IC-ready document. Use when preparing for investment committee, writing up a deal, or creating a formal recommendation. Triggers on \"write IC memo\", \"investment committee memo\", \"deal write-up\", \"prepare IC materials\", or \"recommendation memo\".",
+      "categories": [
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/ic-memo"
+      ]
+    },
+    {
+      "name": "idea-generation",
+      "description": "Systematic stock screening and investment idea sourcing. Combines quantitative screens, thematic research, and pattern recognition to surface new long and short ideas. Use when looking for new ideas, running screens, or conducting thematic sweeps. Triggers on \"idea generation\", \"stock screen\", \"find ideas\", \"what looks interesting\", \"screen for\", \"new ideas\", or \"pitch me something\".",
+      "categories": [
+        "equity_research",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/idea-generation"
+      ]
+    },
+    {
+      "name": "initiating-coverage",
+      "description": "Create institutional-quality equity research initiation reports through a 5-task workflow. Tasks must be executed individually with verified prerequisites - (1) company research, (2) financial modeling, (3) valuation analysis, (4) chart generation, (5) final report assembly. Each task produces specific deliverables (markdown docs, Excel models, charts, or DOCX reports). Tasks 3-5 have dependencies on earlier tasks.",
+      "categories": [
+        "equity_research",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/initiating-coverage"
+      ]
+    },
+    {
+      "name": "kyc-doc-parse",
+      "description": "Parse an investor or client onboarding packet into structured KYC fields — identity, ownership, control, source of funds, and document inventory. Use as the first step of KYC screening; output feeds the rules engine.",
+      "categories": [
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/.agents/skills/kyc-doc-parse"
+      ]
+    },
+    {
+      "name": "kyc-rules",
+      "description": "Apply the firm's KYC/AML rules grid to a parsed onboarding record — assign a risk rating, list every rule outcome with the rule cited, and flag what's missing or escalation-worthy. Use after kyc-doc-parse; this skill decides nothing, it scores and routes.",
+      "categories": [
+        "finance_ops_accounting",
+        "portfolio_risk"
+      ],
+      "paths": [
+        "~/.agents/skills/kyc-rules"
+      ]
+    },
+    {
+      "name": "lbo-model",
+      "description": "This skill should be used when completing LBO (Leveraged Buyout) model templates in Excel for private equity transactions, deal materials, or investment committee presentations. The skill fills in formulas, validates calculations, and ensures professional formatting standards that adapt to any template structure.",
+      "categories": [
+        "equity_research",
+        "execution_capable",
+        "private_markets_deal",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/lbo-model"
+      ]
+    },
+    {
+      "name": "macro-rates-monitor",
+      "description": "Build macroeconomic and rates dashboards combining macro indicators, yield curves, inflation breakevens, and swap rates. Use when monitoring macro conditions, analyzing yield curve shape, decomposing real vs nominal rates, assessing policy rate expectations, or evaluating financial conditions.",
+      "categories": [
+        "execution_capable",
+        "fixed_income_fx_derivatives"
+      ],
+      "paths": [
+        "~/.agents/skills/macro-rates-monitor"
+      ]
+    },
+    {
+      "name": "meme-rush",
+      "description": "|",
+      "categories": [
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/meme-rush",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/meme-rush"
+      ]
+    },
+    {
+      "name": "merger-model",
+      "description": "Build accretion/dilution analysis for M&A transactions. Models pro forma EPS impact, synergy sensitivities, and purchase price allocation. Use when evaluating a potential acquisition, preparing merger consequences analysis for a pitch, or advising on deal terms. Triggers on \"merger model\", \"accretion dilution\", \"M&A model\", \"pro forma EPS\", \"merger consequences\", or \"deal impact analysis\".",
+      "categories": [
+        "portfolio_risk",
+        "private_markets_deal",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/merger-model"
+      ]
+    },
+    {
+      "name": "model-update",
+      "description": "Update financial models with new data — quarterly earnings, management guidance, macro changes, or revised assumptions. Adjusts estimates, recalculates valuation, and flags material changes. Use after earnings, guidance updates, or when assumptions need refreshing. Triggers on \"update model\", \"plug earnings\", \"refresh estimates\", \"update numbers for [company]\", \"new guidance\", or \"revise estimates\".",
+      "categories": [
+        "equity_research",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/model-update"
+      ]
+    },
+    {
+      "name": "morning-note",
+      "description": "Draft concise morning meeting notes summarizing overnight developments, trade ideas, and key events for coverage stocks. Designed for the 7am morning meeting format — tight, opinionated, actionable. Triggers on \"morning note\", \"morning meeting\", \"what happened overnight\", \"trade idea\", \"morning call prep\", or \"daily note\".",
+      "categories": [
+        "equity_research"
+      ],
+      "paths": [
+        "~/.agents/skills/morning-note"
+      ]
+    },
+    {
+      "name": "option-vol-analysis",
+      "description": "Analyze option volatility by combining vol surface data, option pricing with Greeks, and historical price data to assess implied vs realized volatility. Use when pricing options, analyzing volatility surfaces, computing Greeks, assessing vol premiums, or evaluating vol trading strategies.",
+      "categories": [
+        "fixed_income_fx_derivatives"
+      ],
+      "paths": [
+        "~/.agents/skills/option-vol-analysis"
+      ]
+    },
+    {
+      "name": "plan",
+      "description": "Strategic planning with optional interview workflow",
+      "categories": [
+        "other_finance_candidate"
+      ],
+      "paths": [
+        "~/.codex/skills/plan"
+      ]
+    },
+    {
+      "name": "portfolio-monitoring",
+      "description": "Track and analyze portfolio company performance against plan. Ingests monthly/quarterly financial packages (Excel, PDF), extracts KPIs, flags variances to budget, and produces summary dashboards. Use when reviewing portfolio company financials, preparing board materials, or monitoring covenant compliance. Triggers on \"review portfolio company\", \"monthly financials\", \"how is [company] performing\", \"covenant check\", or \"portfolio update\".",
+      "categories": [
+        "equity_research",
+        "portfolio_risk"
+      ],
+      "paths": [
+        "~/.agents/skills/portfolio-monitoring"
+      ]
+    },
+    {
+      "name": "portfolio-rebalance",
+      "description": "Analyze portfolio allocation drift and generate rebalancing trade recommendations across accounts. Considers tax implications, transaction costs, and wash sale rules. Triggers on \"rebalance\", \"portfolio drift\", \"allocation check\", \"rebalancing trades\", or \"my portfolio is out of balance\".",
+      "categories": [
+        "portfolio_risk"
+      ],
+      "paths": [
+        "~/.agents/skills/portfolio-rebalance"
+      ]
+    },
+    {
+      "name": "process-letter",
+      "description": "Draft process letters and bid instructions for sell-side M&A processes. Covers initial indication of interest (IOI) instructions, final bid procedures, and management meeting logistics. Triggers on \"process letter\", \"bid instructions\", \"IOI letter\", \"bid procedures\", \"final round letter\", or \"management meeting invite\".",
+      "categories": [
+        "execution_capable",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/process-letter"
+      ]
+    },
+    {
+      "name": "query-address-info",
+      "description": "|",
+      "categories": [
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/query-address-info",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/query-address-info"
+      ]
+    },
+    {
+      "name": "query-token-audit",
+      "description": "|",
+      "categories": [
+        "finance_ops_accounting",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/query-token-audit",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/query-token-audit"
+      ]
+    },
+    {
+      "name": "query-token-info",
+      "description": "|",
+      "categories": [
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.agents/skills/query-token-info",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/query-token-info"
+      ]
+    },
+    {
+      "name": "returns-analysis",
+      "description": "Build quick IRR/MOIC sensitivity tables for PE deal evaluation. Models returns across entry multiple, leverage, exit multiple, growth, and hold period scenarios. Use when sizing up a deal, stress-testing assumptions, or preparing IC returns exhibits. Triggers on \"returns analysis\", \"IRR sensitivity\", \"MOIC table\", \"what's the return at\", \"model the returns\", or \"back of the envelope\".",
+      "categories": [
+        "private_markets_deal",
+        "valuation_modeling"
+      ],
+      "paths": [
+        "~/.agents/skills/returns-analysis"
+      ]
+    },
+    {
+      "name": "roll-forward",
+      "description": "Build a roll-forward schedule for a balance-sheet account — beginning balance plus activity less reversals equals ending balance, with each component tied to GL. Use for month-end close packages and audit support.",
+      "categories": [
+        "finance_ops_accounting"
+      ],
+      "paths": [
+        "~/.agents/skills/roll-forward"
+      ]
+    },
+    {
+      "name": "stark-capital-strategy",
+      "description": "Stark Capital Strategy：Web3 项目资本运作方案生成与文档输出 Skill。输入项目信息、融资需求、对标项目和交易市场目标，输出资本结构、估值推导、融资节奏、Revenue Pool、退出机制、交易所路径规划，以及完整版+简版 Word 文档。当前默认使用方案 A（TradFi + DeFi 混合资本结构）；后续可扩展多方案。触发词：Stark Capital Strategy、资本运作、capital strategy、融资方案、capital plan、资本结构、fundraising plan、tokenomics plan、AB Share方案、做个融资方案、写个资本运作、capital structuring、项目融资设计、Web3 fundraising、token launch plan、代币发行方案、上币方案。",
+      "categories": [
+        "execution_capable",
+        "stark_boundary_or_adjacent",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.codex/skills/stark-capital-strategy"
+      ]
+    },
+    {
+      "name": "stark-data-analytics",
+      "description": "Use when Stark asks for project-level data analysis, WPS/Excel/CSV/XLSX/PDF/HTML statement analysis, Web3 onchain/market diagnostics, Dune/GMGN/token-holder/liquidity research, KPI/revenue planning, trading-statement replay, public-equity/TradFi data review, dashboard/report delivery, or a reusable project database. This skill turns scattered live surfaces into source ledgers, project databases, validated calculations, charts, and decision-ready outputs.",
+      "categories": [
+        "equity_research",
+        "finance_ops_accounting",
+        "stark_boundary_or_adjacent",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.codex/skills/stark-data-analytics"
+      ]
+    },
+    {
+      "name": "stark-deck",
+      "description": "Load when the user wants to create, revise, validate, or export a Web3/RWA/AI investor DECK, BP, pitch deck, HTML PPT, or pure-image PDF from Word/DOCX + Excel/XLSX + visual HTML sources. Do not load for generic slide design, ordinary article writing, spreadsheet-only edits, or non-deck PDF tasks.",
+      "categories": [
+        "other_finance_candidate"
+      ],
+      "paths": [
+        "~/.codex/skills/stark-deck"
+      ]
+    },
+    {
+      "name": "stark-finance-trading",
+      "description": "Load when the user wants financial or crypto market data, trading research, signal scans, portfolio or risk checks, backtests, options flow, CEX or DEX liquidity, market-making analysis, or paper/live execution routing. Do not load for generic Web3 marketing, copywriting, tokenomics, legal advice, or UI/design unless financial/trading evidence is the main task.",
+      "categories": [
+        "core_router",
+        "portfolio_risk",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/stark-finance-trading",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/stark-finance-trading",
+        "~/.agents/skills/stark-finance-trading",
+        "~/.codex/skills/stark-finance-trading",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/stark-finance-trading",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.codex/skills/stark-finance-trading"
+      ]
+    },
+    {
+      "name": "stark-liquidity-strategy",
+      "description": "Stark Liquidity Strategy: diagnose, design, audit, and document Web3 liquidity and market-making strategy, including CLAMM/CLMM concentrated-liquidity LP plans, pool visibility issues, CEX/DEX spread, wallet/treasury inventory, GMGN/Pancake/BscScan cross-checks, Binance Alpha/DEX TVL comparison, orderbook/depth support, ABCD liquidity bands, pull/drop cost measurement, no-vacuum corridors, rolling price-axis deployment, LP Excel calculators, Word strategy documents, and liquidity risk playbooks.",
+      "categories": [
+        "execution_capable",
+        "finance_ops_accounting",
+        "portfolio_risk",
+        "stark_boundary_or_adjacent",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.codex/skills/stark-liquidity-strategy"
+      ]
+    },
+    {
+      "name": "stark-market-ops",
+      "description": ">",
+      "categories": [
+        "stark_boundary_or_adjacent"
+      ],
+      "paths": [
+        "~/.codex/skills/stark-market-ops"
+      ]
+    },
+    {
+      "name": "stark-mkt-ops",
+      "description": ">",
+      "categories": [
+        "stark_boundary_or_adjacent"
+      ],
+      "paths": [
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/Stark-Mkt-Ops",
+        "~/.agents/skills/stark-mkt-ops",
+        "~/.codex/skills/stark-mkt-ops",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/stark-mkt-ops",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.codex/skills/stark-mkt-ops"
+      ]
+    },
+    {
+      "name": "stark-tokenomics-planner",
+      "description": "|",
+      "categories": [
+        "stark_boundary_or_adjacent",
+        "web3_market_onchain"
+      ],
+      "paths": [
+        "~/.codex/skills/stark-tokenomics-planner"
+      ]
+    },
+    {
+      "name": "swap-curve-strategy",
+      "description": "Analyze the interest rate swap curve by pricing swaps at multiple tenors, overlaying government and inflation curves, and identifying curve trade opportunities. Use when analyzing swap curves, computing swap spreads, decomposing real rates, identifying steepener/flattener/butterfly trades, or comparing swap rates across currencies.",
+      "categories": [
+        "execution_capable",
+        "fixed_income_fx_derivatives"
+      ],
+      "paths": [
+        "~/.agents/skills/swap-curve-strategy"
+      ]
+    },
+    {
+      "name": "tear-sheet",
+      "description": "Generate professional company tear sheets using S&P Capital IQ data via the Kensho LLM-ready API MCP server. Use this skill whenever the user asks for a tear sheet, company one-pager, company profile, fact sheet, company snapshot, or company overview document — especially when they mention a specific company name or ticker. Also trigger when users ask for equity research summaries, M&A company profiles, corporate development target profiles, sales/BD meeting prep documents, or any concise single-company financial summary. This skill supports four audience types: equity research, investment banking/M&A, corporate development, and sales/business development. If the user doesn't specify an audience, ask. Works for both public and private companies.",
+      "categories": [
+        "equity_research",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/tear-sheet"
+      ]
+    },
+    {
+      "name": "teaser",
+      "description": "Draft anonymous one-page company teasers for sell-side M&A processes. Creates a compelling summary without revealing the company's identity, designed to gauge buyer interest before NDA execution. Triggers on \"teaser\", \"blind teaser\", \"anonymous profile\", \"one-pager for process\", or \"draft teaser for sell-side\".",
+      "categories": [
+        "equity_research",
+        "execution_capable",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/teaser"
+      ]
+    },
+    {
+      "name": "thesis-tracker",
+      "description": "Maintain and update investment theses for portfolio positions and watchlist names. Track key data points, catalysts, and thesis milestones over time. Use when updating a thesis with new information, reviewing position rationale, or checking if a thesis is still intact. Triggers on \"update thesis for [company]\", \"is my thesis still intact\", \"thesis check\", \"add data point to [company]\", or \"review my positions\".",
+      "categories": [
+        "equity_research",
+        "portfolio_risk",
+        "private_markets_deal"
+      ],
+      "paths": [
+        "~/.agents/skills/thesis-tracker"
+      ]
+    },
+    {
+      "name": "trading-signal",
+      "description": "|",
+      "categories": [
+        "other_finance_candidate"
+      ],
+      "paths": [
+        "~/.agents/skills/trading-signal",
+        "~/Documents/AI Space/Projects/Skill&Plugin repo/.agents/skills/trading-signal"
+      ]
+    }
+  ],
+  "checks": {
+    "core_router_present": true,
+    "minimum_finance_skills": true,
+    "min_finance_skills": 1
+  },
+  "evidence_boundary": "Local SKILL.md inventory only. It proves discoverable local routing surfaces and duplicate copies, not tool authentication, API availability, live model behavior, or trading performance."
+}

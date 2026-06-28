@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 32
+- Required artifacts: 34
 
 ## Checks
 
@@ -32,6 +32,8 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading.public-source-audit.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.public-source-audit.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.public-benchmark.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.public-benchmark.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.public-benchmark.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.public-benchmark.md` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json` |

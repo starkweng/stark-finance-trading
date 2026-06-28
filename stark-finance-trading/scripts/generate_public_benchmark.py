@@ -119,6 +119,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
             ("github_actions_workflow_validator", (root / "scripts/validate_github_actions_workflow.py").exists() and "GitHub Actions Workflow Gate" in benchmark),
             ("public_comparison_report", (root / "benchmarks/PUBLIC_COMPARISON_2026-06-28.md").exists()),
             ("public_source_audit", (root / "scripts/audit_public_sources.py").exists()),
+            ("local_skill_inventory", (root / "scripts/discover_local_skill_inventory.py").exists() and (root / "references/local-skill-router.md").exists()),
             ("competitive_task_benchmark", (root / "scripts/generate_competitive_task_benchmark.py").exists() and (root / "benchmarks/competitive-task-cases.json").exists()),
             ("no_superiority_claim_status", comparison.get("claim_status") == "benchmark_defined_no_superiority_claim" and "Avoid public superiority claims" in benchmark),
         ]

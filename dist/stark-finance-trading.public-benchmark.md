@@ -16,7 +16,7 @@
 | `workflow_coverage` | 15.0/15 | 2/2 |
 | `portability` | 10.0/10 | 5/5 |
 | `eval_coverage` | 10.0/10 | 5/5 |
-| `public_readiness` | 10.0/10 | 7/7 |
+| `public_readiness` | 10.0/10 | 8/8 |
 
 ## Evidence Boundary
 

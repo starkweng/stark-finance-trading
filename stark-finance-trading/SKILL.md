@@ -145,6 +145,7 @@ Before claiming this skill is installed or GitHub-ready:
 ```bash
 python3 scripts/validate_stark_finance_trading.py .
 python3 scripts/quick_validate.py .
+python3 scripts/discover_local_skill_inventory.py --skill-root . --out dist/stark-finance-trading.local-skill-inventory.json --markdown dist/stark-finance-trading.local-skill-inventory.md --json
 ```
 
 For packaging, use the bundled deterministic packager and smoke test:

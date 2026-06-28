@@ -2,6 +2,12 @@
 
 This file maps Stark's installed finance, trading, Web3-market, and investment skills into one user-facing route: `stark-finance-trading`.
 
+Refresh machine-specific evidence with:
+
+```bash
+python3 scripts/discover_local_skill_inventory.py --skill-root . --out dist/stark-finance-trading.local-skill-inventory.json --markdown dist/stark-finance-trading.local-skill-inventory.md --json
+```
+
 Default stance:
 
 ```text

@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     "benchmarks/competitive-task-cases.json",
     "scripts/codex_eval.py",
     "scripts/audit_public_sources.py",
+    "scripts/discover_local_skill_inventory.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
     "scripts/generate_public_benchmark.py",
@@ -145,6 +146,11 @@ def validate(root: Path) -> int:
         return fail(f"local-skill-router missing terms: {', '.join(missing_local_terms)}")
     if "User-facing entry: stark-finance-trading" not in local_router:
         return fail("local-skill-router must keep stark-finance-trading as the user-facing entry")
+
+    local_inventory_script = read(root / "scripts/discover_local_skill_inventory.py")
+    for phrase in ["DEFAULT_RECOMMENDED_SKILLS", "Local SKILL.md inventory", "stark-finance-trading"]:
+        if phrase not in local_inventory_script:
+            return fail(f"discover_local_skill_inventory missing phrase: {phrase}")
 
     safety = read(root / "references/safety-policy.md")
     for phrase in ["Risk Tiers", "Tier 4", "Live Confirmation Checklist", "Never execute"]:

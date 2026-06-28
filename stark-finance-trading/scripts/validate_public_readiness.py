@@ -20,6 +20,7 @@ REQUIRED_BENCHMARK_FILES = [
     "evals/live-behavior-evals.json",
     "scripts/codex_eval.py",
     "scripts/audit_public_sources.py",
+    "scripts/discover_local_skill_inventory.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
     "scripts/generate_public_benchmark.py",

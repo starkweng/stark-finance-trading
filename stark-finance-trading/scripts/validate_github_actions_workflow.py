@@ -38,6 +38,8 @@ REQUIRED_ARTIFACTS = [
     "stark-finance-trading/dist/stark-finance-trading.public-source-audit.md",
     "stark-finance-trading/dist/stark-finance-trading.public-benchmark.json",
     "stark-finance-trading/dist/stark-finance-trading.public-benchmark.md",
+    "stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json",
+    "stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.md",
     "stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json",
     "stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.md",
     "stark-finance-trading/dist/stark-finance-trading.live-eval-signoff.json",
