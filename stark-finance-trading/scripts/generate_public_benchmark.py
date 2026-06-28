@@ -43,6 +43,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
     codex_cases = (codex_eval_file.get("cases") or codex_eval_file.get("evals") or [])
     adversarial_cases = (read_json(root / "evals/adversarial-evals.json").get("cases") or [])
     live_cases = (read_json(root / "evals/live-behavior-evals.json").get("cases") or [])
+    tool_routing_cases = (read_json(root / "evals/tool-routing-cases.json").get("cases") or [])
     comparison = read_json(root / "benchmarks/public-comparison-2026-06-28.json")
     candidates = comparison.get("candidates") or []
     official_sources = [item for item in candidates if is_primary_status(str(item.get("source_status", "")))]
@@ -52,7 +53,9 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
         checks = [
             ("description_load_and_do_not_load", "Load when" in skill and "Do not load" in skill),
             ("routing_cases_min_8", len(routing_cases) >= 8),
+            ("tool_routing_cases_min_10", len(tool_routing_cases) >= 10),
             ("negative_cases_present", any(case.get("should_load") is False for case in routing_cases)),
+            ("negative_tool_handoff_cases", any(case.get("should_load") is False for case in tool_routing_cases)),
             ("one_skill_merge_logic", "Do not create separate user-facing skills for every vendor" in router),
         ]
     elif dimension_id == "source_discipline":
@@ -106,6 +109,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
             ("codex_evals", len(codex_cases) >= 8),
             ("adversarial_evals", len(adversarial_cases) >= 10),
             ("live_behavior_evals", len(live_cases) >= 6),
+            ("tool_route_plan_evals", len(tool_routing_cases) >= 10 and (root / "scripts/plan_tool_route.py").exists()),
             ("live_signoff_script", (root / "scripts/generate_live_eval_signoff.py").exists()),
         ]
     elif dimension_id == "public_readiness":
@@ -129,6 +133,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
             ("public_source_audit", (root / "scripts/audit_public_sources.py").exists()),
             ("local_skill_inventory", (root / "scripts/discover_local_skill_inventory.py").exists() and (root / "references/local-skill-router.md").exists()),
             ("public_tool_catalog_report", (root / "scripts/validate_public_tool_catalog.py").exists() and (root / "references/public-tool-catalog.json").exists()),
+            ("tool_route_planner", (root / "scripts/plan_tool_route.py").exists() and (root / "evals/tool-routing-cases.json").exists()),
             ("competitive_task_benchmark", (root / "scripts/generate_competitive_task_benchmark.py").exists() and (root / "benchmarks/competitive-task-cases.json").exists()),
             ("no_superiority_claim_status", comparison.get("claim_status") == "benchmark_defined_no_superiority_claim" and "Avoid public superiority claims" in benchmark),
         ]

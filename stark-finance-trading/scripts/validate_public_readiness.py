@@ -19,9 +19,11 @@ REQUIRED_BENCHMARK_FILES = [
     "references/public-tool-catalog.json",
     "evals/adversarial-evals.json",
     "evals/live-behavior-evals.json",
+    "evals/tool-routing-cases.json",
     "scripts/codex_eval.py",
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
+    "scripts/plan_tool_route.py",
     "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
@@ -135,6 +137,14 @@ def validate(root: Path) -> int:
     for category in ["routing_source_discipline", "execution_safety", "public_claims"]:
         if category not in live_categories:
             return fail(f"live behavior evals missing category: {category}")
+    tool_routing = load_json(root / "evals/tool-routing-cases.json")
+    tool_routing_cases = tool_routing.get("cases", [])
+    if len(tool_routing_cases) < 10:
+        return fail("tool routing cases must include at least 10 cases")
+    if not any(case.get("should_load") is False for case in tool_routing_cases):
+        return fail("tool routing cases must include negative handoff cases")
+    if not any("ibkr-tws-api" in case.get("expected_tool_ids", []) for case in tool_routing_cases):
+        return fail("tool routing cases must cover IBKR wrapper boundary")
 
     benchmark_md = (root / "BENCHMARK.md").read_text(encoding="utf-8")
     if (
@@ -176,6 +186,7 @@ def validate(root: Path) -> int:
         "public_benchmark_dimensions": len(dimensions),
         "competitive_task_cases": len(competitive_cases),
         "public_tool_catalog_tools": len(public_tools),
+        "tool_routing_cases": len(tool_routing_cases),
         "adversarial_categories": sorted(categories),
         "live_behavior_categories": sorted(live_categories),
         "evidence_boundary": comparison.get("evidence_boundary"),

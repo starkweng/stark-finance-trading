@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 36
+- Required artifacts: 38
 
 ## Checks
 
@@ -34,6 +34,8 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading.public-benchmark.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.public-benchmark.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.public-tool-catalog.md` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.tool-route-plan.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.tool-route-plan.json` |
+| `artifact:stark-finance-trading/dist/stark-finance-trading.tool-route-plan.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.tool-route-plan.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.json` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.md` | PASS | `stark-finance-trading/dist/stark-finance-trading.local-skill-inventory.md` |
 | `artifact:stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json` | PASS | `stark-finance-trading/dist/stark-finance-trading.competitive-task-benchmark.json` |

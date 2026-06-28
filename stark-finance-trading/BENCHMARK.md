@@ -21,6 +21,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Public comparison snapshot: `benchmarks/PUBLIC_COMPARISON_2026-06-28.md` and `benchmarks/public-comparison-2026-06-28.json`.
 - Public source audit: `scripts/audit_public_sources.py` checks candidate classification and can optionally probe public URLs.
 - Public tool catalog: `references/public-tool-catalog.json` and `scripts/validate_public_tool_catalog.py` keep official MCP/API/framework candidates machine-checkable.
+- Prompt-to-tool route plan: `scripts/plan_tool_route.py` validates natural prompts against `evals/tool-routing-cases.json`.
 - Public benchmark cases: `benchmarks/public-benchmark-cases.json`.
 - Public benchmark generator: `scripts/generate_public_benchmark.py`.
 - Competitive task cases: `benchmarks/competitive-task-cases.json`.
@@ -86,6 +87,10 @@ The review bundle is the handoff layer between automated checks and human judgme
 ## Public Tool Catalog Gate
 
 `scripts/validate_public_tool_catalog.py` validates `references/public-tool-catalog.json` against required public finance/trading/Web3 tool IDs, required route tags, official or primary source status, source-ledger alignment, high-risk execution/admin/payment surfaces, and the one-skill merge policy. A PASS here means the router has a machine-readable substrate for major public MCP/API/framework candidates. It does not prove credentials, entitlement, live availability, market-data correctness, or execution quality.
+
+## Tool Route Planner Gate
+
+`scripts/plan_tool_route.py` turns representative natural prompts into route plans: whether the skill should load, which workflow to use, which public tool IDs to prefer, which route tags and local helper hints apply, the max risk tier, and the safety terms required before any state-changing path. `evals/tool-routing-cases.json` covers market snapshots, options flow, pump.fun/Dune, token DD, protocol fundamentals, bot/backtest, Binance live order pressure, XAU/cTrader, IBKR wrapper provenance, Stripe/Plaid finance-infra boundaries, local earnings helper routing, and negative marketing/tokenomics handoffs. A PASS here proves deterministic route coverage, not live API access or model behavior.
 
 ## Competitive Task Benchmark
 

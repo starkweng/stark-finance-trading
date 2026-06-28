@@ -24,6 +24,7 @@ REQUIRED_FILES = [
     "evals/routing-evals.json",
     "evals/adversarial-evals.json",
     "evals/live-behavior-evals.json",
+    "evals/tool-routing-cases.json",
     "benchmarks/public-comparison-2026-06-28.json",
     "benchmarks/PUBLIC_COMPARISON_2026-06-28.md",
     "benchmarks/public-benchmark-cases.json",
@@ -31,6 +32,7 @@ REQUIRED_FILES = [
     "scripts/codex_eval.py",
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
+    "scripts/plan_tool_route.py",
     "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
@@ -206,6 +208,19 @@ def validate(root: Path) -> int:
     if not any(case.get("category") == "execution_safety" for case in live_cases):
         return fail("live behavior evals need an execution_safety case")
 
+    tool_routing = json.loads(read(root / "evals/tool-routing-cases.json"))
+    tool_routing_cases = tool_routing.get("cases", [])
+    if len(tool_routing_cases) < 10:
+        return fail("tool routing cases must include at least 10 cases")
+    if not any(case.get("should_load") is False for case in tool_routing_cases):
+        return fail("tool routing cases need at least one negative case")
+    if not any("binance-skills-hub" in case.get("expected_tool_ids", []) and case.get("min_risk_tier") == 4 for case in tool_routing_cases):
+        return fail("tool routing cases need a Binance live execution gated case")
+    plan_tool_route_script = read(root / "scripts/plan_tool_route.py")
+    for phrase in ["ROUTE_RULES", "NEGATIVE_RULES", "plan_route", "tool-routing-cases.json"]:
+        if phrase not in plan_tool_route_script:
+            return fail(f"plan_tool_route missing phrase: {phrase}")
+
     comparison = json.loads(read(root / "benchmarks/public-comparison-2026-06-28.json"))
     candidates = comparison.get("candidates", [])
     if comparison.get("claim_status") != "benchmark_defined_no_superiority_claim":
@@ -242,6 +257,7 @@ def validate(root: Path) -> int:
         "router_terms": len(REQUIRED_TOOL_TERMS),
         "local_skill_terms": len(REQUIRED_LOCAL_SKILL_TERMS),
         "public_tool_catalog_tools": len(public_tools),
+        "tool_routing_cases": len(tool_routing_cases),
     }, ensure_ascii=False, indent=2))
     return 0
 

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T02:42:34.907381+00:00",
+  "generated_at": "2026-06-28T02:57:33.150906+00:00",
   "skill": "stark-finance-trading",
   "skill_root": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/stark-finance-trading",
   "dist": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist",
@@ -84,6 +84,12 @@
       "behavior_proof_status": null,
       "evidence_boundary": "This catalog is a routing substrate for public finance, trading, and Web3 MCP/API/tool surfaces. It records official or high-quality sources and default safety posture, but it does not prove live availability, entitlement, API-key validity, market-data correctness, or trading performance. Live-check source docs before install or exact capability claims."
     },
+    "stark-finance-trading.tool-route-plan.json": {
+      "status": "PASS",
+      "score": null,
+      "behavior_proof_status": null,
+      "evidence_boundary": "These cases validate deterministic source routing against local catalog/rules. They do not prove live tool availability, API credentials, market-data correctness, or model behavior."
+    },
     "stark-finance-trading.local-skill-inventory.json": {
       "status": "PASS",
       "score": null,
@@ -147,28 +153,28 @@
   },
   "package": {
     "path": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading.skill",
-    "sha256": "cf58bb8aafd573fbd8c47d5b263e45a5eb0e4a63bb7cba91eade999815110884",
-    "manifest_sha256": "cf58bb8aafd573fbd8c47d5b263e45a5eb0e4a63bb7cba91eade999815110884",
+    "sha256": "153b6c08df0adfe6d72eb333124a20d3f7bcd723a153e4fb2dc7afc805a21af7",
+    "manifest_sha256": "153b6c08df0adfe6d72eb333124a20d3f7bcd723a153e4fb2dc7afc805a21af7",
     "hash_match": true,
     "zip": {
       "status": "PASS",
-      "entry_count": 52,
+      "entry_count": 54,
       "safe_paths": true,
       "archive_clean": true
     },
     "source_freshness": {
       "status": "PASS",
-      "checked_count": 33,
+      "checked_count": 35,
       "missing_required_package_files": [],
       "hash_mismatches": []
     }
   },
   "github_export_zip": {
     "path": "/Users/mac/Documents/AI Space/Projects/Skill&Plugin repo/dist/stark-finance-trading-github-repo.zip",
-    "sha256": "c2b87663753fd3d636911f14eb72b691a06d1e3428f8a6bcab7b9d292df54bbd",
+    "sha256": "a16b141bad47e391a38b011ecf3ecafbe2f0fe83c0dde0f9dbb083492d3b3835",
     "zip": {
       "status": "PASS",
-      "entry_count": 95,
+      "entry_count": 99,
       "safe_paths": true,
       "archive_clean": true
     }

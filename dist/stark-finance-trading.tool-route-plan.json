@@ -1,0 +1,1428 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T02:57:15.557883+00:00",
+  "skill": "stark-finance-trading",
+  "case_count": 13,
+  "passed_cases": 13,
+  "failed_cases": [],
+  "cases": [
+    {
+      "id": "stock-market-snapshot",
+      "prompt": "帮我看 AAPL、NVDA 今天行情、盘口、1小时波动和主要风险，但不要直接交易。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:alpaca-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:massive-polygon-mcp",
+          "passed": true
+        },
+        {
+          "id": "tag:us_equities",
+          "passed": true
+        },
+        {
+          "id": "tag:market_data",
+          "passed": true
+        },
+        {
+          "id": "max_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "帮我看 AAPL、NVDA 今天行情、盘口、1小时波动和主要风险，但不要直接交易。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "equity_fundamentals",
+          "market_snapshot"
+        ],
+        "workflow": "Equity / Macro / Fundamentals Research + Market Snapshot",
+        "tool_ids": [
+          "alpaca-mcp",
+          "openbb",
+          "fmp-mcp",
+          "massive-polygon-mcp",
+          "alpha-vantage-mcp",
+          "binance-skills-hub",
+          "coingecko-mcp",
+          "twelve-data-mcp"
+        ],
+        "tools": [
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate"
+          },
+          {
+            "id": "openbb",
+            "name": "OpenBB",
+            "provider": "OpenBB",
+            "source_status": "official_open_source",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "fmp-mcp",
+            "name": "Financial Modeling Prep MCP",
+            "provider": "Financial Modeling Prep",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alpha-vantage-mcp",
+            "name": "Alpha Vantage MCP",
+            "provider": "Alpha Vantage",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "us_equities",
+          "fundamentals",
+          "market_data"
+        ],
+        "local_skill_hints": [
+          "earnings-preview",
+          "equity-research",
+          "dcf-model",
+          "catalyst-calendar",
+          "portfolio-rebalance"
+        ],
+        "risk_tier": 2,
+        "risk_mode": "read_only_or_research",
+        "safety_terms": [
+          "fresh_market_data",
+          "not_trade_order",
+          "timestamp",
+          "venue",
+          "delay_status",
+          "no_execution_requested"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "options-flow-draft",
+      "prompt": "看一下 NVDA 有没有异常期权流，如果要做订单草案先不要执行。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:unusual-whales-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:tradier-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:alpaca-mcp",
+          "passed": true
+        },
+        {
+          "id": "tag:options_flow",
+          "passed": true
+        },
+        {
+          "id": "tag:broker",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "看一下 NVDA 有没有异常期权流，如果要做订单草案先不要执行。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "options_flow",
+          "equity_fundamentals"
+        ],
+        "workflow": "Options Flow + Equity / Macro / Fundamentals Research",
+        "tool_ids": [
+          "unusual-whales-mcp",
+          "tradier-mcp",
+          "alpaca-mcp",
+          "openbb",
+          "fmp-mcp",
+          "massive-polygon-mcp",
+          "alpha-vantage-mcp"
+        ],
+        "tools": [
+          {
+            "id": "unusual-whales-mcp",
+            "name": "Unusual Whales MCP",
+            "provider": "Unusual Whales",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "tradier-mcp",
+            "name": "Tradier MCP",
+            "provider": "Tradier",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate"
+          },
+          {
+            "id": "openbb",
+            "name": "OpenBB",
+            "provider": "OpenBB",
+            "source_status": "official_open_source",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "fmp-mcp",
+            "name": "Financial Modeling Prep MCP",
+            "provider": "Financial Modeling Prep",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alpha-vantage-mcp",
+            "name": "Alpha Vantage MCP",
+            "provider": "Alpha Vantage",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "options_flow",
+          "broker",
+          "us_equities",
+          "fundamentals",
+          "market_data"
+        ],
+        "local_skill_hints": [
+          "earnings-preview",
+          "equity-research",
+          "dcf-model",
+          "catalyst-calendar",
+          "portfolio-rebalance"
+        ],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "order_preview_only",
+          "explicit_confirmation_required",
+          "fresh_market_data",
+          "not_trade_order",
+          "no_execution_requested"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "pumpfun-daily-issuance",
+      "prompt": "用 Dune 看 pump.fun 最近 30 天每天发行多少 token，注意表语义。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:dune-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:alchemy-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:helius-mcp",
+          "passed": true
+        },
+        {
+          "id": "tag:onchain_sql",
+          "passed": true
+        },
+        {
+          "id": "tag:pump_fun",
+          "passed": true
+        },
+        {
+          "id": "tag:solana",
+          "passed": true
+        },
+        {
+          "id": "max_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "用 Dune 看 pump.fun 最近 30 天每天发行多少 token，注意表语义。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "pumpfun_solana"
+        ],
+        "workflow": "Solana / Pump.fun Launch Review",
+        "tool_ids": [
+          "dune-mcp",
+          "helius-mcp",
+          "jupiter-apis",
+          "dexscreener-api",
+          "coingecko-mcp",
+          "alchemy-mcp"
+        ],
+        "tools": [
+          {
+            "id": "dune-mcp",
+            "name": "Dune MCP",
+            "provider": "Dune",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "helius-mcp",
+            "name": "Helius MCP",
+            "provider": "Helius",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "jupiter-apis",
+            "name": "Jupiter APIs",
+            "provider": "Jupiter",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "dexscreener-api",
+            "name": "DexScreener API",
+            "provider": "DexScreener",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alchemy-mcp",
+            "name": "Alchemy MCP",
+            "provider": "Alchemy",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "installed_on_stark_machine"
+          }
+        ],
+        "route_tags": [
+          "onchain_sql",
+          "pump_fun",
+          "solana"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 2,
+        "risk_mode": "read_only_or_research",
+        "safety_terms": [
+          "token_identity",
+          "quote_not_swap"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "token-contract-dd",
+      "prompt": "这个 BSC 合约是不是有问题，顺便看看 liquidity、holder、audit 和 smart money。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:binance-skills-hub",
+          "passed": true
+        },
+        {
+          "id": "tool:dune-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:alchemy-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:etherscan-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:dexscreener-api",
+          "passed": true
+        },
+        {
+          "id": "tag:cex",
+          "passed": true
+        },
+        {
+          "id": "tag:holders",
+          "passed": true
+        },
+        {
+          "id": "tag:verified_contracts",
+          "passed": true
+        },
+        {
+          "id": "tag:dex",
+          "passed": true
+        },
+        {
+          "id": "max_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "这个 BSC 合约是不是有问题，顺便看看 liquidity、holder、audit 和 smart money。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "token_contract_dd"
+        ],
+        "workflow": "Token Due Diligence",
+        "tool_ids": [
+          "binance-skills-hub",
+          "dune-mcp",
+          "alchemy-mcp",
+          "etherscan-mcp",
+          "dexscreener-api",
+          "coingecko-mcp"
+        ],
+        "tools": [
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "dune-mcp",
+            "name": "Dune MCP",
+            "provider": "Dune",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "alchemy-mcp",
+            "name": "Alchemy MCP",
+            "provider": "Alchemy",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "etherscan-mcp",
+            "name": "Etherscan MCP",
+            "provider": "Etherscan",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "installed_needs_key_check"
+          },
+          {
+            "id": "dexscreener-api",
+            "name": "DexScreener API",
+            "provider": "DexScreener",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "cex",
+          "holders",
+          "verified_contracts",
+          "dex"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 2,
+        "risk_mode": "read_only_or_research",
+        "safety_terms": [
+          "full_token_addresses",
+          "cross_check_contract"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "defi-protocol-fundamentals",
+      "prompt": "帮我判断一个 DeFi 协议是否值得继续 DD，重点看 revenue、fees、users、TVL、token market 和链上真实使用。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:token-terminal-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:defillama-api",
+          "passed": true
+        },
+        {
+          "id": "tool:dune-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:coingecko-mcp",
+          "passed": true
+        },
+        {
+          "id": "tag:protocol_fundamentals",
+          "passed": true
+        },
+        {
+          "id": "tag:defi",
+          "passed": true
+        },
+        {
+          "id": "tag:onchain_sql",
+          "passed": true
+        },
+        {
+          "id": "max_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "帮我判断一个 DeFi 协议是否值得继续 DD，重点看 revenue、fees、users、TVL、token market 和链上真实使用。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "defi_protocol_fundamentals"
+        ],
+        "workflow": "DeFi Protocol Research",
+        "tool_ids": [
+          "token-terminal-mcp",
+          "defillama-api",
+          "dune-mcp",
+          "coingecko-mcp",
+          "coinmarketcap-mcp",
+          "alchemy-mcp"
+        ],
+        "tools": [
+          {
+            "id": "token-terminal-mcp",
+            "name": "Token Terminal MCP",
+            "provider": "Token Terminal",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "defillama-api",
+            "name": "DeFiLlama API",
+            "provider": "DeFiLlama",
+            "source_status": "official_api",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "dune-mcp",
+            "name": "Dune MCP",
+            "provider": "Dune",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "coinmarketcap-mcp",
+            "name": "CoinMarketCap MCP",
+            "provider": "CoinMarketCap",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alchemy-mcp",
+            "name": "Alchemy MCP",
+            "provider": "Alchemy",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "installed_on_stark_machine"
+          }
+        ],
+        "route_tags": [
+          "protocol_fundamentals",
+          "defi",
+          "onchain_sql"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 1,
+        "risk_mode": "read_only_or_research",
+        "safety_terms": [
+          "methodology_caveats",
+          "not_trade_signal"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "crypto-bot-backtest",
+      "prompt": "这个 ETHUSDT 网格策略能不能跑，帮我看 MDD、手续费、滑点、爆仓路径和能不能接 bot。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:quantconnect-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:lean",
+          "passed": true
+        },
+        {
+          "id": "tool:hummingbot",
+          "passed": true
+        },
+        {
+          "id": "tool:freqtrade",
+          "passed": true
+        },
+        {
+          "id": "tool:ccxt",
+          "passed": true
+        },
+        {
+          "id": "tag:backtest",
+          "passed": true
+        },
+        {
+          "id": "tag:market_making",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_bot",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "这个 ETHUSDT 网格策略能不能跑，帮我看 MDD、手续费、滑点、爆仓路径和能不能接 bot。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "crypto_bot_backtest",
+          "market_snapshot"
+        ],
+        "workflow": "Strategy Backtest + Market Snapshot",
+        "tool_ids": [
+          "quantconnect-mcp",
+          "lean",
+          "hummingbot",
+          "freqtrade",
+          "nautilus-trader",
+          "ccxt",
+          "alpaca-mcp",
+          "binance-skills-hub",
+          "coingecko-mcp",
+          "massive-polygon-mcp",
+          "twelve-data-mcp"
+        ],
+        "tools": [
+          {
+            "id": "quantconnect-mcp",
+            "name": "QuantConnect MCP",
+            "provider": "QuantConnect",
+            "source_status": "official_mcp",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "lean",
+            "name": "LEAN",
+            "provider": "QuantConnect",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "hummingbot",
+            "name": "Hummingbot",
+            "provider": "Hummingbot Foundation",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "freqtrade",
+            "name": "Freqtrade",
+            "provider": "Freqtrade",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "nautilus-trader",
+            "name": "NautilusTrader",
+            "provider": "NautilusTrader",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "ccxt",
+            "name": "CCXT",
+            "provider": "CCXT",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate"
+          },
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "backtest",
+          "market_making",
+          "crypto_bot",
+          "market_data"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 3,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "fees_slippage",
+          "drawdown",
+          "dry_run_first",
+          "kill_switch",
+          "timestamp",
+          "venue",
+          "delay_status"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "live-binance-order",
+      "prompt": "直接用 Binance 帮我买 1000U BTC。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:binance-skills-hub",
+          "passed": true
+        },
+        {
+          "id": "tag:cex",
+          "passed": true
+        },
+        {
+          "id": "safety:explicit_confirmation_required",
+          "passed": true
+        },
+        {
+          "id": "safety:order_preview_only",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "直接用 Binance 帮我买 1000U BTC。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "live_order_execution",
+          "market_snapshot"
+        ],
+        "workflow": "Execution Prep + Market Snapshot",
+        "tool_ids": [
+          "binance-skills-hub",
+          "alpaca-mcp",
+          "coingecko-mcp",
+          "massive-polygon-mcp",
+          "twelve-data-mcp"
+        ],
+        "tools": [
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate"
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "cex",
+          "market_data"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "order_preview_only",
+          "explicit_confirmation_required",
+          "max_loss",
+          "kill_switch",
+          "timestamp",
+          "venue",
+          "delay_status"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "xauusd-ctrader-risk",
+      "prompt": "XAUUSD 这个仓位按 broker 条件会不会爆，帮我看 lot、margin、stop-out 和 cTrader。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:ctrader-ai-agent-connect",
+          "passed": true
+        },
+        {
+          "id": "tag:fx",
+          "passed": true
+        },
+        {
+          "id": "tag:xauusd",
+          "passed": true
+        },
+        {
+          "id": "tag:broker",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "XAUUSD 这个仓位按 broker 条件会不会爆，帮我看 lot、margin、stop-out 和 cTrader。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "fx_cfd_xau",
+          "market_snapshot"
+        ],
+        "workflow": "FX / CFD / XAUUSD Margin Review + Market Snapshot",
+        "tool_ids": [
+          "ctrader-ai-agent-connect",
+          "alpaca-mcp",
+          "binance-skills-hub",
+          "coingecko-mcp",
+          "massive-polygon-mcp",
+          "twelve-data-mcp"
+        ],
+        "tools": [
+          {
+            "id": "ctrader-ai-agent-connect",
+            "name": "cTrader AI Agent Connect",
+            "provider": "cTrader",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate"
+          },
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine"
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "fx",
+          "xauusd",
+          "broker",
+          "market_data"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "demo_first",
+          "broker_assumptions",
+          "explicit_confirmation_required",
+          "timestamp",
+          "venue",
+          "delay_status"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "ibkr-wrapper-boundary",
+      "prompt": "有没有 IBKR MCP 可以接？要区分官方 TWS API、community MCP、paper/live 和误下单风险。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:ibkr-tws-api",
+          "passed": true
+        },
+        {
+          "id": "tag:broker",
+          "passed": true
+        },
+        {
+          "id": "tag:multi_asset",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "有没有 IBKR MCP 可以接？要区分官方 TWS API、community MCP、paper/live 和误下单风险。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "ibkr_boundary"
+        ],
+        "workflow": "IBKR / TWS",
+        "tool_ids": [
+          "ibkr-tws-api"
+        ],
+        "tools": [
+          {
+            "id": "ibkr-tws-api",
+            "name": "IBKR TWS API",
+            "provider": "Interactive Brokers",
+            "source_status": "official_api_with_community_mcp_candidates",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "broker",
+          "multi_asset"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "official_api_vs_community_wrapper",
+          "paper_first",
+          "order_preview",
+          "kill_switch",
+          "explicit_confirmation_required"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "finance-infra-boundary",
+      "prompt": "这个产品要接 Stripe 收款和 Plaid 银行流水，别把它当交易信号。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:stripe-agent-toolkit",
+          "passed": true
+        },
+        {
+          "id": "tool:plaid-api",
+          "passed": true
+        },
+        {
+          "id": "tag:payments",
+          "passed": true
+        },
+        {
+          "id": "tag:bank_data",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "这个产品要接 Stripe 收款和 Plaid 银行流水，别把它当交易信号。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "finance_infra"
+        ],
+        "workflow": "Financial Infrastructure / Payments Boundary",
+        "tool_ids": [
+          "stripe-agent-toolkit",
+          "plaid-api"
+        ],
+        "tools": [
+          {
+            "id": "stripe-agent-toolkit",
+            "name": "Stripe Agent Toolkit",
+            "provider": "Stripe",
+            "source_status": "official_mcp_or_agent_toolkit",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "plaid-api",
+            "name": "Plaid API",
+            "provider": "Plaid",
+            "source_status": "official_api",
+            "default_action_tier": 2,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "payments",
+          "bank_data"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "minimal_scope",
+          "not_trading_signal",
+          "explicit_confirmation_required"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "local-earnings-router",
+      "prompt": "帮我做 NVDA earnings preview，结合 equity research、DCF、catalyst、portfolio risk，但不要交易。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:alpaca-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:openbb",
+          "passed": true
+        },
+        {
+          "id": "tool:fmp-mcp",
+          "passed": true
+        },
+        {
+          "id": "tag:fundamentals",
+          "passed": true
+        },
+        {
+          "id": "tag:us_equities",
+          "passed": true
+        },
+        {
+          "id": "local:earnings-preview",
+          "passed": true
+        },
+        {
+          "id": "local:equity-research",
+          "passed": true
+        },
+        {
+          "id": "local:dcf-model",
+          "passed": true
+        },
+        {
+          "id": "local:portfolio-rebalance",
+          "passed": true
+        },
+        {
+          "id": "max_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "帮我做 NVDA earnings preview，结合 equity research、DCF、catalyst、portfolio risk，但不要交易。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "equity_fundamentals"
+        ],
+        "workflow": "Equity / Macro / Fundamentals Research",
+        "tool_ids": [
+          "alpaca-mcp",
+          "openbb",
+          "fmp-mcp",
+          "massive-polygon-mcp",
+          "alpha-vantage-mcp"
+        ],
+        "tools": [
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate"
+          },
+          {
+            "id": "openbb",
+            "name": "OpenBB",
+            "provider": "OpenBB",
+            "source_status": "official_open_source",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "fmp-mcp",
+            "name": "Financial Modeling Prep MCP",
+            "provider": "Financial Modeling Prep",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          },
+          {
+            "id": "alpha-vantage-mcp",
+            "name": "Alpha Vantage MCP",
+            "provider": "Alpha Vantage",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate"
+          }
+        ],
+        "route_tags": [
+          "us_equities",
+          "fundamentals",
+          "market_data"
+        ],
+        "local_skill_hints": [
+          "earnings-preview",
+          "equity-research",
+          "dcf-model",
+          "catalyst-calendar",
+          "portfolio-rebalance"
+        ],
+        "risk_tier": 2,
+        "risk_mode": "read_only_or_research",
+        "safety_terms": [
+          "fresh_market_data",
+          "not_trade_order",
+          "no_execution_requested"
+        ],
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "negative-marketing",
+      "prompt": "帮我给新 Web3 项目写一周 Twitter 运营计划和 KOL 节奏。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "expected_handoff",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "帮我给新 Web3 项目写一周 Twitter 运营计划和 KOL 节奏。",
+        "should_load": false,
+        "handoff": "stark-mkt-ops",
+        "reason": "Prompt matches a non-finance/trading primary intent.",
+        "tool_ids": [],
+        "route_tags": [],
+        "workflow": "",
+        "risk_tier": 0,
+        "safety_terms": [
+          "handoff_not_force_route"
+        ],
+        "evidence_boundary": "Deterministic route plan only; not a live tool call or model behavior proof."
+      }
+    },
+    {
+      "id": "negative-tokenomics",
+      "prompt": "帮我设计 ARTX 和 miniARTX 的释放机制和双通证飞轮。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "expected_handoff",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "帮我设计 ARTX 和 miniARTX 的释放机制和双通证飞轮。",
+        "should_load": false,
+        "handoff": "stark-tokenomics-planner",
+        "reason": "Prompt matches a non-finance/trading primary intent.",
+        "tool_ids": [],
+        "route_tags": [],
+        "workflow": "",
+        "risk_tier": 0,
+        "safety_terms": [
+          "handoff_not_force_route"
+        ],
+        "evidence_boundary": "Deterministic route plan only; not a live tool call or model behavior proof."
+      }
+    }
+  ],
+  "evidence_boundary": "These cases validate deterministic source routing against local catalog/rules. They do not prove live tool availability, API credentials, market-data correctness, or model behavior."
+}

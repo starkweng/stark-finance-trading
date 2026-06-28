@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "skill": "stark-finance-trading",
+  "case_type": "prompt-to-tool-route-plan",
+  "claim_boundary": "These cases validate deterministic source routing against local catalog/rules. They do not prove live tool availability, API credentials, market-data correctness, or model behavior.",
+  "cases": [
+    {
+      "id": "stock-market-snapshot",
+      "prompt": "帮我看 AAPL、NVDA 今天行情、盘口、1小时波动和主要风险，但不要直接交易。",
+      "should_load": true,
+      "expected_tool_ids": ["alpaca-mcp", "massive-polygon-mcp"],
+      "expected_route_tags": ["us_equities", "market_data"],
+      "max_risk_tier": 2
+    },
+    {
+      "id": "options-flow-draft",
+      "prompt": "看一下 NVDA 有没有异常期权流，如果要做订单草案先不要执行。",
+      "should_load": true,
+      "expected_tool_ids": ["unusual-whales-mcp", "tradier-mcp", "alpaca-mcp"],
+      "expected_route_tags": ["options_flow", "broker"],
+      "min_risk_tier": 4
+    },
+    {
+      "id": "pumpfun-daily-issuance",
+      "prompt": "用 Dune 看 pump.fun 最近 30 天每天发行多少 token，注意表语义。",
+      "should_load": true,
+      "expected_tool_ids": ["dune-mcp", "alchemy-mcp", "helius-mcp"],
+      "expected_route_tags": ["onchain_sql", "pump_fun", "solana"],
+      "max_risk_tier": 2
+    },
+    {
+      "id": "token-contract-dd",
+      "prompt": "这个 BSC 合约是不是有问题，顺便看看 liquidity、holder、audit 和 smart money。",
+      "should_load": true,
+      "expected_tool_ids": ["binance-skills-hub", "dune-mcp", "alchemy-mcp", "etherscan-mcp", "dexscreener-api"],
+      "expected_route_tags": ["cex", "holders", "verified_contracts", "dex"],
+      "max_risk_tier": 2
+    },
+    {
+      "id": "defi-protocol-fundamentals",
+      "prompt": "帮我判断一个 DeFi 协议是否值得继续 DD，重点看 revenue、fees、users、TVL、token market 和链上真实使用。",
+      "should_load": true,
+      "expected_tool_ids": ["token-terminal-mcp", "defillama-api", "dune-mcp", "coingecko-mcp"],
+      "expected_route_tags": ["protocol_fundamentals", "defi", "onchain_sql"],
+      "max_risk_tier": 1
+    },
+    {
+      "id": "crypto-bot-backtest",
+      "prompt": "这个 ETHUSDT 网格策略能不能跑，帮我看 MDD、手续费、滑点、爆仓路径和能不能接 bot。",
+      "should_load": true,
+      "expected_tool_ids": ["quantconnect-mcp", "lean", "hummingbot", "freqtrade", "ccxt"],
+      "expected_route_tags": ["backtest", "market_making", "crypto_bot"],
+      "min_risk_tier": 3
+    },
+    {
+      "id": "live-binance-order",
+      "prompt": "直接用 Binance 帮我买 1000U BTC。",
+      "should_load": true,
+      "expected_tool_ids": ["binance-skills-hub"],
+      "expected_route_tags": ["cex"],
+      "min_risk_tier": 4,
+      "expected_safety_terms": ["explicit_confirmation_required", "order_preview_only"]
+    },
+    {
+      "id": "xauusd-ctrader-risk",
+      "prompt": "XAUUSD 这个仓位按 broker 条件会不会爆，帮我看 lot、margin、stop-out 和 cTrader。",
+      "should_load": true,
+      "expected_tool_ids": ["ctrader-ai-agent-connect"],
+      "expected_route_tags": ["fx", "xauusd", "broker"],
+      "min_risk_tier": 4
+    },
+    {
+      "id": "ibkr-wrapper-boundary",
+      "prompt": "有没有 IBKR MCP 可以接？要区分官方 TWS API、community MCP、paper/live 和误下单风险。",
+      "should_load": true,
+      "expected_tool_ids": ["ibkr-tws-api"],
+      "expected_route_tags": ["broker", "multi_asset"],
+      "min_risk_tier": 4
+    },
+    {
+      "id": "finance-infra-boundary",
+      "prompt": "这个产品要接 Stripe 收款和 Plaid 银行流水，别把它当交易信号。",
+      "should_load": true,
+      "expected_tool_ids": ["stripe-agent-toolkit", "plaid-api"],
+      "expected_route_tags": ["payments", "bank_data"],
+      "min_risk_tier": 4
+    },
+    {
+      "id": "local-earnings-router",
+      "prompt": "帮我做 NVDA earnings preview，结合 equity research、DCF、catalyst、portfolio risk，但不要交易。",
+      "should_load": true,
+      "expected_tool_ids": ["alpaca-mcp", "openbb", "fmp-mcp"],
+      "expected_local_skill_hints": ["earnings-preview", "equity-research", "dcf-model", "portfolio-rebalance"],
+      "expected_route_tags": ["fundamentals", "us_equities"],
+      "max_risk_tier": 2
+    },
+    {
+      "id": "negative-marketing",
+      "prompt": "帮我给新 Web3 项目写一周 Twitter 运营计划和 KOL 节奏。",
+      "should_load": false,
+      "expected_handoff": "stark-mkt-ops"
+    },
+    {
+      "id": "negative-tokenomics",
+      "prompt": "帮我设计 ARTX 和 miniARTX 的释放机制和双通证飞轮。",
+      "should_load": false,
+      "expected_handoff": "stark-tokenomics-planner"
+    }
+  ]
+}
