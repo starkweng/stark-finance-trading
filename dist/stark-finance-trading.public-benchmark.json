@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T02:21:23.361632+00:00",
+  "generated_at": "2026-06-28T02:42:17.111533+00:00",
   "skill": "stark-finance-trading",
   "benchmark_type": "source_level_public_readiness",
   "claim_status": "source_level_benchmark_pass_live_comparison_pending",
@@ -40,8 +40,8 @@
       "id": "source_discipline",
       "weight": 15,
       "score": 15.0,
-      "passed_checks": 5,
-      "total_checks": 5,
+      "passed_checks": 6,
+      "total_checks": 6,
       "checks": [
         {
           "id": "source_ledger_exists",
@@ -61,6 +61,10 @@
         },
         {
           "id": "public_source_audit_script",
+          "passed": true
+        },
+        {
+          "id": "public_tool_catalog",
           "passed": true
         }
       ]
@@ -169,8 +173,8 @@
       "id": "public_readiness",
       "weight": 10,
       "score": 10.0,
-      "passed_checks": 8,
-      "total_checks": 8,
+      "passed_checks": 9,
+      "total_checks": 9,
       "checks": [
         {
           "id": "public_docs",
@@ -194,6 +198,10 @@
         },
         {
           "id": "local_skill_inventory",
+          "passed": true
+        },
+        {
+          "id": "public_tool_catalog_report",
           "passed": true
         },
         {

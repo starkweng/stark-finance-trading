@@ -11,12 +11,12 @@
 | Dimension | Score | Checks |
 |---|---:|---:|
 | `routing_precision` | 20.0/20 | 4/4 |
-| `source_discipline` | 15.0/15 | 5/5 |
+| `source_discipline` | 15.0/15 | 6/6 |
 | `safety_boundary` | 20.0/20 | 4/4 |
 | `workflow_coverage` | 15.0/15 | 2/2 |
 | `portability` | 10.0/10 | 5/5 |
 | `eval_coverage` | 10.0/10 | 5/5 |
-| `public_readiness` | 10.0/10 | 8/8 |
+| `public_readiness` | 10.0/10 | 9/9 |
 
 ## Evidence Boundary
 

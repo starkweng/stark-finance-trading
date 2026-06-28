@@ -7,6 +7,7 @@ This skill should compete on workflow quality, not instruction volume.
 - One primary user-facing route instead of a vendor-skill pile.
 - Clear positive and negative triggers.
 - Installed tool surfaces are separated from external candidates.
+- Public MCP/API/framework candidates are also represented in a machine-readable catalog with source status, route tags, action tier, installed status, merge policy, and safety notes.
 - Execution-capable tools are gated by a risk-tier policy.
 - Routing evals cover explicit, implicit, contextual, negative, gotcha, backtest, and live-action cases.
 - Validator checks required files, routing terms, safety phrases, eval structure, and obvious secret patterns.
@@ -19,6 +20,7 @@ This skill should compete on workflow quality, not instruction volume.
 - Comparative public benchmark: criteria defined; live comparative runs pending.
 - Public comparison snapshot: `benchmarks/PUBLIC_COMPARISON_2026-06-28.md` and `benchmarks/public-comparison-2026-06-28.json`.
 - Public source audit: `scripts/audit_public_sources.py` checks candidate classification and can optionally probe public URLs.
+- Public tool catalog: `references/public-tool-catalog.json` and `scripts/validate_public_tool_catalog.py` keep official MCP/API/framework candidates machine-checkable.
 - Public benchmark cases: `benchmarks/public-benchmark-cases.json`.
 - Public benchmark generator: `scripts/generate_public_benchmark.py`.
 - Competitive task cases: `benchmarks/competitive-task-cases.json`.
@@ -80,6 +82,10 @@ The review bundle is the handoff layer between automated checks and human judgme
 ## Public Benchmark Gate
 
 `scripts/audit_public_sources.py` validates candidate URL shape, source classification, and optional live reachability. `scripts/generate_public_benchmark.py` generates a source-level scorecard from the current skill tree and `benchmarks/public-benchmark-cases.json`. A PASS here means the source package meets the static public-readiness rubric. It does not mean live model behavior passed or that the skill has defeated public competitors in reviewed live runs.
+
+## Public Tool Catalog Gate
+
+`scripts/validate_public_tool_catalog.py` validates `references/public-tool-catalog.json` against required public finance/trading/Web3 tool IDs, required route tags, official or primary source status, source-ledger alignment, high-risk execution/admin/payment surfaces, and the one-skill merge policy. A PASS here means the router has a machine-readable substrate for major public MCP/API/framework candidates. It does not prove credentials, entitlement, live availability, market-data correctness, or execution quality.
 
 ## Competitive Task Benchmark
 

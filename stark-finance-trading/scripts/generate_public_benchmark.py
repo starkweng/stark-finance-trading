@@ -33,6 +33,8 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
     safety = read_text(root / "references/safety-policy.md")
     workflows = read_text(root / "references/workflows.md")
     source_ledger = read_text(root / "references/source-ledger.md")
+    public_tool_catalog = read_json(root / "references/public-tool-catalog.json")
+    public_tools = public_tool_catalog.get("catalog") or []
     gotchas = read_text(root / "references/gotchas.md")
     benchmark = read_text(root / "BENCHMARK.md")
     workflow_ci = read_text(root / ".github/workflows/ci.yml")
@@ -60,6 +62,12 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
             ("evidence_labels_required", has_all(skill, ["timestamp", "venue", "delay"]) or has_all(skill, ["source", "timestamp", "venue"])),
             ("dune_semantics_gotcha", "table semantics" in gotchas and "pump.fun" in gotchas),
             ("public_source_audit_script", (root / "scripts/audit_public_sources.py").exists()),
+            (
+                "public_tool_catalog",
+                len(public_tools) >= 30
+                and sum(1 for item in public_tools if "official" in str(item.get("source_status", ""))) >= 30
+                and sum(1 for item in public_tools if item.get("default_action_tier") == 4) >= 5,
+            ),
         ]
     elif dimension_id == "safety_boundary":
         checks = [
@@ -120,6 +128,7 @@ def score_dimension(root: Path, dimension_id: str, weight: int) -> dict:
             ("public_comparison_report", (root / "benchmarks/PUBLIC_COMPARISON_2026-06-28.md").exists()),
             ("public_source_audit", (root / "scripts/audit_public_sources.py").exists()),
             ("local_skill_inventory", (root / "scripts/discover_local_skill_inventory.py").exists() and (root / "references/local-skill-router.md").exists()),
+            ("public_tool_catalog_report", (root / "scripts/validate_public_tool_catalog.py").exists() and (root / "references/public-tool-catalog.json").exists()),
             ("competitive_task_benchmark", (root / "scripts/generate_competitive_task_benchmark.py").exists() and (root / "benchmarks/competitive-task-cases.json").exists()),
             ("no_superiority_claim_status", comparison.get("claim_status") == "benchmark_defined_no_superiority_claim" and "Avoid public superiority claims" in benchmark),
         ]

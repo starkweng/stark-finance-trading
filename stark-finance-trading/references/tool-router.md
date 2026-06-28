@@ -2,6 +2,8 @@
 
 This router keeps one user-facing skill while preserving tool-specific safety and capability boundaries.
 
+For deterministic routing and public-release validation, keep the machine-readable catalog in `references/public-tool-catalog.json` aligned with this human router. The catalog records official source status, route tags, installed status, default action tier, auth/setup needs, merge policy, and safety notes for each major public MCP/API/framework candidate.
+
 ## Installed Or Visible On Stark's Machine
 
 | Surface | Status | Best for | Guardrail |

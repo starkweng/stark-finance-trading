@@ -58,6 +58,7 @@ def main() -> int:
         ("adversarial_evals_json", [py, "-m", "json.tool", "evals/adversarial-evals.json"]),
         ("live_behavior_evals_json", [py, "-m", "json.tool", "evals/live-behavior-evals.json"]),
         ("public_comparison_json", [py, "-m", "json.tool", "benchmarks/public-comparison-2026-06-28.json"]),
+        ("public_tool_catalog_json", [py, "-m", "json.tool", "references/public-tool-catalog.json"]),
         ("public_benchmark_cases_json", [py, "-m", "json.tool", "benchmarks/public-benchmark-cases.json"]),
         ("competitive_task_cases_json", [py, "-m", "json.tool", "benchmarks/competitive-task-cases.json"]),
         (
@@ -65,7 +66,7 @@ def main() -> int:
             [
                 py,
                 "-c",
-                "from pathlib import Path\nfor p in ['scripts/generate_eval_review_bundle.py', 'scripts/score_eval_review_bundle.py', 'scripts/generate_release_manifest.py', 'scripts/generate_release_notes.py', 'scripts/validate_github_actions_workflow.py', 'scripts/smoke_github_export.py', 'scripts/validate_release_readiness.py', 'scripts/enable_remote_ci.py', 'scripts/discover_local_skill_inventory.py']:\n    compile(Path(p).read_text(encoding='utf-8'), p, 'exec')",
+                "from pathlib import Path\nfor p in ['scripts/generate_eval_review_bundle.py', 'scripts/score_eval_review_bundle.py', 'scripts/generate_release_manifest.py', 'scripts/generate_release_notes.py', 'scripts/validate_github_actions_workflow.py', 'scripts/smoke_github_export.py', 'scripts/validate_release_readiness.py', 'scripts/enable_remote_ci.py', 'scripts/discover_local_skill_inventory.py', 'scripts/validate_public_tool_catalog.py']:\n    compile(Path(p).read_text(encoding='utf-8'), p, 'exec')",
             ],
         ),
         (
@@ -93,6 +94,20 @@ def main() -> int:
                 str(dist_for_cmd / "stark-finance-trading.public-source-audit.json"),
                 "--markdown",
                 str(dist_for_cmd / "stark-finance-trading.public-source-audit.md"),
+                "--json",
+            ],
+        ),
+        (
+            "public_tool_catalog",
+            [
+                py,
+                "scripts/validate_public_tool_catalog.py",
+                "--root",
+                ".",
+                "--out",
+                str(dist_for_cmd / "stark-finance-trading.public-tool-catalog.json"),
+                "--markdown",
+                str(dist_for_cmd / "stark-finance-trading.public-tool-catalog.md"),
                 "--json",
             ],
         ),

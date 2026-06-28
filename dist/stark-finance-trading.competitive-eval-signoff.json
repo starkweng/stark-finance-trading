@@ -6,7 +6,7 @@
     "status": "PENDING",
     "exact_command_to_approve": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/codex_eval.py --skill-path . --eval-set benchmarks/competitive-task-cases.json --out-dir ../dist/competitive-eval --sandbox read-only --timeout 180 --require-approved-signoff --signoff ../dist/stark-finance-trading.competitive-eval-signoff.json"
   },
-  "created_at": "2026-06-28T02:21:23.751377+00:00",
+  "created_at": "2026-06-28T02:42:17.570485+00:00",
   "skill_path": ".",
   "eval_set": "benchmarks/competitive-task-cases.json",
   "case_count": 12,

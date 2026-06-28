@@ -15,6 +15,8 @@ It is designed for Stark's workflow: one natural entry point that quietly routes
 - Local finance/trading skills: earnings, equity research, DCF/comps/model update, bond/rates/FX/derivatives, portfolio monitoring/rebalance, PE/deal diligence, finance ops, GMGN/Binance/Web3 helpers. These stay implementation details behind one front door.
 - Adjacent finance infrastructure: Stripe and Plaid for payments, billing, account connectivity, cashflow, and treasury context. These are not trading-signal routes.
 
+The machine-readable route substrate lives in `references/public-tool-catalog.json`. It classifies public MCP/API/framework candidates by official source status, route tags, installed status, default action tier, auth/setup needs, merge policy, and safety notes.
+
 ## Why One Skill
 
 Finance/trading work fails when the agent treats every vendor as a separate mental mode. This skill keeps one front door and uses internal route maps:
@@ -59,6 +61,7 @@ python3 scripts/validate_public_readiness.py .
 python3 scripts/quick_validate.py .
 python3 scripts/run_quality_suite.py --json
 python3 scripts/audit_public_sources.py --root . --out dist/stark-finance-trading.public-source-audit.json --markdown dist/stark-finance-trading.public-source-audit.md --json
+python3 scripts/validate_public_tool_catalog.py --root . --out dist/stark-finance-trading.public-tool-catalog.json --markdown dist/stark-finance-trading.public-tool-catalog.md --json
 python3 scripts/generate_public_benchmark.py --root . --out dist/stark-finance-trading.public-benchmark.json --markdown dist/stark-finance-trading.public-benchmark.md --json
 python3 scripts/discover_local_skill_inventory.py --skill-root . --out dist/stark-finance-trading.local-skill-inventory.json --markdown dist/stark-finance-trading.local-skill-inventory.md --json
 python3 scripts/generate_competitive_task_benchmark.py --root . --out dist/stark-finance-trading.competitive-task-benchmark.json --markdown dist/stark-finance-trading.competitive-task-benchmark.md --json
@@ -89,4 +92,4 @@ python3 stark-finance-trading/scripts/enable_remote_ci.py --repo-root . --repo s
 
 ## Evidence Boundaries
 
-This v0.1 package has static validation, routing eval seeds, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.
+This v0.1 package has static validation, routing eval seeds, adversarial eval seeds, live behavior eval definitions, live/competitive eval signoff packets, human-review bundles, eval review scorecards, a public comparison snapshot, a public source audit, a machine-readable public tool catalog, a local skill inventory report, a source-level public benchmark scorecard, a task-level competitive router benchmark, GitHub Actions workflow validation, release manifest/notes sidecars, reproducible package smoke, a local quality suite, a local GitHub export path, an exported-repository smoke test, a remote CI proof helper, and a local release-readiness report. It is GitHub-ready as a source package, but remote GitHub Actions completion, approved live model evals, and reviewed comparative live evals remain separate external proofs.

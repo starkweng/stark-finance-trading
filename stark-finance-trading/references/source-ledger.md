@@ -2,6 +2,8 @@
 
 Last refreshed: 2026-06-28. Live-check before installing or citing exact capabilities.
 
+`references/public-tool-catalog.json` is the machine-readable companion to this ledger. When adding or changing a public MCP/API/framework source, update both files and rerun `scripts/validate_public_tool_catalog.py`.
+
 ## Official / Primary Sources
 
 | Source | URL | Use |

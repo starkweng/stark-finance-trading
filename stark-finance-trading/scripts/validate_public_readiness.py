@@ -16,11 +16,13 @@ REQUIRED_BENCHMARK_FILES = [
     "benchmarks/public-benchmark-cases.json",
     "benchmarks/competitive-task-cases.json",
     "references/local-skill-router.md",
+    "references/public-tool-catalog.json",
     "evals/adversarial-evals.json",
     "evals/live-behavior-evals.json",
     "scripts/codex_eval.py",
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
+    "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
     "scripts/generate_public_benchmark.py",
@@ -89,6 +91,18 @@ def validate(root: Path) -> int:
                 return fail(f"candidate missing {field}: {item.get('name', '<unknown>')}")
         if not str(item["source_url"]).startswith("https://"):
             return fail(f"candidate source_url must be https: {item['name']}")
+    public_tool_catalog = load_json(root / "references/public-tool-catalog.json")
+    public_tools = public_tool_catalog.get("catalog", [])
+    if len(public_tools) < 30:
+        return fail("public tool catalog must include at least 30 tools")
+    if sum(1 for item in public_tools if "official" in str(item.get("source_status", ""))) < 30:
+        return fail("public tool catalog must be official-source-led")
+    if sum(1 for item in public_tools if item.get("default_action_tier") == 4) < 5:
+        return fail("public tool catalog must identify high-risk execution surfaces")
+    public_tool_ids = {item.get("id") for item in public_tools}
+    for required_id in ["dune-mcp", "alchemy-mcp", "etherscan-mcp", "alpaca-mcp", "ibkr-tws-api", "hummingbot", "freqtrade"]:
+        if required_id not in public_tool_ids:
+            return fail(f"public tool catalog missing required id: {required_id}")
     benchmark_cases = load_json(root / "benchmarks/public-benchmark-cases.json")
     dimensions = benchmark_cases.get("dimensions", [])
     if len(dimensions) < 7:
@@ -161,6 +175,7 @@ def validate(root: Path) -> int:
         "live_behavior_cases": len(live_cases),
         "public_benchmark_dimensions": len(dimensions),
         "competitive_task_cases": len(competitive_cases),
+        "public_tool_catalog_tools": len(public_tools),
         "adversarial_categories": sorted(categories),
         "live_behavior_categories": sorted(live_categories),
         "evidence_boundary": comparison.get("evidence_boundary"),

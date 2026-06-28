@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "generated_at": "2026-06-28T02:42:17.082894+00:00",
+  "skill": "stark-finance-trading",
+  "catalog_path": "references/public-tool-catalog.json",
+  "tool_count": 34,
+  "required_tool_count": 33,
+  "missing_required_tool_ids": [],
+  "official_or_primary_count": 34,
+  "route_tag_count": 140,
+  "missing_required_route_tags": [],
+  "high_risk_surface_count": 5,
+  "high_risk_surfaces": [
+    "coinbase-cdp-agentkit",
+    "ctrader-ai-agent-connect",
+    "ibkr-tws-api",
+    "stripe-agent-toolkit",
+    "tradier-mcp"
+  ],
+  "priority_counts": {
+    "connector_substrate": 1,
+    "core": 13,
+    "execution_candidate": 3,
+    "execution_framework": 3,
+    "finance_ops": 2,
+    "institutional": 2,
+    "support": 9,
+    "web3_execution_candidate": 1
+  },
+  "source_status_counts": {
+    "official_api": 5,
+    "official_api_with_community_mcp_candidates": 1,
+    "official_docs_mcp": 1,
+    "official_mcp": 17,
+    "official_mcp_and_skill": 2,
+    "official_mcp_or_agent_toolkit": 1,
+    "official_open_source": 6,
+    "official_skill_hub": 1
+  },
+  "default_action_tier_counts": {
+    "1": 17,
+    "2": 5,
+    "3": 7,
+    "4": 5
+  },
+  "installed_status_counts": {
+    "external_candidate": 28,
+    "installed_needs_key_check": 1,
+    "installed_on_stark_machine": 3,
+    "lazy_loadable_connector_candidate": 2
+  },
+  "grouped_by_priority": {
+    "connector_substrate": [
+      "ccxt"
+    ],
+    "core": [
+      "alchemy-mcp",
+      "alpaca-mcp",
+      "binance-skills-hub",
+      "coingecko-mcp",
+      "dune-mcp",
+      "etherscan-mcp",
+      "helius-mcp",
+      "lean",
+      "massive-polygon-mcp",
+      "openbb",
+      "quantconnect-mcp",
+      "token-terminal-mcp",
+      "unusual-whales-mcp"
+    ],
+    "execution_candidate": [
+      "ctrader-ai-agent-connect",
+      "ibkr-tws-api",
+      "tradier-mcp"
+    ],
+    "execution_framework": [
+      "freqtrade",
+      "hummingbot",
+      "nautilus-trader"
+    ],
+    "finance_ops": [
+      "plaid-api",
+      "stripe-agent-toolkit"
+    ],
+    "institutional": [
+      "databento-api",
+      "factset-mcp"
+    ],
+    "support": [
+      "alpha-vantage-mcp",
+      "coinmarketcap-mcp",
+      "defillama-api",
+      "dexscreener-api",
+      "fmp-mcp",
+      "jupiter-apis",
+      "openbb-docs-mcp",
+      "quicknode-mcp",
+      "twelve-data-mcp"
+    ],
+    "web3_execution_candidate": [
+      "coinbase-cdp-agentkit"
+    ]
+  },
+  "errors": [],
+  "evidence_boundary": "This catalog is a routing substrate for public finance, trading, and Web3 MCP/API/tool surfaces. It records official or high-quality sources and default safety posture, but it does not prove live availability, entitlement, API-key validity, market-data correctness, or trading performance. Live-check source docs before install or exact capability claims."
+}

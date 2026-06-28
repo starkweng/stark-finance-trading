@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T02:21:23.409243+00:00",
+  "generated_at": "2026-06-28T02:42:17.160698+00:00",
   "benchmark_type": "scenario-static-competitive-router-benchmark",
   "claim_status": "scenario-static-router-advantage-live-review-pending",
   "status": "PASS",

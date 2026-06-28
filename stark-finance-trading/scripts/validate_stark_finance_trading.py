@@ -19,6 +19,7 @@ REQUIRED_FILES = [
     "references/safety-policy.md",
     "references/workflows.md",
     "references/source-ledger.md",
+    "references/public-tool-catalog.json",
     "references/gotchas.md",
     "evals/routing-evals.json",
     "evals/adversarial-evals.json",
@@ -30,6 +31,7 @@ REQUIRED_FILES = [
     "scripts/codex_eval.py",
     "scripts/audit_public_sources.py",
     "scripts/discover_local_skill_inventory.py",
+    "scripts/validate_public_tool_catalog.py",
     "scripts/generate_competitive_task_benchmark.py",
     "scripts/generate_eval_review_bundle.py",
     "scripts/generate_public_benchmark.py",
@@ -152,6 +154,23 @@ def validate(root: Path) -> int:
         if phrase not in local_inventory_script:
             return fail(f"discover_local_skill_inventory missing phrase: {phrase}")
 
+    public_tool_catalog = json.loads(read(root / "references/public-tool-catalog.json"))
+    public_tools = public_tool_catalog.get("catalog", [])
+    public_tool_ids = {item.get("id") for item in public_tools}
+    for required_id in ["dune-mcp", "alchemy-mcp", "etherscan-mcp", "alpaca-mcp", "openbb", "ibkr-tws-api", "hummingbot", "freqtrade"]:
+        if required_id not in public_tool_ids:
+            return fail(f"public-tool-catalog missing required id: {required_id}")
+    if len(public_tools) < 30:
+        return fail("public-tool-catalog must include at least 30 tools")
+    if sum(1 for item in public_tools if "official" in str(item.get("source_status", ""))) < 30:
+        return fail("public-tool-catalog must prioritize official source-backed tools")
+    if sum(1 for item in public_tools if item.get("default_action_tier") == 4) < 5:
+        return fail("public-tool-catalog must identify execution/high-risk surfaces")
+    public_tool_script = read(root / "scripts/validate_public_tool_catalog.py")
+    for phrase in ["REQUIRED_TOOL_IDS", "REQUIRED_ROUTE_TAGS", "public tool catalog"]:
+        if phrase not in public_tool_script:
+            return fail(f"validate_public_tool_catalog missing phrase: {phrase}")
+
     safety = read(root / "references/safety-policy.md")
     for phrase in ["Risk Tiers", "Tier 4", "Live Confirmation Checklist", "Never execute"]:
         if phrase not in safety:
@@ -222,6 +241,7 @@ def validate(root: Path) -> int:
         "competitive_task_cases": len(competitive_cases),
         "router_terms": len(REQUIRED_TOOL_TERMS),
         "local_skill_terms": len(REQUIRED_LOCAL_SKILL_TERMS),
+        "public_tool_catalog_tools": len(public_tools),
     }, ensure_ascii=False, indent=2))
     return 0
 

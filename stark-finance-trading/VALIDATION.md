@@ -10,7 +10,7 @@ PASS
 {
   "ok": true,
   "skill": "stark-finance-trading",
-  "required_files": 33,
+  "required_files": 35,
   "routing_cases": 11,
   "adversarial_cases": 12,
   "live_behavior_cases": 9,
@@ -18,7 +18,8 @@ PASS
   "public_benchmark_dimensions": 7,
   "competitive_task_cases": 12,
   "router_terms": 31,
-  "local_skill_terms": 14
+  "local_skill_terms": 14,
+  "public_tool_catalog_tools": 34
 }
 ```
 
@@ -31,6 +32,7 @@ adversarial_cases: 12
 live_behavior_cases: 9
 public_benchmark_dimensions: 7
 competitive_task_cases: 12
+public_tool_catalog_tools: 34
 ```
 
 ```text
@@ -56,6 +58,17 @@ python3 scripts/generate_public_benchmark.py --root . --json
 PASS
 score: 100/100
 dimensions: 7
+```
+
+```text
+python3 scripts/validate_public_tool_catalog.py --root . --json
+PASS
+tool_count: 34
+official_or_primary_count: 34
+high_risk_surface_count: 5
+core_priority_tools: 13
+missing_required_tool_ids: 0
+missing_required_route_tags: 0
 ```
 
 ```text
@@ -87,8 +100,10 @@ PASS
 quick_validate: PASS
 skill_validator: PASS
 public_readiness: PASS
+public_tool_catalog_json: PASS
 github_actions_workflow: PASS
 public_source_audit_offline: PASS
+public_tool_catalog: PASS
 public_benchmark: PASS
 competitive_task_benchmark: PASS
 local_skill_inventory: PASS
@@ -107,14 +122,14 @@ competitive_eval_review_scorecard: PASS
 github_export: PASS
 github_export_smoke: PASS
 release_readiness: PASS
-steps: 31
+steps: 33
 ```
 
 ```text
 python3 scripts/validate_github_actions_workflow.py --root . --json
 PASS
 required_snippet_count: 13
-required_artifact_count: 34
+required_artifact_count: 36
 failed_checks: 0
 ```
 
@@ -131,7 +146,7 @@ eval_regression: PASS
 ```text
 python3 /path/to/stark-skiller/scripts/security_scan_skill.py .
 PASS
-files_scanned: 50
+files_scanned: 52
 critical: 0
 high: 0
 medium: 0
@@ -152,29 +167,29 @@ hashes_match: true
 fixed_zip_metadata: true
 entry_counts_match: true
 install_smoke: true
-entry_count: 50
+entry_count: 52
 ```
 
 ```text
 python3 scripts/package_skill.py . ../dist
 python3 scripts/install_package_smoke.py ../dist/stark-finance-trading.skill --json
 PASS
-entry_count: 50
+entry_count: 52
 ```
 
 ```text
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
-skill_files_copied: 51
-release_artifacts_copied: 32
+skill_files_copied: 53
+release_artifacts_copied: 34
 release_package_install_smoke: true
-zip_entry_count: 91
+zip_entry_count: 95
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 91
+zip_entry_count: 95
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -192,8 +207,8 @@ local_release_status: LOCAL_RELEASE_READY
 goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
-package_entry_count: 50
-github_export_zip_entry_count: 91
+package_entry_count: 52
+github_export_zip_entry_count: 95
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
@@ -257,6 +272,7 @@ no output
 - Routing evals are seeded, not live-run.
 - Public comparison snapshot is source-level, not a live comparative win.
 - Public source audit checks candidate classification and URL reachability only. Live URL audit can return WARN for WAF, bot-blocking, rate-limit, or local TLS/network issues; WARN is not market-data proof and not a source invalidation.
+- Public tool catalog validation checks source-ledger alignment, route tags, official-source status, action tiers, and high-risk surfaces. It does not prove credentials, entitlement, live availability, market-data correctness, or execution quality.
 - Public benchmark scorecard is source-level and checks routing coverage, evidence depth, safety gates, eval coverage, reproducible packaging, and GitHub readiness. It does not prove market accuracy or live trading performance.
 - Competitive task benchmark is source-level and checks task coverage against representative workflows. It does not prove live model output quality or public superiority.
 - GitHub Actions workflow validation is static coverage validation. It does not prove the workflow has run remotely on GitHub.
