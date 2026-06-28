@@ -1,11 +1,11 @@
 # stark-finance-trading Public Tool Catalog
 
 - Status: PASS
-- Tools: 49
-- Required tools covered: 48/48
-- Official or primary source-backed: 49
+- Tools: 50
+- Required tools covered: 49/49
+- Official or primary source-backed: 50
 - Route tags: 174
-- High-risk execution/admin/payment surfaces: 13
+- High-risk execution/admin/payment surfaces: 14
 
 ## Priority Mix
 
@@ -13,7 +13,7 @@
 |---|---:|
 | `connector_substrate` | 1 |
 | `core` | 14 |
-| `execution_candidate` | 11 |
+| `execution_candidate` | 12 |
 | `execution_framework` | 3 |
 | `finance_ops` | 2 |
 | `institutional` | 3 |
@@ -27,7 +27,7 @@
 | `1` | 23 |
 | `2` | 6 |
 | `3` | 7 |
-| `4` | 13 |
+| `4` | 14 |
 
 ## High-Risk Surfaces
 
@@ -42,6 +42,7 @@
 - `oanda-v20-api`
 - `okx-api`
 - `stripe-agent-toolkit`
+- `tradestation-mcp`
 - `tradier-mcp`
 - `tradingview-broker-api`
 

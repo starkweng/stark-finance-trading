@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T09:05:59.863673+00:00",
+  "generated_at": "2026-06-28T09:21:03.187432+00:00",
   "skill": "stark-finance-trading",
-  "catalog_tool_count": 49,
+  "catalog_tool_count": 50,
   "observed_runtime_tool_count": 13,
   "runtime_status_counts": {
     "configured_mcp": 2,
     "configured_mcp_needs_env": 1,
     "deferred_tool_source": 1,
     "enabled_plugin": 2,
-    "external_candidate": 36,
+    "external_candidate": 37,
     "local_skill_backed": 7
   },
   "configured_mcp_servers": [
@@ -371,6 +371,21 @@
       "id": "tradier-mcp",
       "name": "Tradier MCP",
       "provider": "Tradier",
+      "catalog_installed_status": "external_candidate",
+      "runtime_status": "external_candidate",
+      "availability_rank": 10,
+      "configured_mcp": [],
+      "enabled_plugins": [],
+      "local_skills": [],
+      "required_env_present": {},
+      "deferred_tool_sources": [],
+      "default_action_tier": 4,
+      "priority": "execution_candidate"
+    },
+    {
+      "id": "tradestation-mcp",
+      "name": "TradeStation MCP",
+      "provider": "TradeStation",
       "catalog_installed_status": "external_candidate",
       "runtime_status": "external_candidate",
       "availability_rank": 10,

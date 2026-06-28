@@ -80,6 +80,7 @@ REQUIRED_TOOL_TERMS = [
     "Unusual Whales",
     "Massive",
     "Tradier",
+    "TradeStation",
     "cTrader",
     "OANDA",
     "MetaTrader",

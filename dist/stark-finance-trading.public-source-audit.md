@@ -2,9 +2,9 @@
 
 - Status: PASS
 - Audit mode: `offline`
-- Candidates: 49
-- Official or primary sources: 49
-- Execution-capable candidates: 15
+- Candidates: 50
+- Official or primary sources: 50
+- Execution-capable candidates: 16
 
 ## Candidate Results
 
@@ -20,6 +20,7 @@
 | Unusual Whales MCP | `official_mcp` | PASS | https://unusualwhales.com/public-api/mcp |
 | Massive / Polygon.io MCP | `official_mcp` | PASS | https://github.com/massive-com/mcp_massive |
 | Tradier MCP | `official_mcp` | PASS | https://docs.tradier.com/docs/tradier-mcp |
+| TradeStation MCP | `official_mcp` | PASS | https://www.tradestation.com/platforms-and-tools/mcp/ |
 | Robinhood Agentic Trading | `official_product` | PASS | https://robinhood.com/us/en/agentic-trading/ |
 | cTrader MCP servers | `official_mcp` | PASS | https://help.ctrader.com/ctrader-ai-agent-connect/ |
 | OANDA v20 REST API | `official_api` | PASS | https://developer.oanda.com/rest-live-v20/introduction/ |

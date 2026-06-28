@@ -11,46 +11,46 @@ PASS
   "ok": true,
   "skill": "stark-finance-trading",
   "required_files": 47,
-  "routing_cases": 11,
+  "routing_cases": 13,
   "adversarial_cases": 12,
-  "live_behavior_cases": 9,
-  "public_comparison_candidates": 34,
+  "live_behavior_cases": 11,
+  "public_comparison_candidates": 50,
   "public_benchmark_dimensions": 7,
   "competitive_task_cases": 12,
-  "router_terms": 31,
+  "router_terms": 47,
   "local_skill_terms": 14,
-  "public_tool_catalog_tools": 34,
-  "tool_routing_cases": 18
+  "public_tool_catalog_tools": 50,
+  "tool_routing_cases": 24
 }
 ```
 
 ```text
 python3 scripts/validate_public_readiness.py .
 PASS
-candidates: 34
-official_or_primary_sources: 34
+candidates: 50
+official_or_primary_sources: 50
 adversarial_cases: 12
-live_behavior_cases: 9
+live_behavior_cases: 11
 public_benchmark_dimensions: 7
 competitive_task_cases: 12
-public_tool_catalog_tools: 34
-tool_routing_cases: 18
+public_tool_catalog_tools: 50
+tool_routing_cases: 24
 ```
 
 ```text
 python3 scripts/audit_public_sources.py --root . --json
 PASS
-candidates: 34
-official_or_primary_sources: 34
-execution_capable_candidates: 7
+candidates: 50
+official_or_primary_sources: 50
+execution_capable_candidates: 16
 community_wrapper_candidates: 1
 ```
 
 ```text
 python3 scripts/audit_public_sources.py --root . --live --json
 WARN
-candidates: 34
-PASS: 30
+candidates: 50
+PASS: 46
 WARN: 4
 FAIL: 0
 ```
@@ -65,10 +65,10 @@ dimensions: 7
 ```text
 python3 scripts/validate_public_tool_catalog.py --root . --json
 PASS
-tool_count: 34
-official_or_primary_count: 34
-high_risk_surface_count: 5
-core_priority_tools: 13
+tool_count: 50
+official_or_primary_count: 50
+high_risk_surface_count: 14
+core_priority_tools: 14
 missing_required_tool_ids: 0
 missing_required_route_tags: 0
 ```
@@ -76,32 +76,30 @@ missing_required_route_tags: 0
 ```text
 python3 scripts/plan_tool_route.py --root . --json
 PASS
-passed_cases: 18/18
+passed_cases: 24/24
 failed_cases: 0
 ```
 
-New explicit public-tool route regressions cover Hummingbot, Freqtrade, CCXT, OpenBB, and Alpaca paper/live boundaries.
+New explicit public-tool route regressions cover Hummingbot, Freqtrade, CCXT, OpenBB, TradeStation MCP, and Alpaca paper/live boundaries.
 
 ```text
 python3 scripts/runtime_capability_scan.py --root . --json
 PASS
-catalog_tool_count: 34
+catalog_tool_count: 50
 observed_runtime_tool_count: 13
-configured_mcp_servers: 8
-enabled_plugin_count: 27
-local_skill_name_count: 519
+runtime_status_counts: configured_mcp=2, configured_mcp_needs_env=1, deferred_tool_source=1, enabled_plugin=2, external_candidate=37, local_skill_backed=7
 env_missing_tool_ids: 1
 ```
 
 ```text
 python3 scripts/generate_integration_activation_plan.py --root . --runtime-report ../dist/stark-finance-trading.runtime-capabilities.json --out ../dist/stark-finance-trading.integration-activation-plan.json --markdown ../dist/stark-finance-trading.integration-activation-plan.md --json
 PASS
-catalog_tool_count: 34
+catalog_tool_count: 50
 ready_now_count: 11
 quick_activation_count: 2
-priority_backlog_count: 12
-high_risk_requires_confirmation_count: 5
-activation_stage_counts: install_or_auth_candidate=12, lazy_load_available=1, needs_env=1, ready_now=11, watchlist=9
+priority_backlog_count: 23
+high_risk_requires_confirmation_count: 14
+activation_stage_counts: install_or_auth_candidate=23, lazy_load_available=1, needs_env=1, ready_now=11, watchlist=14
 ```
 
 ```text
@@ -255,15 +253,15 @@ entry_count: 64
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
 skill_files_copied: 65
-release_artifacts_copied: 62
+release_artifacts_copied: 64
 release_package_install_smoke: true
-zip_entry_count: 135
+zip_entry_count: 137
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 135
+zip_entry_count: 137
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -313,7 +311,7 @@ goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
 package_entry_count: 64
-github_export_zip_entry_count: 135
+github_export_zip_entry_count: 137
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0
@@ -359,7 +357,7 @@ runner_kind: fixture
 ```text
 python3 scripts/generate_eval_review_bundle.py ../dist/live-eval-dry-run --eval-set evals/live-behavior-evals.json --out-dir ../dist/stark-finance-trading.live-eval-review --json
 PASS
-cases: 9
+cases: 11
 review_md: ../dist/stark-finance-trading.live-eval-review/review.md
 review_html: ../dist/stark-finance-trading.live-eval-review/review.html
 ```
@@ -369,7 +367,7 @@ python3 scripts/score_eval_review_bundle.py ../dist/stark-finance-trading.live-e
 PASS
 score: 100/100
 behavior_proof_status: UNPROVEN_DRY_RUN_ONLY
-cases: 9
+cases: 11
 ```
 
 ```text

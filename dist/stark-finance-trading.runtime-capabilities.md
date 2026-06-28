@@ -1,7 +1,7 @@
 # stark-finance-trading Runtime Capabilities
 
 - Status: PASS
-- Catalog tools: 49
+- Catalog tools: 50
 - Observed runtime-backed tools: 13
 - Configured MCP servers: 8
 - Enabled plugins: 27
@@ -15,7 +15,7 @@
 | `configured_mcp_needs_env` | 1 |
 | `deferred_tool_source` | 1 |
 | `enabled_plugin` | 2 |
-| `external_candidate` | 36 |
+| `external_candidate` | 37 |
 | `local_skill_backed` | 7 |
 
 ## Observed Tools

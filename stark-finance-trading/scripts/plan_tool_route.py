@@ -28,8 +28,8 @@ NEGATIVE_RULES = [
 ROUTE_RULES = [
     {
         "id": "broker_api_execution",
-        "patterns": [r"alpaca", r"tradier", r"paper trading", r"paper/live", r"live trading", r"broker api", r"order preview", r"美股.*下单", r"股票.*下单"],
-        "tool_ids": ["alpaca-mcp", "tradier-mcp", "ibkr-tws-api"],
+        "patterns": [r"alpaca", r"tradier", r"tradestation", r"paper trading", r"paper/live", r"live trading", r"broker api", r"order preview", r"美股.*下单", r"股票.*下单"],
+        "tool_ids": ["alpaca-mcp", "tradier-mcp", "tradestation-mcp", "ibkr-tws-api"],
         "workflow": "Broker API / Paper-Live Execution Boundary",
         "route_tags": ["broker", "paper_trading", "orders"],
         "risk_tier": 4,

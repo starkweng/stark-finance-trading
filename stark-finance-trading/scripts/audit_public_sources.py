@@ -21,6 +21,7 @@ ALLOWED_STATUS_PREFIXES = (
 EXECUTION_CATEGORIES = {
     "broker_data_execution",
     "broker_options_execution",
+    "broker_account_execution_mcp",
     "broker_agentic_execution",
     "fx_cfd_platform_mcp",
     "fx_broker_api",

@@ -2,15 +2,15 @@
 
 - Status: WARN
 - Audit mode: `live`
-- Candidates: 49
-- Official or primary sources: 49
-- Execution-capable candidates: 15
+- Candidates: 50
+- Official or primary sources: 50
+- Execution-capable candidates: 16
 
 ## Candidate Results
 
 | Candidate | Source status | Result | URL |
 |---|---|---|---|
-| Alpaca MCP | `official_mcp` | WARN | https://docs.alpaca.markets/us/docs/alpaca-mcp-server |
+| Alpaca MCP | `official_mcp` | PASS | https://docs.alpaca.markets/us/docs/alpaca-mcp-server |
 | OpenBB Docs MCP / OpenBB | `official_docs_mcp` | PASS | https://github.com/OpenBB-finance/openbb-docs-mcp |
 | QuantConnect MCP / LEAN | `official_mcp` | PASS | https://www.quantconnect.com/mcp |
 | Alpha Vantage MCP | `official_mcp` | PASS | https://github.com/alphavantage/alpha_vantage_mcp |
@@ -19,7 +19,8 @@
 | Twelve Data MCP | `official_mcp` | PASS | https://github.com/twelvedata/mcp |
 | Unusual Whales MCP | `official_mcp` | PASS | https://unusualwhales.com/public-api/mcp |
 | Massive / Polygon.io MCP | `official_mcp` | PASS | https://github.com/massive-com/mcp_massive |
-| Tradier MCP | `official_mcp` | WARN | https://docs.tradier.com/docs/tradier-mcp |
+| Tradier MCP | `official_mcp` | PASS | https://docs.tradier.com/docs/tradier-mcp |
+| TradeStation MCP | `official_mcp` | WARN | https://www.tradestation.com/platforms-and-tools/mcp/ |
 | Robinhood Agentic Trading | `official_product` | PASS | https://robinhood.com/us/en/agentic-trading/ |
 | cTrader MCP servers | `official_mcp` | PASS | https://help.ctrader.com/ctrader-ai-agent-connect/ |
 | OANDA v20 REST API | `official_api` | PASS | https://developer.oanda.com/rest-live-v20/introduction/ |

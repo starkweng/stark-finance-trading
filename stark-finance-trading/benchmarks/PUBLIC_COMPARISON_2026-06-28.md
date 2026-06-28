@@ -36,6 +36,7 @@ escalation.
 | Unusual Whales MCP | Official | Options flow and dark-pool signals | Treat flow as signal evidence, not trade instruction. |
 | Massive / Polygon.io MCP | Official | Institutional-style market data | Route by feed need and explain subscription gaps. |
 | Tradier MCP | Official | Options and broker execution | Require order preview, max loss, and confirmation. |
+| TradeStation MCP | Official MCP | Account-connected market data, portfolio, and order-management workflows | Keep reads separate from order management; require paper/live context and explicit confirmation. |
 | Robinhood Agentic Trading | Official product | Budget-isolated agentic brokerage workflow | Treat as Tier 4; require account scope, limits, and confirmation. |
 | cTrader MCP servers | Official MCP | FX/CFD account, market, chart, and order operations | Preserve broker lot/margin assumptions and demo/live separation. |
 | Binance Skills Hub | Official | Crypto exchange and Web3 skills | Keep vendor skills internal; gate state changes. |

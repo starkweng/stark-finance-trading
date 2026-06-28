@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T09:05:59.903005+00:00",
+  "generated_at": "2026-06-28T09:21:03.224044+00:00",
   "skill": "stark-finance-trading",
-  "catalog_tool_count": 49,
+  "catalog_tool_count": 50,
   "runtime_report": "dist/stark-finance-trading.runtime-capabilities.json",
   "runtime_status": "PASS",
   "activation_stage_counts": {
-    "install_or_auth_candidate": 22,
+    "install_or_auth_candidate": 23,
     "lazy_load_available": 1,
     "needs_env": 1,
     "ready_now": 11,
@@ -15,14 +15,14 @@
   },
   "safety_gate_counts": {
     "auth_or_install_review": 12,
-    "high_risk_requires_confirmation": 13,
+    "high_risk_requires_confirmation": 14,
     "read_only_ok": 18,
     "simulation_or_paper_first": 6
   },
   "ready_now_count": 11,
   "quick_activation_count": 2,
-  "priority_backlog_count": 22,
-  "high_risk_requires_confirmation_count": 13,
+  "priority_backlog_count": 23,
+  "high_risk_requires_confirmation_count": 14,
   "required_core_missing": [],
   "top_activation_actions": [
     {
@@ -1230,6 +1230,34 @@
       "no_secret_values": true
     },
     {
+      "id": "tradestation-mcp",
+      "name": "TradeStation MCP",
+      "provider": "TradeStation",
+      "priority": "execution_candidate",
+      "priority_rank": 88,
+      "source_status": "official_mcp",
+      "source_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
+      "runtime_status": "external_candidate",
+      "activation_stage": "install_or_auth_candidate",
+      "default_action_tier": 4,
+      "route_tags": [
+        "broker",
+        "us_equities",
+        "options",
+        "futures",
+        "market_data",
+        "orders",
+        "portfolio"
+      ],
+      "best_for": "TradeStation account-connected market data, portfolio analysis, order management, and broker workflow preparation through the official MCP surface.",
+      "auth_or_setup": "TradeStation account access, MCP server setup, secure authentication, permission scope, and paper/live boundary checks.",
+      "missing_env": [],
+      "safety_gate": "high_risk_requires_confirmation",
+      "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
+      "merge_policy": "Keep as a broker execution route behind stark-finance-trading; do not expose as a separate user-facing Stark skill.",
+      "no_secret_values": true
+    },
+    {
       "id": "tradier-mcp",
       "name": "Tradier MCP",
       "provider": "Tradier",
@@ -1637,6 +1665,34 @@
       "safety_gate": "high_risk_requires_confirmation",
       "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
       "merge_policy": "Prefer a controlled adapter or official API docs over unofficial MCP wrappers.",
+      "no_secret_values": true
+    },
+    {
+      "id": "tradestation-mcp",
+      "name": "TradeStation MCP",
+      "provider": "TradeStation",
+      "priority": "execution_candidate",
+      "priority_rank": 88,
+      "source_status": "official_mcp",
+      "source_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
+      "runtime_status": "external_candidate",
+      "activation_stage": "install_or_auth_candidate",
+      "default_action_tier": 4,
+      "route_tags": [
+        "broker",
+        "us_equities",
+        "options",
+        "futures",
+        "market_data",
+        "orders",
+        "portfolio"
+      ],
+      "best_for": "TradeStation account-connected market data, portfolio analysis, order management, and broker workflow preparation through the official MCP surface.",
+      "auth_or_setup": "TradeStation account access, MCP server setup, secure authentication, permission scope, and paper/live boundary checks.",
+      "missing_env": [],
+      "safety_gate": "high_risk_requires_confirmation",
+      "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
+      "merge_policy": "Keep as a broker execution route behind stark-finance-trading; do not expose as a separate user-facing Stark skill.",
       "no_secret_values": true
     },
     {
@@ -2241,6 +2297,34 @@
       "safety_gate": "high_risk_requires_confirmation",
       "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
       "merge_policy": "Prefer a controlled adapter or official API docs over unofficial MCP wrappers.",
+      "no_secret_values": true
+    },
+    {
+      "id": "tradestation-mcp",
+      "name": "TradeStation MCP",
+      "provider": "TradeStation",
+      "priority": "execution_candidate",
+      "priority_rank": 88,
+      "source_status": "official_mcp",
+      "source_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
+      "runtime_status": "external_candidate",
+      "activation_stage": "install_or_auth_candidate",
+      "default_action_tier": 4,
+      "route_tags": [
+        "broker",
+        "us_equities",
+        "options",
+        "futures",
+        "market_data",
+        "orders",
+        "portfolio"
+      ],
+      "best_for": "TradeStation account-connected market data, portfolio analysis, order management, and broker workflow preparation through the official MCP surface.",
+      "auth_or_setup": "TradeStation account access, MCP server setup, secure authentication, permission scope, and paper/live boundary checks.",
+      "missing_env": [],
+      "safety_gate": "high_risk_requires_confirmation",
+      "next_action": "Live-check the official source, install/connect only if Stark needs this route, then rerun runtime scan and route evals.",
+      "merge_policy": "Keep as a broker execution route behind stark-finance-trading; do not expose as a separate user-facing Stark skill.",
       "no_secret_values": true
     },
     {

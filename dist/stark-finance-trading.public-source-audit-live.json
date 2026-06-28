@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T09:05:38.000616+00:00",
+  "generated_at": "2026-06-28T09:18:33.094570+00:00",
   "mode": "live",
   "status": "WARN",
-  "candidate_count": 49,
-  "official_or_primary_sources": 49,
-  "execution_capable_candidates": 15,
+  "candidate_count": 50,
+  "official_or_primary_sources": 50,
+  "execution_capable_candidates": 16,
   "community_wrapper_candidates": 1,
   "candidates": [
     {
@@ -14,7 +14,7 @@
       "category": "broker_data_execution",
       "source_url": "https://docs.alpaca.markets/us/docs/alpaca-mcp-server",
       "source_status": "official_mcp",
-      "status": "WARN",
+      "status": "PASS",
       "checks": {
         "name": true,
         "category": true,
@@ -28,12 +28,12 @@
         "live_url_not_failed": true
       },
       "live_probe": {
-        "reachable": false,
-        "network_status": "WARN",
-        "http_status": 0,
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
         "effective_url": "https://docs.alpaca.markets/us/docs/alpaca-mcp-server",
-        "returncode": 28,
-        "stderr_tail": "curl: (28) SSL connection timeout\n"
+        "returncode": 0,
+        "stderr_tail": ""
       }
     },
     {
@@ -249,6 +249,33 @@
       "category": "broker_options_execution",
       "source_url": "https://docs.tradier.com/docs/tradier-mcp",
       "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true,
+        "live_url_not_failed": true
+      },
+      "live_probe": {
+        "reachable": true,
+        "network_status": "PASS",
+        "http_status": 200,
+        "effective_url": "https://docs.tradier.com/docs/tradier-mcp",
+        "returncode": 0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "TradeStation MCP",
+      "category": "broker_account_execution_mcp",
+      "source_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
+      "source_status": "official_mcp",
       "status": "WARN",
       "checks": {
         "name": true,
@@ -265,10 +292,10 @@
       "live_probe": {
         "reachable": false,
         "network_status": "WARN",
-        "http_status": 0,
-        "effective_url": "https://docs.tradier.com/docs/tradier-mcp",
-        "returncode": 28,
-        "stderr_tail": "curl: (28) SSL connection timeout\n"
+        "http_status": 405,
+        "effective_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
+        "returncode": 0,
+        "stderr_tail": ""
       }
     },
     {

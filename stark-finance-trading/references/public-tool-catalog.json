@@ -327,6 +327,21 @@
       "safety_notes": "Every order is tier 4; paper first."
     },
     {
+      "id": "tradestation-mcp",
+      "name": "TradeStation MCP",
+      "provider": "TradeStation",
+      "source_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
+      "source_status": "official_mcp",
+      "priority": "execution_candidate",
+      "default_action_tier": 4,
+      "route_tags": ["broker", "us_equities", "options", "futures", "market_data", "orders", "portfolio"],
+      "best_for": "TradeStation account-connected market data, portfolio analysis, order management, and broker workflow preparation through the official MCP surface.",
+      "auth_or_setup": "TradeStation account access, MCP server setup, secure authentication, permission scope, and paper/live boundary checks.",
+      "installed_status": "external_candidate",
+      "merge_policy": "Keep as a broker execution route behind stark-finance-trading; do not expose as a separate user-facing Stark skill.",
+      "safety_notes": "Market reads can be lower tier; placing or managing orders is tier 4 and requires account, instrument, quantity, order type, max-loss, cancel path, and explicit confirmation."
+    },
+    {
       "id": "ibkr-tws-api",
       "name": "IBKR TWS API",
       "provider": "Interactive Brokers",

@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T09:05:44.638669+00:00",
+  "generated_at": "2026-06-28T09:20:49.998631+00:00",
   "mode": "offline",
   "status": "PASS",
-  "candidate_count": 49,
-  "official_or_primary_sources": 49,
-  "execution_capable_candidates": 15,
+  "candidate_count": 50,
+  "official_or_primary_sources": 50,
+  "execution_capable_candidates": 16,
   "community_wrapper_candidates": 1,
   "candidates": [
     {
@@ -176,6 +176,25 @@
       "name": "Tradier MCP",
       "category": "broker_options_execution",
       "source_url": "https://docs.tradier.com/docs/tradier-mcp",
+      "source_status": "official_mcp",
+      "status": "PASS",
+      "checks": {
+        "name": true,
+        "category": true,
+        "https_source_url": true,
+        "source_status_allowed": true,
+        "route_role": true,
+        "stark_edge": true,
+        "strengths": true,
+        "risk_tier": true,
+        "execution_tier_nonzero": true
+      },
+      "live_probe": null
+    },
+    {
+      "name": "TradeStation MCP",
+      "category": "broker_account_execution_mcp",
+      "source_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
       "source_status": "official_mcp",
       "status": "PASS",
       "checks": {

@@ -107,6 +107,16 @@
       "what_stark_must_do_better": "Demand order previews, max-loss checks, and explicit confirmation before live submission."
     },
     {
+      "name": "TradeStation MCP",
+      "category": "broker_account_execution_mcp",
+      "source_url": "https://www.tradestation.com/platforms-and-tools/mcp/",
+      "source_status": "official_mcp",
+      "strengths": ["account-connected MCP", "market data", "portfolio analysis", "order management", "broker workflow"],
+      "default_risk_tier": 4,
+      "route_role": "TradeStation-specific broker route for market/account context, portfolio review, and guarded order-management preparation.",
+      "what_stark_must_do_better": "Separate market/account reads from state-changing order management, require paper/live context, order preview, max-loss, cancel path, and explicit confirmation."
+    },
+    {
       "name": "Robinhood Agentic Trading",
       "category": "broker_agentic_execution",
       "source_url": "https://robinhood.com/us/en/agentic-trading/",

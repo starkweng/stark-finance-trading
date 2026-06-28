@@ -31,6 +31,7 @@ REQUIRED_TOOL_IDS = {
     "unusual-whales-mcp",
     "massive-polygon-mcp",
     "tradier-mcp",
+    "tradestation-mcp",
     "ibkr-tws-api",
     "ctrader-ai-agent-connect",
     "oanda-v20-api",

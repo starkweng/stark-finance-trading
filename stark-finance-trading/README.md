@@ -9,9 +9,9 @@ It is designed for Stark's workflow: one natural entry point that quietly routes
 - Web3/onchain: Dune, Alchemy, Etherscan, The Graph, Goldsky, Moralis Cortex, GoldRush/Covalent, SQD, Coinbase CDP/AgentKit, QuickNode, CoinGecko, CoinMarketCap, Token Terminal, DeFiLlama, Helius, Jupiter, DexScreener, Binance Web3 skills, GMGN, BNB Agent Studio.
 - CEX/DEX trading research: Binance CLI, Binance Agentic Wallet, Bybit AI Trading Skills, Kraken MCP, OKX API, BingX API AI Skills, Deribit API, GMGN, token audit/info/rank/signal skills.
 - TradFi/market data candidates: Alpaca, OpenBB, FactSet, Alpha Vantage, Financial Modeling Prep, Twelve Data, Massive/Polygon.io, Databento, Finnhub, Nasdaq Data Link.
-- Options and flow candidates: Unusual Whales, Alpaca options, Tradier, IBKR/TWS candidates.
+- Options and flow candidates: Unusual Whales, Alpaca options, Tradier, TradeStation, IBKR/TWS candidates.
 - Quant/backtest frameworks: QuantConnect, LEAN, NautilusTrader, Hummingbot, Freqtrade, CCXT-backed local adapters.
-- Execution-capable candidates: Binance, Bybit, Kraken, OKX, BingX, Deribit, Coinbase CDP/AgentKit wallet actions, Alpaca, Tradier, Robinhood Agentic Trading, cTrader, OANDA, MetaTrader 5, TradingView Broker API, IBKR/TWS, Hummingbot, Freqtrade, CCXT, NautilusTrader, QuantConnect live.
+- Execution-capable candidates: Binance, Bybit, Kraken, OKX, BingX, Deribit, Coinbase CDP/AgentKit wallet actions, Alpaca, Tradier, TradeStation, Robinhood Agentic Trading, cTrader, OANDA, MetaTrader 5, TradingView Broker API, IBKR/TWS, Hummingbot, Freqtrade, CCXT, NautilusTrader, QuantConnect live.
 - Local finance/trading skills: earnings, equity research, DCF/comps/model update, bond/rates/FX/derivatives, portfolio monitoring/rebalance, PE/deal diligence, finance ops, GMGN/Binance/Web3 helpers. These stay implementation details behind one front door.
 - Adjacent finance infrastructure: Stripe and Plaid for payments, billing, account connectivity, cashflow, and treasury context. These are not trading-signal routes.
 

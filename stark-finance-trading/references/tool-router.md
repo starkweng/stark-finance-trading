@@ -41,7 +41,7 @@ Use these when installing new data/execution surfaces or writing a public README
 | OANDA v20 REST API | Official FX/CFD broker API | FX/CFD pricing, candles, account, and order workflows | Practice first; live orders and margin actions are Tier 4. |
 | MetaTrader 5 Python Integration | Official terminal API | MT5 terminal/account data, FX/CFD/XAUUSD workflows, broker-specific contract specs | Demo/live and broker contract specs must be verified before any order draft. |
 | TradingView Broker API | Official broker integration API | Chart/signal/broker-integration boundary, alerts, order-flow design | Alerts/signals are not orders; broker actions require preview and confirmation. |
-| TradeStation MCP | Official broker connection announced | Broker-account AI integration | Verify availability and account constraints before use. |
+| TradeStation MCP | Official MCP | Account-connected market data, portfolio analysis, and order-management workflows | Keep reads separate from order management; require paper/live context and explicit confirmation. |
 | Coinbase CDP / AgentKit MCP | Official Web3 agent MCP stack | CDP API operations, AgentKit, wallet actions, x402/payment-adjacent workflows | Separate docs/context from wallet actions; transfers/payments are Tier 4. |
 | CoinGecko MCP / Skill | Official crypto data MCP + skill | Prices, OHLCV, market cap, NFT, DeFi/onchain data, token metadata | Resolve token IDs/contracts; market data is not execution advice. |
 | CoinMarketCap MCP | Official crypto market-data MCP/API | Crypto rankings, quotes, market pairs, exchange/category market data | Good neutral market-rank cross-check. Resolve IDs/contracts; data is not execution advice. |
@@ -131,7 +131,7 @@ For local specialist skills, consult `references/local-skill-router.md`: `option
 
 ### Execution
 
-Execution-capable routes include Binance CLI, Binance Agentic Wallet, Bybit AI Trading Skills, Kraken MCP, OKX API, BingX API AI Skills, Deribit API, Coinbase CDP/AgentKit wallet actions, Alpaca trading, Tradier, Robinhood Agentic Trading, cTrader, OANDA, MetaTrader 5, TradingView Broker API, IBKR/TWS wrappers, Hummingbot, Freqtrade, CCXT-backed adapters, NautilusTrader, and QuantConnect live. All must pass `references/safety-policy.md`.
+Execution-capable routes include Binance CLI, Binance Agentic Wallet, Bybit AI Trading Skills, Kraken MCP, OKX API, BingX API AI Skills, Deribit API, Coinbase CDP/AgentKit wallet actions, Alpaca trading, Tradier, TradeStation, Robinhood Agentic Trading, cTrader, OANDA, MetaTrader 5, TradingView Broker API, IBKR/TWS wrappers, Hummingbot, Freqtrade, CCXT-backed adapters, NautilusTrader, and QuantConnect live. All must pass `references/safety-policy.md`.
 
 ### Financial Infrastructure / Payments
 

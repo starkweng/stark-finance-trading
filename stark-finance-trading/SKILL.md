@@ -33,7 +33,7 @@ Never skip from analysis to live orders, wallet signing, CEX order placement, tr
 
 - 股票、期权、外汇、商品、加密货币、永续、现货、链上 token、DEX/CEX liquidity 的行情和研究。
 - market scan、leaderboard、smart-money signal、meme/token discovery、options flow、dark pool、news/fundamental check。
-- Dune/Alchemy/Etherscan/The Graph/Goldsky/Moralis/GoldRush/SQD/Binance/Bybit/Kraken/OKX/BingX/Deribit/GMGN/Alpaca/OpenBB/QuantConnect/Unusual Whales/Alpha Vantage/FMP/Twelve Data/Massive/Finnhub/Nasdaq/OANDA/MetaTrader/TradingView 等工具路由。
+- Dune/Alchemy/Etherscan/The Graph/Goldsky/Moralis/GoldRush/SQD/Binance/Bybit/Kraken/OKX/BingX/Deribit/GMGN/Alpaca/OpenBB/QuantConnect/Unusual Whales/Alpha Vantage/FMP/Twelve Data/Massive/TradeStation/Finnhub/Nasdaq/OANDA/MetaTrader/TradingView 等工具路由。
 - 策略回测、参数验证、paper trading plan、bot risk review、market-making / liquidity war room。
 - 交易执行前的预检查、订单草案、风险边界和人工确认清单。
 

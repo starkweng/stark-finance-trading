@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T09:05:44.672620+00:00",
+  "generated_at": "2026-06-28T09:20:50.033558+00:00",
   "skill": "stark-finance-trading",
   "catalog_path": "references/public-tool-catalog.json",
-  "tool_count": 49,
-  "required_tool_count": 48,
+  "tool_count": 50,
+  "required_tool_count": 49,
   "missing_required_tool_ids": [],
-  "official_or_primary_count": 49,
+  "official_or_primary_count": 50,
   "route_tag_count": 174,
   "missing_required_route_tags": [],
-  "high_risk_surface_count": 13,
+  "high_risk_surface_count": 14,
   "high_risk_surfaces": [
     "bingx-ai-skills",
     "bybit-ai-trading-skills",
@@ -23,13 +23,14 @@
     "oanda-v20-api",
     "okx-api",
     "stripe-agent-toolkit",
+    "tradestation-mcp",
     "tradier-mcp",
     "tradingview-broker-api"
   ],
   "priority_counts": {
     "connector_substrate": 1,
     "core": 14,
-    "execution_candidate": 11,
+    "execution_candidate": 12,
     "execution_framework": 3,
     "finance_ops": 2,
     "institutional": 3,
@@ -41,7 +42,7 @@
     "official_api_with_community_mcp_candidates": 1,
     "official_docs_mcp": 1,
     "official_docs_mcp_and_skill": 1,
-    "official_mcp": 22,
+    "official_mcp": 23,
     "official_mcp_and_skill": 2,
     "official_mcp_or_agent_toolkit": 1,
     "official_open_source": 6,
@@ -52,10 +53,10 @@
     "1": 23,
     "2": 6,
     "3": 7,
-    "4": 13
+    "4": 14
   },
   "installed_status_counts": {
-    "external_candidate": 43,
+    "external_candidate": 44,
     "installed_needs_key_check": 1,
     "installed_on_stark_machine": 3,
     "lazy_loadable_connector_candidate": 2
@@ -90,6 +91,7 @@
       "metatrader5-python",
       "oanda-v20-api",
       "okx-api",
+      "tradestation-mcp",
       "tradier-mcp",
       "tradingview-broker-api"
     ],

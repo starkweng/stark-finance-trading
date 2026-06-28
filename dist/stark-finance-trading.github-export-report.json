@@ -66,7 +66,9 @@
     "dist/stark-finance-trading.runtime-capabilities.md",
     "dist/stark-finance-trading.skill",
     "dist/stark-finance-trading.tool-route-plan.json",
-    "dist/stark-finance-trading.tool-route-plan.md"
+    "dist/stark-finance-trading.tool-route-plan.md",
+    "dist/stark-finance-trading.tool-route-plan.no-runtime.json",
+    "dist/stark-finance-trading.tool-route-plan.no-runtime.md"
   ],
   "validation": {
     "status": "PASS",
@@ -83,7 +85,7 @@
   "archive": {
     "path": "dist/stark-finance-trading-github-repo.zip",
     "status": "PASS",
-    "entry_count": 135
+    "entry_count": 137
   },
   "evidence_boundary": "Local export validation only; does not prove remote GitHub Actions completion."
 }

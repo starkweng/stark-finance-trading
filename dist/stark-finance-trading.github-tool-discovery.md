@@ -11,18 +11,18 @@
 
 | Repo | Stars | Tags | Tier | URL |
 |---|---:|---|---:|---|
-| OpenBB-finance/OpenBB | 69776 | options_flow, research | 1 | https://github.com/OpenBB-finance/OpenBB |
+| OpenBB-finance/OpenBB | 69779 | options_flow, research | 1 | https://github.com/OpenBB-finance/OpenBB |
 | freqtrade/freqtrade | 51902 | bot_framework | 3 | https://github.com/freqtrade/freqtrade |
 | ccxt/ccxt | 43099 | backtest, bot_framework, onchain | 3 | https://github.com/ccxt/ccxt |
 | Fincept-Corporation/FinceptTerminal | 27587 | research | 1 | https://github.com/Fincept-Corporation/FinceptTerminal |
 | wilsonfreitas/awesome-quant | 27092 | bot_framework | 3 | https://github.com/wilsonfreitas/awesome-quant |
 | hummingbot/hummingbot | 19008 | broker_execution, onchain, backtest, bot_framework | 4 | https://github.com/hummingbot/hummingbot |
 | ccxt/binance-trade-bot | 8712 | bot_framework | 3 | https://github.com/ccxt/binance-trade-bot |
-| kernc/backtesting.py | 8576 | backtest | 3 | https://github.com/kernc/backtesting.py |
+| kernc/backtesting.py | 8575 | backtest | 3 | https://github.com/kernc/backtesting.py |
 | paperswithbacktest/awesome-systematic-trading | 8444 | backtest, bot_framework | 3 | https://github.com/paperswithbacktest/awesome-systematic-trading |
 | DeviaVir/zenbot | 8261 | backtest, bot_framework | 3 | https://github.com/DeviaVir/zenbot |
 | jesse-ai/jesse | 8111 | bot_framework | 3 | https://github.com/jesse-ai/jesse |
-| Thysrael/Horizon | 7546 | mcp, bot_framework | 3 | https://github.com/Thysrael/Horizon |
+| Thysrael/Horizon | 7547 | mcp, bot_framework | 3 | https://github.com/Thysrael/Horizon |
 | ricequant/rqalpha | 6521 | backtest | 3 | https://github.com/ricequant/rqalpha |
 | edtechre/pybroker | 3437 | broker_execution, backtest | 4 | https://github.com/edtechre/pybroker |
 | fasiondog/hikyuu | 3290 | backtest | 3 | https://github.com/fasiondog/hikyuu |

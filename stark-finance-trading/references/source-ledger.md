@@ -19,6 +19,7 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 | Unusual Whales MCP | https://unusualwhales.com/public-api/mcp | Official options/dark-pool/congressional-trading MCP and skill. |
 | Massive / Polygon.io MCP | https://github.com/massive-com/mcp_massive | Official market-data MCP for the Polygon.io/Massive ecosystem. |
 | Tradier MCP | https://docs.tradier.com/docs/tradier-mcp | Official Tradier MCP docs. |
+| TradeStation MCP | https://www.tradestation.com/platforms-and-tools/mcp/ | Official TradeStation MCP server page for account-connected market data, portfolio analysis, and order-management workflows. |
 | Robinhood Agentic Trading | https://robinhood.com/us/en/agentic-trading/ | Official Robinhood agentic trading product page. |
 | cTrader AI Agent Connect | https://help.ctrader.com/ctrader-ai-agent-connect/ | Official cTrader MCP / AI agent connection docs. |
 | OANDA v20 REST API | https://developer.oanda.com/rest-live-v20/introduction/ | Official OANDA v20 REST API docs for FX/CFD account, pricing, and order workflows. |

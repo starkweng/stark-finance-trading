@@ -1,18 +1,18 @@
 # stark-finance-trading Integration Activation Plan
 
 - Status: PASS
-- Catalog tools: 49
+- Catalog tools: 50
 - Runtime report status: `PASS`
 - Ready now: 11
 - Quick activations: 2
-- Priority install/auth backlog: 22
-- High-risk confirmation surfaces: 13
+- Priority install/auth backlog: 23
+- High-risk confirmation surfaces: 14
 
 ## Activation Stage Counts
 
 | Stage | Count |
 |---|---:|
-| `install_or_auth_candidate` | 22 |
+| `install_or_auth_candidate` | 23 |
 | `lazy_load_available` | 1 |
 | `needs_env` | 1 |
 | `ready_now` | 11 |
@@ -67,6 +67,7 @@
 | `metatrader5-python` | 4 | `high_risk_requires_confirmation` |
 | `oanda-v20-api` | 4 | `high_risk_requires_confirmation` |
 | `okx-api` | 4 | `high_risk_requires_confirmation` |
+| `tradestation-mcp` | 4 | `high_risk_requires_confirmation` |
 | `tradier-mcp` | 4 | `high_risk_requires_confirmation` |
 | `tradingview-broker-api` | 4 | `high_risk_requires_confirmation` |
 | `coinbase-cdp-agentkit` | 4 | `high_risk_requires_confirmation` |

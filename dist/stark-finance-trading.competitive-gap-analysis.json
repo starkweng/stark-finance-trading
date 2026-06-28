@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "competitive_gap_status": "PASS",
-  "generated_at": "2026-06-28T09:06:00.000902+00:00",
+  "generated_at": "2026-06-28T09:21:03.313130+00:00",
   "skill": "stark-finance-trading",
   "input_statuses": {
     "github_tool_discovery": "PASS",
@@ -52,7 +52,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
       "candidate_count": 13,
-      "total_stars": 187984,
+      "total_stars": 187985,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -79,7 +79,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
       "candidate_count": 13,
-      "total_stars": 109012,
+      "total_stars": 109011,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -153,7 +153,7 @@
       ],
       "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
       "candidate_count": 5,
-      "total_stars": 8682,
+      "total_stars": 8683,
       "top_candidate": "nirholas/UCAI"
     },
     {
@@ -178,7 +178,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
       "candidate_count": 3,
-      "total_stars": 98990,
+      "total_stars": 98993,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -228,7 +228,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat flow/greeks/dark-pool data as signal evidence, not execution advice; live credentials and redistribution rules remain external.",
       "candidate_count": 1,
-      "total_stars": 69776,
+      "total_stars": 69779,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -492,7 +492,7 @@
       "name": "OpenBB-finance/OpenBB",
       "url": "https://github.com/OpenBB-finance/OpenBB",
       "description": "Financial data platform for analysts, quants and AI agents.",
-      "stars": 69776,
+      "stars": 69779,
       "language": "Python",
       "route_tags": [
         "options_flow",
@@ -664,7 +664,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7546,
+      "stars": 7547,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -736,7 +736,7 @@
       "name": "kernc/backtesting.py",
       "url": "https://github.com/kernc/backtesting.py",
       "description": "🔎 📈 🐍 💰  Backtest trading strategies in Python.",
-      "stars": 8576,
+      "stars": 8575,
       "language": "Python",
       "route_tags": [
         "backtest"
@@ -1002,7 +1002,7 @@
       "name": "OpenBB-finance/OpenBB",
       "url": "https://github.com/OpenBB-finance/OpenBB",
       "description": "Financial data platform for analysts, quants and AI agents.",
-      "stars": 69776,
+      "stars": 69779,
       "language": "Python",
       "route_tags": [
         "options_flow",
@@ -1174,7 +1174,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7546,
+      "stars": 7547,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -1246,7 +1246,7 @@
       "name": "kernc/backtesting.py",
       "url": "https://github.com/kernc/backtesting.py",
       "description": "🔎 📈 🐍 💰  Backtest trading strategies in Python.",
-      "stars": 8576,
+      "stars": 8575,
       "language": "Python",
       "route_tags": [
         "backtest"
