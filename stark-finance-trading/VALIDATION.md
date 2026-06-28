@@ -20,7 +20,7 @@ PASS
   "router_terms": 31,
   "local_skill_terms": 14,
   "public_tool_catalog_tools": 34,
-  "tool_routing_cases": 13
+  "tool_routing_cases": 18
 }
 ```
 
@@ -34,7 +34,7 @@ live_behavior_cases: 9
 public_benchmark_dimensions: 7
 competitive_task_cases: 12
 public_tool_catalog_tools: 34
-tool_routing_cases: 13
+tool_routing_cases: 18
 ```
 
 ```text
@@ -76,9 +76,11 @@ missing_required_route_tags: 0
 ```text
 python3 scripts/plan_tool_route.py --root . --json
 PASS
-passed_cases: 13/13
+passed_cases: 18/18
 failed_cases: 0
 ```
+
+New explicit public-tool route regressions cover Hummingbot, Freqtrade, CCXT, OpenBB, and Alpaca paper/live boundaries.
 
 ```text
 python3 scripts/runtime_capability_scan.py --root . --json

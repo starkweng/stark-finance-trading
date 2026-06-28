@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T05:48:54.478651+00:00",
+  "generated_at": "2026-06-28T05:55:41.642783+00:00",
   "skill": "stark-finance-trading",
-  "case_count": 13,
-  "passed_cases": 13,
+  "case_count": 18,
+  "passed_cases": 18,
   "failed_cases": [],
   "cases": [
     {
@@ -929,6 +929,7 @@
           "backtest",
           "market_making",
           "crypto_bot",
+          "crypto_exchange",
           "market_data"
         ],
         "local_skill_hints": [],
@@ -942,6 +943,842 @@
           "timestamp",
           "venue",
           "delay_status"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "hummingbot-market-making-dry-run",
+      "prompt": "用 Hummingbot 评估 ETHUSDT market making bot，重点看 connector、库存、max loss、dry-run 和 kill switch，不要启动真实 bot。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:hummingbot",
+          "passed": true
+        },
+        {
+          "id": "tool:ccxt",
+          "passed": true
+        },
+        {
+          "id": "tag:market_making",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_bot",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_exchange",
+          "passed": true
+        },
+        {
+          "id": "safety:dry_run_first",
+          "passed": true
+        },
+        {
+          "id": "safety:kill_switch",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "用 Hummingbot 评估 ETHUSDT market making bot，重点看 connector、库存、max loss、dry-run 和 kill switch，不要启动真实 bot。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "crypto_bot_backtest",
+          "market_snapshot"
+        ],
+        "workflow": "Strategy Backtest + Market Snapshot",
+        "tool_ids": [
+          "binance-skills-hub",
+          "quantconnect-mcp",
+          "lean",
+          "hummingbot",
+          "freqtrade",
+          "ccxt",
+          "alpaca-mcp",
+          "nautilus-trader",
+          "coingecko-mcp",
+          "massive-polygon-mcp",
+          "twelve-data-mcp"
+        ],
+        "tools": [
+          {
+            "id": "binance-skills-hub",
+            "name": "Binance Skills Hub",
+            "provider": "Binance",
+            "source_status": "official_skill_hub",
+            "default_action_tier": 2,
+            "installed_status": "installed_on_stark_machine",
+            "runtime_status": "enabled_plugin",
+            "availability_rank": 90
+          },
+          {
+            "id": "quantconnect-mcp",
+            "name": "QuantConnect MCP",
+            "provider": "QuantConnect",
+            "source_status": "official_mcp",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "lean",
+            "name": "LEAN",
+            "provider": "QuantConnect",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "hummingbot",
+            "name": "Hummingbot",
+            "provider": "Hummingbot Foundation",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "freqtrade",
+            "name": "Freqtrade",
+            "provider": "Freqtrade",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "ccxt",
+            "name": "CCXT",
+            "provider": "CCXT",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "nautilus-trader",
+            "name": "NautilusTrader",
+            "provider": "NautilusTrader",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "coingecko-mcp",
+            "name": "CoinGecko MCP",
+            "provider": "CoinGecko",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "twelve-data-mcp",
+            "name": "Twelve Data MCP",
+            "provider": "Twelve Data",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "backtest",
+          "market_making",
+          "crypto_bot",
+          "crypto_exchange",
+          "market_data"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 3,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "fees_slippage",
+          "drawdown",
+          "dry_run_first",
+          "kill_switch",
+          "timestamp",
+          "venue",
+          "delay_status",
+          "no_execution_requested"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "freqtrade-strategy-dry-run",
+      "prompt": "这个 Freqtrade strategy 先做 backtest 和 dry-run 路线，检查手续费、滑点、MDD、stop condition，不要直接实盘。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:freqtrade",
+          "passed": true
+        },
+        {
+          "id": "tool:ccxt",
+          "passed": true
+        },
+        {
+          "id": "tag:backtest",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_bot",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_exchange",
+          "passed": true
+        },
+        {
+          "id": "safety:dry_run_first",
+          "passed": true
+        },
+        {
+          "id": "safety:kill_switch",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "这个 Freqtrade strategy 先做 backtest 和 dry-run 路线，检查手续费、滑点、MDD、stop condition，不要直接实盘。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "crypto_bot_backtest"
+        ],
+        "workflow": "Strategy Backtest",
+        "tool_ids": [
+          "quantconnect-mcp",
+          "lean",
+          "hummingbot",
+          "freqtrade",
+          "ccxt",
+          "nautilus-trader"
+        ],
+        "tools": [
+          {
+            "id": "quantconnect-mcp",
+            "name": "QuantConnect MCP",
+            "provider": "QuantConnect",
+            "source_status": "official_mcp",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "lean",
+            "name": "LEAN",
+            "provider": "QuantConnect",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "hummingbot",
+            "name": "Hummingbot",
+            "provider": "Hummingbot Foundation",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "freqtrade",
+            "name": "Freqtrade",
+            "provider": "Freqtrade",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "ccxt",
+            "name": "CCXT",
+            "provider": "CCXT",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "nautilus-trader",
+            "name": "NautilusTrader",
+            "provider": "NautilusTrader",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "backtest",
+          "market_making",
+          "crypto_bot",
+          "crypto_exchange"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 3,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "fees_slippage",
+          "drawdown",
+          "dry_run_first",
+          "kill_switch",
+          "no_execution_requested"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "ccxt-connector-boundary",
+      "prompt": "如果用 CCXT 接多个交易所，只先看 order book、balances、connector risk 和 rate limit，不要下单。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:ccxt",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_bot",
+          "passed": true
+        },
+        {
+          "id": "tag:crypto_exchange",
+          "passed": true
+        },
+        {
+          "id": "safety:dry_run_first",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "如果用 CCXT 接多个交易所，只先看 order book、balances、connector risk 和 rate limit，不要下单。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "crypto_bot_backtest"
+        ],
+        "workflow": "Strategy Backtest",
+        "tool_ids": [
+          "quantconnect-mcp",
+          "lean",
+          "hummingbot",
+          "freqtrade",
+          "ccxt",
+          "nautilus-trader"
+        ],
+        "tools": [
+          {
+            "id": "quantconnect-mcp",
+            "name": "QuantConnect MCP",
+            "provider": "QuantConnect",
+            "source_status": "official_mcp",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "lean",
+            "name": "LEAN",
+            "provider": "QuantConnect",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "hummingbot",
+            "name": "Hummingbot",
+            "provider": "Hummingbot Foundation",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "freqtrade",
+            "name": "Freqtrade",
+            "provider": "Freqtrade",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "ccxt",
+            "name": "CCXT",
+            "provider": "CCXT",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "nautilus-trader",
+            "name": "NautilusTrader",
+            "provider": "NautilusTrader",
+            "source_status": "official_open_source",
+            "default_action_tier": 3,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "backtest",
+          "market_making",
+          "crypto_bot",
+          "crypto_exchange"
+        ],
+        "local_skill_hints": [],
+        "risk_tier": 3,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "fees_slippage",
+          "drawdown",
+          "dry_run_first",
+          "kill_switch",
+          "no_execution_requested"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "openbb-options-research-boundary",
+      "prompt": "用 OpenBB 看 NVDA fundamentals，再结合 options flow 和 IV，但只做 research，不要把它变成直接交易建议。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:openbb",
+          "passed": true
+        },
+        {
+          "id": "tool:unusual-whales-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:alpaca-mcp",
+          "passed": true
+        },
+        {
+          "id": "tag:fundamentals",
+          "passed": true
+        },
+        {
+          "id": "tag:options_flow",
+          "passed": true
+        },
+        {
+          "id": "tag:broker",
+          "passed": true
+        },
+        {
+          "id": "safety:order_preview_only",
+          "passed": true
+        },
+        {
+          "id": "safety:explicit_confirmation_required",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "用 OpenBB 看 NVDA fundamentals，再结合 options flow 和 IV，但只做 research，不要把它变成直接交易建议。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "options_flow",
+          "equity_fundamentals"
+        ],
+        "workflow": "Options Flow + Equity / Macro / Fundamentals Research",
+        "tool_ids": [
+          "openbb",
+          "fmp-mcp",
+          "alpaca-mcp",
+          "unusual-whales-mcp",
+          "tradier-mcp",
+          "massive-polygon-mcp",
+          "alpha-vantage-mcp"
+        ],
+        "tools": [
+          {
+            "id": "openbb",
+            "name": "OpenBB",
+            "provider": "OpenBB",
+            "source_status": "official_open_source",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "fmp-mcp",
+            "name": "Financial Modeling Prep MCP",
+            "provider": "Financial Modeling Prep",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "unusual-whales-mcp",
+            "name": "Unusual Whales MCP",
+            "provider": "Unusual Whales",
+            "source_status": "official_mcp_and_skill",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "tradier-mcp",
+            "name": "Tradier MCP",
+            "provider": "Tradier",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "alpha-vantage-mcp",
+            "name": "Alpha Vantage MCP",
+            "provider": "Alpha Vantage",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "options_flow",
+          "broker",
+          "us_equities",
+          "fundamentals",
+          "market_data"
+        ],
+        "local_skill_hints": [
+          "earnings-preview",
+          "equity-research",
+          "dcf-model",
+          "catalyst-calendar",
+          "portfolio-rebalance"
+        ],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "order_preview_only",
+          "explicit_confirmation_required",
+          "fresh_market_data",
+          "not_trade_order",
+          "no_execution_requested"
+        ],
+        "runtime_report_used": true,
+        "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
+        "evidence_boundary": "Deterministic route plan only; it proves catalog/rule coverage, not live tool availability, API credentials, market-data correctness, or model behavior."
+      }
+    },
+    {
+      "id": "alpaca-paper-live-boundary",
+      "prompt": "Alpaca 可以帮我准备 AAPL paper trading order preview，但先不要执行，区分 paper/live、数量、价格和 kill switch。",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "should_load",
+          "passed": true
+        },
+        {
+          "id": "tool:alpaca-mcp",
+          "passed": true
+        },
+        {
+          "id": "tool:tradier-mcp",
+          "passed": true
+        },
+        {
+          "id": "tag:broker",
+          "passed": true
+        },
+        {
+          "id": "tag:paper_trading",
+          "passed": true
+        },
+        {
+          "id": "tag:orders",
+          "passed": true
+        },
+        {
+          "id": "safety:paper_first",
+          "passed": true
+        },
+        {
+          "id": "safety:order_preview_only",
+          "passed": true
+        },
+        {
+          "id": "safety:explicit_confirmation_required",
+          "passed": true
+        },
+        {
+          "id": "safety:kill_switch",
+          "passed": true
+        },
+        {
+          "id": "safety:no_execution_requested",
+          "passed": true
+        },
+        {
+          "id": "min_risk_tier",
+          "passed": true
+        }
+      ],
+      "plan": {
+        "schema_version": "1.0",
+        "status": "PASS",
+        "prompt": "Alpaca 可以帮我准备 AAPL paper trading order preview，但先不要执行，区分 paper/live、数量、价格和 kill switch。",
+        "should_load": true,
+        "handoff": "",
+        "matched_rules": [
+          "broker_api_execution",
+          "equity_fundamentals"
+        ],
+        "workflow": "Broker API / Paper-Live Execution Boundary + Equity / Macro / Fundamentals Research",
+        "tool_ids": [
+          "openbb",
+          "fmp-mcp",
+          "alpaca-mcp",
+          "tradier-mcp",
+          "ibkr-tws-api",
+          "massive-polygon-mcp",
+          "alpha-vantage-mcp"
+        ],
+        "tools": [
+          {
+            "id": "openbb",
+            "name": "OpenBB",
+            "provider": "OpenBB",
+            "source_status": "official_open_source",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "fmp-mcp",
+            "name": "Financial Modeling Prep MCP",
+            "provider": "Financial Modeling Prep",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "local_skill_backed",
+            "availability_rank": 80
+          },
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "tradier-mcp",
+            "name": "Tradier MCP",
+            "provider": "Tradier",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "ibkr-tws-api",
+            "name": "IBKR TWS API",
+            "provider": "Interactive Brokers",
+            "source_status": "official_api_with_community_mcp_candidates",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "massive-polygon-mcp",
+            "name": "Massive / Polygon.io MCP",
+            "provider": "Massive / Polygon.io",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
+          {
+            "id": "alpha-vantage-mcp",
+            "name": "Alpha Vantage MCP",
+            "provider": "Alpha Vantage",
+            "source_status": "official_mcp",
+            "default_action_tier": 1,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          }
+        ],
+        "route_tags": [
+          "broker",
+          "paper_trading",
+          "orders",
+          "us_equities",
+          "fundamentals",
+          "market_data"
+        ],
+        "local_skill_hints": [
+          "earnings-preview",
+          "equity-research",
+          "dcf-model",
+          "catalyst-calendar",
+          "portfolio-rebalance"
+        ],
+        "risk_tier": 4,
+        "risk_mode": "paper_or_live_gated",
+        "safety_terms": [
+          "paper_first",
+          "order_preview_only",
+          "explicit_confirmation_required",
+          "kill_switch",
+          "fresh_market_data",
+          "not_trade_order",
+          "no_execution_requested"
         ],
         "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",
@@ -1235,13 +2072,36 @@
         "should_load": true,
         "handoff": "",
         "matched_rules": [
+          "broker_api_execution",
           "ibkr_boundary"
         ],
-        "workflow": "IBKR / TWS",
+        "workflow": "Broker API / Paper-Live Execution Boundary + IBKR / TWS",
         "tool_ids": [
+          "alpaca-mcp",
+          "tradier-mcp",
           "ibkr-tws-api"
         ],
         "tools": [
+          {
+            "id": "alpaca-mcp",
+            "name": "Alpaca MCP",
+            "provider": "Alpaca",
+            "source_status": "official_mcp",
+            "default_action_tier": 2,
+            "installed_status": "lazy_loadable_connector_candidate",
+            "runtime_status": "deferred_tool_source",
+            "availability_rank": 60
+          },
+          {
+            "id": "tradier-mcp",
+            "name": "Tradier MCP",
+            "provider": "Tradier",
+            "source_status": "official_mcp",
+            "default_action_tier": 4,
+            "installed_status": "external_candidate",
+            "runtime_status": "external_candidate",
+            "availability_rank": 10
+          },
           {
             "id": "ibkr-tws-api",
             "name": "IBKR TWS API",
@@ -1255,17 +2115,20 @@
         ],
         "route_tags": [
           "broker",
+          "paper_trading",
+          "orders",
           "multi_asset"
         ],
         "local_skill_hints": [],
         "risk_tier": 4,
         "risk_mode": "paper_or_live_gated",
         "safety_terms": [
-          "official_api_vs_community_wrapper",
           "paper_first",
-          "order_preview",
+          "order_preview_only",
+          "explicit_confirmation_required",
           "kill_switch",
-          "explicit_confirmation_required"
+          "official_api_vs_community_wrapper",
+          "order_preview"
         ],
         "runtime_report_used": true,
         "next_action": "Gather read-only evidence first; produce a preview/checklist for any state-changing path.",

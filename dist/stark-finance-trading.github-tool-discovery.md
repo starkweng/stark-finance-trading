@@ -11,12 +11,12 @@
 
 | Repo | Stars | Tags | Tier | URL |
 |---|---:|---|---:|---|
-| OpenBB-finance/OpenBB | 69774 | options_flow, research | 1 | https://github.com/OpenBB-finance/OpenBB |
-| freqtrade/freqtrade | 51900 | bot_framework | 3 | https://github.com/freqtrade/freqtrade |
+| OpenBB-finance/OpenBB | 69773 | options_flow, research | 1 | https://github.com/OpenBB-finance/OpenBB |
+| freqtrade/freqtrade | 51901 | bot_framework | 3 | https://github.com/freqtrade/freqtrade |
 | ccxt/ccxt | 43094 | backtest, bot_framework, onchain | 3 | https://github.com/ccxt/ccxt |
 | Fincept-Corporation/FinceptTerminal | 27575 | research | 1 | https://github.com/Fincept-Corporation/FinceptTerminal |
 | wilsonfreitas/awesome-quant | 27080 | bot_framework | 3 | https://github.com/wilsonfreitas/awesome-quant |
-| hummingbot/hummingbot | 19006 | broker_execution, onchain, backtest, bot_framework | 4 | https://github.com/hummingbot/hummingbot |
+| hummingbot/hummingbot | 19007 | broker_execution, onchain, backtest, bot_framework | 4 | https://github.com/hummingbot/hummingbot |
 | ccxt/binance-trade-bot | 8712 | bot_framework | 3 | https://github.com/ccxt/binance-trade-bot |
 | kernc/backtesting.py | 8576 | backtest | 3 | https://github.com/kernc/backtesting.py |
 | paperswithbacktest/awesome-systematic-trading | 8443 | backtest, bot_framework | 3 | https://github.com/paperswithbacktest/awesome-systematic-trading |

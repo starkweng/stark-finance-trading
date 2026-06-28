@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-28T05:48:54.789750+00:00",
+  "generated_at": "2026-06-28T05:55:41.958037+00:00",
   "package": {
     "path": "dist/stark-finance-trading.skill",
     "name": "stark-finance-trading.skill",
-    "size_bytes": 182014,
-    "sha256": "63774f10bd23f8244a15ae87dfda6941c201a86f8c637c79c695d7c8b591e4ad",
+    "size_bytes": 182750,
+    "sha256": "6b01ba39c4c836df978b2f2f6b1039aad1f4ee49340b8b41cfc5c6f7d0de491b",
     "entry_count": 62
   },
   "install_smoke": {
@@ -59,8 +59,8 @@
     },
     {
       "path": "stark-finance-trading/VALIDATION.md",
-      "size": 15713,
-      "sha256": "d9acf52d7d281c8e99f48f3e9a12f464b73367ce289fda707f5028645111f307"
+      "size": 15834,
+      "sha256": "3f18538e827104ba2e09760c19989c268656a2bdb6ad4795b191d86808c88565"
     },
     {
       "path": "stark-finance-trading/VERSION",
@@ -119,8 +119,8 @@
     },
     {
       "path": "stark-finance-trading/evals/tool-routing-cases.json",
-      "size": 4826,
-      "sha256": "bb12ffe488de9ee3bd7209ab886ebf38bef023dead9dff07ea13d9dc9c158aac"
+      "size": 7277,
+      "sha256": "482bdec8065d04807dd6fc9f2caf6f58b6cd1274d09f0339ee0015ffccd07415"
     },
     {
       "path": "stark-finance-trading/examples.md",
@@ -269,8 +269,8 @@
     },
     {
       "path": "stark-finance-trading/scripts/plan_tool_route.py",
-      "size": 16287,
-      "sha256": "5c8d6ab35466e1f767f6c82ea058b4e0d75d67f0f4834d64ff8f5990a6501934"
+      "size": 17050,
+      "sha256": "ac742b1b2bba149b95192d4e4b39272f4fcad2c4a176e42184e1a7c831e431cb"
     },
     {
       "path": "stark-finance-trading/scripts/quick_validate.py",

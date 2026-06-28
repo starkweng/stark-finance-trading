@@ -27,6 +27,15 @@ NEGATIVE_RULES = [
 
 ROUTE_RULES = [
     {
+        "id": "broker_api_execution",
+        "patterns": [r"alpaca", r"tradier", r"paper trading", r"paper/live", r"live trading", r"broker api", r"order preview", r"美股.*下单", r"股票.*下单"],
+        "tool_ids": ["alpaca-mcp", "tradier-mcp", "ibkr-tws-api"],
+        "workflow": "Broker API / Paper-Live Execution Boundary",
+        "route_tags": ["broker", "paper_trading", "orders"],
+        "risk_tier": 4,
+        "safety_terms": ["paper_first", "order_preview_only", "explicit_confirmation_required", "kill_switch"],
+    },
+    {
         "id": "options_flow",
         "patterns": [r"期权", r"options?", r"dark pool", r"unusual", r"flow", r"greek", r"iv\b"],
         "tool_ids": ["unusual-whales-mcp", "tradier-mcp", "alpaca-mcp"],
@@ -64,10 +73,10 @@ ROUTE_RULES = [
     },
     {
         "id": "crypto_bot_backtest",
-        "patterns": [r"回测", r"backtest", r"mdd", r"grid", r"网格", r"martingale", r"bot", r"滑点", r"手续费", r"爆仓"],
+        "patterns": [r"回测", r"backtest", r"mdd", r"grid", r"网格", r"martingale", r"bot", r"hummingbot", r"freqtrade", r"\bccxt\b", r"nautilus", r"quantconnect", r"\blean\b", r"market making", r"dry[- ]?run", r"滑点", r"手续费", r"爆仓"],
         "tool_ids": ["quantconnect-mcp", "lean", "hummingbot", "freqtrade", "nautilus-trader", "ccxt"],
         "workflow": "Strategy Backtest",
-        "route_tags": ["backtest", "market_making", "crypto_bot"],
+        "route_tags": ["backtest", "market_making", "crypto_bot", "crypto_exchange"],
         "risk_tier": 3,
         "safety_terms": ["fees_slippage", "drawdown", "dry_run_first", "kill_switch"],
     },
@@ -214,7 +223,7 @@ def plan_route(prompt: str, root: Path, runtime_report: Path | None = None) -> d
     risk_tier = max(int(rule.get("risk_tier", 1)) for rule in matched)
     if risk_tier == 4 and "explicit_confirmation_required" not in safety_terms:
         safety_terms.append("explicit_confirmation_required")
-    if any(term in lowered for term in ["不要交易", "先不要执行", "不要直接交易", "不要下单"]):
+    if any(term in lowered for term in ["不要交易", "先不要执行", "不要直接交易", "不要下单", "不要启动", "不要直接实盘", "不要把它变成直接交易建议"]):
         safety_terms.append("no_execution_requested")
 
     tools = [
