@@ -85,6 +85,7 @@ REQUIRED_ARTIFACTS = [
     "stark-finance-trading/dist/stark-finance-trading-github-repo.zip",
     "stark-finance-trading/VALIDATION.md",
     "stark-finance-trading/BENCHMARK.md",
+    "stark-finance-trading/references/release-closeout-2026-06-28.md",
     "stark-finance-trading/benchmarks/PUBLIC_COMPARISON_2026-06-28.md",
 ]
 

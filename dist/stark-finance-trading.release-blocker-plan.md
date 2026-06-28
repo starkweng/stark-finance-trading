@@ -4,8 +4,8 @@
 - Plan status: `ACTIONABLE_BLOCKERS_OPEN`
 - Goal completion status: `NOT_COMPLETE_REQUIREMENTS_PENDING`
 - Release status: `LOCAL_RELEASE_READY`
-- Blockers: 4
-- Actionable blockers: 4
+- Blockers: 5
+- Actionable blockers: 5
 - External/user-gated blockers: 4
 - No secret values: True
 
@@ -15,6 +15,7 @@
 |---|---:|
 | `needs_github_permission` | 1 |
 | `needs_live_eval_approval` | 2 |
+| `needs_release_repair` | 1 |
 | `needs_secret_or_env` | 1 |
 
 ## Blockers
@@ -22,6 +23,7 @@
 | Blocker | Status | Category | Owner | Required Action |
 |---|---|---|---|---|
 | `critical_runtime_alignment` | PARTIAL | `needs_secret_or_env` | Stark/local secret setup | Set ETHERSCAN_API_KEY if Etherscan live calls are required. |
+| `installed_copies_synced` | MISSING | `needs_release_repair` | Codex/local maintainer | Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators. |
 | `remote_github_actions_proven` | MISSING | `needs_github_permission` | Stark/GitHub auth | Run `gh auth refresh -h github.com -s workflow`, then rerun this script with `--wait`. |
 | `approved_live_model_eval_proven` | MISSING | `needs_live_eval_approval` | Stark/live eval reviewer | Run an approved live eval, generate the review bundle, and score it after human review. |
 | `reviewed_comparative_live_eval_proven` | MISSING | `needs_live_eval_approval` | Stark/live eval reviewer | Run an approved live eval, generate the review bundle, and score it after human review. |
@@ -35,6 +37,14 @@ python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-tra
 ```
 
 Success evidence: etherscan-mcp no longer appears in env_missing_tool_ids and ETHERSCAN_API_KEY presence is true.
+
+### `installed_copies_synced`
+
+```bash
+python3 scripts/run_quality_suite.py --dist dist --json
+```
+
+Success evidence: The corresponding requirement becomes PROVEN in goal completion audit.
 
 ### `remote_github_actions_proven`
 

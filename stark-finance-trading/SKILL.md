@@ -58,6 +58,7 @@ Load only what the task needs:
 | Local runtime availability alignment | `scripts/runtime_capability_scan.py` |
 | Public tool activation and setup priority | `scripts/generate_integration_activation_plan.py` |
 | Open external blockers, secret/env gates, and live-eval approvals | `scripts/generate_release_blocker_plan.py` |
+| Current v1 closeout, stop policy, and external proof boundary | `references/release-closeout-2026-06-28.md` |
 | Execution, wallets, broker accounts, live orders, bots | `references/safety-policy.md` |
 | Market snapshot, token DD, options flow, backtest, MM workflows | `references/workflows.md` |
 | Loop Blueprint and repair/learn cycle | `references/loop-engineering-pattern-2026-06-28.md` |

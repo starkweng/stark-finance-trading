@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T09:21:02.975045+00:00",
+  "generated_at": "2026-06-28T09:46:36.944642+00:00",
   "skill": "stark-finance-trading",
   "mode": "live_github_search",
   "query_count": 12,
@@ -242,7 +242,7 @@
         "trade",
         "trading"
       ],
-      "stars": 43099,
+      "stars": 43101,
       "forks": 8721,
       "open_issues": 1314,
       "pushed_at": "2026-06-27T11:36:26Z",
@@ -283,7 +283,7 @@
         "stock-market",
         "trading"
       ],
-      "stars": 27587,
+      "stars": 27588,
       "forks": 3870,
       "open_issues": 24,
       "pushed_at": "2026-06-24T08:41:31Z",
@@ -393,7 +393,7 @@
       "default_action_tier": 3,
       "language": "Python",
       "topics": [],
-      "stars": 8712,
+      "stars": 8711,
       "forks": 2298,
       "open_issues": 191,
       "pushed_at": "2025-03-12T17:36:21Z",
@@ -481,7 +481,7 @@
         "trading-bot",
         "trading-strategies"
       ],
-      "stars": 8444,
+      "stars": 8445,
       "forks": 1194,
       "open_issues": 37,
       "pushed_at": "2025-01-22T07:49:32Z",
@@ -587,8 +587,8 @@
         "python",
         "webhook"
       ],
-      "stars": 7547,
-      "forks": 1068,
+      "stars": 7548,
+      "forks": 1067,
       "open_issues": 6,
       "pushed_at": "2026-06-28T04:10:58Z",
       "license": "MIT",
@@ -623,7 +623,7 @@
         "trading"
       ],
       "stars": 6521,
-      "forks": 1762,
+      "forks": 1761,
       "open_issues": 30,
       "pushed_at": "2026-06-24T10:06:59Z",
       "license": "NOASSERTION",

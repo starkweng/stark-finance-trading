@@ -1,23 +1,24 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T09:21:37.389508+00:00",
+  "generated_at": "2026-06-28T09:46:38.282033+00:00",
   "skill": "stark-finance-trading",
   "dist": "dist",
   "release_blocker_plan_status": "ACTIONABLE_BLOCKERS_OPEN",
   "goal_completion_status": "NOT_COMPLETE_REQUIREMENTS_PENDING",
   "release_status": "LOCAL_RELEASE_READY",
-  "blocker_count": 4,
-  "actionable_blocker_count": 4,
+  "blocker_count": 5,
+  "actionable_blocker_count": 5,
   "blocked_external_count": 4,
   "category_counts": {
     "needs_secret_or_env": 1,
+    "needs_release_repair": 1,
     "needs_github_permission": 1,
     "needs_live_eval_approval": 2
   },
   "status_counts": {
     "PARTIAL": 1,
-    "MISSING": 3
+    "MISSING": 4
   },
   "blockers": [
     {
@@ -34,6 +35,21 @@
       "unblocks": "critical_runtime_alignment",
       "verification_command": "python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json",
       "success_evidence": "etherscan-mcp no longer appears in env_missing_tool_ids and ETHERSCAN_API_KEY presence is true."
+    },
+    {
+      "id": "installed_copies_synced",
+      "label": "Local installed skill copies are synced where present",
+      "status": "MISSING",
+      "category": "needs_release_repair",
+      "source": "goal_completion_audit",
+      "evidence": "existing=4; matching=0; checked_files=['SKILL.md', 'scripts/analyze_competitive_gaps.py', 'scripts/audit_external_proofs.py', 'scripts/audit_goal_completion.py', 'scripts/discover_github_finance_tools.py', 'scripts/generate_competitive_route_backlog.py', 'scripts/generate_integration_activation_plan.py', 'scripts/generate_release_blocker_plan.py', 'scripts/run_quality_suite.py']",
+      "required_action": "Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators.",
+      "owner": "Codex/local maintainer",
+      "automation_allowed": true,
+      "automation_boundary": "Local repair is allowed when it does not require secrets, live trading, or external account permissions.",
+      "unblocks": "installed_copies_synced",
+      "verification_command": "python3 scripts/run_quality_suite.py --dist dist --json",
+      "success_evidence": "The corresponding requirement becomes PROVEN in goal completion audit."
     },
     {
       "id": "remote_github_actions_proven",
@@ -88,6 +104,13 @@
       "owner": "Stark/local secret setup",
       "action": "Set ETHERSCAN_API_KEY if Etherscan live calls are required.",
       "verify": "python3 scripts/runtime_capability_scan.py --root . --out dist/stark-finance-trading.runtime-capabilities.json --markdown dist/stark-finance-trading.runtime-capabilities.md --json"
+    },
+    {
+      "id": "installed_copies_synced",
+      "category": "needs_release_repair",
+      "owner": "Codex/local maintainer",
+      "action": "Rsync stark-finance-trading to .agents/.codex skill roots and rerun validators.",
+      "verify": "python3 scripts/run_quality_suite.py --dist dist --json"
     },
     {
       "id": "remote_github_actions_proven",

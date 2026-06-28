@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "competitive_gap_status": "PASS",
-  "generated_at": "2026-06-28T09:21:03.313130+00:00",
+  "generated_at": "2026-06-28T09:46:37.256555+00:00",
   "skill": "stark-finance-trading",
   "input_statuses": {
     "github_tool_discovery": "PASS",
@@ -52,7 +52,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
       "candidate_count": 13,
-      "total_stars": 187985,
+      "total_stars": 187988,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -79,7 +79,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
       "candidate_count": 13,
-      "total_stars": 109011,
+      "total_stars": 109014,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -122,7 +122,7 @@
       ],
       "stark_response": "Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
       "candidate_count": 5,
-      "total_stars": 62999,
+      "total_stars": 63001,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -153,7 +153,7 @@
       ],
       "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
       "candidate_count": 5,
-      "total_stars": 8683,
+      "total_stars": 8684,
       "top_candidate": "nirholas/UCAI"
     },
     {
@@ -178,7 +178,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
       "candidate_count": 3,
-      "total_stars": 98993,
+      "total_stars": 98994,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -350,7 +350,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43099,
+      "stars": 43101,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -566,7 +566,7 @@
       "name": "ccxt/binance-trade-bot",
       "url": "https://github.com/ccxt/binance-trade-bot",
       "description": "Automated cryptocurrency trading bot",
-      "stars": 8712,
+      "stars": 8711,
       "language": "Python",
       "route_tags": [
         "bot_framework"
@@ -594,7 +594,7 @@
       "name": "paperswithbacktest/awesome-systematic-trading",
       "url": "https://github.com/paperswithbacktest/awesome-systematic-trading",
       "description": "A curated list of awesome libraries, packages, strategies, books, blogs, tutorials for systematic trading.",
-      "stars": 8444,
+      "stars": 8445,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -664,7 +664,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7547,
+      "stars": 7548,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -860,7 +860,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43099,
+      "stars": 43101,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -1076,7 +1076,7 @@
       "name": "ccxt/binance-trade-bot",
       "url": "https://github.com/ccxt/binance-trade-bot",
       "description": "Automated cryptocurrency trading bot",
-      "stars": 8712,
+      "stars": 8711,
       "language": "Python",
       "route_tags": [
         "bot_framework"
@@ -1104,7 +1104,7 @@
       "name": "paperswithbacktest/awesome-systematic-trading",
       "url": "https://github.com/paperswithbacktest/awesome-systematic-trading",
       "description": "A curated list of awesome libraries, packages, strategies, books, blogs, tutorials for systematic trading.",
-      "stars": 8444,
+      "stars": 8445,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -1174,7 +1174,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7547,
+      "stars": 7548,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -1380,7 +1380,7 @@
       "name": "Fincept-Corporation/FinceptTerminal",
       "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
       "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
-      "stars": 27587,
+      "stars": 27588,
       "language": "C++",
       "route_tags": [
         "research"
@@ -1393,7 +1393,7 @@
       "coverage_status": "COVERED_SOURCE_LEVEL",
       "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
       "backlog_action": "maintain_watch",
-      "priority_score": 57.08,
+      "priority_score": 57.09,
       "matched_catalog_tool_ids": [],
       "matched_runtime_statuses": {}
     },

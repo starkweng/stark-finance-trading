@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T09:21:03.224044+00:00",
+  "generated_at": "2026-06-28T09:46:37.171409+00:00",
   "skill": "stark-finance-trading",
   "catalog_tool_count": 50,
   "runtime_report": "dist/stark-finance-trading.runtime-capabilities.json",

@@ -3,7 +3,7 @@
 - Status: PASS
 - Workflow: `.github/workflows/ci.yml`
 - Required snippets: 13
-- Required artifacts: 58
+- Required artifacts: 59
 
 ## Checks
 
@@ -79,6 +79,7 @@
 | `artifact:stark-finance-trading/dist/stark-finance-trading-github-repo.zip` | PASS | `stark-finance-trading/dist/stark-finance-trading-github-repo.zip` |
 | `artifact:stark-finance-trading/VALIDATION.md` | PASS | `stark-finance-trading/VALIDATION.md` |
 | `artifact:stark-finance-trading/BENCHMARK.md` | PASS | `stark-finance-trading/BENCHMARK.md` |
+| `artifact:stark-finance-trading/references/release-closeout-2026-06-28.md` | PASS | `stark-finance-trading/references/release-closeout-2026-06-28.md` |
 | `artifact:stark-finance-trading/benchmarks/PUBLIC_COMPARISON_2026-06-28.md` | PASS | `stark-finance-trading/benchmarks/PUBLIC_COMPARISON_2026-06-28.md` |
 
 ## Evidence Boundary

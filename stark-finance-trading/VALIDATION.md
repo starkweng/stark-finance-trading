@@ -2,6 +2,8 @@
 
 Last local validation: 2026-06-28.
 
+Current v1 release boundary and stop policy are tracked in `references/release-closeout-2026-06-28.md`.
+
 ## Static Checks
 
 ```text
@@ -10,7 +12,7 @@ PASS
 {
   "ok": true,
   "skill": "stark-finance-trading",
-  "required_files": 47,
+  "required_files": 48,
   "routing_cases": 13,
   "adversarial_cases": 12,
   "live_behavior_cases": 11,
@@ -200,7 +202,7 @@ steps: 49
 python3 scripts/validate_github_actions_workflow.py --root . --json
 PASS
 required_snippet_count: 13
-required_artifact_count: 58
+required_artifact_count: 59
 failed_checks: 0
 ```
 
@@ -217,7 +219,7 @@ eval_regression: PASS
 ```text
 python3 /path/to/stark-skiller/scripts/security_scan_skill.py .
 PASS
-files_scanned: 64
+files_scanned: 65
 critical: 0
 high: 0
 medium: 0
@@ -239,29 +241,29 @@ hashes_match: true
 fixed_zip_metadata: true
 entry_counts_match: true
 install_smoke: true
-entry_count: 64
+entry_count: 65
 ```
 
 ```text
 python3 scripts/package_skill.py . ../dist
 python3 scripts/install_package_smoke.py ../dist/stark-finance-trading.skill --json
 PASS
-entry_count: 64
+entry_count: 65
 ```
 
 ```text
 python3 scripts/export_github_repo.py --skill-root . --out-dir ../dist/github-export/stark-finance-trading --release-artifacts-dir ../dist --zip ../dist/stark-finance-trading-github-repo.zip --json
 PASS
-skill_files_copied: 65
+skill_files_copied: 66
 release_artifacts_copied: 64
 release_package_install_smoke: true
-zip_entry_count: 137
+zip_entry_count: 138
 ```
 
 ```text
 python3 scripts/smoke_github_export.py --zip ../dist/stark-finance-trading-github-repo.zip --out ../dist/stark-finance-trading.github-export-smoke.json --markdown ../dist/stark-finance-trading.github-export-smoke.md --json
 PASS
-zip_entry_count: 137
+zip_entry_count: 138
 required_files: true
 no_transient_files: true
 exported_core_commands: true
@@ -310,8 +312,8 @@ local_release_status: LOCAL_RELEASE_READY
 goal_completion_status: NOT_COMPLETE_EXTERNAL_PROOFS_PENDING
 package_sha256: see ../dist/stark-finance-trading.release-readiness.json
 github_export_zip_sha256: see ../dist/stark-finance-trading.release-readiness.json
-package_entry_count: 64
-github_export_zip_entry_count: 137
+package_entry_count: 65
+github_export_zip_entry_count: 138
 source_freshness: PASS
 missing_required_package_files: 0
 hash_mismatches: 0

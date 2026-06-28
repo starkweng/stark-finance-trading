@@ -25,6 +25,8 @@ The deterministic prompt router lives in `scripts/plan_tool_route.py`. It turns 
 
 `scripts/generate_release_blocker_plan.py` turns external proof gaps, missing env/key gates, and live-eval approvals into a machine-readable action plan without printing secret values.
 
+`references/release-closeout-2026-06-28.md` is the current v1 release boundary: locally ready, no more broad catalog expansion by default, and externally blocked only by secret/env, GitHub workflow, and live-eval proof gates.
+
 ## Why One Skill
 
 Finance/trading work fails when the agent treats every vendor as a separate mental mode. This skill keeps one front door and uses internal route maps:

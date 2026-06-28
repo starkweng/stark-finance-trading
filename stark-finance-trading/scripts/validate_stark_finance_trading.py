@@ -20,6 +20,7 @@ REQUIRED_FILES = [
     "references/workflows.md",
     "references/source-ledger.md",
     "references/public-tool-catalog.json",
+    "references/release-closeout-2026-06-28.md",
     "references/gotchas.md",
     "evals/routing-evals.json",
     "evals/adversarial-evals.json",
@@ -208,6 +209,11 @@ def validate(root: Path) -> int:
     for phrase in ["Market Snapshot", "Token Due Diligence", "Strategy Backtest", "Execution Prep", "Local Skill Delegation"]:
         if phrase not in workflows:
             return fail(f"workflows missing phrase: {phrase}")
+
+    closeout = read(root / "references/release-closeout-2026-06-28.md")
+    for phrase in ["locally v1 ready", "Open External Gates", "Stop Policy", "does not prove remote GitHub Actions completion"]:
+        if phrase not in closeout:
+            return fail(f"release closeout missing phrase: {phrase}")
 
     evals = json.loads(read(root / "evals/routing-evals.json"))
     cases = evals.get("cases", [])

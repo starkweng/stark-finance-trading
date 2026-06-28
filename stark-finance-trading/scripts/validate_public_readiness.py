@@ -17,6 +17,7 @@ REQUIRED_BENCHMARK_FILES = [
     "benchmarks/competitive-task-cases.json",
     "references/local-skill-router.md",
     "references/public-tool-catalog.json",
+    "references/release-closeout-2026-06-28.md",
     "evals/adversarial-evals.json",
     "evals/live-behavior-evals.json",
     "evals/tool-routing-cases.json",

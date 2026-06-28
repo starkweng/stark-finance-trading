@@ -33,6 +33,7 @@ REQUIRED_SOURCE_FILES = [
     "references/source-ledger.md",
     "references/public-tool-catalog.json",
     "references/quality-gates-2026-06-24.md",
+    "references/release-closeout-2026-06-28.md",
     "evals/routing-evals.json",
     "evals/adversarial-evals.json",
     "evals/live-behavior-evals.json",
@@ -123,6 +124,12 @@ STATUS_ARTIFACTS = [
     "stark-finance-trading.github-export-report.json",
     "stark-finance-trading.github-export-smoke.json",
 ]
+
+ALLOWED_WARN_STATUS_ARTIFACTS = {
+    # Live GitHub search can legitimately fall back or warn because of API/rate/network limits.
+    # The discovery report is still useful release evidence when its script exits successfully.
+    "stark-finance-trading.github-tool-discovery.json",
+}
 
 PACKAGE_SOURCE_EXCLUDES = {
     ".github/workflows/ci.yml",
@@ -300,7 +307,10 @@ def validate(args: argparse.Namespace) -> dict[str, Any]:
             "evidence_boundary": data.get("evidence_boundary"),
         }
 
-    status_artifacts_pass = all(item.get("status") == "PASS" for item in artifact_statuses.values())
+    status_artifacts_pass = all(
+        item.get("status") == "PASS" or (rel in ALLOWED_WARN_STATUS_ARTIFACTS and item.get("status") == "WARN")
+        for rel, item in artifact_statuses.items()
+    )
 
     package_path = dist / f"{SKILL_NAME}.skill"
     package_sha = sha256_file(package_path) if package_path.exists() else ""

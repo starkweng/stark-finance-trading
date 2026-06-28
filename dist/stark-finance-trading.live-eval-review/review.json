@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "title": "stark-finance-trading Live Behavior Eval Review",
-  "generated_at": "2026-06-28T09:21:03.976278+00:00",
+  "generated_at": "2026-06-28T09:46:37.918274+00:00",
   "source_report": "dist/live-eval-dry-run/review.json",
   "source_status": "PASS",
   "source_mode": "dry_run",

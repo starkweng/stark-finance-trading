@@ -136,6 +136,7 @@ def validate_export(skill_name: str, out_dir: Path) -> dict:
         f"{skill_name}/README.md",
         f"{skill_name}/BENCHMARK.md",
         f"{skill_name}/VALIDATION.md",
+        f"{skill_name}/references/release-closeout-2026-06-28.md",
         f"{skill_name}/scripts/package_skill.py",
         f"{skill_name}/scripts/install_package_smoke.py",
         f"{skill_name}/scripts/enable_remote_ci.py",
@@ -191,6 +192,7 @@ def validate_export(skill_name: str, out_dir: Path) -> dict:
         and "stark-finance-trading.local-skill-inventory.json" in workflow_text
         and "stark-finance-trading.github-export-smoke.json" in workflow_text
         and "stark-finance-trading.release-readiness.json" in workflow_text
+        and "stark-finance-trading/references/release-closeout-2026-06-28.md" in workflow_text
         and "stark-finance-trading-github-repo.zip" in workflow_text
     )
     transient = []
