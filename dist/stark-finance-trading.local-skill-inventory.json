@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T07:32:18.403015+00:00",
+  "generated_at": "2026-06-28T09:06:00.179303+00:00",
   "skill": "stark-finance-trading",
   "scan_roots": [
     {
@@ -902,7 +902,7 @@
     },
     {
       "name": "stark-budget",
-      "description": "Create, adapt, audit, and repair budget workbooks and financial planning spreadsheets for Stark's Web3, AI, RWA, trading, operations, event, team, launch, market-making, and general business budgeting tasks. Use when the user asks to make a budget, convert a budget into a monthly plan, update or verify Excel/WPS/Google Sheets budget files, compare scenarios, classify required vs optional spend, preserve formulas and formatting, check totals, build a clean .xlsx budget model, or diagnose formula/layout problems in budget workbooks.",
+      "description": "Create, adapt, audit, and repair budget workbooks and financial planning spreadsheets for Stark's Web3, AI, RWA, trading, operations, event, team, launch, market-making, and general business budgeting tasks. Use when the user asks to make a budget, convert a budget into a monthly plan, update or verify Excel/WPS/Google Sheets budget files, compare scenarios, classify required vs optional spend, preserve formulas and formatting, check totals, build a clean .xlsx budget model, diagnose formula/layout problems, or reuse budget templates from prior Stark workbooks.",
       "categories": [
         "execution_capable",
         "finance_ops_accounting"

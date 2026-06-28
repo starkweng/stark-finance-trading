@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T07:32:47.255559+00:00",
+  "generated_at": "2026-06-28T09:06:32.709341+00:00",
   "skill": "stark-finance-trading",
   "skill_root": "stark-finance-trading",
   "dist": "dist",
@@ -118,7 +118,7 @@
       "status": "PROVEN",
       "passed": true,
       "required_for_goal_completion": true,
-      "evidence": "release_status=PASS; package_sha=e0dd5fdc6bb8eb04e5e518865e5acf6d65fa6f1b04bc054cd9297ed95f6e994a; package_entries=64; github_zip_sha=755cf199c6f3d24b92b3e55bf619dfbd43129ac3ca6fb009ca9ed192deacf259; github_zip_entries=135; github_smoke=PASS",
+      "evidence": "release_status=PASS; package_sha=533d5090ed539cbbb9e833c8373a4d776cd4e0662162b7ca4886c6ee7cb7a333; package_entries=64; github_zip_sha=f0409b4873560e9469545ad27621cea69bd6dd64bfea77fe2cb2a29cc0cea41f; github_zip_entries=135; github_smoke=PASS",
       "required_action": "Regenerate package, GitHub export, export smoke, and release readiness."
     },
     {
@@ -433,9 +433,9 @@
   },
   "artifacts": {
     "package": "dist/stark-finance-trading.skill",
-    "package_sha256": "e0dd5fdc6bb8eb04e5e518865e5acf6d65fa6f1b04bc054cd9297ed95f6e994a",
+    "package_sha256": "533d5090ed539cbbb9e833c8373a4d776cd4e0662162b7ca4886c6ee7cb7a333",
     "github_export_zip": "dist/stark-finance-trading-github-repo.zip",
-    "github_export_zip_sha256": "755cf199c6f3d24b92b3e55bf619dfbd43129ac3ca6fb009ca9ed192deacf259"
+    "github_export_zip_sha256": "f0409b4873560e9469545ad27621cea69bd6dd64bfea77fe2cb2a29cc0cea41f"
   },
   "evidence_boundary": "This audit maps Stark's original objective to machine-checkable evidence. PASS means the audit ran. The goal is complete only when every required requirement is PROVEN. PARTIAL, MISSING, BLOCKED, or dry-run evidence keeps the goal active."
 }

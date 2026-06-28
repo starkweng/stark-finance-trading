@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "skill": "stark-finance-trading",
-  "generated_at": "2026-06-28T07:32:04.445721+00:00",
+  "generated_at": "2026-06-28T09:05:44.638669+00:00",
   "mode": "offline",
   "status": "PASS",
   "candidate_count": 49,
@@ -709,7 +709,7 @@
     {
       "name": "Stripe MCP / Agent Toolkit",
       "category": "financial_payments_infrastructure",
-      "source_url": "https://docs.stripe.com/agents/toolkit",
+      "source_url": "https://docs.stripe.com/mcp",
       "source_status": "official_mcp_or_agent_toolkit",
       "status": "PASS",
       "checks": {

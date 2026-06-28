@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "status": "PASS",
-  "generated_at": "2026-06-28T07:32:17.912110+00:00",
+  "generated_at": "2026-06-28T09:05:59.642277+00:00",
   "skill": "stark-finance-trading",
   "mode": "live_github_search",
   "query_count": 12,
@@ -162,7 +162,7 @@
         "quantitative-finance",
         "stocks"
       ],
-      "stars": 69773,
+      "stars": 69776,
       "forks": 7059,
       "open_issues": 68,
       "pushed_at": "2026-06-25T14:16:00Z",
@@ -195,8 +195,8 @@
         "trade",
         "trading-bot"
       ],
-      "stars": 51901,
-      "forks": 10810,
+      "stars": 51902,
+      "forks": 10809,
       "open_issues": 32,
       "pushed_at": "2026-06-27T15:19:05Z",
       "license": "GPL-3.0",
@@ -242,7 +242,7 @@
         "trade",
         "trading"
       ],
-      "stars": 43096,
+      "stars": 43099,
       "forks": 8721,
       "open_issues": 1314,
       "pushed_at": "2026-06-27T11:36:26Z",
@@ -283,9 +283,9 @@
         "stock-market",
         "trading"
       ],
-      "stars": 27579,
-      "forks": 3869,
-      "open_issues": 23,
+      "stars": 27587,
+      "forks": 3870,
+      "open_issues": 24,
       "pushed_at": "2026-06-24T08:41:31Z",
       "license": "NOASSERTION",
       "source_status": "github_live_search",
@@ -327,8 +327,8 @@
         "trading-strategies",
         "yahoo-finance"
       ],
-      "stars": 27085,
-      "forks": 3611,
+      "stars": 27092,
+      "forks": 3612,
       "open_issues": 58,
       "pushed_at": "2026-06-28T01:39:42Z",
       "license": "",
@@ -370,7 +370,7 @@
         "python",
         "trading"
       ],
-      "stars": 19007,
+      "stars": 19008,
       "forks": 4760,
       "open_issues": 151,
       "pushed_at": "2026-06-26T17:58:35Z",
@@ -481,7 +481,7 @@
         "trading-bot",
         "trading-strategies"
       ],
-      "stars": 8443,
+      "stars": 8444,
       "forks": 1194,
       "open_issues": 37,
       "pushed_at": "2025-01-22T07:49:32Z",
@@ -554,7 +554,7 @@
         "trading-bot",
         "trading-strategies"
       ],
-      "stars": 8110,
+      "stars": 8111,
       "forks": 1156,
       "open_issues": 6,
       "pushed_at": "2026-06-27T17:10:42Z",
@@ -587,8 +587,8 @@
         "python",
         "webhook"
       ],
-      "stars": 7539,
-      "forks": 1064,
+      "stars": 7546,
+      "forks": 1068,
       "open_issues": 6,
       "pushed_at": "2026-06-28T04:10:58Z",
       "license": "MIT",
@@ -697,10 +697,10 @@
         "trading",
         "vestment"
       ],
-      "stars": 3289,
+      "stars": 3290,
       "forks": 799,
       "open_issues": 5,
-      "pushed_at": "2026-06-28T07:12:01Z",
+      "pushed_at": "2026-06-28T07:40:00Z",
       "license": "Apache-2.0",
       "source_status": "github_live_search",
       "stark_relevance": "candidate_for_public_comparison_or_router_source"

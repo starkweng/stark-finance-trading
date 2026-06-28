@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "PASS",
   "competitive_gap_status": "PASS",
-  "generated_at": "2026-06-28T07:32:18.238688+00:00",
+  "generated_at": "2026-06-28T09:06:00.000902+00:00",
   "skill": "stark-finance-trading",
   "input_statuses": {
     "github_tool_discovery": "PASS",
@@ -52,7 +52,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat bot frameworks as strategy/runtime substrates behind live_gating_required and kill-switch review.",
       "candidate_count": 13,
-      "total_stars": 187963,
+      "total_stars": 187984,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -79,7 +79,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route into backtest/research stacks, keep assumptions explicit, and require simulation or paper proof before live execution.",
       "candidate_count": 13,
-      "total_stars": 109006,
+      "total_stars": 109012,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -122,7 +122,7 @@
       ],
       "stark_response": "Use Dune/Alchemy/Binance where configured; keep Etherscan and endpoint-specific surfaces gated by env/auth checks.",
       "candidate_count": 5,
-      "total_stars": 62995,
+      "total_stars": 62999,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -153,7 +153,7 @@
       ],
       "stark_response": "Use MCP as a substrate, but only promote concrete finance routes with source, auth, and safety metadata.",
       "candidate_count": 5,
-      "total_stars": 8675,
+      "total_stars": 8682,
       "top_candidate": "nirholas/UCAI"
     },
     {
@@ -178,7 +178,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Route to research/fundamentals tools with metric definitions, source provenance, and no public superiority claim.",
       "candidate_count": 3,
-      "total_stars": 98979,
+      "total_stars": 98990,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -203,7 +203,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Keep broker/order surfaces in Tier 4 with account, venue, order, margin, and kill-switch preview before confirmation.",
       "candidate_count": 3,
-      "total_stars": 23373,
+      "total_stars": 23374,
       "top_candidate": "hummingbot/hummingbot"
     },
     {
@@ -228,7 +228,7 @@
       "env_missing_tool_ids": [],
       "stark_response": "Treat flow/greeks/dark-pool data as signal evidence, not execution advice; live credentials and redistribution rules remain external.",
       "candidate_count": 1,
-      "total_stars": 69773,
+      "total_stars": 69776,
       "top_candidate": "OpenBB-finance/OpenBB"
     },
     {
@@ -294,7 +294,7 @@
       "name": "hummingbot/hummingbot",
       "url": "https://github.com/hummingbot/hummingbot",
       "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
-      "stars": 19007,
+      "stars": 19008,
       "language": "Python",
       "route_tags": [
         "broker_execution",
@@ -350,7 +350,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43096,
+      "stars": 43099,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -466,7 +466,7 @@
       "name": "freqtrade/freqtrade",
       "url": "https://github.com/freqtrade/freqtrade",
       "description": "Free, open source crypto trading bot",
-      "stars": 51901,
+      "stars": 51902,
       "language": "Python",
       "route_tags": [
         "bot_framework"
@@ -492,7 +492,7 @@
       "name": "OpenBB-finance/OpenBB",
       "url": "https://github.com/OpenBB-finance/OpenBB",
       "description": "Financial data platform for analysts, quants and AI agents.",
-      "stars": 69773,
+      "stars": 69776,
       "language": "Python",
       "route_tags": [
         "options_flow",
@@ -520,7 +520,7 @@
       "name": "wilsonfreitas/awesome-quant",
       "url": "https://github.com/wilsonfreitas/awesome-quant",
       "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
-      "stars": 27085,
+      "stars": 27092,
       "language": "HTML",
       "route_tags": [
         "bot_framework"
@@ -594,7 +594,7 @@
       "name": "paperswithbacktest/awesome-systematic-trading",
       "url": "https://github.com/paperswithbacktest/awesome-systematic-trading",
       "description": "A curated list of awesome libraries, packages, strategies, books, blogs, tutorials for systematic trading.",
-      "stars": 8443,
+      "stars": 8444,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -642,7 +642,7 @@
       "name": "jesse-ai/jesse",
       "url": "https://github.com/jesse-ai/jesse",
       "description": "An advanced crypto trading bot written in Python",
-      "stars": 8110,
+      "stars": 8111,
       "language": "JavaScript",
       "route_tags": [
         "bot_framework"
@@ -664,7 +664,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7539,
+      "stars": 7546,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -780,7 +780,7 @@
       "name": "fasiondog/hikyuu",
       "url": "https://github.com/fasiondog/hikyuu",
       "description": "Hikyuu Quant Framework 基于C++/Python的超高速开源量化交易研究框架，同时可基于策略部件进行资产重用，快速累积策略资产。",
-      "stars": 3289,
+      "stars": 3290,
       "language": "C++",
       "route_tags": [
         "backtest"
@@ -804,7 +804,7 @@
       "name": "hummingbot/hummingbot",
       "url": "https://github.com/hummingbot/hummingbot",
       "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
-      "stars": 19007,
+      "stars": 19008,
       "language": "Python",
       "route_tags": [
         "broker_execution",
@@ -860,7 +860,7 @@
       "name": "ccxt/ccxt",
       "url": "https://github.com/ccxt/ccxt",
       "description": "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go / Java ",
-      "stars": 43096,
+      "stars": 43099,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -976,7 +976,7 @@
       "name": "freqtrade/freqtrade",
       "url": "https://github.com/freqtrade/freqtrade",
       "description": "Free, open source crypto trading bot",
-      "stars": 51901,
+      "stars": 51902,
       "language": "Python",
       "route_tags": [
         "bot_framework"
@@ -1002,7 +1002,7 @@
       "name": "OpenBB-finance/OpenBB",
       "url": "https://github.com/OpenBB-finance/OpenBB",
       "description": "Financial data platform for analysts, quants and AI agents.",
-      "stars": 69773,
+      "stars": 69776,
       "language": "Python",
       "route_tags": [
         "options_flow",
@@ -1030,7 +1030,7 @@
       "name": "wilsonfreitas/awesome-quant",
       "url": "https://github.com/wilsonfreitas/awesome-quant",
       "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
-      "stars": 27085,
+      "stars": 27092,
       "language": "HTML",
       "route_tags": [
         "bot_framework"
@@ -1104,7 +1104,7 @@
       "name": "paperswithbacktest/awesome-systematic-trading",
       "url": "https://github.com/paperswithbacktest/awesome-systematic-trading",
       "description": "A curated list of awesome libraries, packages, strategies, books, blogs, tutorials for systematic trading.",
-      "stars": 8443,
+      "stars": 8444,
       "language": "Python",
       "route_tags": [
         "backtest",
@@ -1152,7 +1152,7 @@
       "name": "jesse-ai/jesse",
       "url": "https://github.com/jesse-ai/jesse",
       "description": "An advanced crypto trading bot written in Python",
-      "stars": 8110,
+      "stars": 8111,
       "language": "JavaScript",
       "route_tags": [
         "bot_framework"
@@ -1174,7 +1174,7 @@
       "name": "Thysrael/Horizon",
       "url": "https://github.com/Thysrael/Horizon",
       "description": "📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 用 AI 构建你专属的新闻雷达",
-      "stars": 7539,
+      "stars": 7546,
       "language": "Python",
       "route_tags": [
         "mcp",
@@ -1290,7 +1290,7 @@
       "name": "fasiondog/hikyuu",
       "url": "https://github.com/fasiondog/hikyuu",
       "description": "Hikyuu Quant Framework 基于C++/Python的超高速开源量化交易研究框架，同时可基于策略部件进行资产重用，快速累积策略资产。",
-      "stars": 3289,
+      "stars": 3290,
       "language": "C++",
       "route_tags": [
         "backtest"
@@ -1380,7 +1380,7 @@
       "name": "Fincept-Corporation/FinceptTerminal",
       "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
       "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
-      "stars": 27579,
+      "stars": 27587,
       "language": "C++",
       "route_tags": [
         "research"

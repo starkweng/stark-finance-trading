@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-06-28T07:32:18.635563+00:00",
+  "generated_at": "2026-06-28T09:06:00.419534+00:00",
   "package": {
     "path": "dist/stark-finance-trading.skill",
     "name": "stark-finance-trading.skill",
-    "size_bytes": 202993,
-    "sha256": "e0dd5fdc6bb8eb04e5e518865e5acf6d65fa6f1b04bc054cd9297ed95f6e994a",
+    "size_bytes": 203235,
+    "sha256": "533d5090ed539cbbb9e833c8373a4d776cd4e0662162b7ca4886c6ee7cb7a333",
     "entry_count": 64
   },
   "install_smoke": {
@@ -89,8 +89,8 @@
     },
     {
       "path": "stark-finance-trading/benchmarks/public-comparison-2026-06-28.json",
-      "size": 29949,
-      "sha256": "1788fd1e7acaaba34f0068afb6ed69614cc142e8fada61dea057fbd8fbbc3f0d"
+      "size": 29938,
+      "sha256": "7bb1a7109325fa8d41fb8b043a7d8958d8e58ec2fe109d0fb4a0525bb4f6bd12"
     },
     {
       "path": "stark-finance-trading/evals/adversarial-evals.json",
@@ -144,8 +144,8 @@
     },
     {
       "path": "stark-finance-trading/references/public-tool-catalog.json",
-      "size": 41361,
-      "sha256": "73f6161b9b579ffef6897c41438f674f3c19fa38413b89e7f2499907c07a42b4"
+      "size": 41350,
+      "sha256": "21d1cc3da18e152084f7f401297716207d96da67aba0561580d0f1c4eb89644d"
     },
     {
       "path": "stark-finance-trading/references/quality-gates-2026-06-24.md",
@@ -159,8 +159,8 @@
     },
     {
       "path": "stark-finance-trading/references/source-ledger.md",
-      "size": 8054,
-      "sha256": "d1d1e2c53ddc5965fb0032c1d55f205997e2a1a08b8bdfa12d27de41a433288d"
+      "size": 8044,
+      "sha256": "2f760b25e1640d1ed7e945b49e6a862b1974efcc68404c09a5c858ba0847ef81"
     },
     {
       "path": "stark-finance-trading/references/tool-router.md",
@@ -189,8 +189,8 @@
     },
     {
       "path": "stark-finance-trading/scripts/audit_public_sources.py",
-      "size": 7690,
-      "sha256": "41206efda6b36498cbe3aca779d8ce30d7c76390d7c23ebda5e7a084811a12a0"
+      "size": 8560,
+      "sha256": "14d398f416d81046e0cd05390099c72fbd8039f5e8dba78881471c62b2472566"
     },
     {
       "path": "stark-finance-trading/scripts/codex_eval.py",

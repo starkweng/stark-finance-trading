@@ -48,7 +48,7 @@
 | Moralis Cortex MCP | `official_mcp` | PASS | https://docs.moralis.com/data-api/cortex-api/overview |
 | GoldRush MCP | `official_mcp` | PASS | https://github.com/covalenthq/goldrush-mcp-server |
 | SQD Portal MCP | `official_mcp` | PASS | https://docs.sqd.dev/en/ai/mcp-server |
-| Stripe MCP / Agent Toolkit | `official_mcp_or_agent_toolkit` | PASS | https://docs.stripe.com/agents/toolkit |
+| Stripe MCP / Agent Toolkit | `official_mcp_or_agent_toolkit` | PASS | https://docs.stripe.com/mcp |
 | Plaid API | `official_api` | PASS | https://plaid.com/docs/ |
 | Databento API | `official_api` | PASS | https://databento.com/docs |
 | Finnhub API | `official_api` | PASS | https://finnhub.io/docs/api |

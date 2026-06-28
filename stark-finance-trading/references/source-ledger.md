@@ -35,7 +35,7 @@ Last refreshed: 2026-06-28. Live-check before installing or citing exact capabil
 | Helius MCP | https://www.helius.dev/docs/agents/mcp | Official Helius MCP and agent docs for Solana data/infrastructure. |
 | Jupiter APIs | https://dev.jup.ag/docs | Official Jupiter developer docs for Solana liquidity/swap APIs. |
 | DexScreener API | https://docs.dexscreener.com/api/reference | Official DexScreener public API docs; community MCP wrappers must be treated as non-official unless verified. |
-| Stripe MCP / Agent Toolkit | https://docs.stripe.com/agents/toolkit | Official Stripe agent toolkit and MCP-style integration for payments and financial operations, not trading signals. |
+| Stripe MCP / Agent Toolkit | https://docs.stripe.com/mcp | Official Stripe MCP server and agent toolkit integration for payments and financial operations, not trading signals. |
 | Plaid docs | https://plaid.com/docs/ | Official Plaid docs for bank/account connectivity; use as financial data infrastructure, not broker execution. |
 | Databento docs | https://databento.com/docs | Official Databento data API docs. |
 | Finnhub API | https://finnhub.io/docs/api | Official Finnhub API docs for market data, news, fundamentals, earnings, and sentiment. |

@@ -615,7 +615,7 @@
       "id": "stripe-agent-toolkit",
       "name": "Stripe Agent Toolkit",
       "provider": "Stripe",
-      "source_url": "https://docs.stripe.com/agents/toolkit",
+      "source_url": "https://docs.stripe.com/mcp",
       "source_status": "official_mcp_or_agent_toolkit",
       "priority": "finance_ops",
       "default_action_tier": 4,

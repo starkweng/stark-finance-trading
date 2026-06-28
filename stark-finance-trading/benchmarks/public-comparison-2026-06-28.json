@@ -389,7 +389,7 @@
     {
       "name": "Stripe MCP / Agent Toolkit",
       "category": "financial_payments_infrastructure",
-      "source_url": "https://docs.stripe.com/agents/toolkit",
+      "source_url": "https://docs.stripe.com/mcp",
       "source_status": "official_mcp_or_agent_toolkit",
       "strengths": ["payments", "billing", "checkout", "financial operations", "agent tool integration"],
       "default_risk_tier": 2,

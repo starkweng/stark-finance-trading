@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 import re
 import subprocess
@@ -60,11 +61,23 @@ def curl_probe(url: str, timeout: int) -> dict:
         "/dev/null",
         "-w",
         "%{http_code}\t%{url_effective}",
+        "--connect-timeout",
+        str(min(5, max(1, timeout))),
         "--max-time",
         str(timeout),
         url,
     ]
-    proc = subprocess.run(command, text=True, capture_output=True)
+    try:
+        proc = subprocess.run(command, text=True, capture_output=True, timeout=timeout + 5)
+    except subprocess.TimeoutExpired as exc:
+        return {
+            "reachable": False,
+            "network_status": "WARN",
+            "http_status": 0,
+            "effective_url": url,
+            "returncode": -1,
+            "stderr_tail": f"subprocess timeout after {timeout + 5}s: {exc}",
+        }
     stdout = proc.stdout.strip()
     code = 0
     effective_url = url
@@ -79,7 +92,7 @@ def curl_probe(url: str, timeout: int) -> dict:
     reachable = 200 <= code < 400
     if reachable:
         network_status = "PASS"
-    elif code in {401, 403, 405, 429} or proc.returncode in {35, 56, 60, 92}:
+    elif code == 0 or code in {401, 403, 405, 429} or proc.returncode in {6, 7, 28, 35, 52, 56, 60, 92}:
         network_status = "WARN"
     else:
         network_status = "FAIL"
@@ -171,13 +184,21 @@ def main() -> int:
     parser.add_argument("--markdown")
     parser.add_argument("--live", action="store_true", help="Probe URLs with curl. Offline classification checks run by default.")
     parser.add_argument("--timeout", type=int, default=12)
+    parser.add_argument("--jobs", type=int, default=8, help="Concurrent live URL probes.")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
     comparison = read_json(root / args.comparison)
     candidates = comparison.get("candidates") or []
-    audited = [audit_candidate(item, live=args.live, timeout=args.timeout) for item in candidates]
+    if args.live and args.jobs > 1:
+        with ThreadPoolExecutor(max_workers=args.jobs) as executor:
+            audited = list(executor.map(
+                lambda item: audit_candidate(item, live=True, timeout=args.timeout),
+                candidates,
+            ))
+    else:
+        audited = [audit_candidate(item, live=args.live, timeout=args.timeout) for item in candidates]
     has_fail = any(item["status"] == "FAIL" for item in audited)
     has_warn = any(item["status"] == "WARN" for item in audited)
     status = "FAIL" if not audited or has_fail else "WARN" if has_warn else "PASS"
